@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
+		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
+		56D8F0241BAF97C500242FA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0231BAF97C500242FA9 /* ViewController.m */; };
+		56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0251BAF97C500242FA9 /* Main.storyboard */; };
+		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
+		56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F02A1BAF97C500242FA9 /* LaunchScreen.xib */; };
+		56D8F0381BAF97C500242FA9 /* PHPHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0371BAF97C500242FA9 /* PHPHubTests.m */; };
+		56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0511BAF9F7200242FA9 /* BaseModel.m */; };
+		56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0541BAF9FF200242FA9 /* BaseApi.m */; };
+		56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F05B1BAFA5E100242FA9 /* APIRequestHandler.m */; };
+		56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */; };
+		56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */; };
+		56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */; };
+		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56D8F0321BAF97C500242FA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56D8F0101BAF97C500242FA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56D8F0171BAF97C500242FA9;
+			remoteInfo = PHPHub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56D8F01F1BAF97C500242FA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		56D8F0201BAF97C500242FA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		56D8F0221BAF97C500242FA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		56D8F0231BAF97C500242FA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		56D8F0261BAF97C500242FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56D8F0281BAF97C500242FA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56D8F02B1BAF97C500242FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		56D8F0311BAF97C500242FA9 /* PHPHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHPHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D8F0361BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D8F0371BAF97C500242FA9 /* PHPHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHPHubTests.m; sourceTree = "<group>"; };
+		56D8F0501BAF9F7200242FA9 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		56D8F0511BAF9F7200242FA9 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		56D8F0531BAF9FF200242FA9 /* BaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseApi.h; sourceTree = "<group>"; };
+		56D8F0541BAF9FF200242FA9 /* BaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseApi.m; sourceTree = "<group>"; };
+		56D8F0561BAFA15700242FA9 /* APIConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstant.h; sourceTree = "<group>"; };
+		56D8F0591BAFA4C400242FA9 /* PHPHub-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PHPHub-Prefix.pch"; sourceTree = "<group>"; };
+		56D8F05A1BAFA5E100242FA9 /* APIRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequestHandler.h; sourceTree = "<group>"; };
+		56D8F05B1BAFA5E100242FA9 /* APIRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequestHandler.m; sourceTree = "<group>"; };
+		56D8F05D1BAFA66C00242FA9 /* AccessTokenHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessTokenHandler.h; sourceTree = "<group>"; };
+		56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessTokenHandler.m; sourceTree = "<group>"; };
+		56D8F0601BAFA7E300242FA9 /* DebugConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugConstant.h; sourceTree = "<group>"; };
+		56D8F0611BAFB0AE00242FA9 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEntity.h; sourceTree = "<group>"; };
+		56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
+		56D8F0641BAFDA5400242FA9 /* BaseDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDBManager.h; sourceTree = "<group>"; };
+		56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDBManager.m; sourceTree = "<group>"; };
+		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56D8F0151BAF97C500242FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D8F02E1BAF97C500242FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46A79BE4D8CD8EE6782FCE6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A752BE6144529BFF7075D5A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48AB7B79B85CBC8E3BC49600 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */,
+				379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		56D8F00F1BAF97C500242FA9 = {
+			isa = PBXGroup;
+			children = (
+				56D8F01A1BAF97C500242FA9 /* PHPHub */,
+				56D8F0341BAF97C500242FA9 /* PHPHubTests */,
+				56D8F0191BAF97C500242FA9 /* Products */,
+				48AB7B79B85CBC8E3BC49600 /* Pods */,
+				46A79BE4D8CD8EE6782FCE6C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		56D8F0191BAF97C500242FA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0181BAF97C500242FA9 /* PHPHub.app */,
+				56D8F0311BAF97C500242FA9 /* PHPHubTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56D8F01A1BAF97C500242FA9 /* PHPHub */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F04F1BAF9F3500242FA9 /* BaseClasses */,
+				56D8F04D1BAF9DF800242FA9 /* Constants */,
+				56D8F04B1BAF9D7D00242FA9 /* Utils */,
+				56D8F04A1BAF9D7600242FA9 /* ThirdParty */,
+				56D8F0471BAF9D6300242FA9 /* Handlers */,
+				56D8F0481BAF9D6900242FA9 /* Models */,
+				56D8F04C1BAF9D8200242FA9 /* Views */,
+				56D8F04E1BAF9E9F00242FA9 /* ViewPartial */,
+				56D8F0461BAF9D5E00242FA9 /* Controllers */,
+				56D8F0451BAF9D5800242FA9 /* Classes */,
+				56D8F0411BAF9D3600242FA9 /* Apis */,
+				56D8F0491BAF9D7000242FA9 /* Resources */,
+				56D8F01B1BAF97C500242FA9 /* Supporting Files */,
+			);
+			path = PHPHub;
+			sourceTree = "<group>";
+		};
+		56D8F01B1BAF97C500242FA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0591BAFA4C400242FA9 /* PHPHub-Prefix.pch */,
+				56D8F01F1BAF97C500242FA9 /* AppDelegate.h */,
+				56D8F0201BAF97C500242FA9 /* AppDelegate.m */,
+				56D8F0281BAF97C500242FA9 /* Images.xcassets */,
+				56D8F01C1BAF97C500242FA9 /* Info.plist */,
+				56D8F01D1BAF97C500242FA9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56D8F0341BAF97C500242FA9 /* PHPHubTests */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0371BAF97C500242FA9 /* PHPHubTests.m */,
+				56D8F0351BAF97C500242FA9 /* Supporting Files */,
+			);
+			path = PHPHubTests;
+			sourceTree = "<group>";
+		};
+		56D8F0351BAF97C500242FA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0361BAF97C500242FA9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56D8F0411BAF9D3600242FA9 /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Apis;
+			sourceTree = "<group>";
+		};
+		56D8F0451BAF9D5800242FA9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0221BAF97C500242FA9 /* ViewController.h */,
+				56D8F0231BAF97C500242FA9 /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		56D8F0471BAF9D6300242FA9 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F05A1BAFA5E100242FA9 /* APIRequestHandler.h */,
+				56D8F05B1BAFA5E100242FA9 /* APIRequestHandler.m */,
+				56D8F05D1BAFA66C00242FA9 /* AccessTokenHandler.h */,
+				56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		56D8F0481BAF9D6900242FA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56D8F0491BAF9D7000242FA9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		56D8F04B1BAF9D7D00242FA9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		56D8F04C1BAF9D8200242FA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0251BAF97C500242FA9 /* Main.storyboard */,
+				56D8F02A1BAF97C500242FA9 /* LaunchScreen.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56D8F04D1BAF9DF800242FA9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0561BAFA15700242FA9 /* APIConstant.h */,
+				56D8F0601BAFA7E300242FA9 /* DebugConstant.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		56D8F04E1BAF9E9F00242FA9 /* ViewPartial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewPartial;
+			sourceTree = "<group>";
+		};
+		56D8F04F1BAF9F3500242FA9 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0501BAF9F7200242FA9 /* BaseModel.h */,
+				56D8F0511BAF9F7200242FA9 /* BaseModel.m */,
+				56D8F0531BAF9FF200242FA9 /* BaseApi.h */,
+				56D8F0541BAF9FF200242FA9 /* BaseApi.m */,
+				56D8F0611BAFB0AE00242FA9 /* BaseEntity.h */,
+				56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */,
+				56D8F0641BAFDA5400242FA9 /* BaseDBManager.h */,
+				56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56D8F0171BAF97C500242FA9 /* PHPHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D8F03B1BAF97C500242FA9 /* Build configuration list for PBXNativeTarget "PHPHub" */;
+			buildPhases = (
+				5290A2E267E7BC8ACB24A108 /* Check Pods Manifest.lock */,
+				56D8F0141BAF97C500242FA9 /* Sources */,
+				56D8F0151BAF97C500242FA9 /* Frameworks */,
+				56D8F0161BAF97C500242FA9 /* Resources */,
+				A0B60134939C09094568F1F5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PHPHub;
+			productName = PHPHub;
+			productReference = 56D8F0181BAF97C500242FA9 /* PHPHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56D8F0301BAF97C500242FA9 /* PHPHubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D8F03E1BAF97C500242FA9 /* Build configuration list for PBXNativeTarget "PHPHubTests" */;
+			buildPhases = (
+				56D8F02D1BAF97C500242FA9 /* Sources */,
+				56D8F02E1BAF97C500242FA9 /* Frameworks */,
+				56D8F02F1BAF97C500242FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56D8F0331BAF97C500242FA9 /* PBXTargetDependency */,
+			);
+			name = PHPHubTests;
+			productName = PHPHubTests;
+			productReference = 56D8F0311BAF97C500242FA9 /* PHPHubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56D8F0101BAF97C500242FA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = ESTGroup;
+				TargetAttributes = {
+					56D8F0171BAF97C500242FA9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					56D8F0301BAF97C500242FA9 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 56D8F0171BAF97C500242FA9;
+					};
+				};
+			};
+			buildConfigurationList = 56D8F0131BAF97C500242FA9 /* Build configuration list for PBXProject "PHPHub" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56D8F00F1BAF97C500242FA9;
+			productRefGroup = 56D8F0191BAF97C500242FA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56D8F0171BAF97C500242FA9 /* PHPHub */,
+				56D8F0301BAF97C500242FA9 /* PHPHubTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56D8F0161BAF97C500242FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */,
+				56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */,
+				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D8F02F1BAF97C500242FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5290A2E267E7BC8ACB24A108 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B60134939C09094568F1F5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56D8F0141BAF97C500242FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
+				56D8F0241BAF97C500242FA9 /* ViewController.m in Sources */,
+				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
+				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
+				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
+				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
+				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
+				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
+				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D8F02D1BAF97C500242FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D8F0381BAF97C500242FA9 /* PHPHubTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56D8F0331BAF97C500242FA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56D8F0171BAF97C500242FA9 /* PHPHub */;
+			targetProxy = 56D8F0321BAF97C500242FA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56D8F0251BAF97C500242FA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56D8F0261BAF97C500242FA9 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		56D8F02A1BAF97C500242FA9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56D8F02B1BAF97C500242FA9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56D8F0391BAF97C500242FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		56D8F03A1BAF97C500242FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56D8F03C1BAF97C500242FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
+				INFOPLIST_FILE = PHPHub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		56D8F03D1BAF97C500242FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
+				INFOPLIST_FILE = PHPHub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		56D8F03F1BAF97C500242FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PHPHubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PHPHub.app/PHPHub";
+			};
+			name = Debug;
+		};
+		56D8F0401BAF97C500242FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PHPHubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PHPHub.app/PHPHub";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56D8F0131BAF97C500242FA9 /* Build configuration list for PBXProject "PHPHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D8F0391BAF97C500242FA9 /* Debug */,
+				56D8F03A1BAF97C500242FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56D8F03B1BAF97C500242FA9 /* Build configuration list for PBXNativeTarget "PHPHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D8F03C1BAF97C500242FA9 /* Debug */,
+				56D8F03D1BAF97C500242FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56D8F03E1BAF97C500242FA9 /* Build configuration list for PBXNativeTarget "PHPHubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D8F03F1BAF97C500242FA9 /* Debug */,
+				56D8F0401BAF97C500242FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56D8F0101BAF97C500242FA9 /* Project object */;
+}

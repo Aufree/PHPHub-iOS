@@ -1,0 +1,1 @@
+CTASSETSPICKERCONTROLLER_OTHER_LDFLAGS = -framework "AssetsLibrary" -framework "MediaPlayer"

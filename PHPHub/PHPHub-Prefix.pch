@@ -1,0 +1,17 @@
+//
+//  PHPHub-Prefix.pch
+//  PHPHub
+//
+//  Created by Aufree on 9/21/15.
+//  Copyright (c) 2015 ESTGroup. All rights reserved.
+//
+
+#if DEBUG
+#define IS_IN_DEVELOPMENT TRUE
+#else
+#define IS_IN_DEVELOPMENT FALSE
+#endif
+
+#import "BaseApi.h"
+#import "ApiConstant.h"
+#import "DebugConstant.h"

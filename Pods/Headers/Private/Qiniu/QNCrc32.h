@@ -1,0 +1,1 @@
+../../../Qiniu/QiniuSDK/Common/QNCrc32.h

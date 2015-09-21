@@ -1,0 +1,1 @@
+QINIU_OTHER_LDFLAGS = -l"z"
