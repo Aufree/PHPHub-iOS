@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
-		56D8F0241BAF97C500242FA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0231BAF97C500242FA9 /* ViewController.m */; };
 		56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0251BAF97C500242FA9 /* Main.storyboard */; };
 		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
 		56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F02A1BAF97C500242FA9 /* LaunchScreen.xib */; };
@@ -20,6 +19,8 @@
 		56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */; };
 		56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */; };
 		56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */; };
+		56D8F07D1BB002F700242FA9 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */; };
+		56D8F0801BB0034800242FA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F07F1BB0034800242FA9 /* ViewController.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +42,8 @@
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56D8F01F1BAF97C500242FA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		56D8F0201BAF97C500242FA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		56D8F0221BAF97C500242FA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		56D8F0231BAF97C500242FA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		56D8F0261BAF97C500242FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		56D8F0281BAF97C500242FA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56D8F0281BAF97C500242FA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		56D8F02B1BAF97C500242FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		56D8F0311BAF97C500242FA9 /* PHPHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHPHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F0361BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +63,11 @@
 		56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
 		56D8F0641BAFDA5400242FA9 /* BaseDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDBManager.h; sourceTree = "<group>"; };
 		56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDBManager.m; sourceTree = "<group>"; };
+		56D8F07A1BAFF9E900242FA9 /* UIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIConstant.h; sourceTree = "<group>"; };
+		56D8F07B1BB002F700242FA9 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
+		56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
+		56D8F07E1BB0034800242FA9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		56D8F07F1BB0034800242FA9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,7 +153,6 @@
 				56D8F0591BAFA4C400242FA9 /* PHPHub-Prefix.pch */,
 				56D8F01F1BAF97C500242FA9 /* AppDelegate.h */,
 				56D8F0201BAF97C500242FA9 /* AppDelegate.m */,
-				56D8F0281BAF97C500242FA9 /* Images.xcassets */,
 				56D8F01C1BAF97C500242FA9 /* Info.plist */,
 				56D8F01D1BAF97C500242FA9 /* main.m */,
 			);
@@ -190,8 +193,10 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56D8F0221BAF97C500242FA9 /* ViewController.h */,
-				56D8F0231BAF97C500242FA9 /* ViewController.m */,
+				56D8F07E1BB0034800242FA9 /* ViewController.h */,
+				56D8F07F1BB0034800242FA9 /* ViewController.m */,
+				56D8F07B1BB002F700242FA9 /* BaseTabBarViewController.h */,
+				56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 		56D8F0491BAF9D7000242FA9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0281BAF97C500242FA9 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			children = (
 				56D8F0561BAFA15700242FA9 /* APIConstant.h */,
 				56D8F0601BAFA7E300242FA9 /* DebugConstant.h */,
+				56D8F07A1BAFF9E900242FA9 /* UIConstant.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -411,12 +418,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
-				56D8F0241BAF97C500242FA9 /* ViewController.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
+				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
+				56D8F07D1BB002F700242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
 			);
