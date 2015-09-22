@@ -71,6 +71,20 @@
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_background.png"]];
 }
 
+#pragma mark - Delegate - UITabBarControllerDelegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    CATransition *animation = [CATransition animation];
+    [animation setType:kCATransitionFade];
+    [animation setDuration:0.25];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:
+                                  kCAMediaTimingFunctionEaseIn]];
+    [self.view.window.layer addAnimation:animation forKey:@"fadeTransition"];
+    
+    return YES;
+}
+
 - (void)jumpToViewController:(UIViewController *)viewController {
     if([self.selectedViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigation = (UINavigationController *)self.selectedViewController;
