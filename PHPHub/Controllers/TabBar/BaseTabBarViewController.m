@@ -8,6 +8,7 @@
 
 #import "BaseTabBarViewController.h"
 #import "EssentialListViewController.h"
+#import "TopicListContainerViewController.h"
 #import "WiKiListViewController.h"
 
 @interface BaseTabBarViewController ()
@@ -41,7 +42,8 @@
     _essentialNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"essential_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"essential_selected_icon.png"]];
     _essentialNC.tabBarItem.imageInsets = insets;
     
-    _forumNC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    TopicListContainerViewController *topicListContainerVC = [[TopicListContainerViewController alloc] init];
+    _forumNC = [[UINavigationController alloc] initWithRootViewController:topicListContainerVC];
     _forumNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"forum_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"forum_selected_icon.png"]];
     _forumNC.tabBarItem.imageInsets = insets;
     

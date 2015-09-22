@@ -30,6 +30,10 @@
 		56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */; };
 		56D8F0A81BB0F54300242FA9 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A71BB0F54300242FA9 /* UserEntity.m */; };
 		56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0AB1BB1359100242FA9 /* WiKiListViewController.m */; };
+		56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0AF1BB137FB00242FA9 /* TopicListContainerViewController.m */; };
+		56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B21BB1380F00242FA9 /* TopicListViewController.m */; };
+		56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */; };
+		56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +99,14 @@
 		56D8F0A71BB0F54300242FA9 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
 		56D8F0AA1BB1359100242FA9 /* WiKiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiKiListViewController.h; sourceTree = "<group>"; };
 		56D8F0AB1BB1359100242FA9 /* WiKiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiKiListViewController.m; sourceTree = "<group>"; };
+		56D8F0AE1BB137FB00242FA9 /* TopicListContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListContainerViewController.h; sourceTree = "<group>"; };
+		56D8F0AF1BB137FB00242FA9 /* TopicListContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListContainerViewController.m; sourceTree = "<group>"; };
+		56D8F0B11BB1380F00242FA9 /* TopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListViewController.h; sourceTree = "<group>"; };
+		56D8F0B21BB1380F00242FA9 /* TopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListViewController.m; sourceTree = "<group>"; };
+		56D8F0B61BB13A7200242FA9 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
+		56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
+		56D8F0BA1BB1432F00242FA9 /* TitlePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePagerView.h; sourceTree = "<group>"; };
+		56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePagerView.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,9 +225,10 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56D8F0A91BB1356800242FA9 /* WiKi */,
 				56D8F08D1BB009C500242FA9 /* TabBar */,
 				56D8F0861BB0096800242FA9 /* Essential */,
+				56D8F0AD1BB1377800242FA9 /* Forum */,
+				56D8F0A91BB1356800242FA9 /* WiKi */,
 				56D8F07E1BB0034800242FA9 /* ViewController.h */,
 				56D8F07F1BB0034800242FA9 /* ViewController.m */,
 			);
@@ -253,6 +266,8 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0B91BB1431200242FA9 /* TitlePagerView */,
+				56D8F0B51BB138EE00242FA9 /* ViewPagerController */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -399,6 +414,35 @@
 			path = WiKi;
 			sourceTree = "<group>";
 		};
+		56D8F0AD1BB1377800242FA9 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0AE1BB137FB00242FA9 /* TopicListContainerViewController.h */,
+				56D8F0AF1BB137FB00242FA9 /* TopicListContainerViewController.m */,
+				56D8F0B11BB1380F00242FA9 /* TopicListViewController.h */,
+				56D8F0B21BB1380F00242FA9 /* TopicListViewController.m */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		56D8F0B51BB138EE00242FA9 /* ViewPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0B61BB13A7200242FA9 /* ViewPagerController.h */,
+				56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */,
+			);
+			path = ViewPagerController;
+			sourceTree = "<group>";
+		};
+		56D8F0B91BB1431200242FA9 /* TitlePagerView */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0BA1BB1432F00242FA9 /* TitlePagerView.h */,
+				56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */,
+			);
+			path = TitlePagerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -536,10 +580,14 @@
 			files = (
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
+				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
 				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
+				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
+				56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */,
+				56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
 				56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */,

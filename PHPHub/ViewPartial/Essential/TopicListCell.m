@@ -59,7 +59,7 @@ static CGFloat topicListCellAvatarHeight = 38;
         _avatarImageView.backgroundColor = [UIColor clearColor];
         _avatarImageView.layer.backgroundColor = [UIColor colorWithRed:0.176 green:0.600 blue:0.953 alpha:0.340].CGColor;
         _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
-        _avatarImageView.layer.shouldRasterize = YES;
+        _avatarImageView.layer.masksToBounds = YES;
     }
     return _avatarImageView;
 }
