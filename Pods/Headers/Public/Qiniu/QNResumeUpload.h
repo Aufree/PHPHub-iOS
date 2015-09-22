@@ -1,1 +1,0 @@
-../../../Qiniu/QiniuSDK/Storage/QNResumeUpload.h
