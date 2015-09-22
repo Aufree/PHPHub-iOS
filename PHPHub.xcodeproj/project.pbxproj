@@ -29,6 +29,7 @@
 		56D8F0A21BB0ED5E00242FA9 /* TopicApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A11BB0ED5E00242FA9 /* TopicApi.m */; };
 		56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */; };
 		56D8F0A81BB0F54300242FA9 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A71BB0F54300242FA9 /* UserEntity.m */; };
+		56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0AB1BB1359100242FA9 /* WiKiListViewController.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,8 @@
 		56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		56D8F0A61BB0F54300242FA9 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
 		56D8F0A71BB0F54300242FA9 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
+		56D8F0AA1BB1359100242FA9 /* WiKiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiKiListViewController.h; sourceTree = "<group>"; };
+		56D8F0AB1BB1359100242FA9 /* WiKiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiKiListViewController.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -210,6 +213,7 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0A91BB1356800242FA9 /* WiKi */,
 				56D8F08D1BB009C500242FA9 /* TabBar */,
 				56D8F0861BB0096800242FA9 /* Essential */,
 				56D8F07E1BB0034800242FA9 /* ViewController.h */,
@@ -386,6 +390,15 @@
 			path = Apis;
 			sourceTree = "<group>";
 		};
+		56D8F0A91BB1356800242FA9 /* WiKi */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0AA1BB1359100242FA9 /* WiKiListViewController.h */,
+				56D8F0AB1BB1359100242FA9 /* WiKiListViewController.m */,
+			);
+			path = WiKi;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,6 +538,7 @@
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
+				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,

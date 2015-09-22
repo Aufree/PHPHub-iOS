@@ -11,5 +11,6 @@
 
 @interface TopicModel : BaseModel
 @property TopicApi *api;
-- (id)all:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getAllTopic:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 @end

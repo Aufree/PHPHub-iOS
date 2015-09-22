@@ -11,4 +11,5 @@
 
 @interface TopicApi : BaseApi
 - (id)getAll:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 @end

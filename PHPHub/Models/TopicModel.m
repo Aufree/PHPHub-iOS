@@ -19,8 +19,13 @@
     return self;
 }
 
-- (id)all:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getAllTopic:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
     return [_api getAll:block atPage:pageIndex];
+}
+
+- (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    return [_api getWiKiList:block atPage:pageIndex];
 }
 @end

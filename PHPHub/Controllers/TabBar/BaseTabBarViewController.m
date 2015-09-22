@@ -8,6 +8,7 @@
 
 #import "BaseTabBarViewController.h"
 #import "EssentialListViewController.h"
+#import "WiKiListViewController.h"
 
 @interface BaseTabBarViewController ()
 {
@@ -44,7 +45,8 @@
     _forumNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"forum_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"forum_selected_icon.png"]];
     _forumNC.tabBarItem.imageInsets = insets;
     
-    _wikiNC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    WiKiListViewController *wikiListVC = [[WiKiListViewController alloc] init];
+    _wikiNC = [[UINavigationController alloc] initWithRootViewController:wikiListVC];
     _wikiNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"wiki_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"wiki_selected_icon.png"]];
     _wikiNC.tabBarItem.imageInsets = UIEdgeInsetsMake(7.0, 0.0, -7.0, 0.0);;
     

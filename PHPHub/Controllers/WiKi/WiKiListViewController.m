@@ -1,27 +1,27 @@
 //
-//  EssentialListViewController.m
+//  WiKiListViewController.m
 //  PHPHub
 //
-//  Created by Aufree on 9/21/15.
+//  Created by Aufree on 9/22/15.
 //  Copyright (c) 2015 ESTGroup. All rights reserved.
 //
 
-#import "EssentialListViewController.h"
+#import "WiKiListViewController.h"
+
 #import "TopicListCell.h"
 #import "TopicEntity.h"
 #import "TopicModel.h"
 
-@interface EssentialListViewController ()
+@interface WiKiListViewController ()
 @property (nonatomic, copy) NSArray *topicEntites;
 @end
 
-@implementation EssentialListViewController
-
+@implementation WiKiListViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
-    self.navigationItem.title = @"精华";
+    self.navigationItem.title = @"社区 WiKi";
     
     [self fetchEssentialListData];
 }
@@ -35,7 +35,7 @@
         }
     };
     
-    [[TopicModel Instance] getAllTopic:callback atPage:1];
+    [[TopicModel Instance] getWiKiList:callback atPage:1];
 }
 
 #pragma mark - Table view data source
@@ -65,7 +65,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -80,4 +80,5 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
 }
+
 @end
