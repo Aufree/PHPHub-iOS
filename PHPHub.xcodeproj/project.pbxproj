@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0251BAF97C500242FA9 /* Main.storyboard */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
+		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				56D8F09D1BB0ED0800242FA9 /* TopicEntity.m */,
 				56D8F0A61BB0F54300242FA9 /* UserEntity.h */,
 				56D8F0A71BB0F54300242FA9 /* UserEntity.m */,
+				5644B4F41BB1692C008A96A8 /* PaginationEntity.h */,
+				5644B4F51BB1692C008A96A8 /* PaginationEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
+				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
 				56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,

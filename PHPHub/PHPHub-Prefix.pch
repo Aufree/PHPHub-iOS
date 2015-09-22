@@ -20,3 +20,4 @@
 #import "BaseHelper.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
+#import "PaginationEntity.h"

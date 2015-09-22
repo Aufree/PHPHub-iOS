@@ -11,12 +11,13 @@
 @implementation TopicApi
 - (id)getAll:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=last_reply_user,user"];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=last_reply_user,user&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     
@@ -33,12 +34,13 @@
 
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=recent&per_page=15&page=1"];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=recent&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     
@@ -55,12 +57,13 @@
 
 - (id)getHotsTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=vote&per_page=15&page=1"];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=vote&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     
@@ -77,12 +80,13 @@
 
 - (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=nobody&per_page=15&page=1"];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=nobody&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     
@@ -99,12 +103,13 @@
 
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=wiki&per_page=15&page=1"];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=wiki&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     

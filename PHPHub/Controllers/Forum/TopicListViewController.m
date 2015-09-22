@@ -13,39 +13,71 @@
 #import "TopicModel.h"
 
 @interface TopicListViewController ()
-@property (nonatomic, copy) NSArray *topicEntites;
+@property (nonatomic, strong) NSMutableArray *topicEntites;
+@property (nonatomic, strong) PaginationEntity *pagination;
 @end
 
 @implementation TopicListViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
     self.navigationItem.title = @"社区 WiKi";
     
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchTopicListData)];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
     [self.tableView.header beginRefreshing];
 }
 
-- (void)fetchTopicListData {
+- (void)headerRefreshing {
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             weakself.topicEntites = data[@"entities"];
+            weakself.pagination = data[@"pagination"];
             [weakself.tableView reloadData];
         }
         
         [weakself.tableView.header endRefreshing];
     };
     
-    if (self.topicListType == TopicListTypeNewest) {
-        [[TopicModel Instance] getNewestTopicList:callback atPage:1];
-    } else if (self.topicListType == TopicListTypeHots) {
-        [[TopicModel Instance] getHotsTopicList:callback atPage:1];
-    } else if (self.topicListType == TopicListTypeNoReply) {
-        [[TopicModel Instance] getNoReplyTopicList:callback atPage:1];
+    [self fetchDataSource:callback atPage:1];
+}
+
+- (void)footerRereshing
+{
+    NSUInteger maxPage = self.pagination.totalPages;
+    NSUInteger nextPage = self.pagination.currentPage + 1;
+    
+    if (nextPage <= maxPage) {
+        __weak typeof(self) weakself = self;
+        BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
+            if (!error) {
+                NSArray *newData  = [data objectForKey:@"entities"];
+                
+                [weakself.topicEntites addObjectsFromArray:newData];
+                weakself.pagination = data[@"pagination"];
+                [weakself.tableView reloadData];
+            }
+            [weakself.tableView.footer endRefreshing];
+        };
+        
+        [self fetchDataSource:callback atPage:nextPage];
+    } else {
+        [self.tableView.footer endRefreshing];
     }
     
+}
+
+- (void)fetchDataSource:(BaseResultBlock)callback atPage:(NSUInteger)atPage {
+    if (self.topicListType == TopicListTypeNewest) {
+        [[TopicModel Instance] getNewestTopicList:callback atPage:atPage];
+    } else if (self.topicListType == TopicListTypeHots) {
+        [[TopicModel Instance] getHotsTopicList:callback atPage:atPage];
+    } else if (self.topicListType == TopicListTypeNoReply) {
+        [[TopicModel Instance] getNoReplyTopicList:callback atPage:atPage];
+    }
 }
 
 #pragma mark - Table view data source
