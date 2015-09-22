@@ -38,9 +38,9 @@ static CGFloat topicListCellAvatarHeight = 38;
 - (UIView *)baseView {
     if (!_baseView) {
         _baseView = [[UIView alloc] init];
-        _baseView.backgroundColor = [UIColor whiteColor];
+        _baseView.backgroundColor = [UIColor clearColor];
+        _baseView.layer.backgroundColor = [UIColor whiteColor].CGColor;
         _baseView.layer.cornerRadius = 2;
-        _baseView.layer.masksToBounds = YES;
         _baseView.layer.borderColor = [UIColor colorWithRed:0.871 green:0.875 blue:0.878 alpha:1.000].CGColor;
         _baseView.layer.borderWidth = 0.5;
         
@@ -56,9 +56,10 @@ static CGFloat topicListCellAvatarHeight = 38;
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, topicListCellAvatarHeight, topicListCellAvatarHeight)];
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _avatarImageView.backgroundColor = [UIColor colorWithRed:0.176 green:0.600 blue:0.953 alpha:0.340];
+        _avatarImageView.backgroundColor = [UIColor clearColor];
+        _avatarImageView.layer.backgroundColor = [UIColor colorWithRed:0.176 green:0.600 blue:0.953 alpha:0.340].CGColor;
         _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
-        _avatarImageView.layer.masksToBounds = YES;
+        _avatarImageView.layer.shouldRasterize = YES;
     }
     return _avatarImageView;
 }
@@ -89,8 +90,9 @@ static CGFloat topicListCellAvatarHeight = 38;
         _topicRepliesCountLabel.font = [UIFont fontWithName:FontName size:11];
         _topicRepliesCountLabel.numberOfLines = 1;
         _topicRepliesCountLabel.textColor = [UIColor whiteColor];
-        _topicRepliesCountLabel.backgroundColor = [UIColor colorWithRed:0.392 green:0.702 blue:0.945 alpha:1.000];
         _topicRepliesCountLabel.textAlignment = NSTextAlignmentCenter;
+        _topicRepliesCountLabel.backgroundColor = [UIColor clearColor];
+        _topicRepliesCountLabel.layer.backgroundColor = [UIColor colorWithRed:0.392 green:0.702 blue:0.945 alpha:1.000].CGColor;
     }
     return _topicRepliesCountLabel;
 }
@@ -121,11 +123,11 @@ static CGFloat topicListCellAvatarHeight = 38;
     
     [self.topicRepliesCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         CGFloat topicRepliesCountHeight = 20;
+        _topicRepliesCountLabel.layer.cornerRadius = topicRepliesCountHeight/2;
+        _topicRepliesCountLabel.layer.shouldRasterize = YES;
         make.size.mas_equalTo(CGSizeMake(topicRepliesCountHeight, topicRepliesCountHeight));
         make.centerY.mas_equalTo(self.baseView.mas_centerY);
         make.right.equalTo(self.baseView).offset(-10);
-        _topicRepliesCountLabel.layer.cornerRadius = topicRepliesCountHeight/2;
-        _topicRepliesCountLabel.layer.masksToBounds = YES;
     }];
 }
 @end
