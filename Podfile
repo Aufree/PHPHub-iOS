@@ -4,7 +4,7 @@ platform :ios, "7.0"
 
 pod 'AFNetworking', '~> 2.0'
 pod 'AFOAuth2Manager'
-pod "Qiniu"
+pod 'Qiniu'
 pod 'SDWebImage'
 pod 'Reachability'
 pod 'MBProgressHUD'
@@ -19,3 +19,4 @@ pod 'FMDBMigrationManager', '~> 1.3'
 pod 'GVUserDefaults'
 pod 'Masonry'
 pod 'SVProgressHUD'
+pod 'MJRefresh'

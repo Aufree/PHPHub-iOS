@@ -23,16 +23,19 @@
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
     self.navigationItem.title = @"社区 WiKi";
     
-    [self fetchEssentialListData];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchWiKiListData)];
+    [self.tableView.header beginRefreshing];
 }
 
-- (void)fetchEssentialListData {
+- (void)fetchWiKiListData {
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             weakself.topicEntites = data[@"entities"];
             [weakself.tableView reloadData];
         }
+        
+        [weakself.tableView.header endRefreshing];
     };
     
     [[TopicModel Instance] getWiKiList:callback atPage:1];

@@ -23,7 +23,8 @@
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
     self.navigationItem.title = @"精华";
     
-    [self fetchEssentialListData];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchEssentialListData)];
+    [self.tableView.header beginRefreshing];
 }
 
 - (void)fetchEssentialListData {
@@ -33,6 +34,8 @@
             weakself.topicEntites = data[@"entities"];
             [weakself.tableView reloadData];
         }
+        
+        [weakself.tableView.header endRefreshing];
     };
     
     [[TopicModel Instance] getAllTopic:callback atPage:1];

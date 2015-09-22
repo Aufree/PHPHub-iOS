@@ -38,6 +38,7 @@ PODS:
   - Mantle/extobjc (1.5.5)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
+  - MJRefresh (2.4.10)
   - MTLFMDBAdapter (0.1.8):
     - FMDB (~> 2.3)
     - Mantle (~> 1.5)
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - Mantle (~> 1.5)
   - Masonry
   - MBProgressHUD
+  - MJRefresh
   - MTLFMDBAdapter (from `https://github.com/summerblue/MTLFMDBAdapter`)
   - QBPopupMenu
   - Qiniu
@@ -93,6 +95,7 @@ SPEC CHECKSUMS:
   Mantle: 1b29072a707453975b200a173cf77ec1e2810b75
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MJRefresh: e52328552ed9cbfce3501e3820b18bf7643c65cc
   MTLFMDBAdapter: f9849788d9e3a1c6662ef0ce600dd3e4a538a723
   QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
   Qiniu: 1fb5191b3bc1edb65b2da3d905b8281e15bd1d5c
