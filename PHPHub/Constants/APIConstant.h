@@ -10,7 +10,7 @@
 #define Client_secret            @"get client secret from server"
 #define APIAccessToken [NSString stringWithFormat:@"%@%@", APIBaseURL, @"oauth/access_token"]
 
-#define APIBaseURL                 @"https://api.phphub.org/"
+#define APIBaseURL                 @"https://api.phphub.org"
 #define APIClientTokenIdentifier   @"APIClientTokenIdentifier"
 #define APIPasswordTokenIdentifier @"APIPasswordTokenIdentifier"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicEntity.h"
 
 @interface TopicListCell : UITableViewCell
-@property (nonatomic, copy) NSString *topicTitle;
+@property (nonatomic, strong) TopicEntity *topicEntity;
 @end

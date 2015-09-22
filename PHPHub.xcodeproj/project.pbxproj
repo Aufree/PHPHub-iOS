@@ -25,6 +25,9 @@
 		56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */; };
 		56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0951BB0E43400242FA9 /* UIView+Additions.m */; };
 		56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0991BB0E6F400242FA9 /* BaseHelper.m */; };
+		56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F09D1BB0ED0800242FA9 /* TopicEntity.m */; };
+		56D8F0A21BB0ED5E00242FA9 /* TopicApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A11BB0ED5E00242FA9 /* TopicApi.m */; };
+		56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,12 @@
 		56D8F0951BB0E43400242FA9 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		56D8F0981BB0E6F400242FA9 /* BaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHelper.h; sourceTree = "<group>"; };
 		56D8F0991BB0E6F400242FA9 /* BaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHelper.m; sourceTree = "<group>"; };
+		56D8F09C1BB0ED0800242FA9 /* TopicEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicEntity.h; sourceTree = "<group>"; };
+		56D8F09D1BB0ED0800242FA9 /* TopicEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicEntity.m; sourceTree = "<group>"; };
+		56D8F0A01BB0ED5E00242FA9 /* TopicApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicApi.h; sourceTree = "<group>"; };
+		56D8F0A11BB0ED5E00242FA9 /* TopicApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicApi.m; sourceTree = "<group>"; };
+		56D8F0A31BB0EDAF00242FA9 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
+		56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,8 +160,8 @@
 				56D8F04C1BAF9D8200242FA9 /* Views */,
 				56D8F04E1BAF9E9F00242FA9 /* ViewPartial */,
 				56D8F0461BAF9D5E00242FA9 /* Controllers */,
+				56D8F09F1BB0ED4E00242FA9 /* Apis */,
 				56D8F0451BAF9D5800242FA9 /* Classes */,
-				56D8F0411BAF9D3600242FA9 /* Apis */,
 				56D8F0491BAF9D7000242FA9 /* Resources */,
 				56D8F01B1BAF97C500242FA9 /* Supporting Files */,
 			);
@@ -188,13 +197,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		56D8F0411BAF9D3600242FA9 /* Apis */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Apis;
-			sourceTree = "<group>";
-		};
 		56D8F0451BAF9D5800242FA9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +229,8 @@
 		56D8F0481BAF9D6900242FA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0A31BB0EDAF00242FA9 /* TopicModel.h */,
+				56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 		56D8F04B1BAF9D7D00242FA9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F09B1BB0ECE800242FA9 /* Entities */,
 				56D8F0971BB0E69500242FA9 /* Helper */,
 				56D8F0911BB0E3BE00242FA9 /* Categories */,
 				56D8F0921BB0E3BE00242FA9 /* DBManager */,
@@ -356,6 +361,24 @@
 				56D8F0991BB0E6F400242FA9 /* BaseHelper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		56D8F09B1BB0ECE800242FA9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F09C1BB0ED0800242FA9 /* TopicEntity.h */,
+				56D8F09D1BB0ED0800242FA9 /* TopicEntity.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		56D8F09F1BB0ED4E00242FA9 /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0A01BB0ED5E00242FA9 /* TopicApi.h */,
+				56D8F0A11BB0ED5E00242FA9 /* TopicApi.m */,
+			);
+			path = Apis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +519,7 @@
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
+				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
@@ -506,6 +530,8 @@
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
+				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
+				56D8F0A21BB0ED5E00242FA9 /* TopicApi.m in Sources */,
 				56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
