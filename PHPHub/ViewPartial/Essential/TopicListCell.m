@@ -91,8 +91,6 @@ static CGFloat topicListCellAvatarHeight = 38;
         _topicRepliesCountLabel.textColor = [UIColor whiteColor];
         _topicRepliesCountLabel.backgroundColor = [UIColor colorWithRed:0.392 green:0.702 blue:0.945 alpha:1.000];
         _topicRepliesCountLabel.textAlignment = NSTextAlignmentCenter;
-        _topicRepliesCountLabel.layer.cornerRadius = _topicRepliesCountLabel.height/2;
-        _topicRepliesCountLabel.layer.masksToBounds = YES;
     }
     return _topicRepliesCountLabel;
 }
@@ -112,13 +110,22 @@ static CGFloat topicListCellAvatarHeight = 38;
     [self.topicTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.baseView.mas_top).offset(topicTitleMargin);
         make.left.equalTo(self.baseView.mas_left).offset(topicTitleOffset);
-        make.right.equalTo(self.baseView.mas_right).offset(-topicTitleMargin);
+        make.right.equalTo(self.topicRepliesCountLabel.mas_left).offset(-topicTitleMargin);
     }];
     
     [self.topicInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.baseView.mas_bottom).offset(-topicTitleMargin - self.topicInfoLabel.height);
         make.left.equalTo(self.baseView.mas_left).offset(topicTitleOffset);
-        make.right.equalTo(self.baseView.mas_right).offset(-topicTitleMargin);
+        make.right.equalTo(self.topicRepliesCountLabel.mas_left).offset(-topicTitleMargin);
+    }];
+    
+    [self.topicRepliesCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        CGFloat topicRepliesCountHeight = 20;
+        make.size.mas_equalTo(CGSizeMake(topicRepliesCountHeight, topicRepliesCountHeight));
+        make.centerY.mas_equalTo(self.baseView.mas_centerY);
+        make.right.equalTo(self.baseView).offset(-10);
+        _topicRepliesCountLabel.layer.cornerRadius = topicRepliesCountHeight/2;
+        _topicRepliesCountLabel.layer.masksToBounds = YES;
     }];
 }
 @end
