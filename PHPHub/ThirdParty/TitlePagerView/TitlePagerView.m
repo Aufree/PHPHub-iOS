@@ -8,7 +8,7 @@
 
 #import "TitlePagerView.h"
 
-static CGFloat TitlePagerViewTitleSpace = 20;
+static CGFloat TitlePagerViewTitleSpace = 50;
 
 @interface TitlePagerView ()
 @property (nonatomic, strong) NSMutableArray *views;
