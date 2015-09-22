@@ -35,7 +35,14 @@
         }
     };
     
-    [[TopicModel Instance] getWiKiList:callback atPage:1];
+    if (self.topicListType == TopicListTypeNewest) {
+        [[TopicModel Instance] getNewestTopicList:callback atPage:1];
+    } else if (self.topicListType == TopicListTypeHots) {
+        [[TopicModel Instance] getHotsTopicList:callback atPage:1];
+    } else if (self.topicListType == TopicListTypeNoReply) {
+        [[TopicModel Instance] getNoReplyTopicList:callback atPage:1];
+    }
+    
 }
 
 #pragma mark - Table view data source

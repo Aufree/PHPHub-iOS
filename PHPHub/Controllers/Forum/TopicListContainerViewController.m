@@ -85,16 +85,19 @@
 
 - (UIViewController *)createNewestVC {
     self.newestTopicListVC = [[TopicListViewController alloc] init];
+    self.newestTopicListVC.topicListType = TopicListTypeNewest;
     return self.newestTopicListVC;
 }
 
 - (UIViewController *)createHotsVC {
     self.hotsTopicListVC = [[TopicListViewController alloc] init];
+    self.hotsTopicListVC.topicListType = TopicListTypeHots;
     return self.hotsTopicListVC;
 }
 
 - (UIViewController *)createNoReplyVC {
     self.noReplyTopicListVC = [[TopicListViewController alloc] init];
+    self.noReplyTopicListVC.topicListType = TopicListTypeNoReply;
     return self.noReplyTopicListVC;
 }
 

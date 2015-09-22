@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicListViewController : UITableViewController
+typedef NS_ENUM(NSInteger, TopicListType) {
+    TopicListTypeNewest = 0,
+    TopicListTypeHots = 1,
+    TopicListTypeNoReply = 2,
+};
 
+@interface TopicListViewController : UITableViewController
+@property (nonatomic) TopicListType topicListType;
 @end
