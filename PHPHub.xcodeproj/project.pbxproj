@@ -19,8 +19,12 @@
 		56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */; };
 		56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */; };
 		56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */; };
-		56D8F07D1BB002F700242FA9 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */; };
 		56D8F0801BB0034800242FA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F07F1BB0034800242FA9 /* ViewController.m */; };
+		56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0881BB0096800242FA9 /* EssentialListViewController.m */; };
+		56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F08B1BB009A000242FA9 /* TopicListCell.m */; };
+		56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */; };
+		56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0951BB0E43400242FA9 /* UIView+Additions.m */; };
+		56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0991BB0E6F400242FA9 /* BaseHelper.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,10 +68,18 @@
 		56D8F0641BAFDA5400242FA9 /* BaseDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDBManager.h; sourceTree = "<group>"; };
 		56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDBManager.m; sourceTree = "<group>"; };
 		56D8F07A1BAFF9E900242FA9 /* UIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIConstant.h; sourceTree = "<group>"; };
-		56D8F07B1BB002F700242FA9 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
-		56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
 		56D8F07E1BB0034800242FA9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		56D8F07F1BB0034800242FA9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		56D8F0871BB0096800242FA9 /* EssentialListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialListViewController.h; sourceTree = "<group>"; };
+		56D8F0881BB0096800242FA9 /* EssentialListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialListViewController.m; sourceTree = "<group>"; };
+		56D8F08A1BB009A000242FA9 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
+		56D8F08B1BB009A000242FA9 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
+		56D8F08E1BB009C500242FA9 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
+		56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
+		56D8F0941BB0E43400242FA9 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		56D8F0951BB0E43400242FA9 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		56D8F0981BB0E6F400242FA9 /* BaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHelper.h; sourceTree = "<group>"; };
+		56D8F0991BB0E6F400242FA9 /* BaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHelper.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,10 +205,10 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F08D1BB009C500242FA9 /* TabBar */,
+				56D8F0861BB0096800242FA9 /* Essential */,
 				56D8F07E1BB0034800242FA9 /* ViewController.h */,
 				56D8F07F1BB0034800242FA9 /* ViewController.m */,
-				56D8F07B1BB002F700242FA9 /* BaseTabBarViewController.h */,
-				56D8F07C1BB002F700242FA9 /* BaseTabBarViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +249,9 @@
 		56D8F04B1BAF9D7D00242FA9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0971BB0E69500242FA9 /* Helper */,
+				56D8F0911BB0E3BE00242FA9 /* Categories */,
+				56D8F0921BB0E3BE00242FA9 /* DBManager */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -263,6 +278,7 @@
 		56D8F04E1BAF9E9F00242FA9 /* ViewPartial */ = {
 			isa = PBXGroup;
 			children = (
+				56D8F0851BB0094D00242FA9 /* Essential */,
 			);
 			path = ViewPartial;
 			sourceTree = "<group>";
@@ -280,6 +296,66 @@
 				56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		56D8F0851BB0094D00242FA9 /* Essential */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F08A1BB009A000242FA9 /* TopicListCell.h */,
+				56D8F08B1BB009A000242FA9 /* TopicListCell.m */,
+			);
+			path = Essential;
+			sourceTree = "<group>";
+		};
+		56D8F0861BB0096800242FA9 /* Essential */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0871BB0096800242FA9 /* EssentialListViewController.h */,
+				56D8F0881BB0096800242FA9 /* EssentialListViewController.m */,
+			);
+			path = Essential;
+			sourceTree = "<group>";
+		};
+		56D8F08D1BB009C500242FA9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F08E1BB009C500242FA9 /* BaseTabBarViewController.h */,
+				56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		56D8F0911BB0E3BE00242FA9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0931BB0E43400242FA9 /* UIView */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		56D8F0921BB0E3BE00242FA9 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		56D8F0931BB0E43400242FA9 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0941BB0E43400242FA9 /* UIView+Additions.h */,
+				56D8F0951BB0E43400242FA9 /* UIView+Additions.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		56D8F0971BB0E69500242FA9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				56D8F0981BB0E6F400242FA9 /* BaseHelper.h */,
+				56D8F0991BB0E6F400242FA9 /* BaseHelper.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,13 +496,17 @@
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
+				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
+				56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */,
+				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
+				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
-				56D8F07D1BB002F700242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
+				56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

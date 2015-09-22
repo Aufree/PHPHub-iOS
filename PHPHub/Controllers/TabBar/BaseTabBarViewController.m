@@ -7,6 +7,7 @@
 //
 
 #import "BaseTabBarViewController.h"
+#import "EssentialListViewController.h"
 
 @interface BaseTabBarViewController ()
 {
@@ -34,7 +35,8 @@
 {
     UIEdgeInsets insets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
 
-    _essentialNC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    EssentialListViewController *essentialListVC = [[EssentialListViewController alloc] init];
+    _essentialNC = [[UINavigationController alloc] initWithRootViewController:essentialListVC];
     _essentialNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"essential_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage imageNamed:@"essential_selected_icon.png"]];
     _essentialNC.tabBarItem.imageInsets = insets;
     
