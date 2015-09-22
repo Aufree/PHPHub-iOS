@@ -21,3 +21,5 @@
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 #import "PaginationEntity.h"
+
+#define DidTapStatusBar @"DidTapStatusBar"

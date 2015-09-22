@@ -44,6 +44,27 @@
     [self reloadData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DidTapStatusBar object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarTappedAction:) name:DidTapStatusBar object:nil];
+}
+
+- (void)statusBarTappedAction:(NSNotification*)notification {
+    if (self.currentIndex == 0 && self.newestTopicListVC) {
+        [self.newestTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
+    } else if (self.currentIndex == 1 && self.hotsTopicListVC) {
+        [self.hotsTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
+    } else if (self.currentIndex == 2 && self.noReplyTopicListVC) {
+        [self.noReplyTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
+    }
+}
+
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
     return 3;
