@@ -16,7 +16,12 @@
              @"topicId" : @"id",
              @"topicTitle" : @"title",
              @"topicRepliesCount" : @"reply_count",
+             @"user" : @"user.data",
              };
 }
 
++ (NSValueTransformer *)userJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
+}
 @end

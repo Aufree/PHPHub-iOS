@@ -7,9 +7,11 @@
 //
 
 #import "BaseEntity.h"
+#import "UserEntity.h"
 
 @interface TopicEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *topicId;
 @property (nonatomic, copy) NSString *topicTitle;
 @property (nonatomic, strong) NSNumber *topicRepliesCount;
+@property (nonatomic, strong) UserEntity *user;
 @end
