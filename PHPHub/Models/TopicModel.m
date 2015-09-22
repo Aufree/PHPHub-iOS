@@ -24,6 +24,18 @@
     return [_api getAll:block atPage:pageIndex];
 }
 
+- (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getNewestTopicList:block atPage:pageIndex];
+}
+
+- (id)getHotsTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getHotsTopicList:block atPage:pageIndex];
+}
+
+- (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getNoReplyTopicList:block atPage:pageIndex];
+}
+
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
     return [_api getWiKiList:block atPage:pageIndex];

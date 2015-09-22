@@ -130,7 +130,7 @@
         self.pagingTitleView = [[TitlePagerView alloc] init];
         self.pagingTitleView.frame = CGRectMake(0, 0, 0, 40);
         self.pagingTitleView.font = [UIFont systemFontOfSize:15];
-        NSArray *titleArray = @[@"最新", @"冷门", @"热门"];
+        NSArray *titleArray = @[@"最新", @"热门", @"冷门"];
         self.pagingTitleView.width = [TitlePagerView calculateTitleWidth:titleArray withFont:self.pagingTitleView.font];
         [self.pagingTitleView addObjects:titleArray];
         self.pagingTitleView.delegate = self;
