@@ -38,6 +38,7 @@
 		56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */; };
 		56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
+		C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = C19433411BB340A200D51917 /* UIResponder+Router.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		56D8F0BA1BB1432F00242FA9 /* TitlePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePagerView.h; sourceTree = "<group>"; };
 		56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePagerView.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C19433401BB340A200D51917 /* UIResponder+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
+		C19433411BB340A200D51917 /* UIResponder+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,7 @@
 		56D8F0911BB0E3BE00242FA9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C194333F1BB340A200D51917 /* UIResponder */,
 				56D8F0931BB0E43400242FA9 /* UIView */,
 			);
 			path = Categories;
@@ -464,6 +468,15 @@
 				56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */,
 			);
 			path = TitlePagerView;
+			sourceTree = "<group>";
+		};
+		C194333F1BB340A200D51917 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				C19433401BB340A200D51917 /* UIResponder+Router.h */,
+				C19433411BB340A200D51917 /* UIResponder+Router.m */,
+			);
+			path = UIResponder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,6 +628,7 @@
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
+				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
 				565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
