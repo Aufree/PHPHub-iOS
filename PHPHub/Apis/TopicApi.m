@@ -34,7 +34,7 @@
 
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=recent&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=recent&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
@@ -57,7 +57,7 @@
 
 - (id)getHotsTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=vote&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=vote&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
@@ -80,7 +80,7 @@
 
 - (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=nobody&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=nobody&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
@@ -103,7 +103,7 @@
 
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=user,node&filter=wiki&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=wiki&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
