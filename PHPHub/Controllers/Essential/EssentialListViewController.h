@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EssentialListViewController : UITableViewController
+@interface EssentialListViewController : UIViewController
 
 @end

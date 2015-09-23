@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WiKiListViewController : UITableViewController
+@interface WiKiListViewController : UIViewController
 
 @end

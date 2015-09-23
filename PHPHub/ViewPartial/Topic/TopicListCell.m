@@ -119,6 +119,7 @@ static CGFloat topicListCellAvatarHeight = 38;
         make.top.equalTo(self.baseView.mas_bottom).offset(-topicTitleMargin - self.topicInfoLabel.height);
         make.left.equalTo(self.baseView.mas_left).offset(topicTitleOffset);
         make.right.equalTo(self.topicRepliesCountLabel.mas_left).offset(-topicTitleMargin);
+        make.height.mas_equalTo(self.topicInfoLabel.height);
     }];
     
     [self.topicRepliesCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {

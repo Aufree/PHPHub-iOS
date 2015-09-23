@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
+		565CE8191BB28380001680D2 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE8181BB28380001680D2 /* TopicListCell.m */; };
+		565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81B1BB283A4001680D2 /* TopicListTableView.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0251BAF97C500242FA9 /* Main.storyboard */; };
@@ -22,7 +24,6 @@
 		56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */; };
 		56D8F0801BB0034800242FA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F07F1BB0034800242FA9 /* ViewController.m */; };
 		56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0881BB0096800242FA9 /* EssentialListViewController.m */; };
-		56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F08B1BB009A000242FA9 /* TopicListCell.m */; };
 		56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */; };
 		56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0951BB0E43400242FA9 /* UIView+Additions.m */; };
 		56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0991BB0E6F400242FA9 /* BaseHelper.m */; };
@@ -53,6 +54,10 @@
 		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
+		565CE8171BB28380001680D2 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
+		565CE8181BB28380001680D2 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
+		565CE81A1BB283A4001680D2 /* TopicListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListTableView.h; sourceTree = "<group>"; };
+		565CE81B1BB283A4001680D2 /* TopicListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListTableView.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,8 +89,6 @@
 		56D8F07F1BB0034800242FA9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		56D8F0871BB0096800242FA9 /* EssentialListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialListViewController.h; sourceTree = "<group>"; };
 		56D8F0881BB0096800242FA9 /* EssentialListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialListViewController.m; sourceTree = "<group>"; };
-		56D8F08A1BB009A000242FA9 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
-		56D8F08B1BB009A000242FA9 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
 		56D8F08E1BB009C500242FA9 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
 		56D8F08F1BB009C500242FA9 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
 		56D8F0941BB0E43400242FA9 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
@@ -147,6 +150,17 @@
 				379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		565CE8161BB28358001680D2 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				565CE8171BB28380001680D2 /* TopicListCell.h */,
+				565CE8181BB28380001680D2 /* TopicListCell.m */,
+				565CE81A1BB283A4001680D2 /* TopicListTableView.h */,
+				565CE81B1BB283A4001680D2 /* TopicListTableView.m */,
+			);
+			path = Topic;
 			sourceTree = "<group>";
 		};
 		56D8F00F1BAF97C500242FA9 = {
@@ -308,6 +322,7 @@
 		56D8F04E1BAF9E9F00242FA9 /* ViewPartial */ = {
 			isa = PBXGroup;
 			children = (
+				565CE8161BB28358001680D2 /* Topic */,
 				56D8F0851BB0094D00242FA9 /* Essential */,
 			);
 			path = ViewPartial;
@@ -331,8 +346,6 @@
 		56D8F0851BB0094D00242FA9 /* Essential */ = {
 			isa = PBXGroup;
 			children = (
-				56D8F08A1BB009A000242FA9 /* TopicListCell.h */,
-				56D8F08B1BB009A000242FA9 /* TopicListCell.m */,
 			);
 			path = Essential;
 			sourceTree = "<group>";
@@ -588,6 +601,7 @@
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
+				565CE8191BB28380001680D2 /* TopicListCell.m in Sources */,
 				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
@@ -596,8 +610,8 @@
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				56D8F0801BB0034800242FA9 /* ViewController.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
-				56D8F08C1BB009A000242FA9 /* TopicListCell.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
+				565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
@@ -735,8 +749,10 @@
 			baseConfigurationReference = 289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				INFOPLIST_FILE = PHPHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -747,8 +763,10 @@
 			baseConfigurationReference = 379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				INFOPLIST_FILE = PHPHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
