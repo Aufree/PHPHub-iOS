@@ -14,6 +14,7 @@ static CGFloat topicListCellAvatarHeight = 38;
 @interface TopicListCell ()
 @property (nonatomic, strong) UIView *baseView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
+@property (nonatomic, strong) UIImageView *circleImageView;
 @property (nonatomic, strong) UILabel *topicTitleLabel;
 @property (nonatomic, strong) UILabel *topicInfoLabel;
 @property (nonatomic, strong) UILabel *topicRepliesCountLabel;
@@ -45,6 +46,7 @@ static CGFloat topicListCellAvatarHeight = 38;
         _baseView.layer.borderWidth = 0.5;
         
         [_baseView addSubview:self.avatarImageView];
+        [_baseView addSubview:self.circleImageView];
         [_baseView addSubview:self.topicTitleLabel];
         [_baseView addSubview:self.topicInfoLabel];
         [_baseView addSubview:self.topicRepliesCountLabel];
@@ -55,11 +57,17 @@ static CGFloat topicListCellAvatarHeight = 38;
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, topicListCellAvatarHeight, topicListCellAvatarHeight)];
-        _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _avatarImageView.layer.masksToBounds = YES;
     }
     return _avatarImageView;
+}
+
+- (UIImageView *)circleImageView {
+    if (!_circleImageView) {
+        _circleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, topicListCellAvatarHeight, topicListCellAvatarHeight)];
+        _circleImageView.image = [UIImage imageNamed:@"corner_circle"];
+    }
+    return _circleImageView;
 }
 
 - (UILabel *)topicTitleLabel {
