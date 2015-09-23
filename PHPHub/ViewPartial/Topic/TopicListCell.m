@@ -27,7 +27,7 @@ static CGFloat topicListCellAvatarHeight = 38;
     [self.contentView addSubview:self.baseView];
     
     NSURL *URL = [BaseHelper qiniuImageCenter:_topicEntity.user.userAvatar withWidth:@"76" withHeight:@"76"];
-    [_avatarImageView sd_setImageWithURL:URL];
+    [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _topicTitleLabel.text = _topicEntity.topicTitle;
     _topicInfoLabel.text = @"安全 • 最后由 Aufree • 5天前";
     _topicRepliesCountLabel.text = _topicEntity.topicRepliesCount.stringValue;
@@ -55,10 +55,8 @@ static CGFloat topicListCellAvatarHeight = 38;
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, topicListCellAvatarHeight, topicListCellAvatarHeight)];
-        _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _avatarImageView.backgroundColor = [UIColor clearColor];
-        _avatarImageView.layer.backgroundColor = [UIColor colorWithRed:0.176 green:0.600 blue:0.953 alpha:0.340].CGColor;
         _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
+        _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
         _avatarImageView.layer.masksToBounds = YES;
     }
     return _avatarImageView;
