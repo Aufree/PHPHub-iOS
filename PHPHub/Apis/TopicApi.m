@@ -11,7 +11,7 @@
 @implementation TopicApi
 - (id)getAll:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=last_reply_user,user&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {

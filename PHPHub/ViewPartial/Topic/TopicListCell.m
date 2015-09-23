@@ -7,7 +7,9 @@
 //
 
 #import "TopicListCell.h"
+
 #import "Masonry.h"
+#import "NSDate+DateTools.h"
 
 static CGFloat topicListCellAvatarHeight = 38;
 
@@ -30,7 +32,7 @@ static CGFloat topicListCellAvatarHeight = 38;
     NSURL *URL = [BaseHelper qiniuImageCenter:_topicEntity.user.userAvatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _topicTitleLabel.text = _topicEntity.topicTitle;
-    _topicInfoLabel.text = @"安全 • 最后由 Aufree • 5天前";
+    _topicInfoLabel.text = [NSString stringWithFormat:@"%@ • 最后由 %@ • %@", _topicEntity.node.nodeName, _topicEntity.lastReplyUser.username, [_topicEntity.updatedAt timeAgoSinceNow]];
     _topicRepliesCountLabel.text = _topicEntity.topicRepliesCount.stringValue;
     
     [self addAutoLayoutToCell];

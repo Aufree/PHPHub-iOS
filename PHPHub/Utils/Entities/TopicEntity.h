@@ -8,10 +8,14 @@
 
 #import "BaseEntity.h"
 #import "UserEntity.h"
+#import "NodeEntity.h"
 
 @interface TopicEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *topicId;
 @property (nonatomic, copy) NSString *topicTitle;
 @property (nonatomic, strong) NSNumber *topicRepliesCount;
 @property (nonatomic, strong) UserEntity *user;
+@property (nonatomic, strong) UserEntity *lastReplyUser;
+@property (nonatomic, strong) NodeEntity *node;
+@property (nonatomic, strong) NSDate *updatedAt;
 @end

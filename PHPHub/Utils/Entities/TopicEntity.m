@@ -17,11 +17,24 @@
              @"topicTitle" : @"title",
              @"topicRepliesCount" : @"reply_count",
              @"user" : @"user.data",
+             @"lastReplyUser" : @"last_reply_user.data",
+             @"node" : @"node.data",
+             @"updatedAt" : @"updated_at.date",
              };
 }
 
 + (NSValueTransformer *)userJSONTransformer
 {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
+}
+
++ (NSValueTransformer *)lastReplyUserJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
+}
+
++ (NSValueTransformer *)nodeJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[NodeEntity class]];
 }
 @end
