@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "UMFeedback.h"
+#import "UMOpus.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // About feedback
+    [UMFeedback setAppkey:UMENG_APPKEY];
+    [UMOpus setAudioEnable:YES];
     
     // Showing the App
     [self makeWindowVisible:launchOptions];

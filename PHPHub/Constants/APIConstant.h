@@ -14,3 +14,5 @@
 #define APIClientTokenIdentifier   @"APIClientTokenIdentifier"
 #define APIPasswordTokenIdentifier @"APIPasswordTokenIdentifier"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
+
+#define UMENG_APPKEY @"560302ff67e58e882f002336"
