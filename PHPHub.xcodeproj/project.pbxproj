@@ -12,6 +12,7 @@
 		565218141BB69FD700412E60 /* NotificationListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218131BB69FD700412E60 /* NotificationListTableView.m */; };
 		565218171BB69FEC00412E60 /* NotificationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218161BB69FEC00412E60 /* NotificationListCell.m */; };
 		5652181B1BB6A24D00412E60 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181A1BB6A24D00412E60 /* BaseView.m */; };
+		5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181D1BB6A9C200412E60 /* NotificationEntity.m */; };
 		565CE8191BB28380001680D2 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE8181BB28380001680D2 /* TopicListCell.m */; };
 		565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81B1BB283A4001680D2 /* TopicListTableView.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
@@ -68,6 +69,8 @@
 		565218161BB69FEC00412E60 /* NotificationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListCell.m; sourceTree = "<group>"; };
 		565218191BB6A24D00412E60 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		5652181A1BB6A24D00412E60 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		5652181C1BB6A9C200412E60 /* NotificationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationEntity.h; sourceTree = "<group>"; };
+		5652181D1BB6A9C200412E60 /* NotificationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationEntity.m; sourceTree = "<group>"; };
 		565CE8171BB28380001680D2 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
 		565CE8181BB28380001680D2 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
 		565CE81A1BB283A4001680D2 /* TopicListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListTableView.h; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 				5644B4F51BB1692C008A96A8 /* PaginationEntity.m */,
 				565CE81D1BB29ED0001680D2 /* NodeEntity.h */,
 				565CE81E1BB29ED0001680D2 /* NodeEntity.m */,
+				5652181C1BB6A9C200412E60 /* NotificationEntity.h */,
+				5652181D1BB6A9C200412E60 /* NotificationEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
+				5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */,
 				565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
