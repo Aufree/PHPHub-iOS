@@ -7,6 +7,7 @@
 //
 
 #import "TopicListCell.h"
+#import "BaseView.h"
 
 #import "Masonry.h"
 #import "NSDate+DateTools.h"
@@ -14,7 +15,7 @@
 static CGFloat topicListCellAvatarHeight = 38;
 
 @interface TopicListCell ()
-@property (nonatomic, strong) UIView *baseView;
+@property (nonatomic, strong) BaseView *baseView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UIImageView *circleImageView;
 @property (nonatomic, strong) UILabel *topicTitleLabel;
@@ -38,14 +39,9 @@ static CGFloat topicListCellAvatarHeight = 38;
     [self addAutoLayoutToCell];
 }
 
-- (UIView *)baseView {
+- (BaseView *)baseView {
     if (!_baseView) {
-        _baseView = [[UIView alloc] init];
-        _baseView.backgroundColor = [UIColor clearColor];
-        _baseView.layer.backgroundColor = [UIColor whiteColor].CGColor;
-        _baseView.layer.cornerRadius = 2;
-        _baseView.layer.borderColor = [UIColor colorWithRed:0.871 green:0.875 blue:0.878 alpha:1.000].CGColor;
-        _baseView.layer.borderWidth = 0.5;
+        _baseView = [[BaseView alloc] init];
         
         [_baseView addSubview:self.avatarImageView];
         [_baseView addSubview:self.circleImageView];

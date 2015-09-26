@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
+		565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652180F1BB69F8200412E60 /* NotificationListViewController.m */; };
+		565218141BB69FD700412E60 /* NotificationListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218131BB69FD700412E60 /* NotificationListTableView.m */; };
+		565218171BB69FEC00412E60 /* NotificationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218161BB69FEC00412E60 /* NotificationListCell.m */; };
+		5652181B1BB6A24D00412E60 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181A1BB6A24D00412E60 /* BaseView.m */; };
 		565CE8191BB28380001680D2 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE8181BB28380001680D2 /* TopicListCell.m */; };
 		565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81B1BB283A4001680D2 /* TopicListTableView.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
@@ -56,6 +60,14 @@
 		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
+		5652180E1BB69F8200412E60 /* NotificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
+		5652180F1BB69F8200412E60 /* NotificationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListViewController.m; sourceTree = "<group>"; };
+		565218121BB69FD700412E60 /* NotificationListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListTableView.h; sourceTree = "<group>"; };
+		565218131BB69FD700412E60 /* NotificationListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListTableView.m; sourceTree = "<group>"; };
+		565218151BB69FEC00412E60 /* NotificationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListCell.h; sourceTree = "<group>"; };
+		565218161BB69FEC00412E60 /* NotificationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListCell.m; sourceTree = "<group>"; };
+		565218191BB6A24D00412E60 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		5652181A1BB6A24D00412E60 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		565CE8171BB28380001680D2 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
 		565CE8181BB28380001680D2 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
 		565CE81A1BB283A4001680D2 /* TopicListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListTableView.h; sourceTree = "<group>"; };
@@ -158,6 +170,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5652180D1BB69F5B00412E60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				5652180E1BB69F8200412E60 /* NotificationListViewController.h */,
+				5652180F1BB69F8200412E60 /* NotificationListViewController.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		565218111BB69F9800412E60 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				565218121BB69FD700412E60 /* NotificationListTableView.h */,
+				565218131BB69FD700412E60 /* NotificationListTableView.m */,
+				565218151BB69FEC00412E60 /* NotificationListCell.h */,
+				565218161BB69FEC00412E60 /* NotificationListCell.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		565218181BB6A23A00412E60 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				565218191BB6A24D00412E60 /* BaseView.h */,
+				5652181A1BB6A24D00412E60 /* BaseView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		565CE8161BB28358001680D2 /* Topic */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +299,7 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5652180D1BB69F5B00412E60 /* Notification */,
 				56737C321BB2A1B5008B3E60 /* Me */,
 				56D8F08D1BB009C500242FA9 /* TabBar */,
 				56D8F0861BB0096800242FA9 /* Essential */,
@@ -336,6 +378,8 @@
 		56D8F04E1BAF9E9F00242FA9 /* ViewPartial */ = {
 			isa = PBXGroup;
 			children = (
+				565218181BB6A23A00412E60 /* Base */,
+				565218111BB69F9800412E60 /* Notification */,
 				565CE8161BB28358001680D2 /* Topic */,
 				56D8F0851BB0094D00242FA9 /* Essential */,
 			);
@@ -622,12 +666,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565218141BB69FD700412E60 /* NotificationListTableView.m in Sources */,
 				56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */,
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
+				565218171BB69FEC00412E60 /* NotificationListCell.m in Sources */,
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
+				565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */,
 				565CE8191BB28380001680D2 /* TopicListCell.m in Sources */,
 				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
@@ -649,6 +696,7 @@
 				56D8F0A21BB0ED5E00242FA9 /* TopicApi.m in Sources */,
 				565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */,
 				56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */,
+				5652181B1BB6A24D00412E60 /* BaseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

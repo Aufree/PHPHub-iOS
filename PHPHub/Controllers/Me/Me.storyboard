@@ -8,7 +8,6 @@
         <!--Me View Controller-->
         <scene sceneID="PEl-Vz-1xh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LfP-eK-tUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4Mc-Cd-chf" customClass="MeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SGR-Pc-a5U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -239,13 +238,13 @@
                         <outlet property="usernameLabel" destination="9OA-pB-5Bv" id="nZF-PO-b1y"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LfP-eK-tUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="814" y="409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1N-KC-cPY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fEB-ak-qcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VHy-bJ-hTD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -258,6 +257,7 @@
                         <segue destination="4Mc-Cd-chf" kind="relationship" relationship="rootViewController" id="lNb-VZ-8z1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEB-ak-qcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="409"/>
         </scene>
