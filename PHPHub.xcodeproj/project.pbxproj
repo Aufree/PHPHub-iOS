@@ -11,6 +11,8 @@
 		565CE8191BB28380001680D2 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE8181BB28380001680D2 /* TopicListCell.m */; };
 		565CE81C1BB283A4001680D2 /* TopicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81B1BB283A4001680D2 /* TopicListTableView.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
+		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
+		56737C371BB2A239008B3E60 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56737C361BB2A239008B3E60 /* Me.storyboard */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0251BAF97C500242FA9 /* Main.storyboard */; };
@@ -62,6 +64,9 @@
 		565CE81B1BB283A4001680D2 /* TopicListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListTableView.m; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
+		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		56737C361BB2A239008B3E60 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +174,16 @@
 			path = Topic;
 			sourceTree = "<group>";
 		};
+		56737C321BB2A1B5008B3E60 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				56737C331BB2A1FE008B3E60 /* MeViewController.h */,
+				56737C341BB2A1FE008B3E60 /* MeViewController.m */,
+				56737C361BB2A239008B3E60 /* Me.storyboard */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		56D8F00F1BAF97C500242FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +263,7 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56737C321BB2A1B5008B3E60 /* Me */,
 				56D8F08D1BB009C500242FA9 /* TabBar */,
 				56D8F0861BB0096800242FA9 /* Essential */,
 				56D8F0AD1BB1377800242FA9 /* Forum */,
@@ -563,6 +579,7 @@
 			files = (
 				56D8F0271BAF97C500242FA9 /* Main.storyboard in Resources */,
 				56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */,
+				56737C371BB2A239008B3E60 /* Me.storyboard in Resources */,
 				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */,
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
