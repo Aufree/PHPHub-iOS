@@ -13,6 +13,12 @@
     return @{
              @"notificationId" : @"id",
              @"notificationContent" : @"content",
+             @"user" : @"user.data",
              };
+}
+
++ (NSValueTransformer *)userJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
 }
 @end
