@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7g3-ew-1Fc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Passport View Controller-->
+        <scene sceneID="NfN-hT-0l5">
+            <objects>
+                <viewController storyboardIdentifier="login" id="rC2-JI-Ttz" customClass="PassportViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m9i-eX-On9"/>
+                        <viewControllerLayoutGuide type="bottom" id="r4X-FD-bii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N9a-BI-8Hy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-ik-czR">
+                                <rect key="frame" x="35" y="319" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.82745098039215681" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0No-9q-D0b"/>
+                                    <constraint firstAttribute="width" constant="250" id="hYA-Sk-OSx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="扫码登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchScanLoginButton:" destination="rC2-JI-Ttz" eventType="touchUpInside" id="fbn-na-cn5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2R-AV-iOX">
+                                <rect key="frame" x="35" y="399" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.5725490196078431" green="0.81568627450980391" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="EDF-rO-HlV"/>
+                                    <constraint firstAttribute="height" constant="50" id="w7h-0o-yTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="傻傻弄不懂">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchIntroLoginButton:" destination="rC2-JI-Ttz" eventType="touchUpInside" id="7Ak-KL-LsR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous_logo" translatesAutoresizingMaskIntoConstraints="NO" id="fOb-Wp-Q73">
+                                <rect key="frame" x="80" y="119" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="4w1-xp-3uW"/>
+                                    <constraint firstAttribute="width" constant="160" id="cSO-dt-NHP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fOb-Wp-Q73" secondAttribute="centerX" id="QP5-67-7tR"/>
+                            <constraint firstAttribute="centerY" secondItem="y2F-ik-czR" secondAttribute="centerY" constant="-60" id="d7D-Ea-fOF"/>
+                            <constraint firstAttribute="centerX" secondItem="j2R-AV-iOX" secondAttribute="centerX" id="feH-3Q-rbH"/>
+                            <constraint firstItem="j2R-AV-iOX" firstAttribute="top" secondItem="y2F-ik-czR" secondAttribute="bottom" constant="30" id="lmI-k9-VdR"/>
+                            <constraint firstItem="y2F-ik-czR" firstAttribute="top" secondItem="fOb-Wp-Q73" secondAttribute="bottom" constant="40" id="rQI-lG-6ci"/>
+                            <constraint firstAttribute="centerX" secondItem="y2F-ik-czR" secondAttribute="centerX" id="umF-fP-EjT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OKj-ah-RuJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="introLoginButton" destination="j2R-AV-iOX" id="edV-9y-mqe"/>
+                        <outlet property="scanLoginButton" destination="y2F-ik-czR" id="bTe-S5-2kq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9I-5F-ABQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="406"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gi3-Fg-9m4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7g3-ew-1Fc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6L-KA-6Z5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rC2-JI-Ttz" kind="relationship" relationship="rootViewController" id="BwW-Od-4hL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWB-hV-IWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="406"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="anonymous_logo" width="160" height="160"/>
+    </resources>
+</document>
