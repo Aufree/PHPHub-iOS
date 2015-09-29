@@ -13,7 +13,7 @@
 @interface TopicListContainerViewController () <ViewPagerDataSource, ViewPagerDelegate, TitlePagerViewDelegate>
 @property (nonatomic, strong) TopicListViewController *newestTopicListVC;
 @property (nonatomic, strong) TopicListViewController *hotsTopicListVC;
-@property (nonatomic, strong) TopicListViewController *noReplyTopicListVC;
+@property (nonatomic, strong) TopicListViewController *jobTopicListVC;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) TitlePagerView *pagingTitleView;
 @end
@@ -60,8 +60,8 @@
         [self.newestTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
     } else if (self.currentIndex == 1 && self.hotsTopicListVC) {
         [self.hotsTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
-    } else if (self.currentIndex == 2 && self.noReplyTopicListVC) {
-        [self.noReplyTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
+    } else if (self.currentIndex == 2 && self.jobTopicListVC) {
+        [self.jobTopicListVC.tableView setContentOffset:CGPointZero animated:YES];
     }
 }
 
@@ -70,37 +70,13 @@
     return 3;
 }
 
-- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
-    NSString *labelText = nil;
-    switch (index) {
-        case 0:
-            labelText = @"最新";
-            break;
-        case 1:
-            labelText = @"热门";
-            break;
-        case 2:
-            labelText = @"冷门";
-            break;
-        default:
-            break;
-    }
-    UILabel *label = [UILabel new];
-    label.font = [UIFont fontWithName:@"Arial" size:15.0f];
-    label.text = labelText;
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    [label sizeToFit];
-    return label;
-}
-
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
     if (index == 0) {
         return [self createNewestVC];
     } else if (index == 1) {
         return [self createHotsVC];
     } else {
-        return [self createNoReplyVC];
+        return [self createJobVC];
     }
 }
 
@@ -116,32 +92,10 @@
     return self.hotsTopicListVC;
 }
 
-- (UIViewController *)createNoReplyVC {
-    self.noReplyTopicListVC = [[TopicListViewController alloc] init];
-    self.noReplyTopicListVC.topicListType = TopicListTypeNoReply;
-    return self.noReplyTopicListVC;
-}
-
-#pragma mark - ViewPagerDelegate
-- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {
-    switch (option) {
-        case ViewPagerOptionStartFromSecondTab:
-            return 0.0;
-            break;
-        case ViewPagerOptionCenterCurrentTab:
-            return 0.0;
-            break;
-        case ViewPagerOptionTabLocation:
-            return 1.0;
-            break;
-        case ViewPagerOptionTabWidth:
-            return SCREEN_WIDTH / 2;
-            break;
-        default:
-            break;
-    }
-    
-    return value;
+- (UIViewController *)createJobVC {
+    self.jobTopicListVC = [[TopicListViewController alloc] init];
+    self.jobTopicListVC.topicListType = TopicListTypeJob;
+    return self.jobTopicListVC;
 }
 
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index {
@@ -154,7 +108,7 @@
         self.pagingTitleView = [[TitlePagerView alloc] init];
         self.pagingTitleView.frame = CGRectMake(0, 0, 0, 40);
         self.pagingTitleView.font = [UIFont systemFontOfSize:15];
-        NSArray *titleArray = @[@"最新", @"热门", @"冷门"];
+        NSArray *titleArray = @[@"最新", @"热门", @"招聘"];
         self.pagingTitleView.width = [TitlePagerView calculateTitleWidth:titleArray withFont:self.pagingTitleView.font];
         [self.pagingTitleView addObjects:titleArray];
         self.pagingTitleView.delegate = self;
@@ -212,11 +166,5 @@
             view.bounces = enabled;
         }
     }
-}
-
-- (void)setSubViewScrollStatus:(BOOL)enabled {
-//    UITableView *tableView = self.currentIndex == 0 ? self.showListVC.tableView : self.channelListVC.tableView;
-//    tableView.bounces       = enabled;
-//    tableView.scrollEnabled = enabled;
 }
 @end

@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, TopicListType) {
     TopicListTypeNewest = 0,
     TopicListTypeHots = 1,
     TopicListTypeNoReply = 2,
+    TopicListTypeJob = 3,
 };
 
 @interface TopicListViewController : UIViewController

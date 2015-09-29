@@ -36,6 +36,10 @@
     return [_api getNoReplyTopicList:block atPage:pageIndex];
 }
 
+- (id)getJobTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getJobTopicList:block atPage:pageIndex];
+}
+
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
     return [_api getWiKiList:block atPage:pageIndex];

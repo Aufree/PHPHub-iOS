@@ -81,6 +81,8 @@
         [[TopicModel Instance] getHotsTopicList:callback atPage:atPage];
     } else if (self.topicListType == TopicListTypeNoReply) {
         [[TopicModel Instance] getNoReplyTopicList:callback atPage:atPage];
+    } else if (self.topicListType == TopicListTypeJob) {
+        [[TopicModel Instance] getJobTopicList:callback atPage:atPage];
     }
 }
 
