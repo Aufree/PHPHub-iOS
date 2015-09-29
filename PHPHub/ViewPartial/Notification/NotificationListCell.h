@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NotificationEntity.h"
 
 @interface NotificationListCell : UITableViewCell
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, strong) NotificationEntity *notificationEntity;
++ (CGFloat)countHeightForCell:(NotificationEntity *)notificationEntity;
 @end

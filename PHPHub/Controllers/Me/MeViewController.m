@@ -7,6 +7,7 @@
 //
 
 #import "MeViewController.h"
+#import "NotificationListViewController.h"
 
 @implementation MeViewController
 
@@ -30,5 +31,16 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return section == 0 ? nil : @"";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+    if (section == 1 && row == 0) {
+        NotificationListViewController *notificationListVC = [[NotificationListViewController alloc] init];
+        notificationListVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:notificationListVC animated:YES];
+    }
 }
 @end

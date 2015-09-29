@@ -8,18 +8,27 @@
 
 #import "NotificationListViewController.h"
 #import "NotificationListCell.h"
+#import "NotificationEntity.h"
 
 @interface NotificationListViewController ()
-
+@property (nonatomic, strong) NSMutableArray *notificationEntities;
+@property (nonatomic, strong) PaginationEntity *pagination;
 @end
 
 @implementation NotificationListViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad {    
     [super viewDidLoad];
     
     self.tableView = [[NotificationListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
+    [self.tableView reloadData];
+}
+
+- (void)setNotificationEntities:(NSMutableArray *)notificationEntities {
+    _notificationEntities = notificationEntities;
+    self.notificationEntities = _notificationEntities;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
