@@ -11,6 +11,7 @@
 
 @interface TopicApi : BaseApi
 - (id)getAll:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getExcellentTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getHotsTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;

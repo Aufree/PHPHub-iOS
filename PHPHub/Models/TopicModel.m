@@ -24,6 +24,10 @@
     return [_api getAll:block atPage:pageIndex];
 }
 
+- (id)getExcellentTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getExcellentTopicList:block atPage:pageIndex];
+}
+
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
     return [_api getNewestTopicList:block atPage:pageIndex];
 }

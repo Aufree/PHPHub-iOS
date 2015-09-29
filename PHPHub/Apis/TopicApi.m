@@ -32,6 +32,29 @@
                                       failure:failureBlock];
 }
 
+- (id)getExcellentTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=excellent&per_page=20&page=%ld", (long)pageIndex];
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
+    {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
+        data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error)
+    {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi clientGrantInstance] GET:urlPath
+                                   parameters:nil
+                                      success:successBlock
+                                      failure:failureBlock];
+}
+
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
     NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=recent&per_page=20&page=%ld", (long)pageIndex];

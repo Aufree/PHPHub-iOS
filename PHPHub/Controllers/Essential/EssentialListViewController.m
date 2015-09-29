@@ -78,7 +78,7 @@
 }
 
 - (void)fetchDataSource:(BaseResultBlock)callback atPage:(NSUInteger)atPage {
-    [[TopicModel Instance] getAllTopic:callback atPage:atPage];
+    [[TopicModel Instance] getExcellentTopicList:callback atPage:atPage];
 }
 
 @end
