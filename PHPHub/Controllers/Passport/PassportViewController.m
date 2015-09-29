@@ -31,6 +31,7 @@
 }
 
 - (IBAction)didTouchScanLoginButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (IBAction)didTouchIntroLoginButton:(id)sender {
