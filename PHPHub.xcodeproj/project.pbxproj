@@ -857,6 +857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				INFOPLIST_FILE = PHPHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -871,6 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				INFOPLIST_FILE = PHPHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;

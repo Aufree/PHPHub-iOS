@@ -8,7 +8,10 @@
 
 #import "PassportViewController.h"
 
-@interface PassportViewController ()
+#import "QRCodeReaderDelegate.h"
+#import "QRCodeReaderViewController.h"
+
+@interface PassportViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *introLoginButton;
 @end
@@ -31,7 +34,42 @@
 }
 
 - (IBAction)didTouchScanLoginButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:NO];
+    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+        static QRCodeReaderViewController *reader = nil;
+        static dispatch_once_t onceToken;
+        
+        dispatch_once(&onceToken, ^{
+            reader                        = [QRCodeReaderViewController new];
+            reader.modalPresentationStyle = UIModalPresentationFormSheet;
+        });
+        reader.delegate = self;
+        
+        [reader setCompletionWithBlock:^(NSString *resultAsString) {
+            NSLog(@"Completion with result: %@", resultAsString);
+        }];
+        
+        [self presentViewController:reader animated:YES completion:NULL];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
+    }
+}
+
+#pragma mark - QRCodeReader Delegate Methods
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
+}
+
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)didTouchIntroLoginButton:(id)sender {
