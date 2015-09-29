@@ -76,10 +76,6 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 
 // Asks dataSource how many tabs will be
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager;
-// Asks dataSource to give a view to display as a tab item
-// It is suggested to return a view with a clearColor background
-// So that un/selected states can be clearly seen
-- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index;
 
 @optional
 // The content for any tab. Return a view controller and ViewPager will use its view to show as content
