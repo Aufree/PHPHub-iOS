@@ -1,13 +1,13 @@
 //
-//  APIConstant.h
+//  APIConstant.example.h
 //  PHPHub
 //
-//  Created by Aufree on 9/21/15.
+//  Created by Aufree on 9/30/15.
 //  Copyright (c) 2015 ESTGroup. All rights reserved.
 //
 
-#define Client_id                @"get client from server"
-#define Client_secret            @"get client secret from server"
+#define Client_id                @"get client id from server"
+#define Client_secret            @"get client secret id from server"
 #define APIAccessToken [NSString stringWithFormat:@"%@%@", APIBaseURL, @"oauth/access_token"]
 
 #define APIBaseURL                 @"https://api.phphub.org"
@@ -15,4 +15,4 @@
 #define APIPasswordTokenIdentifier @"APIPasswordTokenIdentifier"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
 
-#define UMENG_APPKEY @"560302ff67e58e882f002336"
+#define UMENG_APPKEY @"setup umeng appkey"

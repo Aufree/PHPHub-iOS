@@ -81,6 +81,7 @@
 		5652184D1BBA7F0000412E60 /* Passport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Passport.storyboard; sourceTree = "<group>"; };
 		565218531BBB6D9500412E60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		565218541BBB6D9500412E60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		565218561BBB7A7300412E60 /* APIConstant.example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstant.example.h; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		56D8F0511BAF9F7200242FA9 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		56D8F0531BAF9FF200242FA9 /* BaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseApi.h; sourceTree = "<group>"; };
 		56D8F0541BAF9FF200242FA9 /* BaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseApi.m; sourceTree = "<group>"; };
-		56D8F0561BAFA15700242FA9 /* APIConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstant.h; sourceTree = "<group>"; };
 		56D8F0591BAFA4C400242FA9 /* PHPHub-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PHPHub-Prefix.pch"; sourceTree = "<group>"; };
 		56D8F05A1BAFA5E100242FA9 /* APIRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequestHandler.h; sourceTree = "<group>"; };
 		56D8F05B1BAFA5E100242FA9 /* APIRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequestHandler.m; sourceTree = "<group>"; };
@@ -421,9 +421,9 @@
 		56D8F04D1BAF9DF800242FA9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				56D8F0561BAFA15700242FA9 /* APIConstant.h */,
 				56D8F0601BAFA7E300242FA9 /* DebugConstant.h */,
 				56D8F07A1BAFF9E900242FA9 /* UIConstant.h */,
+				565218561BBB7A7300412E60 /* APIConstant.example.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
