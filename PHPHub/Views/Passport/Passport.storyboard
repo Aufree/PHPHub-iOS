@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Passport View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="NfN-hT-0l5">
             <objects>
-                <viewController storyboardIdentifier="login" id="rC2-JI-Ttz" customClass="PassportViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="rC2-JI-Ttz" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m9i-eX-On9"/>
                         <viewControllerLayoutGuide type="bottom" id="r4X-FD-bii"/>

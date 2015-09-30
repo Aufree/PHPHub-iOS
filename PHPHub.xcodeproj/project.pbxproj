@@ -17,7 +17,7 @@
 		565218481BBA7CC500412E60 /* TopicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218431BBA7CC500412E60 /* TopicListTableView.m */; };
 		5652184B1BBA7D0500412E60 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5652184A1BBA7D0500412E60 /* Me.storyboard */; };
 		5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5652184D1BBA7F0000412E60 /* Passport.storyboard */; };
-		565218521BBA83B600412E60 /* PassportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218511BBA83B600412E60 /* PassportViewController.m */; };
+		565218551BBB6D9500412E60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218541BBB6D9500412E60 /* LoginViewController.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
@@ -79,8 +79,8 @@
 		565218431BBA7CC500412E60 /* TopicListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListTableView.m; sourceTree = "<group>"; };
 		5652184A1BBA7D0500412E60 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		5652184D1BBA7F0000412E60 /* Passport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Passport.storyboard; sourceTree = "<group>"; };
-		565218501BBA83B600412E60 /* PassportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassportViewController.h; sourceTree = "<group>"; };
-		565218511BBA83B600412E60 /* PassportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassportViewController.m; sourceTree = "<group>"; };
+		565218531BBB6D9500412E60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		565218541BBB6D9500412E60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -266,8 +266,8 @@
 		5652184F1BBA838D00412E60 /* Passport */ = {
 			isa = PBXGroup;
 			children = (
-				565218501BBA83B600412E60 /* PassportViewController.h */,
-				565218511BBA83B600412E60 /* PassportViewController.m */,
+				565218531BBB6D9500412E60 /* LoginViewController.h */,
+				565218541BBB6D9500412E60 /* LoginViewController.m */,
 			);
 			path = Passport;
 			sourceTree = "<group>";
@@ -721,13 +721,13 @@
 				56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
-				565218521BBA83B600412E60 /* PassportViewController.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
 				5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
+				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "MeViewController.h"
 #import "NotificationListViewController.h"
-#import "PassportViewController.h"
+#import "LoginViewController.h"
 
 @implementation MeViewController
 
@@ -25,8 +25,8 @@
     NSURL *URL = [BaseHelper qiniuImageCenter:@"http://7qncb1.com2.z0.glb.qiniucdn.com/uploads/users/avatar/0d20b07d7c08d8e15aea5238533ed5a6.jpg" withWidth:@"120" withHeight:@"120"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     
-    PassportViewController *passportVC = [[UIStoryboard storyboardWithName:@"Passport" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"login"];
-    [self.navigationController pushViewController:passportVC animated:NO];
+    LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"login"];
+    [self.navigationController pushViewController:loginVC animated:NO];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
