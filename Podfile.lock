@@ -36,9 +36,9 @@ PODS:
   - Mantle (1.5.5):
     - Mantle/extobjc (= 1.5.5)
   - Mantle/extobjc (1.5.5)
-  - Masonry (0.6.2)
+  - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
-  - MJRefresh (2.4.10)
+  - MJRefresh (2.4.11)
   - MTLFMDBAdapter (0.1.8):
     - FMDB (~> 2.3)
     - Mantle (~> 1.5)
@@ -46,7 +46,7 @@ PODS:
   - Qiniu (7.0.12):
     - AFNetworking (~> 2.0)
     - HappyDNS (~> 0.1)
-  - QRCodeReaderViewController (1.0)
+  - QRCodeReaderViewController (3.5.2)
   - Reachability (3.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -71,7 +71,7 @@ DEPENDENCIES:
   - MTLFMDBAdapter (from `https://github.com/summerblue/MTLFMDBAdapter`)
   - QBPopupMenu
   - Qiniu
-  - QRCodeReaderViewController (from `https://github.com/zhengjinghua/QRCodeReaderViewController.git`)
+  - QRCodeReaderViewController (from `https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git`)
   - Reachability
   - SDWebImage
   - SVProgressHUD
@@ -82,15 +82,15 @@ EXTERNAL SOURCES:
   MTLFMDBAdapter:
     :git: https://github.com/summerblue/MTLFMDBAdapter
   QRCodeReaderViewController:
-    :git: https://github.com/zhengjinghua/QRCodeReaderViewController.git
+    :git: https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git
 
 CHECKOUT OPTIONS:
   MTLFMDBAdapter:
     :commit: 8a567630ad9ef38388a48ac6600e7a7a35316cdb
     :git: https://github.com/summerblue/MTLFMDBAdapter
   QRCodeReaderViewController:
-    :commit: 2563f0be23adbc2ab34f201c6d220fe1be7395b9
-    :git: https://github.com/zhengjinghua/QRCodeReaderViewController.git
+    :commit: f3a40c7bdb002ed21cd1ca602a5426bb67f0cacb
+    :git: https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -102,13 +102,13 @@ SPEC CHECKSUMS:
   GVUserDefaults: acb40729f70984008d0650e49d7e422f1bbfa597
   HappyDNS: 8eb3c929ee6143eb56bfddfc9e6052ca9429699c
   Mantle: 1b29072a707453975b200a173cf77ec1e2810b75
-  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJRefresh: e52328552ed9cbfce3501e3820b18bf7643c65cc
+  MJRefresh: b327947f35ab3eb16ca42646b26f7347e6aa7186
   MTLFMDBAdapter: f9849788d9e3a1c6662ef0ce600dd3e4a538a723
   QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
   Qiniu: 1fb5191b3bc1edb65b2da3d905b8281e15bd1d5c
-  QRCodeReaderViewController: 46ad8ba4af91889c2924db91f28c5a5100e240eb
+  QRCodeReaderViewController: 09386655825287ffa2f8eeae505f65fbcc7c7697
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
