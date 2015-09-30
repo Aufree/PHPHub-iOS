@@ -30,7 +30,7 @@
     NSURL *url = [NSURL URLWithString:APIBaseURL];
     AFOAuth2Client *oauthClient = [AFOAuth2Client clientWithBaseURL:url clientID:Client_id secret:Client_secret];
     
-    [oauthClient authenticateUsingOAuthWithURLString:APIAccessToken
+    [oauthClient authenticateUsingOAuthWithURLString:APIAccessTokenURL
                                                scope:@""
                                              success: ^(AFOAuthCredential *credential) {
                                                  NSLog(@"oauthClient -- > I have a CLIENT GRANT token! %@", credential.accessToken);
@@ -46,7 +46,7 @@
     NSURL *url = [NSURL URLWithString:APIBaseURL];
     AFOAuth2Client *oauthClient = [AFOAuth2Client clientWithBaseURL:url clientID:Client_id secret:Client_secret];
     
-    [oauthClient authenticateUsingOAuthWithURLString:APIAccessToken
+    [oauthClient authenticateUsingOAuthWithURLString:APIAccessTokenURL
                                                scope:@""
                                              success: ^(AFOAuthCredential *credential)
      {
@@ -76,6 +76,7 @@
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:APIPasswordTokenIdentifier];
     return [NSString stringWithFormat:@"Bearer %@", token];
 }
+
 + (void)storePasswordGrantAccessToken:(NSString *)token
 {
     [[NSUserDefaults standardUserDefaults] setObject:token forKey:APIPasswordTokenIdentifier];
