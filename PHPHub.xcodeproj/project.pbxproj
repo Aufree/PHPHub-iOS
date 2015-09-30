@@ -22,6 +22,7 @@
 		565218601BBBBDDE00412E60 /* UserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652185F1BBBBDDE00412E60 /* UserApi.m */; };
 		565218631BBBBDED00412E60 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218621BBBBDED00412E60 /* UserModel.m */; };
 		565218671BBBC41400412E60 /* GVUserDefaults+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218661BBBC41400412E60 /* GVUserDefaults+Properties.m */; };
+		5652186B1BBBCB4D00412E60 /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652186A1BBBCB4D00412E60 /* CurrentUser.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
@@ -96,6 +97,8 @@
 		565218621BBBBDED00412E60 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		565218651BBBC41400412E60 /* GVUserDefaults+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Properties.h"; sourceTree = "<group>"; };
 		565218661BBBC41400412E60 /* GVUserDefaults+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Properties.m"; sourceTree = "<group>"; };
+		565218691BBBCB4D00412E60 /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
+		5652186A1BBBCB4D00412E60 /* CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUser.m; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				56D8F0621BAFB0AE00242FA9 /* BaseEntity.m */,
 				56D8F0641BAFDA5400242FA9 /* BaseDBManager.h */,
 				56D8F0651BAFDA5400242FA9 /* BaseDBManager.m */,
+				565218691BBBCB4D00412E60 /* CurrentUser.h */,
+				5652186A1BBBCB4D00412E60 /* CurrentUser.m */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -770,6 +775,7 @@
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
+				5652186B1BBBCB4D00412E60 /* CurrentUser.m in Sources */,
 				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
 				565218631BBBBDED00412E60 /* UserModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,

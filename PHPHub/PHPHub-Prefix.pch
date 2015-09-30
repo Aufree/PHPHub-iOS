@@ -24,5 +24,6 @@
 #import "PaginationEntity.h"
 #import "AFOAuth2Manager+Addtions.h"
 #import "GVUserDefaults+Properties.h"
+#import "CurrentUser.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

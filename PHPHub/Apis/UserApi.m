@@ -21,6 +21,7 @@
                                              success:^(AFOAuthCredential *credential) {
                                                  [AccessTokenHandler storeLoginTokenGrantAccessToken:credential.accessToken];
                                                  [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
+                                                 [[CurrentUser Instance] setupClientRequestState];
                                                  
                                                  if (block) block(@{@"access_token": credential.accessToken}, nil);
                                              } failure:^(NSError *error) {
