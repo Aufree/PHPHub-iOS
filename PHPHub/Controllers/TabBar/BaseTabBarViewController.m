@@ -68,7 +68,7 @@
     [self setDelegate:self];
     
     // White background
-    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_background.png"]];
+    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_backgroud"]];
 }
 
 #pragma mark - Delegate - UITabBarControllerDelegate
