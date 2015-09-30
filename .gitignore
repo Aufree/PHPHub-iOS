@@ -43,5 +43,5 @@ Pods/
 Carthage/Build
 
 
-# Ignore api constant file
-PHPHub/Constants/APIConstant.h
+# Ignore secret constant file
+PHPHub/Constants/SecretConstant.h
