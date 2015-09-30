@@ -14,6 +14,7 @@
 
 #import "BaseApi.h"
 #import "APIConstant.h"
+#import "SecretConstant.h"
 #import "UIConstant.h"
 #import "DebugConstant.h"
 #import "UIView+Additions.h"
