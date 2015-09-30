@@ -82,6 +82,7 @@
 		565218531BBB6D9500412E60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		565218541BBB6D9500412E60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		565218561BBB7A7300412E60 /* APIConstant.example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstant.example.h; sourceTree = "<group>"; };
+		565218571BBB7BB000412E60 /* APIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstant.h; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -424,6 +425,7 @@
 				56D8F0601BAFA7E300242FA9 /* DebugConstant.h */,
 				56D8F07A1BAFF9E900242FA9 /* UIConstant.h */,
 				565218561BBB7A7300412E60 /* APIConstant.example.h */,
+				565218571BBB7BB000412E60 /* APIConstant.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
