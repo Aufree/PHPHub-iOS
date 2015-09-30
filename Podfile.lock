@@ -89,7 +89,7 @@ CHECKOUT OPTIONS:
     :commit: 8a567630ad9ef38388a48ac6600e7a7a35316cdb
     :git: https://github.com/summerblue/MTLFMDBAdapter
   QRCodeReaderViewController:
-    :commit: f3a40c7bdb002ed21cd1ca602a5426bb67f0cacb
+    :commit: 466bc1abd221912f0855e0a228546dec494a7721
     :git: https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git
 
 SPEC CHECKSUMS:
@@ -108,7 +108,7 @@ SPEC CHECKSUMS:
   MTLFMDBAdapter: f9849788d9e3a1c6662ef0ce600dd3e4a538a723
   QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
   Qiniu: 1fb5191b3bc1edb65b2da3d905b8281e15bd1d5c
-  QRCodeReaderViewController: 09386655825287ffa2f8eeae505f65fbcc7c7697
+  QRCodeReaderViewController: 02665936a9742f72bd7b1ef16336b12547c88c66
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
