@@ -228,8 +228,8 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
         return @"client_credentials";
     }
     
-    if ([token isEqualToString:[AccessTokenHandler getPasswordGrantAccessToken]]) {
-        return @"password";
+    if ([token isEqualToString:[AccessTokenHandler getLoginTokenGrantAccessToken]]) {
+        return @"login_token";
     }
     
     return @"unknow";

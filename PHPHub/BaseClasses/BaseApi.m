@@ -12,7 +12,7 @@
 @implementation BaseApi
 #pragma mark - Share Instance
 
-+ (instancetype)passwordGrantInstance
++ (instancetype)loginTokenGrantInstance
 {
     static BaseApi *_passwordGrantInstance = nil;
     static dispatch_once_t passwordGrantOnceToken;
@@ -20,7 +20,7 @@
         _passwordGrantInstance = [[BaseApi alloc] initWithBaseURL:[NSURL URLWithString:APIBaseURL]];
         
         [_passwordGrantInstance prepareForCommonRequest];
-        [_passwordGrantInstance setUpPasswordGrantRequest];
+        [_passwordGrantInstance setUpLoginTokenGrantRequest];
     });
     return _passwordGrantInstance;
 }
@@ -55,11 +55,11 @@
     [self.handler registerNotifications];
 }
 
-- (void)setUpPasswordGrantRequest
+- (void)setUpLoginTokenGrantRequest
 {
-    [self.requestSerializer setValue:[AccessTokenHandler getPasswordGrantAccessToken]
+    [self.requestSerializer setValue:[AccessTokenHandler getLoginTokenGrantAccessToken]
                   forHTTPHeaderField:@"Authorization"];
-    self.handler.grantType = @"password";
+    self.handler.grantType = @"login_token";
 }
 
 - (void)setUpClientGrantRequest

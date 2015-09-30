@@ -71,23 +71,23 @@
 
 #pragma mark - Password Grant
 
-+ (NSString *)getPasswordGrantAccessToken
++ (NSString *)getLoginTokenGrantAccessToken
 {
-    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:APIPasswordTokenIdentifier];
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:APILoginTokenIdentifier];
     return [NSString stringWithFormat:@"Bearer %@", token];
 }
 
-+ (void)storePasswordGrantAccessToken:(NSString *)token
++ (void)storeLoginTokenGrantAccessToken:(NSString *)token
 {
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:APIPasswordTokenIdentifier];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:APILoginTokenIdentifier];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[BaseApi clientGrantInstance] setUpPasswordGrantRequest];
+    [[BaseApi clientGrantInstance] setUpLoginTokenGrantRequest];
 }
 
 + (void)clearToken
 {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:APIPasswordTokenIdentifier];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:APILoginTokenIdentifier];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:APIClientTokenIdentifier];
 }
 

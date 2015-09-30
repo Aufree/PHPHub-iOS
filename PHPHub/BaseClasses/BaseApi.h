@@ -20,12 +20,12 @@ typedef void (^ BaseRequestConstructingBodyBlock)(id<AFMultipartFormData> formDa
 
 #pragma mark - Share Instance
 
-+ (instancetype)passwordGrantInstance;
++ (instancetype)loginTokenGrantInstance;
 + (instancetype)clientGrantInstance;
 
 #pragma mark - Public Method
 
-- (void)setUpPasswordGrantRequest;
+- (void)setUpLoginTokenGrantRequest;
 - (void)setUpClientGrantRequest;
 
 #pragma mark - Shared/Inherit Method

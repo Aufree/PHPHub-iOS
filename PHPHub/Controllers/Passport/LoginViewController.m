@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AccessTokenHandler.h"
 
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
@@ -59,8 +60,24 @@
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        NSArray *loginInfo = [result componentsSeparatedByString:@","];
+        NSString *username = loginInfo[0];
+        NSString *loginToken = loginInfo[1];
+        
+        NSURL *url = [NSURL URLWithString:APIBaseURL];
+        AFOAuth2Manager *oauthClient = [AFOAuth2Manager clientWithBaseURL:url clientID:Client_id secret:Client_secret];
+        
+        [oauthClient authenticateUsingOAuthWithURLString:APIAccessTokenURL
+                                                username:username
+                                              loginToken:loginToken
+                                                   scope:@""
+                                                 success:^(AFOAuthCredential *credential) {
+                                                     [AccessTokenHandler storeLoginTokenGrantAccessToken:credential.accessToken];
+                                                     [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
+                                                     [self.navigationController popToRootViewControllerAnimated:YES];
+                                                 } failure:^(NSError *error) {
+                                                     
+                                                 }];
     }];
 }
 

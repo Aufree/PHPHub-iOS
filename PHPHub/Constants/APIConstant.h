@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 ESTGroup. All rights reserved.
 //
 
-#define APIAccessTokenURL [NSString stringWithFormat:@"%@%@", APIBaseURL, @"oauth/access_token"]
+#define APIAccessTokenURL [NSString stringWithFormat:@"%@%@", APIBaseURL, @"/oauth/access_token"]
 
 #define APIBaseURL                 @"https://api.phphub.org"
 #define APIClientTokenIdentifier   @"APIClientTokenIdentifier"
-#define APIPasswordTokenIdentifier @"APIPasswordTokenIdentifier"
+#define APILoginTokenIdentifier    @"APILoginTokenIdentifier"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"

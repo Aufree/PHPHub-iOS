@@ -14,10 +14,10 @@
 + (void)fetchClientGrantToken;
 
 + (NSString *)getClientGrantAccessTokenFromLocal;
-+ (NSString *)getPasswordGrantAccessToken;
++ (NSString *)getLoginTokenGrantAccessToken;
 
 + (void)storeClientGrantAccessToken:(NSString *)token;
-+ (void)storePasswordGrantAccessToken:(NSString *)token;
++ (void)storeLoginTokenGrantAccessToken:(NSString *)token;
 
 + (void)clearToken;
 

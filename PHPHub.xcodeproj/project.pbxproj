@@ -18,6 +18,7 @@
 		5652184B1BBA7D0500412E60 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5652184A1BBA7D0500412E60 /* Me.storyboard */; };
 		5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5652184D1BBA7F0000412E60 /* Passport.storyboard */; };
 		565218551BBB6D9500412E60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218541BBB6D9500412E60 /* LoginViewController.m */; };
+		5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652185C1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
@@ -84,6 +85,8 @@
 		565218571BBB7BB000412E60 /* APIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstant.h; sourceTree = "<group>"; };
 		565218581BBB7FDF00412E60 /* SecretConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecretConstant.h; sourceTree = "<group>"; };
 		565218591BBB7FF100412E60 /* SecretConstant.example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecretConstant.example.h; sourceTree = "<group>"; };
+		5652185B1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFOAuth2Manager+Addtions.h"; sourceTree = "<group>"; };
+		5652185C1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFOAuth2Manager+Addtions.m"; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -272,6 +275,15 @@
 				565218541BBB6D9500412E60 /* LoginViewController.m */,
 			);
 			path = Passport;
+			sourceTree = "<group>";
+		};
+		5652185A1BBB8F3300412E60 /* AFOAuth2Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5652185B1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.h */,
+				5652185C1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m */,
+			);
+			path = AFOAuth2Manager;
 			sourceTree = "<group>";
 		};
 		56737C321BB2A1B5008B3E60 /* Me */ = {
@@ -468,6 +480,7 @@
 		56D8F0911BB0E3BE00242FA9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				5652185A1BBB8F3300412E60 /* AFOAuth2Manager */,
 				C194333F1BB340A200D51917 /* UIResponder */,
 				56D8F0931BB0E43400242FA9 /* UIView */,
 			);
@@ -723,6 +736,7 @@
 				56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */,
 				565218481BBA7CC500412E60 /* TopicListTableView.m in Sources */,
 				56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */,
+				5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
