@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AccessTokenHandler.h"
+#import "UserModel.h"
 
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
@@ -50,7 +51,6 @@
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
         [alert show];
     }
 }
@@ -64,20 +64,14 @@
         NSString *username = loginInfo[0];
         NSString *loginToken = loginInfo[1];
         
-        NSURL *url = [NSURL URLWithString:APIBaseURL];
-        AFOAuth2Manager *oauthClient = [AFOAuth2Manager clientWithBaseURL:url clientID:Client_id secret:Client_secret];
+        __weak typeof(self) weakself = self;
+        BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
+            [weakself.navigationController popToRootViewControllerAnimated:YES];
+        };
         
-        [oauthClient authenticateUsingOAuthWithURLString:APIAccessTokenURL
-                                                username:username
-                                              loginToken:loginToken
-                                                   scope:@""
-                                                 success:^(AFOAuthCredential *credential) {
-                                                     [AccessTokenHandler storeLoginTokenGrantAccessToken:credential.accessToken];
-                                                     [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
-                                                     [self.navigationController popToRootViewControllerAnimated:YES];
-                                                 } failure:^(NSError *error) {
-                                                     
-                                                 }];
+        if (username && loginToken) {
+            [[UserModel Instance] loginWithUserName:username loginToken:loginToken block:callback];
+        }
     }];
 }
 

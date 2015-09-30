@@ -19,6 +19,8 @@
 		5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5652184D1BBA7F0000412E60 /* Passport.storyboard */; };
 		565218551BBB6D9500412E60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218541BBB6D9500412E60 /* LoginViewController.m */; };
 		5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652185C1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m */; };
+		565218601BBBBDDE00412E60 /* UserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652185F1BBBBDDE00412E60 /* UserApi.m */; };
+		565218631BBBBDED00412E60 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 565218621BBBBDED00412E60 /* UserModel.m */; };
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
@@ -87,6 +89,10 @@
 		565218591BBB7FF100412E60 /* SecretConstant.example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecretConstant.example.h; sourceTree = "<group>"; };
 		5652185B1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFOAuth2Manager+Addtions.h"; sourceTree = "<group>"; };
 		5652185C1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFOAuth2Manager+Addtions.m"; sourceTree = "<group>"; };
+		5652185E1BBBBDDE00412E60 /* UserApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserApi.h; sourceTree = "<group>"; };
+		5652185F1BBBBDDE00412E60 /* UserApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserApi.m; sourceTree = "<group>"; };
+		565218611BBBBDED00412E60 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		565218621BBBBDED00412E60 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		565CE81D1BB29ED0001680D2 /* NodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeEntity.h; sourceTree = "<group>"; };
 		565CE81E1BB29ED0001680D2 /* NodeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -400,6 +406,8 @@
 			children = (
 				56D8F0A31BB0EDAF00242FA9 /* TopicModel.h */,
 				56D8F0A41BB0EDAF00242FA9 /* TopicModel.m */,
+				565218611BBBBDED00412E60 /* UserModel.h */,
+				565218621BBBBDED00412E60 /* UserModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -534,6 +542,8 @@
 			children = (
 				56D8F0A01BB0ED5E00242FA9 /* TopicApi.h */,
 				56D8F0A11BB0ED5E00242FA9 /* TopicApi.m */,
+				5652185E1BBBBDDE00412E60 /* UserApi.h */,
+				5652185F1BBBBDDE00412E60 /* UserApi.m */,
 			);
 			path = Apis;
 			sourceTree = "<group>";
@@ -735,6 +745,7 @@
 				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
 				56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */,
 				565218481BBA7CC500412E60 /* TopicListTableView.m in Sources */,
+				565218601BBBBDDE00412E60 /* UserApi.m in Sources */,
 				56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */,
 				5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
@@ -746,6 +757,7 @@
 				56D8F05F1BAFA66C00242FA9 /* AccessTokenHandler.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
 				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
+				565218631BBBBDED00412E60 /* UserModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
