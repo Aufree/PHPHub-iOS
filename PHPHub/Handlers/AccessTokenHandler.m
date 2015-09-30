@@ -13,15 +13,13 @@
 
 + (NSString *)getClientGrantAccessTokenFromLocal
 {
-    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:APIClientTokenIdentifier];
+    NSString *token = [GVUserDefaults standardUserDefaults].userClientToken;
     return [NSString stringWithFormat:@"Bearer %@", token];
 }
 
 + (void)storeClientGrantAccessToken:(NSString *)token
 {
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:APIClientTokenIdentifier];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+    [GVUserDefaults standardUserDefaults].userClientToken = token;    
     [[BaseApi clientGrantInstance] setUpClientGrantRequest];
 }
 
@@ -73,22 +71,20 @@
 
 + (NSString *)getLoginTokenGrantAccessToken
 {
-    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:APILoginTokenIdentifier];
+    NSString *token = [GVUserDefaults standardUserDefaults].userLoginToken;
     return [NSString stringWithFormat:@"Bearer %@", token];
 }
 
 + (void)storeLoginTokenGrantAccessToken:(NSString *)token
 {
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:APILoginTokenIdentifier];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+    [GVUserDefaults standardUserDefaults].userLoginToken = token;
     [[BaseApi clientGrantInstance] setUpLoginTokenGrantRequest];
 }
 
 + (void)clearToken
 {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:APILoginTokenIdentifier];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:APIClientTokenIdentifier];
+    [GVUserDefaults standardUserDefaults].userLoginToken = nil;
+    [GVUserDefaults standardUserDefaults].userClientToken = nil;
 }
 
 @end

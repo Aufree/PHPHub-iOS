@@ -23,5 +23,6 @@
 #import "MJRefresh.h"
 #import "PaginationEntity.h"
 #import "AFOAuth2Manager+Addtions.h"
+#import "GVUserDefaults+Properties.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

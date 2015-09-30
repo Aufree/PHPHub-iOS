@@ -9,6 +9,4 @@
 #define APIAccessTokenURL [NSString stringWithFormat:@"%@%@", APIBaseURL, @"/oauth/access_token"]
 
 #define APIBaseURL                 @"https://api.phphub.org"
-#define APIClientTokenIdentifier   @"APIClientTokenIdentifier"
-#define APILoginTokenIdentifier    @"APILoginTokenIdentifier"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
