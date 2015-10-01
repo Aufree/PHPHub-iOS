@@ -66,7 +66,9 @@
         
         __weak typeof(self) weakself = self;
         BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
-            [weakself.navigationController popToRootViewControllerAnimated:YES];
+            if (!error) {                
+                [weakself.navigationController popToRootViewControllerAnimated:YES];
+            }
         };
         
         if (username && loginToken) {
