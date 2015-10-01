@@ -17,6 +17,19 @@
              @"githubURL" : @"github_url",
              @"username" : @"name",
              @"avatar" : @"avatar",
+             @"topicCount" : @"topic_count",
+             @"replyCount" : @"reply_count",
+             @"notificationCount" : @"notification_count",
+             @"twitterAccount" : @"twitter_account",
+             @"company" : @"company",
+             @"city" : @"city",
+             @"email" : @"email",
+             @"signature" : @"signature",
+             @"introduction" : @"introduction",
+             @"githubName" : @"github_name",
+             @"realName" : @"real_name",
+             @"createdAt" : @"created_at.date",
+             @"updatedAt" : @"updated_at.date",
              };
 }
 

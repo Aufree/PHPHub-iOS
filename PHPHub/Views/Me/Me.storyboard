@@ -41,7 +41,7 @@
                                                     <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A man seeking for wisdom." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukX-8b-4ps">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukX-8b-4ps">
                                                     <rect key="frame" x="90" y="46" width="197" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Bp4-R1-jdn"/>
@@ -248,6 +248,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatarImageView" destination="yWp-GX-ofb" id="fSX-3p-oMK"/>
+                        <outlet property="userIntroLabel" destination="ukX-8b-4ps" id="fZX-0x-gua"/>
                         <outlet property="usernameLabel" destination="9OA-pB-5Bv" id="nZF-PO-b1y"/>
                     </connections>
                 </tableViewController>

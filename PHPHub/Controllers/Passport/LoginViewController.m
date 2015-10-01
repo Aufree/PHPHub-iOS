@@ -66,7 +66,6 @@
         if (!result) return;
         
         NSArray *loginInfo = [result componentsSeparatedByString:@","];
-        if (loginInfo.count != 2) return;
         
         NSString *username = loginInfo[0];
         NSString *loginToken = loginInfo[1];

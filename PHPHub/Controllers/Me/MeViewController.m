@@ -28,15 +28,16 @@
     [self.navigationController pushViewController:loginVC animated:NO];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             UserEntity *user = [data objectForKey:@"entity"];
             NSURL *URL = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"120" withHeight:@"120"];
             [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-            _usernameLabel.text = user.username;            
+            _usernameLabel.text = user.username;
+            _userIntroLabel.text = user.signature;
         }
     };
     
