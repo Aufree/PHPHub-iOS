@@ -11,5 +11,6 @@
 
 @interface UserModel : BaseModel
 @property (nonatomic, strong) UserApi *api;
+- (id)getCurrentUserData:(BaseResultBlock)block;
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block;
 @end

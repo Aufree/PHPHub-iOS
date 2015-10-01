@@ -16,7 +16,7 @@
              @"githubId" : @"github_id",
              @"githubURL" : @"github_url",
              @"username" : @"name",
-             @"userAvatar" : @"avatar",
+             @"avatar" : @"avatar",
              };
 }
 

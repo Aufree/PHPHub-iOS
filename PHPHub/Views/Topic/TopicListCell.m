@@ -30,7 +30,7 @@ static CGFloat topicListCellAvatarHeight = 38;
     
     [self.contentView addSubview:self.baseView];
     
-    NSURL *URL = [BaseHelper qiniuImageCenter:_topicEntity.user.userAvatar withWidth:@"76" withHeight:@"76"];
+    NSURL *URL = [BaseHelper qiniuImageCenter:_topicEntity.user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _topicTitleLabel.text = _topicEntity.topicTitle;
     _topicInfoLabel.text = [NSString stringWithFormat:@"%@ • 最后由 %@ • %@", _topicEntity.node.nodeName, _topicEntity.lastReplyUser.username, [_topicEntity.updatedAt timeAgoSinceNow]];

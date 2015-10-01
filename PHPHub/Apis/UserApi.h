@@ -7,7 +7,9 @@
 //
 
 #import "BaseApi.h"
+#import "UserEntity.h"
 
 @interface UserApi : BaseApi
+- (id)getCurrentUserData:(BaseResultBlock)block;
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block;
 @end

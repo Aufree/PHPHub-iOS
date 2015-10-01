@@ -19,6 +19,10 @@
     return self;
 }
 
+- (id)getCurrentUserData:(BaseResultBlock)block {
+    return [_api getCurrentUserData:block];
+}
+
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {
     return [_api loginWithUserName:username loginToken:loginToken block:block];
 }

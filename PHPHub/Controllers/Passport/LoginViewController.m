@@ -58,13 +58,19 @@
 #pragma mark - QRCodeReader Delegate Methods
 
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
-{
+{    
+    __weak typeof(self) weakself = self;
+    
     [self dismissViewControllerAnimated:YES completion:^{
+        
+        if (!result) return;
+        
         NSArray *loginInfo = [result componentsSeparatedByString:@","];
+        if (loginInfo.count != 2) return;
+        
         NSString *username = loginInfo[0];
         NSString *loginToken = loginInfo[1];
         
-        __weak typeof(self) weakself = self;
         BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
             if (!error) {                
                 [weakself.navigationController popToRootViewControllerAnimated:YES];

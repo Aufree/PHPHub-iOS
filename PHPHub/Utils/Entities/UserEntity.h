@@ -13,5 +13,5 @@
 @property (nonatomic, strong) NSNumber *githubId;
 @property (nonatomic, copy) NSString *githubURL;
 @property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *userAvatar;
+@property (nonatomic, copy) NSString *avatar;
 @end

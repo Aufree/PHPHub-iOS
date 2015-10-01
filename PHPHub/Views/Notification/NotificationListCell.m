@@ -35,7 +35,7 @@ static CGFloat notificationListCellContentFontSize = 13;
     _notificationEntity = notificationEntity;
     
     [self.contentView addSubview:self.baseView];
-    NSURL *URL = [BaseHelper qiniuImageCenter:notificationEntity.user.userAvatar withWidth:@"76" withHeight:@"76"];
+    NSURL *URL = [BaseHelper qiniuImageCenter:notificationEntity.user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _notificationInfoLabel.text = @"Aufree • 4天前";
     _notificationContentLabel.text = notificationEntity.notificationContent;
