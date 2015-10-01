@@ -25,5 +25,6 @@
 #import "AFOAuth2Manager+Addtions.h"
 #import "GVUserDefaults+Properties.h"
 #import "CurrentUser.h"
+#import "NSString+Additions.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

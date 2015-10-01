@@ -28,8 +28,8 @@
     [self.navigationController pushViewController:loginVC animated:NO];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
@@ -37,7 +37,7 @@
             NSURL *URL = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"120" withHeight:@"120"];
             [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
             _usernameLabel.text = user.username;
-            _userIntroLabel.text = user.signature;
+            _userIntroLabel.text = [NSString isStringEmpty:user.signature] ? @"个人签名为空" : user.signature;
         }
     };
     
