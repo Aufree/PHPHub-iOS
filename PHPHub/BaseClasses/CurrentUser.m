@@ -19,8 +19,11 @@
     return sharedInstance;
 }
 
-- (void)setupClientRequestState
-{
+- (void)saveUser:(UserEntity *)user {
+    [UserDBManager insertOnDuplicateUpdate:user];
+}
+
+- (void)setupClientRequestState {
     [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:nil];
 }
 @end

@@ -10,6 +10,7 @@
 #import "MTLJSONAdapter.h"
 #import "MTLValueTransformer.h"
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
+#import "MTLFMDBAdapter.h"
 
 @interface BaseEntity : MTLModel <MTLJSONSerializing>
 #pragma mark - Class Methods to create Entity

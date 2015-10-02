@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserEntity.h"
+#import "UserDBManager.h"
 
 @interface CurrentUser : NSObject
 + (CurrentUser *)Instance;
+- (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState;
 @end

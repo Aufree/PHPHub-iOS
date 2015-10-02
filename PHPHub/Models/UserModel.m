@@ -20,7 +20,18 @@
 }
 
 - (id)getCurrentUserData:(BaseResultBlock)block {
-    return [_api getCurrentUserData:block];
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (data) {
+            UserEntity *user = data[@"entity"];
+            if (user) {
+                [[CurrentUser Instance] saveUser:user];
+            }
+        } else {
+            if (block) block(nil, error);
+        }
+    };
+    
+    return [_api getCurrentUserData:callback];
 }
 
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {

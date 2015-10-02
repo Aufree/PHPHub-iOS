@@ -12,7 +12,6 @@
 #import "FMDatabaseAdditions.h"
 #import "MTLModel.h"
 #import "FMDBMigrationManager.h"
-#import "MTLFMDBAdapter.h"
 
 #define DefaultDatabaseFileName @"MainDataBase.sqlite"
 

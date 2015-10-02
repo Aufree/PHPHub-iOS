@@ -8,6 +8,7 @@
 
 #import "BaseModel.h"
 #import "UserApi.h"
+#import "UserDBManager.h"
 
 @interface UserModel : BaseModel
 @property (nonatomic, strong) UserApi *api;

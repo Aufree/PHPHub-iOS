@@ -8,7 +8,7 @@
 
 #import "BaseEntity.h"
 
-@interface UserEntity : BaseEntity
+@interface UserEntity : BaseEntity <MTLFMDBSerializing>
 @property (nonatomic, copy) NSNumber *userId;
 @property (nonatomic, copy) NSNumber *githubId;
 @property (nonatomic, copy) NSString *githubURL;
