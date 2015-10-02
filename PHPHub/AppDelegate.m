@@ -24,6 +24,9 @@
     [UMFeedback setAppkey:UMENG_APPKEY];
     [UMOpus setAudioEnable:YES];
     
+    // Get the client token from server
+    [[CurrentUser Instance] setupClientRequestState];
+    
     // Showing the App
     [self makeWindowVisible:launchOptions];
     
