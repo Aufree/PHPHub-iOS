@@ -11,6 +11,10 @@
 #import "QRCodeReaderDelegate.h"
 #import "QRCodeReaderViewController.h"
 
-@interface LoginViewController : UIViewController
+@protocol LoginViewControllerDelegate <NSObject>
+- (void)updateMeView;
+@end
 
+@interface LoginViewController : UIViewController
+@property (nonatomic, assign) id<LoginViewControllerDelegate> delegate;
 @end

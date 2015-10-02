@@ -11,10 +11,7 @@
 #import "LoginViewController.h"
 #import "UserProfileViewController.h"
 
-#import "UserModel.h"
-#import "UserEntity.h"
-
-@interface MeViewController ()
+@interface MeViewController () <LoginViewControllerDelegate>
 @property (nonatomic, strong) UserEntity *userEntity;
 @end
 
@@ -31,31 +28,19 @@
     _avatarImageView.layer.masksToBounds = YES;
     
     if ([CurrentUser Instance].userInfo) {
-        self.userEntity = [CurrentUser Instance].userInfo;
         [self updateMeView];
     } else {
         LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
                                                                   bundle:[NSBundle mainBundle]]
                                         instantiateViewControllerWithIdentifier:@"login"];
+        loginVC.delegate = self;
         [self.navigationController pushViewController:loginVC animated:NO];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    __weak typeof(self) weakself = self;
-    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
-        if (!error) {
-            weakself.userEntity = [data objectForKey:@"entity"];
-            [weakself updateMeView];
-        }
-    };
-    
-    [[UserModel Instance] getCurrentUserData:callback];
-}
-
 - (void)updateMeView {
+    self.userEntity = [CurrentUser Instance].userInfo;
+    
     if (_userEntity) {
         NSString *avatarHeight = [NSString stringWithFormat:@"%.f", _avatarImageView.height * 2];
         NSURL *URL = [BaseHelper qiniuImageCenter:_userEntity.avatar withWidth:avatarHeight withHeight:avatarHeight];

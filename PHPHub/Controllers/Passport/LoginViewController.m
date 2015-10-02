@@ -72,7 +72,7 @@
         
         BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
             if (!error) {                
-                [weakself.navigationController popToRootViewControllerAnimated:YES];
+                [weakself.navigationController popViewControllerAnimated:YES];
             }
         };
         
@@ -88,6 +88,12 @@
 }
 
 - (IBAction)didTouchIntroLoginButton:(id)sender {
+}
+
+- (void)dealloc {
+    if (_delegate && [_delegate respondsToSelector:@selector(updateMeView)]) {
+        [_delegate updateMeView];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "UserEntity.h"
+#import "UserModel.h"
 #import "UserDBManager.h"
 
 @interface CurrentUser : NSObject
 @property (nonatomic, copy) NSNumber *userId;
 @property (nonatomic, strong) UserEntity *userInfo;
 + (CurrentUser *)Instance;
+- (void)updateCurrentUserInfo;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState;
 @end

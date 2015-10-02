@@ -7,6 +7,7 @@
 //
 
 #import "UserModel.h"
+#import "AccessTokenHandler.h"
 
 @implementation UserModel
 
@@ -37,7 +38,19 @@
 }
 
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {
-    return [_api loginWithUserName:username loginToken:loginToken block:block];
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (data) {
+            [AccessTokenHandler storeLoginTokenGrantAccessToken:data[@"access_token"]];
+            [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
+            [[CurrentUser Instance] setupClientRequestState];
+            [[CurrentUser Instance] updateCurrentUserInfo];
+            if (block) block(data, nil);
+        } else {
+            if (block) block(nil, error);
+        }
+    };
+    
+    return [_api loginWithUserName:username loginToken:loginToken block:callback];
 }
 
 @end

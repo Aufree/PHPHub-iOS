@@ -23,6 +23,10 @@
     [UserDBManager insertOnDuplicateUpdate:user];
 }
 
+- (void)updateCurrentUserInfo {
+    [[UserModel Instance] getCurrentUserData:nil];
+}
+
 - (NSNumber *)userId {
     return [GVUserDefaults standardUserDefaults].currentUserId;
 }
