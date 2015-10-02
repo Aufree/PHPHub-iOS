@@ -30,4 +30,9 @@
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = _userEntity.username;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 15;
+}
 @end
