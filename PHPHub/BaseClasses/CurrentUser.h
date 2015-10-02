@@ -11,6 +11,8 @@
 #import "UserDBManager.h"
 
 @interface CurrentUser : NSObject
+@property (nonatomic, copy) NSNumber *userId;
+@property (nonatomic, strong) UserEntity *userInfo;
 + (CurrentUser *)Instance;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState;

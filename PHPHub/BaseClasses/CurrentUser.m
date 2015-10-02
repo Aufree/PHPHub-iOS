@@ -23,6 +23,16 @@
     [UserDBManager insertOnDuplicateUpdate:user];
 }
 
+- (NSNumber *)userId {
+    return [GVUserDefaults standardUserDefaults].currentUserId;
+}
+
+- (UserEntity *)userInfo {
+    if (!self.userId) return nil;
+    
+    return [UserDBManager findByUserId:self.userId];
+}
+
 - (void)setupClientRequestState {
     [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:nil];
 }

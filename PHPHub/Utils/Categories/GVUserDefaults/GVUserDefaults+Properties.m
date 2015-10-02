@@ -11,4 +11,5 @@
 @implementation GVUserDefaults (Properties)
 @dynamic userLoginToken;
 @dynamic userClientToken;
+@dynamic currentUserId;
 @end

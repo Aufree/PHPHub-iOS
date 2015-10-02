@@ -25,7 +25,9 @@
             UserEntity *user = data[@"entity"];
             if (user) {
                 [[CurrentUser Instance] saveUser:user];
+                [GVUserDefaults standardUserDefaults].currentUserId = user.userId;
             }
+            if (block) block(data, nil);
         } else {
             if (block) block(nil, error);
         }

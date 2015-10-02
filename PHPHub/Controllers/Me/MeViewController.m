@@ -12,6 +12,10 @@
 #import "UserModel.h"
 #import "UserEntity.h"
 
+@interface MeViewController ()
+@property (nonatomic, strong) UserEntity *userEntity;
+@end
+
 @implementation MeViewController
 
 - (void)viewDidLoad {
@@ -23,25 +27,41 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
+
     
-    LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"login"];
-    [self.navigationController pushViewController:loginVC animated:NO];
+    if ([CurrentUser Instance].userInfo) {
+        self.userEntity = [CurrentUser Instance].userInfo;
+        [self updateMeView];
+    } else {
+        LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
+                                                                  bundle:[NSBundle mainBundle]]
+                                        instantiateViewControllerWithIdentifier:@"login"];
+        [self.navigationController pushViewController:loginVC animated:NO];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
-            UserEntity *user = [data objectForKey:@"entity"];
-            NSURL *URL = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"120" withHeight:@"120"];
-            [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-            _usernameLabel.text = user.username;
-            _userIntroLabel.text = [NSString isStringEmpty:user.signature] ? @"个人签名为空哦 :)" : user.signature;
+            weakself.userEntity = [data objectForKey:@"entity"];
+            [weakself updateMeView];
         }
     };
     
     [[UserModel Instance] getCurrentUserData:callback];
+}
+
+- (void)updateMeView {
+    if (_userEntity) {
+        NSString *avatarHeight = [NSString stringWithFormat:@"%.f", _avatarImageView.height * 2];
+        NSURL *URL = [BaseHelper qiniuImageCenter:_userEntity.avatar withWidth:avatarHeight withHeight:avatarHeight];
+        [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
+        _usernameLabel.text = _userEntity.username;
+        _userIntroLabel.text = [NSString isStringEmpty:_userEntity.signature] ? @"个人签名为空哦 :)" : _userEntity.signature;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -62,4 +82,5 @@
         [self.navigationController pushViewController:notificationListVC animated:YES];
     }
 }
+
 @end
