@@ -9,7 +9,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="iAa-hV-Y9Z">
             <objects>
-                <tableViewController storyboardIdentifier="userprofile" id="q3e-qd-Mdf" customClass="UserProfileViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="userprofile" hidesBottomBarWhenPushed="YES" id="q3e-qd-Mdf" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hLe-ZU-479">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,6 +398,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="avatarImageView" destination="mlE-av-RkQ" id="nc9-ap-eVT"/>
+                        <outlet property="blogLabel" destination="buv-qr-2KD" id="ZjH-60-9Tq"/>
+                        <outlet property="createdAtLabel" destination="FAE-Wq-P93" id="cn6-aK-Keu"/>
+                        <outlet property="githubLabel" destination="aY6-1I-qP2" id="wRu-me-aPZ"/>
+                        <outlet property="localLabel" destination="b0Q-1I-DLD" id="kQb-hH-ZYl"/>
+                        <outlet property="realnameLabel" destination="80O-z9-ffr" id="kKO-9H-gXs"/>
+                        <outlet property="twitterLabel" destination="FVm-gP-ZYR" id="gcw-Hc-2PW"/>
+                        <outlet property="userIntroLabel" destination="KI2-wC-UbW" id="Pgk-iS-0Lh"/>
                         <outlet property="usernameLabel" destination="dUh-SI-l9n" id="w1g-tR-04A"/>
                     </connections>
                 </tableViewController>

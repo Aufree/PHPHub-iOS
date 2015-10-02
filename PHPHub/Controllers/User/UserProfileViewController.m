@@ -11,6 +11,13 @@
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *realnameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userIntroLabel;
+@property (weak, nonatomic) IBOutlet UILabel *localLabel;
+@property (weak, nonatomic) IBOutlet UILabel *githubLabel;
+@property (weak, nonatomic) IBOutlet UILabel *twitterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blogLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
 @end
 
 @implementation UserProfileViewController
@@ -29,10 +36,16 @@
     NSURL *URL = [BaseHelper qiniuImageCenter:_userEntity.avatar withWidth:avatarHeight withHeight:avatarHeight];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = _userEntity.username;
+    _realnameLabel.text = _userEntity.realName;
+    _userIntroLabel.text = _userEntity.introduction;
+    _localLabel.text = _userEntity.city;
+    _githubLabel.text = _userEntity.githubName;
+    _twitterLabel.text = _userEntity.twitterAccount;
+    _blogLabel.text = _userEntity.githubURL;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 15;
+    return 20;
 }
 @end
