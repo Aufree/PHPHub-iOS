@@ -9,6 +9,8 @@
 #import "MeViewController.h"
 #import "NotificationListViewController.h"
 #import "LoginViewController.h"
+#import "UserProfileViewController.h"
+
 #import "UserModel.h"
 #import "UserEntity.h"
 
@@ -27,7 +29,6 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
-
     
     if ([CurrentUser Instance].userInfo) {
         self.userEntity = [CurrentUser Instance].userInfo;
@@ -75,8 +76,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    
-    if (section == 1 && row == 0) {
+    if (section == 0 && row == 0) {
+        UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                              bundle:[NSBundle mainBundle]]
+                                                    instantiateViewControllerWithIdentifier:@"userprofile"];
+        userProfileVC.userEntity = _userEntity;
+        [self.navigationController pushViewController:userProfileVC animated:YES];
+    } else if (section == 1 && row == 0) {
         NotificationListViewController *notificationListVC = [[NotificationListViewController alloc] init];
         notificationListVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:notificationListVC animated:YES];

@@ -10,6 +10,8 @@
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
+		561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868421BBE2D5500E9E111 /* UserProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561868441BBE2D6500E9E111 /* UserProfile.storyboard */; settings = {ASSET_TAGS = (); }; };
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
 		565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652180F1BB69F8200412E60 /* NotificationListViewController.m */; };
 		5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181D1BB6A9C200412E60 /* NotificationEntity.m */; };
@@ -74,6 +76,9 @@
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
 		5618683C1BBE1E0700E9E111 /* UserDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDBManager.h; sourceTree = "<group>"; };
 		5618683D1BBE1E0700E9E111 /* UserDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDBManager.m; sourceTree = "<group>"; };
+		561868411BBE2D5500E9E111 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		561868421BBE2D5500E9E111 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		561868441BBE2D6500E9E111 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
 		5652180E1BB69F8200412E60 /* NotificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
@@ -212,6 +217,23 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
+		5618683F1BBE2D2400E9E111 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				561868411BBE2D5500E9E111 /* UserProfileViewController.h */,
+				561868421BBE2D5500E9E111 /* UserProfileViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		561868401BBE2D3600E9E111 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				561868441BBE2D6500E9E111 /* UserProfile.storyboard */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		5652180D1BB69F5B00412E60 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +246,7 @@
 		565218341BBA7CC500412E60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				561868401BBE2D3600E9E111 /* User */,
 				5652184C1BBA7EDD00412E60 /* Passport */,
 				565218491BBA7CDD00412E60 /* Me */,
 				565218351BBA7CC500412E60 /* Base */,
@@ -411,6 +434,7 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5618683F1BBE2D2400E9E111 /* User */,
 				5652184F1BBA838D00412E60 /* Passport */,
 				5652180D1BB69F5B00412E60 /* Notification */,
 				56737C321BB2A1B5008B3E60 /* Me */,
@@ -719,6 +743,7 @@
 				56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */,
 				5652184B1BBA7D0500412E60 /* Me.storyboard in Resources */,
 				5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */,
+				561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */,
 				5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */,
 				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
 			);
@@ -791,6 +816,7 @@
 				5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
+				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
