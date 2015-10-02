@@ -37,7 +37,7 @@
     return [UserDBManager findByUserId:self.userId];
 }
 
-- (void)setupClientRequestState {
-    [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:nil];
+- (void)setupClientRequestState:(BaseResultBlock)block {
+    [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:block];
 }
 @end

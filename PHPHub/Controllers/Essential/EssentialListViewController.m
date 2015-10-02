@@ -28,7 +28,15 @@
     self.navigationItem.title = @"精华";
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
-    [self.tableView.header beginRefreshing];
+    
+    // Get the client token from server
+    __weak typeof(self) weakself = self;
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        [weakself.tableView.header beginRefreshing];
+    };
+    
+    [[CurrentUser Instance] setupClientRequestState:callback];
+    
 }
 
 - (void)headerRefreshing {

@@ -17,5 +17,5 @@
 + (CurrentUser *)Instance;
 - (void)updateCurrentUserInfo;
 - (void)saveUser:(UserEntity *)user;
-- (void)setupClientRequestState;
+- (void)setupClientRequestState:(BaseResultBlock)block;
 @end
