@@ -10,6 +10,7 @@
 #import "NotificationListViewController.h"
 #import "LoginViewController.h"
 #import "UserProfileViewController.h"
+#import "TopicListViewController.h"
 
 @interface MeViewController () <LoginViewControllerDelegate>
 @property (nonatomic, strong) UserEntity *userEntity;
@@ -61,17 +62,44 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
+    UIViewController *vc;
     if (section == 0 && row == 0) {
         UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
                                                                               bundle:[NSBundle mainBundle]]
                                                     instantiateViewControllerWithIdentifier:@"userprofile"];
         userProfileVC.userEntity = _userEntity;
-        [self.navigationController pushViewController:userProfileVC animated:YES];
-    } else if (section == 1 && row == 0) {
-        NotificationListViewController *notificationListVC = [[NotificationListViewController alloc] init];
-        notificationListVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:notificationListVC animated:YES];
+        vc = userProfileVC;
+    } else if (section == 1) {
+        switch (row) {
+            case 0: {
+                NotificationListViewController *notificationListVC = [[NotificationListViewController alloc] init];
+                vc = notificationListVC;
+                break;
+            } case 1: {
+                vc = [self createTopicListWithType:TopicListTypeAttention];
+                break;
+            } case 2: {
+                vc = [self createTopicListWithType:TopicListTypeFavorite];
+                break;
+            }
+        }
+    } else if (section == 2) {
+        if (row == 0) {
+            vc = [self createTopicListWithType:TopicListTypeNormal];
+        }
     }
+    
+    if (vc) {
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (TopicListViewController *)createTopicListWithType:(TopicListType)topicListType {
+    TopicListViewController *topicListVC = [[TopicListViewController alloc] init];
+    topicListVC.userId = [[CurrentUser Instance] userId].integerValue;
+    topicListVC.topicListType = topicListType;
+    return topicListVC;
 }
 
 @end

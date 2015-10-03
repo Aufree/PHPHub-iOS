@@ -14,9 +14,14 @@ typedef NS_ENUM(NSInteger, TopicListType) {
     TopicListTypeHots = 1,
     TopicListTypeNoReply = 2,
     TopicListTypeJob = 3,
+    TopicListTypeFavorite = 4,
+    TopicListTypeAttention = 5,
+    TopicListTypeNormal = 6,
 };
 
 @interface TopicListViewController : UIViewController
 @property (nonatomic) TopicListType topicListType;
+@property (nonatomic, assign) NSInteger userId;
 @property (nonatomic, strong) TopicListTableView *tableView;
+@property (nonatomic, assign) BOOL isFromTopicContainer;
 @end

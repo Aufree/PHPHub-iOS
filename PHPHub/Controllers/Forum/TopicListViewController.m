@@ -21,7 +21,11 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 112, 0);
+    
+    if (self.isFromTopicContainer) {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 112, 0);
+    }
+    
     [self.view addSubview:self.tableView];
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
@@ -83,6 +87,15 @@
         [[TopicModel Instance] getNoReplyTopicList:callback atPage:atPage];
     } else if (self.topicListType == TopicListTypeJob) {
         [[TopicModel Instance] getJobTopicList:callback atPage:atPage];
+    } else if (self.topicListType == TopicListTypeFavorite && self.userId > 0) {
+        [[TopicModel Instance] getFavoriteTopicListByUser:self.userId callback:callback atPage:atPage];
+        self.navigationItem.title = @"收藏的帖子";
+    } else if (self.topicListType == TopicListTypeAttention && self.userId > 0) {
+        [[TopicModel Instance] getAttentionTopicListByUser:self.userId callback:callback atPage:atPage];
+        self.navigationItem.title = @"关注的帖子";
+    } else if (self.topicListType == TopicListTypeNormal && self.userId > 0) {
+        [[TopicModel Instance] getTopicListByUser:self.userId callback:callback atPage:atPage];
+        self.navigationItem.title = @"发布的帖子";
     }
 }
 

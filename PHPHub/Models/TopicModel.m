@@ -44,8 +44,19 @@
     return [_api getJobTopicList:block atPage:pageIndex];
 }
 
-- (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
-{
+- (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
     return [_api getWiKiList:block atPage:pageIndex];
+}
+
+- (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getTopicListByUser:userId callback:block atPage:pageIndex];
+}
+
+- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getFavoriteTopicListByUser:userId callback:block atPage:pageIndex];
+}
+
+- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getAttentionTopicListByUser:userId callback:block atPage:pageIndex];
 }
 @end

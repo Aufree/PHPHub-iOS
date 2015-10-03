@@ -83,18 +83,21 @@
 - (UIViewController *)createNewestVC {
     self.newestTopicListVC = [[TopicListViewController alloc] init];
     self.newestTopicListVC.topicListType = TopicListTypeNewest;
+    self.newestTopicListVC.isFromTopicContainer = YES;
     return self.newestTopicListVC;
 }
 
 - (UIViewController *)createHotsVC {
     self.hotsTopicListVC = [[TopicListViewController alloc] init];
     self.hotsTopicListVC.topicListType = TopicListTypeHots;
+    self.hotsTopicListVC.isFromTopicContainer = YES;
     return self.hotsTopicListVC;
 }
 
 - (UIViewController *)createJobVC {
     self.jobTopicListVC = [[TopicListViewController alloc] init];
     self.jobTopicListVC.topicListType = TopicListTypeJob;
+    self.jobTopicListVC.isFromTopicContainer = YES;
     return self.jobTopicListVC;
 }
 

@@ -59,6 +59,30 @@
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
+- (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/topics?include=node,last_reply_user&per_page=20&page=%ld"
+                         , (long)userId, (long)pageIndex];
+    
+    return [self getTopicListByUrlPath:urlPath block:block];
+}
+
+- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/favorite/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
+                         , (long)userId, (long)pageIndex];
+    
+    return [self getTopicListByUrlPath:urlPath block:block];
+}
+
+- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/attention/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
+                         , (long)userId, (long)pageIndex];
+    
+    return [self getTopicListByUrlPath:urlPath block:block];
+}
+
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {

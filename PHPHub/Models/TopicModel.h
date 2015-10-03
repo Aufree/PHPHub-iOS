@@ -18,4 +18,7 @@
 - (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getJobTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 @end
