@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileViewController.h"
+#import "TOWebViewController.h"
 
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -29,6 +30,9 @@
     _avatarImageView.layer.masksToBounds = YES;
     
     [self updateUserProfileView];
+    
+    TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:@"http://baidu.com"];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)updateUserProfileView {

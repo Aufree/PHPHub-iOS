@@ -41,7 +41,7 @@
 #define NEW_ROTATIONS   ([[UIViewController class] instancesRespondToSelector:NSSelectorFromString(@"viewWillTransitionToSize:withTransitionCoordinator:")])
 
 /* The default blue tint color of iOS 7.0 */
-#define DEFAULT_BAR_TINT_COLOR [UIColor colorWithRed:0.0f green:110.0f/255.0f blue:1.0f alpha:1.0f]
+#define DEFAULT_BAR_TINT_COLOR [UIColor colorWithRed:0.000 green:0.717 blue:1.000 alpha:1.000]
 
 /* Detect which user idiom we're running on */
 #define IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -324,6 +324,9 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         loadingBarGradientLayer.frame = self.loadingBarView.bounds;
         [self.loadingBarView.layer addSublayer:loadingBarGradientLayer];
     }
+    
+    // Force hide navigation button
+    self.navigationButtonsHidden = YES;
 
     //only load the buttons if we need to
     if (self.navigationButtonsHidden == NO)
@@ -1113,10 +1116,10 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         
         //set the title to the URL until we load the page properly
         if (self.showPageTitles && self.showUrlWhileLoading) {
-            NSString *url = [self.url absoluteString];
-            url = [url stringByReplacingOccurrencesOfString:@"http://" withString:@""];
-            url = [url stringByReplacingOccurrencesOfString:@"https://" withString:@""];
-            self.title = url;
+//            NSString *url = [self.url absoluteString];
+//            url = [url stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+//            url = [url stringByReplacingOccurrencesOfString:@"https://" withString:@""];
+            self.title = @"加载中";
         } 
         
         if (self.reloadStopButton)
