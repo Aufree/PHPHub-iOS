@@ -30,9 +30,6 @@
     _avatarImageView.layer.masksToBounds = YES;
     
     [self updateUserProfileView];
-    
-    TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:@"http://baidu.com"];
-    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)updateUserProfileView {
@@ -46,6 +43,28 @@
     _githubLabel.text = _userEntity.githubName;
     _twitterLabel.text = _userEntity.twitterAccount;
     _blogLabel.text = _userEntity.githubURL;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    NSString *urlString;
+    
+    if (section == 3 && row == 0) {
+        // Jump to GitHub
+        urlString = [NSString stringWithFormat:@"%@%@", GitHubURL, _userEntity.githubName];
+    } else if (section == 4 && row == 0) {
+        // Jump to Twitter
+        urlString = [NSString stringWithFormat:@"%@%@", TwitterURL, _userEntity.twitterAccount];
+    } else if (section == 5 && row == 0) {
+        // Jump to Blog
+        urlString = @"http://baidu.com";
+    }
+    
+    if (![NSString isStringEmpty:urlString]) {
+        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:urlString];
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

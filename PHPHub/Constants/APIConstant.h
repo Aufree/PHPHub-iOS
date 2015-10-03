@@ -7,6 +7,8 @@
 //
 
 #define APIAccessTokenURL [NSString stringWithFormat:@"%@%@", APIBaseURL, @"/oauth/access_token"]
-
-#define APIBaseURL                 @"https://api.phphub.org"
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
+
+#define APIBaseURL @"https://api.phphub.org"
+#define GitHubURL  @"https://github.com/"
+#define TwitterURL @"https://twitter.com/"
