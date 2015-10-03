@@ -8,6 +8,7 @@
 
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
+#import "TopicListViewController.h"
 
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -50,6 +51,7 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     NSString *urlString;
+    UIViewController *vc;
     
     if (section == 3 && row == 0) {
         // Jump to GitHub
@@ -60,12 +62,39 @@
     } else if (section == 5 && row == 0) {
         // Jump to Blog
         urlString = _userEntity.blogURL;
+    } else if (section == 6) {
+        switch (row) {
+            case 0:
+                vc = [self createTopicListWithType:TopicListTypeNormal];
+                break;
+            case 1:
+                break;
+            case 2:
+                vc = [self createTopicListWithType:TopicListTypeAttention];
+                break;
+            case 3:
+                vc = [self createTopicListWithType:TopicListTypeFavorite];
+                break;
+                
+            default:
+                break;
+        }
     }
     
     if (![NSString isStringEmpty:urlString]) {
-        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:urlString];
-        [self.navigationController pushViewController:webVC animated:YES];
+        vc = [[TOWebViewController alloc] initWithURLString:urlString];
     }
+    
+    if (vc) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (TopicListViewController *)createTopicListWithType:(TopicListType)topicListType {
+    TopicListViewController *topicListVC = [[TopicListViewController alloc] init];
+    topicListVC.userId = _userEntity.userId.integerValue;
+    topicListVC.topicListType = topicListType;
+    return topicListVC;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
