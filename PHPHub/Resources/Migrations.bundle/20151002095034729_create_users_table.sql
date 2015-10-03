@@ -11,6 +11,7 @@ CREATE TABLE "users" (
 "topic_count" integer not null default '0',
 "reply_count" integer not null default '0',
 "twitter_account" varchar null,
+"personal_website" varchar null,
 "company" varchar null,
 "city" varchar null,
 "email" varchar null,

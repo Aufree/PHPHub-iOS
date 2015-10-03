@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSNumber *replyCount;
 @property (nonatomic, copy) NSNumber *notificationCount;
 @property (nonatomic, copy) NSString *twitterAccount;
+@property (nonatomic, copy) NSString *blogURL;
 @property (nonatomic, copy) NSString *company;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *email;

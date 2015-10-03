@@ -58,7 +58,7 @@
         urlString = [NSString stringWithFormat:@"%@%@", TwitterURL, _userEntity.twitterAccount];
     } else if (section == 5 && row == 0) {
         // Jump to Blog
-        urlString = @"http://baidu.com";
+        urlString = _userEntity.blogURL;
     }
     
     if (![NSString isStringEmpty:urlString]) {
