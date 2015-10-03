@@ -26,7 +26,7 @@
 
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=recent&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=newest&per_page=20&page=%ld", (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
