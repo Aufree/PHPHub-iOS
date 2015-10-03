@@ -26,5 +26,6 @@
 #import "GVUserDefaults+Properties.h"
 #import "CurrentUser.h"
 #import "NSString+Additions.h"
+#import "UIViewController+Custom.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

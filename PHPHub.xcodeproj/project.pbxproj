@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B399D1BBF793400CC7007 /* UIViewController+Custom.m */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -75,6 +76,8 @@
 /* Begin PBXFileReference section */
 		289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		560B399C1BBF793400CC7007 /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
+		560B399D1BBF793400CC7007 /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -218,6 +221,15 @@
 				379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		560B399B1BBF791900CC7007 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				560B399C1BBF793400CC7007 /* UIViewController+Custom.h */,
+				560B399D1BBF793400CC7007 /* UIViewController+Custom.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		561868361BBD345A00E9E111 /* NSString */ = {
@@ -575,6 +587,7 @@
 		56D8F0911BB0E3BE00242FA9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				560B399B1BBF791900CC7007 /* UIViewController */,
 				561868361BBD345A00E9E111 /* NSString */,
 				565218641BBBC3FF00412E60 /* GVUserDefaults */,
 				5652185A1BBB8F3300412E60 /* AFOAuth2Manager */,
@@ -839,6 +852,7 @@
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
+				560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
 				565218461BBA7CC500412E60 /* NotificationListTableView.m in Sources */,
 				565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */,
