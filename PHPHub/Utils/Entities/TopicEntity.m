@@ -19,7 +19,7 @@
              @"user" : @"user.data",
              @"lastReplyUser" : @"last_reply_user.data",
              @"node" : @"node.data",
-             @"updatedAt" : @"updated_at.date",
+             @"updatedAt" : @"updated_at",
              };
 }
 

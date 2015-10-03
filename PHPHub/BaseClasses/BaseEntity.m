@@ -97,7 +97,7 @@
     
     if (!_formatter) {
         _formatter = [NSDateFormatter new];
-        _formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.000000";
+        _formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     }
     return _formatter;
 }

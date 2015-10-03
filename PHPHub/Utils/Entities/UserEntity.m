@@ -28,8 +28,8 @@
              @"githubURL" : @"github_url",
              @"realName" : @"real_name",
              @"blogURL" : @"personal_website",
-             @"createdAt" : @"created_at.date",
-             @"updatedAt" : @"updated_at.date",
+             @"createdAt" : @"created_at",
+             @"updatedAt" : @"updated_at",
              };
 }
 
