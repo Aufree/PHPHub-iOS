@@ -43,8 +43,9 @@
             [AccessTokenHandler storeLoginTokenGrantAccessToken:data[@"access_token"]];
             [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
             [[CurrentUser Instance] setupClientRequestState:nil];
-            [[CurrentUser Instance] updateCurrentUserInfo];
-            if (block) block(data, nil);
+            [self getCurrentUserData:^(NSDictionary *userdata, NSError *error) {
+                if (block) block(data, nil);
+            }];
         } else {
             if (block) block(nil, error);
         }
