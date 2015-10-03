@@ -10,7 +10,6 @@
 
 @interface UserEntity : BaseEntity <MTLFMDBSerializing>
 @property (nonatomic, copy) NSNumber *userId;
-@property (nonatomic, copy) NSNumber *githubId;
 @property (nonatomic, copy) NSString *githubURL;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *avatar;

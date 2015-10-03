@@ -6,7 +6,6 @@ CREATE TABLE "users" (
 "id" integer not null primary key,
 "name" varchar not null,
 "avatar" varchar null,
-"github_id" integer not null default '0',
 "github_url" varchar null,
 "topic_count" integer not null default '0',
 "reply_count" integer not null default '0',
@@ -22,7 +21,3 @@ CREATE TABLE "users" (
 "created_at" datetime not null,
 "updated_at" datetime null
 );
--- ----------------------------
---  Indexes structure for table users
--- ----------------------------
-CREATE INDEX users_github_id_index on "users" ("github_id");
