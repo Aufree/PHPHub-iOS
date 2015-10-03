@@ -43,6 +43,7 @@
     _githubLabel.text = _userEntity.githubName;
     _twitterLabel.text = _userEntity.twitterAccount;
     _blogLabel.text = _userEntity.githubURL;
+    _createdAtLabel.text = [NSString stringWithFormat:@"%@", _userEntity.createdAtDate];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

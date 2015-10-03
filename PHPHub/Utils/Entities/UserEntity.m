@@ -28,8 +28,8 @@
              @"githubURL" : @"github_url",
              @"realName" : @"real_name",
              @"blogURL" : @"personal_website",
-             @"createdAt" : @"created_at",
-             @"updatedAt" : @"updated_at",
+             @"createdAtDate" : @"created_at",
+             @"updatedAtDate" : @"updated_at",
              };
 }
 
@@ -63,8 +63,8 @@
              @"githubURL" : @"github_url",
              @"realName" : @"real_name",
              @"blogURL" : @"personal_website",
-             @"createdAt" : @"created_at",
-             @"updatedAt" : @"updated_at",
+             @"createdAtDate" : @"created_at",
+             @"updatedAtDate" : @"updated_at",
              };
 }
 @end
