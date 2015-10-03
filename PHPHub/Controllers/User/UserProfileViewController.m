@@ -42,7 +42,7 @@
     _localLabel.text = _userEntity.city;
     _githubLabel.text = _userEntity.githubName;
     _twitterLabel.text = _userEntity.twitterAccount;
-    _blogLabel.text = _userEntity.githubURL;
+    _blogLabel.text = _userEntity.blogURL;
     _createdAtLabel.text = [NSString stringWithFormat:@"%@", _userEntity.createdAtDate];
 }
 
