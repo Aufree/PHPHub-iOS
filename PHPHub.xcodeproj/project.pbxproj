@@ -10,6 +10,7 @@
 		560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B399D1BBF793400CC7007 /* UIViewController+Custom.m */; settings = {ASSET_TAGS = (); }; };
 		560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */; settings = {ASSET_TAGS = (); }; };
 		560E4BFA1BC0B79E00BD8CE2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4BF91BC0B79E00BD8CE2 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		560E4BFD1BC0D12700BD8CE2 /* EditUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4BFC1BC0D12700BD8CE2 /* EditUserProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -83,6 +84,8 @@
 		560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		560E4BF81BC0B79E00BD8CE2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		560E4BF91BC0B79E00BD8CE2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		560E4BFB1BC0D12700BD8CE2 /* EditUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserProfileViewController.h; sourceTree = "<group>"; };
+		560E4BFC1BC0D12700BD8CE2 /* EditUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserProfileViewController.m; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 			children = (
 				561868411BBE2D5500E9E111 /* UserProfileViewController.h */,
 				561868421BBE2D5500E9E111 /* UserProfileViewController.m */,
+				560E4BFB1BC0D12700BD8CE2 /* EditUserProfileViewController.h */,
+				560E4BFC1BC0D12700BD8CE2 /* EditUserProfileViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -919,6 +924,7 @@
 				56D8F0A21BB0ED5E00242FA9 /* TopicApi.m in Sources */,
 				565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */,
 				56D8F0961BB0E43400242FA9 /* UIView+Additions.m in Sources */,
+				560E4BFD1BC0D12700BD8CE2 /* EditUserProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

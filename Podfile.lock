@@ -54,6 +54,7 @@ PODS:
   - SVProgressHUD (1.1.3)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
+  - UITextView+Placeholder (1.1.0)
   - UMengFeedback (2.3.4)
 
 DEPENDENCIES:
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - UIActivityIndicator-for-SDWebImage
+  - UITextView+Placeholder
   - UMengFeedback (~> 2.3.4)
 
 EXTERNAL SOURCES:
@@ -113,6 +115,7 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+  UITextView+Placeholder: 672ce543356b5b5787f354415bc3b132d47f0362
   UMengFeedback: 5283cc0e324dffca4dd54c4abb3cbded56487817
 
 COCOAPODS: 0.38.2

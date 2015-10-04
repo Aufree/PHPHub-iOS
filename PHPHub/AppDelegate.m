@@ -27,6 +27,10 @@
     // Showing the App
     [self makeWindowVisible:launchOptions];
     
+    // Change UITextField and UITextView Cursor / Caret Color
+    [[UITextField appearance] setTintColor:[UIColor grayColor]];
+    [[UITextView appearance] setTintColor:[UIColor grayColor]];
+    
     return YES;
 }
 
