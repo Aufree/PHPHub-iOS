@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "TOWebViewController.h"
+#import "UMFeedback.h"
 
 @interface SettingsViewController ()
 
@@ -34,7 +35,9 @@
     NSInteger row = indexPath.row;
     UIViewController *vc;
     
-    if (section == 1) {
+    if (section == 0) {
+        [self jumpToUMFeedBack];
+    } else if (section == 1) {
         switch (row) {
             case 0:
                 vc = [[TOWebViewController alloc] initWithURLString:ProjectURL];
@@ -52,4 +55,19 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
+- (void)jumpToUMFeedBack {
+    UserEntity *currentUser = [[CurrentUser Instance] userInfo];
+    NSString *plain = [NSString stringWithFormat:@"uid:%@ - uname:%@", currentUser.userId, currentUser.username];
+    [[UMFeedback sharedInstance] updateUserInfo:@{@"contact":
+                                                   @{
+                                                      @"email": currentUser.email,
+                                                      @"phone": @"",
+                                                      @"qq": @"",
+                                                      @"plain": plain
+                                                    }
+                                                  }];
+    [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];
+}
+
 @end
