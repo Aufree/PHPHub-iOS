@@ -236,6 +236,39 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="42" id="aSj-Xq-6fo">
+                                        <rect key="frame" x="0.0" y="434" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aSj-Xq-6fo" id="1ja-6d-mcw">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="41.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_icon" translatesAutoresizingMaskIntoConstraints="NO" id="JW6-sM-7q1">
+                                                    <rect key="frame" x="20" y="8" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="DHw-qt-K3w"/>
+                                                        <constraint firstAttribute="width" constant="25" id="OsT-Bj-GHT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SM-HP-UAD">
+                                                    <rect key="frame" x="75" y="10" width="212" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Tbm-QG-CmA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1SM-HP-UAD" secondAttribute="trailing" id="1ST-zo-bGl"/>
+                                                <constraint firstItem="JW6-sM-7q1" firstAttribute="leading" secondItem="1ja-6d-mcw" secondAttribute="leadingMargin" constant="12" id="RVL-Zu-rd9"/>
+                                                <constraint firstItem="1SM-HP-UAD" firstAttribute="leading" secondItem="JW6-sM-7q1" secondAttribute="trailing" constant="30" id="Ryp-Kc-fZc"/>
+                                                <constraint firstItem="JW6-sM-7q1" firstAttribute="top" secondItem="1ja-6d-mcw" secondAttribute="topMargin" id="jKF-N6-kYi"/>
+                                                <constraint firstItem="1SM-HP-UAD" firstAttribute="top" secondItem="1ja-6d-mcw" secondAttribute="topMargin" constant="2" id="l5y-yf-HvS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -280,6 +313,7 @@
         <image name="comment_icon" width="19" height="16"/>
         <image name="favorite_icon" width="14" height="17"/>
         <image name="ring_icon" width="17" height="19"/>
+        <image name="settings_icon" width="18" height="18"/>
         <image name="topic_icon" width="17" height="14"/>
         <image name="watch_icon" width="23" height="15"/>
     </resources>
