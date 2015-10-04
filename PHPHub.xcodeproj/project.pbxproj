@@ -11,6 +11,10 @@
 		560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */; settings = {ASSET_TAGS = (); }; };
 		560E4BFA1BC0B79E00BD8CE2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4BF91BC0B79E00BD8CE2 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		560E4BFD1BC0D12700BD8CE2 /* EditUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4BFC1BC0D12700BD8CE2 /* EditUserProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C071BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C001BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C021BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -86,6 +90,14 @@
 		560E4BF91BC0B79E00BD8CE2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		560E4BFB1BC0D12700BD8CE2 /* EditUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserProfileViewController.h; sourceTree = "<group>"; };
 		560E4BFC1BC0D12700BD8CE2 /* EditUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserProfileViewController.m; sourceTree = "<group>"; };
+		560E4BFF1BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		560E4C001BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		560E4C011BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		560E4C021BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		560E4C031BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		560E4C051BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -255,6 +267,21 @@
 				560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		560E4BFE1BC1178900BD8CE2 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				560E4BFF1BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.h */,
+				560E4C001BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m */,
+				560E4C011BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.h */,
+				560E4C021BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m */,
+				560E4C031BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.h */,
+				560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */,
+				560E4C051BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		561868361BBD345A00E9E111 /* NSString */ = {
@@ -548,6 +575,7 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				560E4BFE1BC1178900BD8CE2 /* TPKeyboardAvoiding */,
 				561868641BBF618300E9E111 /* TOWebViewController */,
 				56D8F0B91BB1431200242FA9 /* TitlePagerView */,
 				56D8F0B51BB138EE00242FA9 /* ViewPagerController */,
@@ -883,6 +911,7 @@
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */,
+				560E4C071BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
 				565218461BBA7CC500412E60 /* NotificationListTableView.m in Sources */,
 				565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */,
@@ -905,6 +934,7 @@
 				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
+				560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				56D8F0891BB0096800242FA9 /* EssentialListViewController.m in Sources */,
 				5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */,
 				56D8F09A1BB0E6F400242FA9 /* BaseHelper.m in Sources */,
@@ -912,11 +942,13 @@
 				5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */,
 				56D8F0521BAF9F7200242FA9 /* BaseModel.m in Sources */,
 				5652186B1BBBCB4D00412E60 /* CurrentUser.m in Sources */,
+				560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */,
 				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
 				565218631BBBBDED00412E60 /* UserModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
+				560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				5618687A1BBF618300E9E111 /* TOActivityChrome.m in Sources */,
 				565218441BBA7CC500412E60 /* BaseView.m in Sources */,
 				565218451BBA7CC500412E60 /* NotificationListCell.m in Sources */,

@@ -416,7 +416,7 @@
         <scene sceneID="dsA-gn-WF1">
             <objects>
                 <tableViewController storyboardIdentifier="edituserprofile" id="hnD-j1-xib" customClass="EditUserProfileViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb0-QE-5I9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wb0-QE-5I9" customClass="TPKeyboardAvoidingTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -582,8 +582,12 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="blogTF" destination="jIb-tT-uIq" id="G98-j4-vQp"/>
+                        <outlet property="cityTF" destination="9VS-fz-NMw" id="l01-43-bP8"/>
+                        <outlet property="githubTF" destination="IIr-ko-hUb" id="3Zp-g5-0F3"/>
                         <outlet property="introTextView" destination="VJX-av-CXZ" id="wJG-y0-LCa"/>
                         <outlet property="realnameTF" destination="ZqD-0M-bKr" id="rFs-17-OIS"/>
+                        <outlet property="twitterTF" destination="0AQ-2p-mV1" id="QtN-cn-F0N"/>
                         <outletCollection property="customTextField" destination="ZqD-0M-bKr" id="d3U-zc-JRT"/>
                         <outletCollection property="customTextField" destination="9VS-fz-NMw" id="iiC-wj-naU"/>
                         <outletCollection property="customTextField" destination="0AQ-2p-mV1" id="ukU-vX-eOJ"/>

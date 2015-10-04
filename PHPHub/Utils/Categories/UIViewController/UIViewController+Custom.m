@@ -37,7 +37,7 @@
     self.navigationItem.backBarButtonItem = nil;
 }
 
-- (void)popViewControllerWithAnimation{
+- (void)popViewControllerWithAnimation {
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
