@@ -13,6 +13,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="z6u-Zv-kVM">
+                            <rect key="frame" x="0.0" y="253" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💕 Made with love by The EST Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0Z-41-qU9">
+                                    <rect key="frame" x="10" y="11" width="300" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="Oqj-8S-f7J"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="M0Z-41-qU9" firstAttribute="leading" secondItem="z6u-Zv-kVM" secondAttribute="leading" constant="10" id="ITr-DB-OeA"/>
+                                <constraint firstAttribute="trailing" secondItem="M0Z-41-qU9" secondAttribute="trailing" constant="10" id="e6N-Jn-vx5"/>
+                                <constraint firstItem="M0Z-41-qU9" firstAttribute="centerY" secondItem="z6u-Zv-kVM" secondAttribute="centerY" id="zmG-Y1-0d0"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="eQC-Mi-Ayf">
                                 <cells>
