@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B399D1BBF793400CC7007 /* UIViewController+Custom.m */; settings = {ASSET_TAGS = (); }; };
+		560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +79,7 @@
 		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		560B399C1BBF793400CC7007 /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
 		560B399D1BBF793400CC7007 /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
+		560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -232,6 +234,21 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		560E4BF41BC0B55A00BD8CE2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		560E4BF51BC0B56500BD8CE2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		561868361BBD345A00E9E111 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +302,7 @@
 		565218341BBA7CC500412E60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				560E4BF51BC0B56500BD8CE2 /* Settings */,
 				561868401BBE2D3600E9E111 /* User */,
 				5652184C1BBA7EDD00412E60 /* Passport */,
 				565218491BBA7CDD00412E60 /* Me */,
@@ -473,6 +491,7 @@
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				560E4BF41BC0B55A00BD8CE2 /* Settings */,
 				5618683F1BBE2D2400E9E111 /* User */,
 				5652184F1BBA838D00412E60 /* Passport */,
 				5652180D1BB69F5B00412E60 /* Notification */,
@@ -797,6 +816,7 @@
 				561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */,
 				5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */,
 				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
+				560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
