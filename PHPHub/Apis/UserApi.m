@@ -44,4 +44,25 @@
                                              }];
     return nil;
 }
+
+- (id)updateUserProfile:(id)user withBlock:(BaseResultBlock)block {
+    NSString *urlPath = [NSString stringWithFormat:@"users/%@", [CurrentUser Instance].userId];
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        if (data[@"data"]) {
+            data[@"entity"] = [UserEntity entityFromDictionary:data[@"data"]];
+        }
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi loginTokenGrantInstance] PUT:urlPath
+                                   parameters:[user transformToDictionary]
+                                      success:successBlock
+                                      failure:failureBlock];
+}
 @end

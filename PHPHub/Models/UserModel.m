@@ -54,4 +54,7 @@
     return [_api loginWithUserName:username loginToken:loginToken block:callback];
 }
 
+- (id)updateUserProfile:(id)user withBlock:(BaseResultBlock)block {
+    return [_api updateUserProfile:user withBlock:block];
+}
 @end
