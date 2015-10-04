@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "UserProfileViewController.h"
 #import "TopicListViewController.h"
+#import "SettingsViewController.h"
 
 @interface MeViewController () <LoginViewControllerDelegate>
 @property (nonatomic, strong) UserEntity *userEntity;
@@ -86,6 +87,8 @@
     } else if (section == 2) {
         if (row == 0) {
             vc = [self createTopicListWithType:TopicListTypeNormal];
+        } else if (row == 2) {
+            vc = [[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settings"];
         }
     }
     

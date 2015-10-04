@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="ecD-6L-znx">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="1yS-Gp-G3m" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" hidesBottomBarWhenPushed="YES" id="1yS-Gp-G3m" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="kx3-7v-YDA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
