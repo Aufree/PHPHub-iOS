@@ -88,8 +88,7 @@
         if (row == 0) {
             vc = [self createTopicListWithType:TopicListTypeNormal];
         } else if (row == 2) {
-//            vc = [[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settings"];
-            vc = [[UIStoryboard storyboardWithName:@"UserProfile" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"edituserprofile"];
+            vc = [[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settings"];
         }
     }
     

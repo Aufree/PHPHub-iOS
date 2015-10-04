@@ -9,6 +9,7 @@
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
 #import "TopicListViewController.h"
+#import "EditUserProfileViewController.h"
 
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -31,6 +32,10 @@
     _avatarImageView.layer.masksToBounds = YES;
     
     [self updateUserProfileView];
+    
+    if ([_userEntity.userId isEqualToNumber:[CurrentUser Instance].userId]) {
+        [self createRightButtonItem];
+    }
 }
 
 - (void)updateUserProfileView {
@@ -45,6 +50,22 @@
     _twitterLabel.text = _userEntity.twitterAccount;
     _blogLabel.text = _userEntity.blogURL;
     _createdAtLabel.text = [NSString stringWithFormat:@"%@", _userEntity.createdAtDate];
+}
+
+- (void)createRightButtonItem {
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_profile_icon"]
+                                                                           style:UIBarButtonItemStylePlain
+                                                                          target:self
+                                                                          action:@selector(jumpToEditUserProfile)];
+    rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+- (void)jumpToEditUserProfile {
+    EditUserProfileViewController *editUserProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                                  bundle:[NSBundle mainBundle]]
+                                                        instantiateViewControllerWithIdentifier:@"edituserprofile"];
+    [self.navigationController pushViewController:editUserProfileVC animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
