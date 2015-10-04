@@ -14,5 +14,5 @@
 @property (nonatomic, strong) UserApi *api;
 - (id)getCurrentUserData:(BaseResultBlock)block;
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block;
-- (id)updateUserProfile:(id)user withBlock:(BaseResultBlock)block;
+- (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block;
 @end

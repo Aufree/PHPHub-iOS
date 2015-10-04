@@ -45,7 +45,7 @@
     return nil;
 }
 
-- (id)updateUserProfile:(id)user withBlock:(BaseResultBlock)block {
+- (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block {
     NSString *urlPath = [NSString stringWithFormat:@"users/%@", [CurrentUser Instance].userId];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {

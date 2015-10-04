@@ -9,6 +9,7 @@
 #import "EditUserProfileViewController.h"
 #import "UITextView+Placeholder.h"
 #import "TPKeyboardAvoidingTableView.h"
+#import "SVProgressHUD.h"
 
 @interface EditUserProfileViewController ()
 @property (strong, nonatomic) UserEntity *user;
@@ -31,6 +32,7 @@
     
     [self customUserProfileTextField];
     [self customUserProfileTextView];
+    [self createRightButtonItem];
     
     [self loadCurrentUserData];
 }
@@ -48,6 +50,15 @@
     _introTextView.textContainerInset = UIEdgeInsetsMake(10, 5, 10, 5);
 }
 
+- (void)createRightButtonItem {
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tick_icon"]
+                                                                                              style:UIBarButtonItemStylePlain
+                                                                                             target:self
+                                                                                             action:@selector(updateUserProfile)];
+    rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
 - (void)loadCurrentUserData {
     _realnameTF.text = _user.realName;
     _cityTF.text = _user.city;
@@ -55,6 +66,27 @@
     _githubTF.text = _user.githubName;
     _blogTF.text = _user.blogURL;
     _introTextView.text = _user.introduction;
+}
+
+- (void)updateUserProfile {
+    _user.realName = _realnameTF.text;
+    _user.city = _cityTF.text;
+    _user.twitterAccount = _twitterTF.text;
+    _user.githubName = _githubTF.text;
+    _user.blogURL = _blogTF.text;
+    _user.introduction = _introTextView.text;
+    
+    [SVProgressHUD show];
+    
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (!error) {
+            [SVProgressHUD showSuccessWithStatus:@"更新成功"];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"更新失败, 请稍后再试"];
+        }
+    };
+    
+    [[UserModel Instance] updateUserProfile:_user withBlock:callback];
 }
 
 @end

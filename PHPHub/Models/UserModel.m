@@ -54,7 +54,16 @@
     return [_api loginWithUserName:username loginToken:loginToken block:callback];
 }
 
-- (id)updateUserProfile:(id)user withBlock:(BaseResultBlock)block {
-    return [_api updateUserProfile:user withBlock:block];
+- (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block {
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (data) {
+            UserEntity *userEntity = data[@"entity"];
+            [[CurrentUser Instance] saveUser:userEntity];
+            if (block) block(data, nil);
+        } else {
+            if (block) block(nil, error);
+        }
+    };
+    return [_api updateUserProfile:user withBlock:callback];
 }
 @end
