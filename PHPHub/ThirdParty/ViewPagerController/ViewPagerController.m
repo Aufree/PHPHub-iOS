@@ -10,7 +10,7 @@
 
 @interface ViewPagerController () <UIScrollViewDelegate>
 
-@property (nonatomic, assign) id<UIScrollViewDelegate> origPageScrollViewDelegate;
+@property (nonatomic, weak) id<UIScrollViewDelegate> origPageScrollViewDelegate;
 
 @property UIScrollView *tabsView;
 @property UIView *contentView;

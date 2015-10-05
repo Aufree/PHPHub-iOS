@@ -28,8 +28,8 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 
 @interface ViewPagerController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property (nonatomic,assign) id<ViewPagerDataSource> dataSource;
-@property (nonatomic,assign) id<ViewPagerDelegate> delegate;
+@property (nonatomic, weak) id<ViewPagerDataSource> dataSource;
+@property (nonatomic, weak) id<ViewPagerDelegate> delegate;
 
 @property (nonatomic) UIScrollView *origPageScrollView;
 

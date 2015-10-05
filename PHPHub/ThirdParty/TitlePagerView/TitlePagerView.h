@@ -16,7 +16,7 @@
 @interface TitlePagerView : UIView
 
 @property (nonatomic, strong) UIFont *font;
-@property (nonatomic, assign) id<TitlePagerViewDelegate> delegate;
+@property (nonatomic, weak) id<TitlePagerViewDelegate> delegate;
 
 - (void)addObjects:(NSArray *)images;
 - (void)adjustTitleViewByIndex:(CGFloat)index;
