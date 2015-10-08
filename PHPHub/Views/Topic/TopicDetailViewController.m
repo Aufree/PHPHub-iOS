@@ -10,8 +10,9 @@
 #import "TopicModel.h"
 #import "AccessTokenHandler.h"
 #import "UserProfileViewController.h"
+#import "TOWebViewController.h"
 
-@interface TopicDetailViewController ()
+@interface TopicDetailViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
@@ -30,6 +31,7 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     _avatarImageView.userInteractionEnabled = YES;
+    _topicContentWeb.delegate = self;
     
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
@@ -57,12 +59,28 @@
     _voteCountLabel.text = _topic.voteCount.stringValue;
 }
 
+#pragma mark Load WebView
+
 - (void)loadTopicContentWebView {
     NSURL *url = [NSURL URLWithString:_topic.topicContentUrl];
     NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
     [requestObj setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
     [_topicContentWeb loadRequest:requestObj];
 }
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
+    if (navigationType == UIWebViewNavigationTypeLinkClicked ) {
+        NSURL *url = [request URL];
+        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURL:url];
+        [self.navigationController pushViewController:webVC animated:YES];
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark Touch User Avatar
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
