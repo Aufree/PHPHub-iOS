@@ -51,6 +51,8 @@
         }
     }
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (vc) {
         [self.navigationController pushViewController:vc animated:YES];
     }

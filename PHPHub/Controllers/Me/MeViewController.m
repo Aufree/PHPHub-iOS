@@ -92,6 +92,8 @@
         }
     }
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (vc) {
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];

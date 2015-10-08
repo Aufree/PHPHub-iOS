@@ -1,6 +1,5 @@
 //
 //  UIView+Additions.m
-//  OralMaster
 //
 //  Created by Jin on 15/3/25.
 //  Copyright (c) 2015年 Jin. All rights reserved.
