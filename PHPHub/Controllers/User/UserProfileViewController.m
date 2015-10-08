@@ -31,10 +31,20 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     
-    [self updateUserProfileView];
-    
     if ([_userEntity.userId isEqualToNumber:[CurrentUser Instance].userId]) {
         [self createRightButtonItem];
+        _userEntity = [[CurrentUser Instance] userInfo];
+        [self updateUserProfileView];
+    } else {
+        __weak typeof(self) weakself = self;
+        BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+            if (!error) {
+                _userEntity = data[@"entity"];
+                [weakself updateUserProfileView];
+            }
+        };
+        
+        [[UserModel Instance] getUserById:_userEntity.userId callback:callback];
     }
 }
 

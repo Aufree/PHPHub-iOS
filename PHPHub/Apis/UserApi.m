@@ -24,9 +24,28 @@
     };
     
     return [[BaseApi loginTokenGrantInstance] GET:urlPath
-                                   parameters:nil
-                                      success:successBlock
-                                      failure:failureBlock];
+                                       parameters:nil
+                                          success:successBlock
+                                          failure:failureBlock];
+}
+
+- (id)getUserById:(NSNumber *)userId callback:(BaseResultBlock)block {
+    NSString *urlPath = [NSString stringWithFormat:@"users/%@", userId];
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        data[@"entity"] = [UserEntity entityFromDictionary:data[@"data"]];
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi clientGrantInstance] GET:urlPath
+                                       parameters:nil
+                                          success:successBlock
+                                          failure:failureBlock];
 }
 
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {

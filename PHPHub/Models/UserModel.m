@@ -37,6 +37,10 @@
     return [_api getCurrentUserData:callback];
 }
 
+- (id)getUserById:(NSNumber *)userId callback:(BaseResultBlock)block {
+    return [_api getUserById:userId callback:block];
+}
+
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (data) {

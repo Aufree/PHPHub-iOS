@@ -9,6 +9,7 @@
 #import "TopicDetailViewController.h"
 #import "TopicModel.h"
 #import "AccessTokenHandler.h"
+#import "UserProfileViewController.h"
 
 @interface TopicDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -28,6 +29,7 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
+    _avatarImageView.userInteractionEnabled = YES;
     
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
@@ -60,5 +62,23 @@
     NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
     [requestObj setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
     [_topicContentWeb loadRequest:requestObj];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    
+    if ([touch view] == _avatarImageView) {
+        [self didTapAvatarImageView];
+    }
+    
+}
+
+- (void)didTapAvatarImageView {
+    UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                          bundle:[NSBundle mainBundle]]
+                                                instantiateViewControllerWithIdentifier:@"userprofile"];
+    userProfileVC.userEntity = _topic.user;
+    [self.navigationController pushViewController:userProfileVC animated:YES];
 }
 @end

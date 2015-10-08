@@ -13,6 +13,7 @@
 @interface UserModel : BaseModel
 @property (nonatomic, strong) UserApi *api;
 - (id)getCurrentUserData:(BaseResultBlock)block;
+- (id)getUserById:(NSNumber *)userId callback:(BaseResultBlock)block;
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block;
 - (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block;
 @end
