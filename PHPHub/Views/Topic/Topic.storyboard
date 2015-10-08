@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Topic Detail View Controller-->
         <scene sceneID="WHC-Yw-dAD">
             <objects>
-                <viewController storyboardIdentifier="topic" hidesBottomBarWhenPushed="YES" id="1yv-gg-I7m" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="topic" hidesBottomBarWhenPushed="YES" id="1yv-gg-I7m" customClass="TopicDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X19-Gx-F2t"/>
                         <viewControllerLayoutGuide type="bottom" id="uBS-xN-QCM"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-ma-VRF">
                                 <rect key="frame" x="0.0" y="20" width="320" height="52"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-gd-fek">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-gd-fek">
                                         <rect key="frame" x="12" y="7" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="jgJ-R4-oi2"/>
@@ -48,7 +48,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aic-yW-pmS">
                                         <rect key="frame" x="220" y="0.0" width="100" height="52"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-nE-kVW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgm-gB-YNo">
+                                                <rect key="frame" x="0.0" y="6" width="1" height="40"/>
+                                                <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="s2k-cM-zJj"/>
+                                                    <constraint firstAttribute="height" constant="40" id="wF6-wx-Ctb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vote_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-nE-kVW">
                                                 <rect key="frame" x="25" y="14" width="17" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="17" id="tL7-vw-QJE"/>
@@ -61,13 +72,15 @@
                                                     <constraint firstAttribute="width" constant="50" id="79J-JS-dJi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="sgm-gB-YNo" firstAttribute="centerY" secondItem="Aic-yW-pmS" secondAttribute="centerY" id="3i8-ah-Wno"/>
                                             <constraint firstAttribute="trailing" secondItem="tbI-fQ-TSb" secondAttribute="trailing" constant="8" id="Lbk-75-tlS"/>
+                                            <constraint firstItem="sgm-gB-YNo" firstAttribute="leading" secondItem="Aic-yW-pmS" secondAttribute="leading" id="S83-U5-HGJ"/>
                                             <constraint firstAttribute="width" constant="100" id="ZjB-MK-cqN"/>
                                             <constraint firstItem="tbI-fQ-TSb" firstAttribute="top" secondItem="Aic-yW-pmS" secondAttribute="top" id="coV-la-I6N"/>
                                             <constraint firstAttribute="bottom" secondItem="tbI-fQ-TSb" secondAttribute="bottom" id="pVU-bQ-Rd0"/>
@@ -125,6 +138,14 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="DNm-gd-fek" id="fC5-dN-xtr"/>
+                        <outlet property="signatureLabel" destination="BOC-dg-bn7" id="dyW-0Q-x1C"/>
+                        <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
+                        <outlet property="usernameLabel" destination="ZD4-Y8-xmR" id="MTY-Iw-USl"/>
+                        <outlet property="voteCountLabel" destination="tbI-fQ-TSb" id="ohP-Ok-ebW"/>
+                        <outlet property="voteStatusImage" destination="Dw0-nE-kVW" id="Vjh-Pi-OoR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCR-i3-oY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,10 +153,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar_placeholder" width="38" height="38"/>
         <image name="comments_icon" width="22" height="18"/>
         <image name="favorite_icon" width="14" height="17"/>
         <image name="reply_icon" width="20" height="18"/>
+        <image name="vote_icon" width="17" height="23"/>
         <image name="watch_icon" width="23" height="15"/>
     </resources>
 </document>

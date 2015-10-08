@@ -60,7 +60,7 @@
     return [_api getAttentionTopicListByUser:userId callback:block atPage:pageIndex];
 }
 
-- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    return [_api getTopicById:topicId callback:block atPage:pageIndex];
+- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block {
+    return [_api getTopicById:topicId callback:block];
 }
 @end

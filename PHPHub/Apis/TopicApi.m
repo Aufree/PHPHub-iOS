@@ -83,11 +83,26 @@
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
-- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block
 {
     NSString *urlPath = [NSString stringWithFormat:@"topics/%ld?include=user,node", (long)topicId];
     
-    return [self getTopicListByUrlPath:urlPath block:block];
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
+    {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        data[@"entity"] = [TopicEntity entityFromDictionary:data[@"data"]];
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error)
+    {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi clientGrantInstance] GET:urlPath
+                                   parameters:nil
+                                      success:successBlock
+                                      failure:failureBlock];
 }
 
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{

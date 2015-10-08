@@ -21,5 +21,5 @@
 - (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
-- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block;
 @end

@@ -17,6 +17,7 @@
 		560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C121BC6205900BD8CE2 /* JumpToOtherVCHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C141BC6424800BD8CE2 /* Topic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560E4C131BC6424800BD8CE2 /* Topic.storyboard */; settings = {ASSET_TAGS = (); }; };
+		560E4C171BC64D3F00BD8CE2 /* TopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C161BC64D3F00BD8CE2 /* TopicDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -103,6 +104,8 @@
 		560E4C101BC6205900BD8CE2 /* JumpToOtherVCHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpToOtherVCHandler.h; sourceTree = "<group>"; };
 		560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpToOtherVCHandler.m; sourceTree = "<group>"; };
 		560E4C131BC6424800BD8CE2 /* Topic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Topic.storyboard; sourceTree = "<group>"; };
+		560E4C151BC64D3F00BD8CE2 /* TopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailViewController.h; sourceTree = "<group>"; };
+		560E4C161BC64D3F00BD8CE2 /* TopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailViewController.m; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				565218421BBA7CC500412E60 /* TopicListTableView.h */,
 				565218431BBA7CC500412E60 /* TopicListTableView.m */,
 				560E4C131BC6424800BD8CE2 /* Topic.storyboard */,
+				560E4C151BC64D3F00BD8CE2 /* TopicDetailViewController.h */,
+				560E4C161BC64D3F00BD8CE2 /* TopicDetailViewController.m */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -923,6 +928,7 @@
 				560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */,
 				560E4C071BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
+				560E4C171BC64D3F00BD8CE2 /* TopicDetailViewController.m in Sources */,
 				565218461BBA7CC500412E60 /* NotificationListTableView.m in Sources */,
 				565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */,
 				5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "TopicListTableView.h"
 #import "TopicListCell.h"
 #import "TopicEntity.h"
+#import "TopicDetailViewController.h"
 
 @interface TopicListTableView() <UITableViewDelegate, UITableViewDataSource>
 
@@ -60,8 +61,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
-    [JumpToOtherVCHandler pushToOtherView:vc animated:YES];
+    TopicEntity *topic = [_topicEntites objectAtIndex:indexPath.row];
+    TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
+    topicDetailVC.topicId = topic.topicId.integerValue;
+    [JumpToOtherVCHandler pushToOtherView:topicDetailVC animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
