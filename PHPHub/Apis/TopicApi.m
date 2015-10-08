@@ -61,7 +61,7 @@
 
 - (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/topics?include=node,last_reply_user&per_page=20&page=%ld"
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
                          , (long)userId, (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
