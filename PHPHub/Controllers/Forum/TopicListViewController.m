@@ -42,7 +42,10 @@
         }
         
         [weakself.tableView.header endRefreshing];
-        weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+        
+        if (weakself.pagination.totalPages > 1) {
+            weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+        }
     };
     
     [self fetchDataSource:callback atPage:1];
@@ -69,6 +72,7 @@
         [self fetchDataSource:callback atPage:nextPage];
     } else {
         [self.tableView.footer endRefreshing];
+        [self.tableView.footer noticeNoMoreData];
     }
     
 }
