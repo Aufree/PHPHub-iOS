@@ -15,6 +15,7 @@
 		560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C021BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C121BC6205900BD8CE2 /* JumpToOtherVCHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -98,6 +99,8 @@
 		560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		560E4C051BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		560E4C101BC6205900BD8CE2 /* JumpToOtherVCHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpToOtherVCHandler.h; sourceTree = "<group>"; };
+		560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpToOtherVCHandler.m; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				56D8F05B1BAFA5E100242FA9 /* APIRequestHandler.m */,
 				56D8F05D1BAFA66C00242FA9 /* AccessTokenHandler.h */,
 				56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */,
+				560E4C101BC6205900BD8CE2 /* JumpToOtherVCHandler.h */,
+				560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -909,6 +914,7 @@
 				56D8F0551BAF9FF200242FA9 /* BaseApi.m in Sources */,
 				56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */,
 				56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */,
+				560E4C121BC6205900BD8CE2 /* JumpToOtherVCHandler.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */,
 				560E4C071BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m in Sources */,

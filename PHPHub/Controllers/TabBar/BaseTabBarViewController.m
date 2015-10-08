@@ -85,17 +85,17 @@
     return YES;
 }
 
-- (void)jumpToViewController:(UIViewController *)viewController {
+- (void)pushToViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if([self.selectedViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigation = (UINavigationController *)self.selectedViewController;
-        [navigation pushViewController:viewController animated:NO];
+        [navigation pushViewController:viewController animated:animated];
     }
 }
 
-- (void)jumpToViewControllerWithAnimation:(UIViewController *)viewController {
+- (void)presentToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
     if([self.selectedViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigation = (UINavigationController *)self.selectedViewController;
-        [navigation pushViewController:viewController animated:YES];
+        [navigation presentViewController:viewController animated:animated completion:completion];
     }
 }
 

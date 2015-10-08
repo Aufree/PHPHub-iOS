@@ -27,5 +27,6 @@
 #import "CurrentUser.h"
 #import "NSString+Additions.h"
 #import "UIViewController+Custom.h"
+#import "JumpToOtherVCHandler.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"
