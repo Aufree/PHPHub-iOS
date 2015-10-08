@@ -16,6 +16,7 @@
 		560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C041BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		560E4C121BC6205900BD8CE2 /* JumpToOtherVCHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */; settings = {ASSET_TAGS = (); }; };
+		560E4C141BC6424800BD8CE2 /* Topic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560E4C131BC6424800BD8CE2 /* Topic.storyboard */; settings = {ASSET_TAGS = (); }; };
 		561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868381BBD345A00E9E111 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5618683A1BBE1A3800E9E111 /* Migrations.bundle */; settings = {ASSET_TAGS = (); }; };
 		5618683E1BBE1E0700E9E111 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618683D1BBE1E0700E9E111 /* UserDBManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -101,6 +102,7 @@
 		560E4C061BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		560E4C101BC6205900BD8CE2 /* JumpToOtherVCHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpToOtherVCHandler.h; sourceTree = "<group>"; };
 		560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpToOtherVCHandler.m; sourceTree = "<group>"; };
+		560E4C131BC6424800BD8CE2 /* Topic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Topic.storyboard; sourceTree = "<group>"; };
 		561868371BBD345A00E9E111 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		561868381BBD345A00E9E111 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		5618683A1BBE1A3800E9E111 /* Migrations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Migrations.bundle; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				565218411BBA7CC500412E60 /* TopicListCell.m */,
 				565218421BBA7CC500412E60 /* TopicListTableView.h */,
 				565218431BBA7CC500412E60 /* TopicListTableView.m */,
+				560E4C131BC6424800BD8CE2 /* Topic.storyboard */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */,
 				5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */,
 				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
+				560E4C141BC6424800BD8CE2 /* Topic.storyboard in Resources */,
 				560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
