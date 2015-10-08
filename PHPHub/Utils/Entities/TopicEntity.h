@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSNumber *topicId;
 @property (nonatomic, copy) NSString *topicTitle;
 @property (nonatomic, strong) NSNumber *topicRepliesCount;
+@property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic, strong) UserEntity *user;
 @property (nonatomic, strong) UserEntity *lastReplyUser;
 @property (nonatomic, strong) NodeEntity *node;

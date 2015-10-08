@@ -83,6 +83,13 @@
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
+- (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
+{
+    NSString *urlPath = [NSString stringWithFormat:@"topics/%ld?include=user,node", (long)topicId];
+    
+    return [self getTopicListByUrlPath:urlPath block:block];
+}
+
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {

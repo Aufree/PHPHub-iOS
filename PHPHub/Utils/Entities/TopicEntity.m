@@ -16,6 +16,7 @@
              @"topicId" : @"id",
              @"topicTitle" : @"title",
              @"topicRepliesCount" : @"reply_count",
+             @"voteCount" : @"vote_count",
              @"user" : @"user.data",
              @"lastReplyUser" : @"last_reply_user.data",
              @"node" : @"node.data",
