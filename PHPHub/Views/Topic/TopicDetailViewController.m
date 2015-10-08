@@ -8,6 +8,7 @@
 
 #import "TopicDetailViewController.h"
 #import "TopicModel.h"
+#import "AccessTokenHandler.h"
 
 @interface TopicDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *voteStatusImage;
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *topicContentWeb;
+@property (weak, nonatomic) IBOutlet UITabBar *topicTabbar;
 @property (strong, nonatomic) TopicEntity *topic;
 @end
 
@@ -32,10 +34,16 @@
         if (!error) {
             weakself.topic = data[@"entity"];
             [weakself updateTopicDetailView];
+            [weakself loadTopicContentWebView];
         }
     };
     
     [[TopicModel Instance] getTopicById:self.topicId callback:callback];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    _topicTabbar.hidden = NO;
 }
 
 - (void)updateTopicDetailView {
@@ -45,5 +53,12 @@
     _usernameLabel.text = user.username;
     _signatureLabel.text = @"Hello World";
     _voteCountLabel.text = _topic.voteCount.stringValue;
+}
+
+- (void)loadTopicContentWebView {
+    NSURL *url = [NSURL URLWithString:_topic.topicContentUrl];
+    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
+    [requestObj setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
+    [_topicContentWeb loadRequest:requestObj];
 }
 @end

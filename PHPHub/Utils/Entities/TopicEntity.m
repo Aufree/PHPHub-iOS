@@ -20,6 +20,7 @@
              @"user" : @"user.data",
              @"lastReplyUser" : @"last_reply_user.data",
              @"node" : @"node.data",
+             @"topicContentUrl" : @"links.details_web_view",
              @"updatedAt" : @"updated_at",
              };
 }

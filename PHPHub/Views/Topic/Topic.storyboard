@@ -94,19 +94,32 @@
                                             <constraint firstItem="Dw0-nE-kVW" firstAttribute="leading" secondItem="sgm-gB-YNo" secondAttribute="trailing" constant="10" id="vmz-87-Oda"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bko-RW-cAF">
+                                        <rect key="frame" x="0.0" y="52" width="320" height="0.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="I8k-En-d3a"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="DNm-gd-fek" firstAttribute="leading" secondItem="CZn-ma-VRF" secondAttribute="leading" constant="12" id="C2L-pT-G0z"/>
                                     <constraint firstItem="DNm-gd-fek" firstAttribute="centerY" secondItem="CZn-ma-VRF" secondAttribute="centerY" id="Hwm-rx-KUP"/>
+                                    <constraint firstItem="Bko-RW-cAF" firstAttribute="leading" secondItem="CZn-ma-VRF" secondAttribute="leading" id="N4m-yQ-5dS"/>
                                     <constraint firstItem="Aic-yW-pmS" firstAttribute="leading" secondItem="BOC-dg-bn7" secondAttribute="trailing" constant="10" id="Q3C-YT-whZ"/>
                                     <constraint firstItem="BOC-dg-bn7" firstAttribute="top" secondItem="ZD4-Y8-xmR" secondAttribute="bottom" id="Soy-Dz-xr3"/>
                                     <constraint firstItem="Aic-yW-pmS" firstAttribute="top" secondItem="CZn-ma-VRF" secondAttribute="top" id="TT9-2E-nzo"/>
                                     <constraint firstItem="ZD4-Y8-xmR" firstAttribute="top" secondItem="CZn-ma-VRF" secondAttribute="top" constant="10" id="UL9-8y-8EW"/>
                                     <constraint firstItem="ZD4-Y8-xmR" firstAttribute="leading" secondItem="DNm-gd-fek" secondAttribute="trailing" constant="12" id="V3F-aK-qI4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bko-RW-cAF" secondAttribute="trailing" id="dvq-qt-K5N"/>
                                     <constraint firstAttribute="trailing" secondItem="Aic-yW-pmS" secondAttribute="trailing" id="hJ7-6p-BTu"/>
                                     <constraint firstAttribute="height" constant="52" id="iRV-h7-Cue"/>
                                     <constraint firstAttribute="bottom" secondItem="Aic-yW-pmS" secondAttribute="bottom" id="lUx-42-n9H"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bko-RW-cAF" secondAttribute="bottom" id="mBu-Qu-sVO"/>
                                     <constraint firstItem="BOC-dg-bn7" firstAttribute="leading" secondItem="DNm-gd-fek" secondAttribute="trailing" constant="12" id="tjI-fe-PII"/>
                                     <constraint firstItem="Aic-yW-pmS" firstAttribute="leading" secondItem="ZD4-Y8-xmR" secondAttribute="trailing" constant="10" id="yUG-Qb-3oH"/>
                                 </constraints>
@@ -115,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWK-cB-YQD">
+                            <tabBar hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWK-cB-YQD">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -148,6 +161,7 @@
                         <outlet property="avatarImageView" destination="DNm-gd-fek" id="fC5-dN-xtr"/>
                         <outlet property="signatureLabel" destination="BOC-dg-bn7" id="dyW-0Q-x1C"/>
                         <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
+                        <outlet property="topicTabbar" destination="NWK-cB-YQD" id="Pti-ej-zKg"/>
                         <outlet property="usernameLabel" destination="ZD4-Y8-xmR" id="MTY-Iw-USl"/>
                         <outlet property="voteCountLabel" destination="tbI-fQ-TSb" id="ohP-Ok-ebW"/>
                         <outlet property="voteStatusImage" destination="Dw0-nE-kVW" id="Vjh-Pi-OoR"/>
