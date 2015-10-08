@@ -43,7 +43,7 @@
     NSURL *url = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = user.username;
-    _signatureLabel.text = user.signature;
+    _signatureLabel.text = @"Hello World";
     _voteCountLabel.text = _topic.voteCount.stringValue;
 }
 @end
