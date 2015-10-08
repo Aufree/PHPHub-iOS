@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicEntity.h"
 
 @interface TopicDetailViewController : UIViewController
-@property (nonatomic, assign) NSInteger topicId;
+@property (nonatomic, strong) TopicEntity *topic;
 @end

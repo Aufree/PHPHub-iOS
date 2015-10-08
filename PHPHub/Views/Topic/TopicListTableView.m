@@ -63,7 +63,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicEntity *topic = [_topicEntites objectAtIndex:indexPath.row];
     TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
-    topicDetailVC.topicId = topic.topicId.integerValue;
+    topicDetailVC.topic = topic;
     [JumpToOtherVCHandler pushToOtherView:topicDetailVC animated:YES];
 }
 

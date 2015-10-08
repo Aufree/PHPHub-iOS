@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *topicContentWeb;
 @property (weak, nonatomic) IBOutlet UITabBar *topicTabbar;
-@property (strong, nonatomic) TopicEntity *topic;
 @end
 
 @implementation TopicDetailViewController
@@ -32,17 +31,17 @@
     _avatarImageView.layer.masksToBounds = YES;
     _avatarImageView.userInteractionEnabled = YES;
     _topicContentWeb.delegate = self;
+    [self updateTopicDetailView];
     
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             weakself.topic = data[@"entity"];
-            [weakself updateTopicDetailView];
             [weakself loadTopicContentWebView];
         }
     };
     
-    [[TopicModel Instance] getTopicById:self.topicId callback:callback];
+    [[TopicModel Instance] getTopicById:_topic.topicId.integerValue callback:callback];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,7 +54,7 @@
     NSURL *url = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = user.username;
-    _signatureLabel.text = @"Hello World";
+    _signatureLabel.text = user.signature;
     _voteCountLabel.text = _topic.voteCount.stringValue;
 }
 
