@@ -10,58 +10,63 @@
 
 @implementation TopicApi
 
+- (NSString *)getUrlPathWithFilter:(NSString *)filter atPage:(NSInteger)pageIndex{
+    NSString *urlPath = @"topics?include=node,last_reply_user,user&filter=%@&per_page=20&page=%ld&columns=user(signature)";
+    return [NSString stringWithFormat:urlPath, filter, (long)pageIndex];
+}
+
 - (id)getAll:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getExcellentTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=excellent&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"excellent" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getNewestTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=newest&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"newest" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getHotsTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=vote&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"vote" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getNoReplyTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=nobody&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"nobody" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getJobTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=jobs&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"jobs" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics?include=node,last_reply_user,user&filter=wiki&per_page=20&page=%ld", (long)pageIndex];
+    NSString *urlPath = [self getUrlPathWithFilter:@"wiki" atPage:pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
 - (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/topics?include=node,last_reply_user,user&per_page=20&page=%ld&columns=user(signature)"
                          , (long)userId, (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
@@ -69,7 +74,7 @@
 
 - (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/favorite/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/favorite/topics?include=node,last_reply_user,user&per_page=20&page=%ld&columns=user(signature)"
                          , (long)userId, (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
@@ -77,7 +82,7 @@
 
 - (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex
 {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/attention/topics?include=node,last_reply_user,user&per_page=20&page=%ld"
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/attention/topics?include=node,last_reply_user,user&per_page=20&page=%ld&columns=user(signature)"
                          , (long)userId, (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
@@ -85,7 +90,7 @@
 
 - (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block
 {
-    NSString *urlPath = [NSString stringWithFormat:@"topics/%ld?include=user,node", (long)topicId];
+    NSString *urlPath = [NSString stringWithFormat:@"topics/%ld?include=user,node&columns=user(signature)", (long)topicId];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
     {
