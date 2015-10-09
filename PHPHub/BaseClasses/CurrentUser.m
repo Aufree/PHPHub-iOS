@@ -19,6 +19,10 @@
     return sharedInstance;
 }
 
+- (BOOL)isLogin {
+    return (self.userId && self.userId.intValue > 0);
+}
+
 - (void)saveUser:(UserEntity *)user {
     [UserDBManager insertOnDuplicateUpdate:user];
 }

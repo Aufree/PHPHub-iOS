@@ -12,9 +12,13 @@
 #import "UserDBManager.h"
 
 @interface CurrentUser : NSObject
+
 @property (nonatomic, copy) NSNumber *userId;
 @property (nonatomic, strong) UserEntity *userInfo;
+
 + (CurrentUser *)Instance;
+
+- (BOOL)isLogin;
 - (void)updateCurrentUserInfo;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState:(BaseResultBlock)block;
