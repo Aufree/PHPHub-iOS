@@ -158,7 +158,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqO-iZ-Lup" customClass="BubbleButton">
                                         <rect key="frame" x="160" y="0.0" width="80" height="44"/>
-                                        <state key="normal" image="reply_icon">
+                                        <state key="normal" image="pencil_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -230,7 +230,7 @@
     <resources>
         <image name="comments_icon" width="22" height="18"/>
         <image name="favorite_icon" width="14" height="17"/>
-        <image name="reply_icon" width="20" height="18"/>
+        <image name="pencil_icon" width="22" height="23"/>
         <image name="vote_icon" width="17" height="23"/>
         <image name="watch_icon" width="23" height="15"/>
     </resources>
