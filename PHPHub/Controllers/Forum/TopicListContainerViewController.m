@@ -32,7 +32,6 @@
     // Keeps tab bar below navigation bar on iOS 7.0+
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.tabBarController.tabBar.translucent = YES;
     
     self.currentIndex = 0;
