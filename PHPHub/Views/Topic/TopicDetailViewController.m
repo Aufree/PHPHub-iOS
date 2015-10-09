@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *voteStatusImage;
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *topicContentWeb;
-@property (weak, nonatomic) IBOutlet UITabBar *topicTabbar;
+@property (weak, nonatomic) IBOutlet UIView *topicToolBarView;
 @end
 
 @implementation TopicDetailViewController
@@ -46,7 +46,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    _topicTabbar.hidden = NO;
+    _topicToolBarView.hidden = NO;
 }
 
 - (void)updateTopicDetailView {
