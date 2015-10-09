@@ -104,7 +104,7 @@
         if (block) block(nil, error);
     };
     
-    return [[BaseApi clientGrantInstance] GET:urlPath
+    return [[BaseApi loginTokenGrantInstance] GET:urlPath
                                    parameters:nil
                                       success:successBlock
                                       failure:failureBlock];
