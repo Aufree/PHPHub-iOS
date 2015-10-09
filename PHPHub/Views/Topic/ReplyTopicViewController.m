@@ -8,6 +8,7 @@
 
 #import "ReplyTopicViewController.h"
 #import "UITextView+Placeholder.h"
+#import "TopicModel.h"
 
 @interface ReplyTopicViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
@@ -37,7 +38,18 @@
 }
 
 - (void)postTopicCommentToServer {
-
+    
+    CommentEntity *comment = [[CommentEntity alloc] init];
+    comment.topicId = _topicId;
+    comment.commentBody = _commentTextView.text;
+    
+    BaseResultBlock callback =^(NSDictionary *data, NSError *error) {
+        if (!error) {
+            
+        }
+    };
+    
+    [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
 }
 
 @end

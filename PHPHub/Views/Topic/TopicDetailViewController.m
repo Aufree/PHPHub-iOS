@@ -111,6 +111,7 @@
 
 - (IBAction)didTouchReplyButton:(id)sender {
     ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];
+    replyTopicVC.topicId = _topic.topicId;
     [self.navigationController pushViewController:replyTopicVC animated:YES];
 }
 

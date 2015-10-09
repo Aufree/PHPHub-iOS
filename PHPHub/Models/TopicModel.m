@@ -64,7 +64,7 @@
     return [_api getTopicById:topicId callback:block];
 }
 
-- (id)addCommentToTopic:(TopicEntity *)topic withBlock:(BaseResultBlock)block {
-    return [_api addCommentToTopic:topic withBlock:block];
+- (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block {
+    return [_api addCommentToTopic:comment withBlock:block];
 }
 @end

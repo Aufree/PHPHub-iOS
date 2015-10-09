@@ -137,13 +137,13 @@
                                       failure:failureBlock];
 }
 
-- (id)addCommentToTopic:(TopicEntity *)topic withBlock:(BaseResultBlock)block {
+- (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block {
     NSString *urlPath = @"replies";
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         if (data[@"data"]) {
-            data[@"entity"] = [TopicEntity entityFromDictionary:data[@"data"]];
+            data[@"entity"] = [CommentEntity entityFromDictionary:data[@"data"]];
         }
         if (block) block(data, nil);
     };
@@ -152,8 +152,8 @@
         if (block) block(nil, error);
     };
     
-    return [[BaseApi loginTokenGrantInstance] PUT:urlPath
-                                       parameters:[topic transformToDictionary]
+    return [[BaseApi loginTokenGrantInstance] POST:urlPath
+                                       parameters:[comment transformToDictionary]
                                           success:successBlock
                                           failure:failureBlock];
 }

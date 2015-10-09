@@ -22,5 +22,5 @@
 - (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block;
-- (id)addCommentToTopic:(TopicEntity *)topic withBlock:(BaseResultBlock)block;
+- (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block;
 @end

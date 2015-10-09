@@ -11,5 +11,6 @@
 @interface CommentEntity : BaseEntity
 @property (nonatomic, copy) NSNumber *commentId;
 @property (nonatomic, copy) NSNumber *topicId;
+@property (nonatomic, copy) NSNumber *userId;
 @property (nonatomic, copy) NSString *commentBody;
 @end

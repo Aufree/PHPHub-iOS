@@ -16,6 +16,7 @@
     return @{
              @"commentId" : @"id",
              @"topicId" : @"topic_id",
+             @"userId" : @"user_id",
              @"commentBody" : @"body",
              };
 }
