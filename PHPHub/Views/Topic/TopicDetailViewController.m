@@ -11,6 +11,7 @@
 #import "AccessTokenHandler.h"
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
+#import "ReplyTopicViewController.h"
 
 @interface TopicDetailViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -105,4 +106,12 @@
     userProfileVC.userEntity = _topic.user;
     [self.navigationController pushViewController:userProfileVC animated:YES];
 }
+
+# pragma mark Topic Detail Action
+
+- (IBAction)didTouchReplyButton:(id)sender {
+    ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];
+    [self.navigationController pushViewController:replyTopicVC animated:YES];
+}
+
 @end

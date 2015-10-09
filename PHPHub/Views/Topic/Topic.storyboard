@@ -161,6 +161,9 @@
                                         <state key="normal" image="pencil_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchReplyButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="PIk-Vq-WmB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIb-ug-ZXN" customClass="BubbleButton">
                                         <rect key="frame" x="240" y="0.0" width="80" height="44"/>
@@ -224,7 +227,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCR-i3-oY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="391"/>
+            <point key="canvasLocation" x="410" y="387"/>
+        </scene>
+        <!--Reply Topic View Controller-->
+        <scene sceneID="xUT-ho-KCP">
+            <objects>
+                <viewController storyboardIdentifier="replyTopic" hidesBottomBarWhenPushed="YES" id="sFZ-qp-uS1" customClass="ReplyTopicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ugt-Pt-lNT"/>
+                        <viewControllerLayoutGuide type="bottom" id="tRH-av-Qaq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nmb-yz-nHb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ4-0o-JfK">
+                                <rect key="frame" x="10" y="30" width="300" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="ght-iO-e5n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aQ4-0o-JfK" firstAttribute="top" secondItem="Ugt-Pt-lNT" secondAttribute="bottom" constant="10" id="4ij-m7-BCE"/>
+                            <constraint firstAttribute="trailing" secondItem="aQ4-0o-JfK" secondAttribute="trailing" constant="10" id="EV2-hR-nNb"/>
+                            <constraint firstItem="aQ4-0o-JfK" firstAttribute="leading" secondItem="Nmb-yz-nHb" secondAttribute="leading" constant="10" id="lMF-3X-wW5"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="aQ4-0o-JfK" id="pFm-8U-yHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gf-Ya-bmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="387"/>
         </scene>
     </scenes>
     <resources>
