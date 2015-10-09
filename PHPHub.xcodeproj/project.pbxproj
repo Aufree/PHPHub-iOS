@@ -46,6 +46,7 @@
 		565CE81F1BB29ED0001680D2 /* NodeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CE81E1BB29ED0001680D2 /* NodeEntity.m */; };
 		5672CB321BC760A0007F4B9F /* BubbleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB311BC760A0007F4B9F /* BubbleButton.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB351BC79503007F4B9F /* ReplyTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB341BC79503007F4B9F /* ReplyTopicViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5672CB381BC7A10E007F4B9F /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB371BC7A10E007F4B9F /* CommentEntity.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
@@ -163,6 +164,8 @@
 		5672CB311BC760A0007F4B9F /* BubbleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleButton.m; sourceTree = "<group>"; };
 		5672CB331BC79503007F4B9F /* ReplyTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyTopicViewController.h; sourceTree = "<group>"; };
 		5672CB341BC79503007F4B9F /* ReplyTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTopicViewController.m; sourceTree = "<group>"; };
+		5672CB361BC7A10E007F4B9F /* CommentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentEntity.h; sourceTree = "<group>"; };
+		5672CB371BC7A10E007F4B9F /* CommentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEntity.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -717,6 +720,8 @@
 				565CE81E1BB29ED0001680D2 /* NodeEntity.m */,
 				5652181C1BB6A9C200412E60 /* NotificationEntity.h */,
 				5652181D1BB6A9C200412E60 /* NotificationEntity.m */,
+				5672CB361BC7A10E007F4B9F /* CommentEntity.h */,
+				5672CB371BC7A10E007F4B9F /* CommentEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -977,6 +982,7 @@
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
 				560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				5672CB351BC79503007F4B9F /* ReplyTopicViewController.m in Sources */,
+				5672CB381BC7A10E007F4B9F /* CommentEntity.m in Sources */,
 				5618687A1BBF618300E9E111 /* TOActivityChrome.m in Sources */,
 				565218441BBA7CC500412E60 /* BaseView.m in Sources */,
 				565218451BBA7CC500412E60 /* NotificationListCell.m in Sources */,

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ReplyTopicViewController : UIViewController
-
+@property (nonatomic, copy) NSNumber *topicId;
 @end
