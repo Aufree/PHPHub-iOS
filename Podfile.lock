@@ -42,6 +42,7 @@ PODS:
   - MTLFMDBAdapter (0.1.8):
     - FMDB (~> 2.3)
     - Mantle (~> 1.5)
+  - pop (1.0.8)
   - QBPopupMenu (2.0)
   - Qiniu (7.0.12):
     - AFNetworking (~> 2.0)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - MTLFMDBAdapter (from `https://github.com/summerblue/MTLFMDBAdapter`)
+  - pop (~> 1.0)
   - QBPopupMenu
   - Qiniu
   - QRCodeReaderViewController (from `https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git`)
@@ -108,6 +110,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: b327947f35ab3eb16ca42646b26f7347e6aa7186
   MTLFMDBAdapter: f9849788d9e3a1c6662ef0ce600dd3e4a538a723
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
   Qiniu: 1fb5191b3bc1edb65b2da3d905b8281e15bd1d5c
   QRCodeReaderViewController: 02665936a9742f72bd7b1ef16336b12547c88c66
