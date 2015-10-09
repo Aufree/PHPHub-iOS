@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *watchButton;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
+@property (assign, nonatomic) BOOL isFavoriteTopic;
 @end
 
 @implementation TopicDetailViewController
@@ -43,6 +44,8 @@
         if (!error) {
             weakself.topic = data[@"entity"];
             [weakself loadTopicContentWebView];
+            weakself.isFavoriteTopic = weakself.topic.favorite;
+            [weakself updateFavoriteButtonStateWithFavarite];
         }
     };
     
@@ -108,6 +111,27 @@
 }
 
 # pragma mark Topic Detail Action
+
+- (IBAction)didTouchFavoriteButton:(id)sender {
+    
+    if (_isFavoriteTopic) {
+        _isFavoriteTopic = NO;
+        [[TopicModel Instance] cancelFavoriteTopicById:_topic.topicId withBlock:nil];
+    } else {
+        _isFavoriteTopic = YES;
+        [[TopicModel Instance] favoriteTopicById:_topic.topicId withBlock:nil];
+    }
+    
+    [self updateFavoriteButtonStateWithFavarite];
+}
+
+- (void)updateFavoriteButtonStateWithFavarite {
+    if (_isFavoriteTopic) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_blue_icon"] forState:UIControlStateNormal];
+    } else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_icon"] forState:UIControlStateNormal];
+    }
+}
 
 - (IBAction)didTouchReplyButton:(id)sender {
     ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];

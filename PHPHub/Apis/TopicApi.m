@@ -157,4 +157,37 @@
                                           success:successBlock
                                           failure:failureBlock];
 }
+
+- (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [self favoriteAction:topicId withBlock:block cancelFavorite:NO];
+}
+
+- (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [self favoriteAction:topicId withBlock:block cancelFavorite:YES];
+}
+
+- (id)favoriteAction:(NSNumber *)topicId withBlock:(BaseResultBlock)block cancelFavorite:(BOOL)cancelFavorite {
+    NSString *urlPath = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) block(nil, error);
+    };
+    
+    if (cancelFavorite) {
+        return [[BaseApi loginTokenGrantInstance] DELETE:urlPath
+                                              parameters:nil
+                                                 success:successBlock
+                                                 failure:failureBlock];
+    } else {
+        return [[BaseApi loginTokenGrantInstance] POST:urlPath
+                                              parameters:nil
+                                                 success:successBlock
+                                                 failure:failureBlock];
+    }
+}
 @end

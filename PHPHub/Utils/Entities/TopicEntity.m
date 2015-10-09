@@ -22,6 +22,8 @@
              @"node" : @"node.data",
              @"topicContentUrl" : @"links.details_web_view",
              @"topicRepliesUrl" : @"links.replies_web_view",
+             @"favorite" : @"favorite",
+             @"attention" : @"attention",
              @"updatedAt" : @"updated_at",
              };
 }

@@ -67,4 +67,12 @@
 - (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block {
     return [_api addCommentToTopic:comment withBlock:block];
 }
+
+- (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api favoriteTopicById:topicId withBlock:block];
+}
+
+- (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api cancelFavoriteTopicById:topicId withBlock:block];
+}
 @end

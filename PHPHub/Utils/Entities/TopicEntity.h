@@ -20,5 +20,7 @@
 @property (nonatomic, strong) NodeEntity *node;
 @property (nonatomic, copy) NSString *topicContentUrl;
 @property (nonatomic, copy) NSString *topicRepliesUrl;
+@property (nonatomic, assign) BOOL favorite;
+@property (nonatomic, assign) BOOL attention;
 @property (nonatomic, strong) NSDate *updatedAt;
 @end
