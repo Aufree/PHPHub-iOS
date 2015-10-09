@@ -158,6 +158,9 @@
                                         <state key="normal" image="watch_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchAttentionButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="FDr-3l-jPy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqO-iZ-Lup" customClass="BubbleButton">
                                         <rect key="frame" x="160" y="0.0" width="80" height="44"/>

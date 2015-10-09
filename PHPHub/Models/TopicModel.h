@@ -25,4 +25,6 @@
 - (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block;
 - (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
+- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
+- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 @end

@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
+@property (assign, nonatomic) BOOL isAttentionTopic;
 @end
 
 @implementation TopicDetailViewController
@@ -45,7 +46,9 @@
             weakself.topic = data[@"entity"];
             [weakself loadTopicContentWebView];
             weakself.isFavoriteTopic = weakself.topic.favorite;
+            weakself.isAttentionTopic = weakself.topic.attention;
             [weakself updateFavoriteButtonStateWithFavarite];
+            [weakself updateAttentionButtonStateWithAttention];
         }
     };
     
@@ -125,11 +128,31 @@
     [self updateFavoriteButtonStateWithFavarite];
 }
 
+- (IBAction)didTouchAttentionButton:(id)sender {
+    if (_isAttentionTopic) {
+        _isAttentionTopic = NO;
+        [[TopicModel Instance] cancelAttentionTopicById:_topic.topicId withBlock:nil];
+    } else {
+        _isAttentionTopic = YES;
+        [[TopicModel Instance] attentionTopicById:_topic.topicId withBlock:nil];
+    }
+    
+    [self updateAttentionButtonStateWithAttention];
+}
+
 - (void)updateFavoriteButtonStateWithFavarite {
     if (_isFavoriteTopic) {
         [_favoriteButton setImage:[UIImage imageNamed:@"favorite_blue_icon"] forState:UIControlStateNormal];
     } else {
         [_favoriteButton setImage:[UIImage imageNamed:@"favorite_icon"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)updateAttentionButtonStateWithAttention {
+    if (_isAttentionTopic) {
+        [_watchButton setImage:[UIImage imageNamed:@"watch_blue_icon"] forState:UIControlStateNormal];
+    } else {
+        [_watchButton setImage:[UIImage imageNamed:@"watch_icon"] forState:UIControlStateNormal];
     }
 }
 

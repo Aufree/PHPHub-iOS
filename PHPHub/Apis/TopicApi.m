@@ -159,16 +159,26 @@
 }
 
 - (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [self favoriteAction:topicId withBlock:block cancelFavorite:NO];
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
 }
 
 - (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [self favoriteAction:topicId withBlock:block cancelFavorite:YES];
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:YES];
 }
 
-- (id)favoriteAction:(NSNumber *)topicId withBlock:(BaseResultBlock)block cancelFavorite:(BOOL)cancelFavorite {
-    NSString *urlPath = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
-    
+- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/attention", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
+}
+
+- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/attention", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:YES];
+}
+
+- (id)topicAction:(NSNumber *)topicId withBlock:(BaseResultBlock)block urlString:(NSString *)urlString deleteAction:(BOOL)deleteAction {
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         if (block) block(data, nil);
@@ -178,13 +188,13 @@
         if (block) block(nil, error);
     };
     
-    if (cancelFavorite) {
-        return [[BaseApi loginTokenGrantInstance] DELETE:urlPath
+    if (deleteAction) {
+        return [[BaseApi loginTokenGrantInstance] DELETE:urlString
                                               parameters:nil
                                                  success:successBlock
                                                  failure:failureBlock];
     } else {
-        return [[BaseApi loginTokenGrantInstance] POST:urlPath
+        return [[BaseApi loginTokenGrantInstance] POST:urlString
                                               parameters:nil
                                                  success:successBlock
                                                  failure:failureBlock];

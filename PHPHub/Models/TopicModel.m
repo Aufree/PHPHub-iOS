@@ -75,4 +75,12 @@
 - (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
     return [_api cancelFavoriteTopicById:topicId withBlock:block];
 }
+
+- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api attentionTopicById:topicId withBlock:block];
+}
+
+- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api cancelAttentionTopicById:topicId withBlock:block];
+}
 @end
