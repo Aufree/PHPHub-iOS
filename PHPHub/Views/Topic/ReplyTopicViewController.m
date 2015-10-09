@@ -43,13 +43,16 @@
     comment.topicId = _topicId;
     comment.commentBody = _commentTextView.text;
     
+    __weak typeof(self) weakself = self;
     BaseResultBlock callback =^(NSDictionary *data, NSError *error) {
         if (!error) {
-            
+            [weakself.navigationController popViewControllerAnimated:YES];
         }
     };
     
-    [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
+    if (_commentTextView.text.length > 0) {
+        [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
+    }
 }
 
 @end
