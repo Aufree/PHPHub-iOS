@@ -115,4 +115,10 @@
     [self.navigationController pushViewController:replyTopicVC animated:YES];
 }
 
+- (IBAction)didTouchCommentsButton:(id)sender {
+    if (_topic.topicRepliesUrl) {
+        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
 @end

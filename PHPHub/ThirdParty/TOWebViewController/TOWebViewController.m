@@ -35,6 +35,8 @@
 #import <MessageUI/MFMessageComposeViewController.h>
 #import <Twitter/Twitter.h>
 
+#import "AccessTokenHandler.h"
+
 /* Detect if we're running iOS 7.0 or higher (With the new minimal UI) */
 #define MINIMAL_UI      ([[UIViewController class] instancesRespondToSelector:@selector(edgesForExtendedLayout)])
 /* Detect if we're running iOS 8.0 (With the new device rotation system) */
@@ -263,7 +265,9 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     self.modalPresentationStyle = UIModalPresentationFullScreen;
 
     //Set the URL request
-    self.urlRequest = [[NSMutableURLRequest alloc] init];
+    self.urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@""]
+                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                          timeoutInterval:60.0];
 }
 
 - (void)loadView
@@ -520,6 +524,11 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     if (self.url && self.webView.request == nil)
     {
         [self.urlRequest setURL:self.url];
+        
+        if ([self.url.host rangeOfString:PHPHubHost].location != NSNotFound) {
+            [self.urlRequest setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
+        }
+        
         [self.webView loadRequest:self.urlRequest];
     }
 }

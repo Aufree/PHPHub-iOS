@@ -21,6 +21,7 @@
              @"lastReplyUser" : @"last_reply_user.data",
              @"node" : @"node.data",
              @"topicContentUrl" : @"links.details_web_view",
+             @"topicRepliesUrl" : @"links.replies_web_view",
              @"updatedAt" : @"updated_at",
              };
 }

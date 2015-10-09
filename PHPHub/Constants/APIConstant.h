@@ -10,6 +10,7 @@
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
 
 #define APIBaseURL   @"https://api.phphub.org"
+#define PHPHubHost   @"phphub.org"
 #define GitHubURL    @"https://github.com/"
 #define TwitterURL   @"https://twitter.com/"
 #define ProjectURL   @"https://github.com/phphub/phphub-ios"

@@ -19,5 +19,6 @@
 @property (nonatomic, strong) UserEntity *lastReplyUser;
 @property (nonatomic, strong) NodeEntity *node;
 @property (nonatomic, copy) NSString *topicContentUrl;
+@property (nonatomic, copy) NSString *topicRepliesUrl;
 @property (nonatomic, strong) NSDate *updatedAt;
 @end

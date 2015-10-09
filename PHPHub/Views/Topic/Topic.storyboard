@@ -170,6 +170,9 @@
                                         <state key="normal" image="comments_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchCommentsButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="6h2-Z0-aK8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
