@@ -104,10 +104,17 @@
         if (block) block(nil, error);
     };
     
-    return [[BaseApi loginTokenGrantInstance] GET:urlPath
-                                   parameters:nil
-                                      success:successBlock
-                                      failure:failureBlock];
+    if ([[CurrentUser Instance] isLogin]) {
+        return [[BaseApi loginTokenGrantInstance] GET:urlPath
+                                           parameters:nil
+                                              success:successBlock
+                                              failure:failureBlock];
+    } else {
+        return [[BaseApi clientGrantInstance] GET:urlPath
+                                       parameters:nil
+                                          success:successBlock
+                                          failure:failureBlock];
+    }
 }
 
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{
