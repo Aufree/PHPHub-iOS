@@ -36,8 +36,11 @@
     };
     
     [[CurrentUser Instance] setupClientRequestState:callback];
-    
+    [self createRightButtonItem];
 }
+
+
+#pragma mark Get Topic Data
 
 - (void)headerRefreshing {
     __weak typeof(self) weakself = self;
@@ -87,6 +90,21 @@
 
 - (void)fetchDataSource:(BaseResultBlock)callback atPage:(NSUInteger)atPage {
     [[TopicModel Instance] getExcellentTopicList:callback atPage:atPage];
+}
+
+#pragma mark Right bar button item
+
+- (void)createRightButtonItem {
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pencil_square_icon"]
+                                                                           style:UIBarButtonItemStylePlain
+                                                                          target:self
+                                                                          action:@selector(jumpToPostTopicVC)];
+    rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+- (void)jumpToPostTopicVC {
+    
 }
 
 @end
