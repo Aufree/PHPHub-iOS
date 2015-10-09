@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *topicContentWeb;
 @property (weak, nonatomic) IBOutlet UIView *topicToolBarView;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (weak, nonatomic) IBOutlet UIButton *watchButton;
+@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @end
 
 @implementation TopicDetailViewController
@@ -56,6 +60,9 @@
     _usernameLabel.text = user.username;
     _signatureLabel.text = user.signature;
     _voteCountLabel.text = _topic.voteCount.stringValue;
+    NSString *rawTopicCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
+    NSString *topicCount = [NSString stringWithFormat:@" %@", rawTopicCount];
+    [_commentsButton setTitle:topicCount forState:UIControlStateNormal];
 }
 
 #pragma mark Load WebView

@@ -210,12 +210,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatarImageView" destination="DNm-gd-fek" id="fC5-dN-xtr"/>
+                        <outlet property="commentsButton" destination="sIb-ug-ZXN" id="92c-fK-dXd"/>
+                        <outlet property="favoriteButton" destination="QnM-IR-QMe" id="XEl-Eg-qny"/>
+                        <outlet property="replyButton" destination="vqO-iZ-Lup" id="iVk-Kl-1dd"/>
                         <outlet property="signatureLabel" destination="BOC-dg-bn7" id="dyW-0Q-x1C"/>
                         <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
                         <outlet property="topicToolBarView" destination="a9p-xm-WTv" id="4mp-J9-1Jc"/>
                         <outlet property="usernameLabel" destination="ZD4-Y8-xmR" id="MTY-Iw-USl"/>
                         <outlet property="voteCountLabel" destination="tbI-fQ-TSb" id="ohP-Ok-ebW"/>
                         <outlet property="voteStatusImage" destination="Dw0-nE-kVW" id="Vjh-Pi-OoR"/>
+                        <outlet property="watchButton" destination="55W-fj-Utx" id="PGz-x0-TeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCR-i3-oY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
