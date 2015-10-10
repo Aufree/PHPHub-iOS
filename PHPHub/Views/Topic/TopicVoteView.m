@@ -8,6 +8,7 @@
 
 #import "TopicVoteView.h"
 #import "Masonry.h"
+#import <POP/POP.h>
 
 static CGFloat VoteContainerViewWidth = 240;
 static CGFloat VoteContainerViewHeight = 110;
@@ -29,6 +30,7 @@ static CGFloat VoteContainerViewHeight = 110;
 - (void)setup {
     [self addSubview:self.maskView];
     [self addConstraintToVoteView];
+    [self addAnimationToContainerView];
 }
 
 - (UIView *)maskView {
@@ -80,5 +82,28 @@ static CGFloat VoteContainerViewHeight = 110;
         make.centerX.mas_equalTo(self.maskView.mas_centerX);
         make.centerY.mas_equalTo(self.maskView.mas_centerY);
     }];
+}
+
+- (void)addAnimationToContainerView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+        scaleAnimation.velocity = [NSValue valueWithCGSize:CGSizeMake(3.f, 3.f)];
+        scaleAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
+        scaleAnimation.springBounciness = 18.0f;
+        
+        __weak typeof(self) weakself = self;
+        scaleAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+            
+            [weakself scaleToDefault];
+        };
+        
+        [_voteContainerView.layer pop_addAnimation:scaleAnimation forKey:@"layerScaleSpringAnimation"];
+    });
+}
+
+- (void)scaleToDefault {
+    POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scaleAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(1.f, 1.f)];
+    [_voteContainerView.layer pop_addAnimation:scaleAnimation forKey:@"layerScaleDefaultAnimation"];
 }
 @end
