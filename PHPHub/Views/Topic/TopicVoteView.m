@@ -36,7 +36,7 @@ static CGFloat VoteContainerViewHeight = 110;
         _maskView = [[UIView alloc] initWithFrame:self.bounds];
         _maskView.backgroundColor = [UIColor colorWithWhite:0.847 alpha:0.600];
         _maskView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapMaskView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskViewDidTouch)];
+        UITapGestureRecognizer *tapMaskView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFromSuperview)];
         [_maskView addGestureRecognizer:tapMaskView];
         [_maskView addSubview:self.voteContainerView];
     }
@@ -59,6 +59,7 @@ static CGFloat VoteContainerViewHeight = 110;
         _upVoteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, VoteContainerViewWidth/2, VoteContainerViewHeight)];
         [_upVoteButton setImage:[UIImage imageNamed:@"big_upvote_icon"] forState:UIControlStateNormal];
         [_upVoteButton setImage:[UIImage imageNamed:@"big_upvote_selected_icon"] forState:UIControlStateHighlighted];
+        [_upVoteButton addTarget:self action:@selector(removeFromSuperview) forControlEvents:UIControlEventTouchUpInside];
     }
     return _upVoteButton;
 }
@@ -68,6 +69,7 @@ static CGFloat VoteContainerViewHeight = 110;
         _downVoteButton = [[UIButton alloc] initWithFrame:CGRectMake(VoteContainerViewWidth/2, 0, VoteContainerViewWidth/2, VoteContainerViewHeight)];
         [_downVoteButton setImage:[UIImage imageNamed:@"big_downvote_icon"] forState:UIControlStateNormal];
         [_downVoteButton setImage:[UIImage imageNamed:@"big_downvote_selected_icon"] forState:UIControlStateHighlighted];
+        [_downVoteButton addTarget:self action:@selector(removeFromSuperview) forControlEvents:UIControlEventTouchUpInside];
     }
     return _downVoteButton;
 }
@@ -78,9 +80,5 @@ static CGFloat VoteContainerViewHeight = 110;
         make.centerX.mas_equalTo(self.maskView.mas_centerX);
         make.centerY.mas_equalTo(self.maskView.mas_centerY);
     }];
-}
-
-- (void)maskViewDidTouch {
-    [self removeFromSuperview];
 }
 @end
