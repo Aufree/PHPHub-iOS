@@ -178,6 +178,16 @@
     return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:YES];
 }
 
+- (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/vote-up", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
+}
+
+- (id)voteDownTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    NSString *urlString = [NSString stringWithFormat:@"topics/%@/vote-down", topicId];
+    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
+}
+
 - (id)topicAction:(NSNumber *)topicId withBlock:(BaseResultBlock)block urlString:(NSString *)urlString deleteAction:(BOOL)deleteAction {
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];

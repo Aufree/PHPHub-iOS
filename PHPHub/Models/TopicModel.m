@@ -84,6 +84,14 @@
     return [_api cancelAttentionTopicById:topicId withBlock:block];
 }
 
+- (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api voteUpTopic:topicId withBlock:block];
+}
+
+- (id)voteDownTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
+    return [_api voteDownTopic:topicId withBlock:block];
+}
+
 - (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block {
     return [_api createTopic:entity withBlock:block];
 }

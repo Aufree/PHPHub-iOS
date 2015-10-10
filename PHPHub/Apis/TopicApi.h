@@ -29,4 +29,6 @@
 - (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block;
+- (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
+- (id)voteDownTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 @end
