@@ -59,39 +59,24 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vote_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-nE-kVW">
-                                                <rect key="frame" x="11" y="14" width="17" height="24"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaI-gv-SCh">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="52"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="17" id="tL7-vw-QJE"/>
-                                                    <constraint firstAttribute="height" constant="24" id="tUX-Zf-wnJ"/>
+                                                    <constraint firstAttribute="width" constant="80" id="rbI-Ps-Kbg"/>
                                                 </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-fQ-TSb">
-                                                <rect key="frame" x="28" y="0.0" width="52" height="52"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="79J-JS-dJi"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="79J-JS-dJi"/>
-                                                    </mask>
-                                                </variation>
-                                            </label>
+                                                <state key="normal" title="  10" image="vote_icon">
+                                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="sgm-gB-YNo" firstAttribute="centerY" secondItem="Aic-yW-pmS" secondAttribute="centerY" id="3i8-ah-Wno"/>
-                                            <constraint firstAttribute="trailing" secondItem="tbI-fQ-TSb" secondAttribute="trailing" id="Lbk-75-tlS"/>
+                                            <constraint firstAttribute="bottom" secondItem="TaI-gv-SCh" secondAttribute="bottom" id="7tp-1q-hG3"/>
+                                            <constraint firstItem="TaI-gv-SCh" firstAttribute="top" secondItem="Aic-yW-pmS" secondAttribute="top" id="LNB-vs-4VM"/>
                                             <constraint firstItem="sgm-gB-YNo" firstAttribute="leading" secondItem="Aic-yW-pmS" secondAttribute="leading" id="S83-U5-HGJ"/>
                                             <constraint firstAttribute="width" constant="80" id="ZjB-MK-cqN"/>
-                                            <constraint firstItem="tbI-fQ-TSb" firstAttribute="top" secondItem="Aic-yW-pmS" secondAttribute="top" id="coV-la-I6N"/>
-                                            <constraint firstAttribute="bottom" secondItem="tbI-fQ-TSb" secondAttribute="bottom" id="pVU-bQ-Rd0"/>
-                                            <constraint firstItem="tbI-fQ-TSb" firstAttribute="leading" secondItem="Dw0-nE-kVW" secondAttribute="trailing" id="uD2-gc-jxd"/>
-                                            <constraint firstItem="Dw0-nE-kVW" firstAttribute="centerY" secondItem="Aic-yW-pmS" secondAttribute="centerY" id="utd-zm-Zfw"/>
-                                            <constraint firstItem="Dw0-nE-kVW" firstAttribute="leading" secondItem="sgm-gB-YNo" secondAttribute="trailing" constant="10" id="vmz-87-Oda"/>
+                                            <constraint firstAttribute="trailing" secondItem="TaI-gv-SCh" secondAttribute="trailing" id="aU6-wv-kbG"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bko-RW-cAF">
@@ -229,8 +214,7 @@
                         <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
                         <outlet property="topicToolBarView" destination="a9p-xm-WTv" id="4mp-J9-1Jc"/>
                         <outlet property="usernameLabel" destination="ZD4-Y8-xmR" id="MTY-Iw-USl"/>
-                        <outlet property="voteCountLabel" destination="tbI-fQ-TSb" id="ohP-Ok-ebW"/>
-                        <outlet property="voteStatusImage" destination="Dw0-nE-kVW" id="Vjh-Pi-OoR"/>
+                        <outlet property="voteButton" destination="TaI-gv-SCh" id="Hus-0V-dfn"/>
                         <outlet property="watchButton" destination="55W-fj-Utx" id="PGz-x0-TeX"/>
                     </connections>
                 </viewController>
