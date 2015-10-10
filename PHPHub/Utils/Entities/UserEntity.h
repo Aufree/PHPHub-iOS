@@ -25,6 +25,7 @@
 @property (nonatomic, copy) NSString *introduction;
 @property (nonatomic, copy) NSString *githubName;
 @property (nonatomic, copy) NSString *realName;
+@property (nonatomic, copy) NSString *repliesUrl;
 @property (nonatomic, strong) NSDate *createdAtDate;
 @property (nonatomic, strong) NSDate *updatedAtDate;
 @end

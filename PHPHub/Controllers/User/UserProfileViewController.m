@@ -99,6 +99,7 @@
                 vc = [self createTopicListWithType:TopicListTypeNormal];
                 break;
             case 1:
+                vc = [[TOWebViewController alloc] initWithURLString:_userEntity.repliesUrl];
                 break;
             case 2:
                 vc = [self createTopicListWithType:TopicListTypeAttention];

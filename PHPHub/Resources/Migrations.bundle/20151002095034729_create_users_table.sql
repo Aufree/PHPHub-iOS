@@ -18,6 +18,7 @@ CREATE TABLE "users" (
 "introduction" varchar null,
 "github_name" varchar null,
 "real_name" varchar null,
+"replies_web_view" varchar null,
 "created_at" datetime not null,
 "updated_at" datetime null
 );

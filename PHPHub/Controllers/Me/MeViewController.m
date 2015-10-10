@@ -12,6 +12,7 @@
 #import "UserProfileViewController.h"
 #import "TopicListViewController.h"
 #import "SettingsViewController.h"
+#import "TOWebViewController.h"
 
 @interface MeViewController () <LoginViewControllerDelegate>
 @property (nonatomic, strong) UserEntity *userEntity;
@@ -87,6 +88,8 @@
     } else if (section == 2) {
         if (row == 0) {
             vc = [self createTopicListWithType:TopicListTypeNormal];
+        } else if (row == 1) {
+            vc = [[TOWebViewController alloc] initWithURLString:_userEntity.repliesUrl];
         } else if (row == 2) {
             vc = [[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settings"];
         }
