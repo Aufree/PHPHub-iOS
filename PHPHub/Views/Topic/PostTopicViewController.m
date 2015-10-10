@@ -92,6 +92,7 @@
 }
 
 - (IBAction)didTouchSelectNodeButton:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
