@@ -7,7 +7,6 @@
 //
 
 #import "NodeApi.h"
-#import "NodeEntity.h"
 
 @implementation NodeApi
 
@@ -17,7 +16,7 @@
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         if (data[@"data"]) {
-            data[@"entity"] = [NodeEntity entityFromDictionary:data[@"data"]];
+            data[@"entities"] = [NodeEntity arrayOfEntitiesFromArray:data[@"data"]];
         }
         if (block) block(data, nil);
     };

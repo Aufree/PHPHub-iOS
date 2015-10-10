@@ -7,6 +7,7 @@
 //
 
 #import "BaseApi.h"
+#import "NodeEntity.h"
 
 @interface NodeApi : BaseApi
 - (id)getAllTopicNode:(BaseResultBlock)block;

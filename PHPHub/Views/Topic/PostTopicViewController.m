@@ -8,11 +8,15 @@
 
 #import "PostTopicViewController.h"
 #import "UITextView+Placeholder.h"
+#import "NodeModel.h"
 
 @interface PostTopicViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *topicTitleTF;
 @property (weak, nonatomic) IBOutlet UITextView *topicContentTextView;
 @property (weak, nonatomic) IBOutlet UIButton *selectNodeButton;
+@property (weak, nonatomic) IBOutlet UIPickerView *nodePickView;
+@property (strong, nonatomic) NSMutableArray *nodeNameArray;
+@property (copy, nonatomic) NSArray *nodeEntites;
 @end
 
 @implementation PostTopicViewController
@@ -20,9 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"发布话题";
+    self.nodeNameArray = [[NSMutableArray alloc] init];
     
     [self setup];
     [self createRightButtonItem];
+    [self getAllNodeFromServer];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.nodePickView.hidden = NO;
 }
 
 - (void)setup {
@@ -42,10 +53,43 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
+- (void)getAllNodeFromServer {
+    __weak typeof(self) weakself = self;
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (!error) {
+            weakself.nodeEntites = data[@"entities"];
+            for (NodeEntity *node in weakself.nodeEntites) {
+                [weakself.nodeNameArray addObject:node.nodeName];
+            }
+            [weakself.nodePickView reloadAllComponents];
+        }
+    };
+    
+    [[NodeModel Instance] getAllTopicNode:callback];
+}
+
 - (void)postTopicToServer {
     
 }
 
 - (IBAction)didTouchSelectNodeButton:(id)sender {
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NodeEntity *node = [_nodeEntites objectAtIndex:row];
+    NSString *buttonTitle = [NSString stringWithFormat:@"发布到 [%@] 下", node.nodeName];
+    [_selectNodeButton setTitle:buttonTitle forState:UIControlStateNormal];
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_nodeNameArray count];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_nodeNameArray objectAtIndex:row];
 }
 @end
