@@ -200,4 +200,25 @@
                                                  failure:failureBlock];
     }
 }
+
+- (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block {
+    NSString *urlPath = @"topics";
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        if (data[@"data"]) {
+            data[@"entity"] = [TopicEntity entityFromDictionary:data[@"data"]];
+        }
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi loginTokenGrantInstance] POST:urlPath
+                                        parameters:[entity transformToDictionary]
+                                           success:successBlock
+                                           failure:failureBlock];
+}
 @end

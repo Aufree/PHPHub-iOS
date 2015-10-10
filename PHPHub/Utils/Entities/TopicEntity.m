@@ -14,7 +14,9 @@
 {
     return @{
              @"topicId" : @"id",
+             @"nodeId" : @"node_id",
              @"topicTitle" : @"title",
+             @"topicBody" : @"body",
              @"topicRepliesCount" : @"reply_count",
              @"voteCount" : @"vote_count",
              @"user" : @"user.data",

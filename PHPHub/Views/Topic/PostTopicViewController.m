@@ -8,7 +8,9 @@
 
 #import "PostTopicViewController.h"
 #import "UITextView+Placeholder.h"
+
 #import "NodeModel.h"
+#import "TopicModel.h"
 
 @interface PostTopicViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *topicTitleTF;
@@ -69,7 +71,24 @@
 }
 
 - (void)postTopicToServer {
+    TopicEntity *topic = [TopicEntity new];
+    topic.topicTitle = _topicTitleTF.text;
+    topic.topicBody = _topicContentTextView.text;
+    NSInteger seletedNodeRow = [_nodePickView selectedRowInComponent:0];
+    NodeEntity *selectedNode = [_nodeEntites objectAtIndex:seletedNodeRow];
+    topic.nodeId = selectedNode.nodeId;
     
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (!error) {
+            TopicEntity *topicEntity = data[@"entity"];
+            topicEntity.user = [[CurrentUser Instance] userInfo];
+            topicEntity.topicRepliesCount = @0;
+            topicEntity.voteCount = @0;
+            [JumpToOtherVCHandler jumpToTopicDetailWithTopic:topicEntity];
+        }
+    };
+    
+    [[TopicModel Instance] createTopic:topic withBlock:callback];
 }
 
 - (IBAction)didTouchSelectNodeButton:(id)sender {

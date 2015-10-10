@@ -7,7 +7,10 @@
 //
 
 #import "JumpToOtherVCHandler.h"
+
 #import "BaseTabBarViewController.h"
+#import "TopicDetailViewController.h"
+
 #import "AppDelegate.h"
 
 @implementation JumpToOtherVCHandler
@@ -19,5 +22,11 @@
 + (void)presentToOtherView:(UIViewController *)vc animated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
     BaseTabBarViewController *tabbar = [(AppDelegate *)[[UIApplication sharedApplication] delegate] tabBarViewController];
     [tabbar presentViewController:vc animated:animated completion:completion];
+}
+
++ (void)jumpToTopicDetailWithTopic:(TopicEntity *)topic {
+    TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
+    topicDetailVC.topic = topic;
+    [self pushToOtherView:topicDetailVC animated:YES];
 }
 @end

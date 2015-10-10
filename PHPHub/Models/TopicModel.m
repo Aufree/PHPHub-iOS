@@ -83,4 +83,8 @@
 - (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
     return [_api cancelAttentionTopicById:topicId withBlock:block];
 }
+
+- (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block {
+    return [_api createTopic:entity withBlock:block];
+}
 @end

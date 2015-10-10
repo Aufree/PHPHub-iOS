@@ -27,4 +27,5 @@
 - (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
+- (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block;
 @end

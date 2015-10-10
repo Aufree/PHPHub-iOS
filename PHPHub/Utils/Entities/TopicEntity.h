@@ -12,7 +12,9 @@
 
 @interface TopicEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *topicId;
+@property (nonatomic, strong) NSNumber *nodeId;
 @property (nonatomic, copy) NSString *topicTitle;
+@property (nonatomic, copy) NSString *topicBody;
 @property (nonatomic, strong) NSNumber *topicRepliesCount;
 @property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic, strong) UserEntity *user;
