@@ -67,6 +67,9 @@
                                                 <state key="normal" title="  10" image="vote_icon">
                                                     <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTouchVoteButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="Qb1-5N-5dj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

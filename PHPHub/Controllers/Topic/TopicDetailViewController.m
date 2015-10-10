@@ -12,6 +12,7 @@
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
 #import "ReplyTopicViewController.h"
+#import "TopicVoteView.h"
 
 @interface TopicDetailViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -163,6 +164,12 @@
     } else {
         [_watchButton setImage:[UIImage imageNamed:@"watch_icon"] forState:UIControlStateNormal];
     }
+}
+
+- (IBAction)didTouchVoteButton:(id)sender {
+    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+    TopicVoteView *topicVoteView = [[TopicVoteView alloc] initWithFrame:keyWindow.bounds];
+    [keyWindow addSubview: topicVoteView];
 }
 
 - (IBAction)didTouchReplyButton:(id)sender {

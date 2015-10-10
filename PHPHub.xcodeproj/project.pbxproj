@@ -50,6 +50,7 @@
 		5672CB4F1BC8EB3E007F4B9F /* PostTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB4A1BC8EB3E007F4B9F /* PostTopicViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB501BC8EB3E007F4B9F /* ReplyTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB4C1BC8EB3E007F4B9F /* ReplyTopicViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB511BC8EB3E007F4B9F /* TopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB4E1BC8EB3E007F4B9F /* TopicDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5672CB541BC8EBC0007F4B9F /* TopicVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB531BC8EBC0007F4B9F /* TopicVoteView.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
@@ -175,6 +176,8 @@
 		5672CB4C1BC8EB3E007F4B9F /* ReplyTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTopicViewController.m; sourceTree = "<group>"; };
 		5672CB4D1BC8EB3E007F4B9F /* TopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailViewController.h; sourceTree = "<group>"; };
 		5672CB4E1BC8EB3E007F4B9F /* TopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailViewController.m; sourceTree = "<group>"; };
+		5672CB521BC8EBC0007F4B9F /* TopicVoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicVoteView.h; sourceTree = "<group>"; };
+		5672CB531BC8EBC0007F4B9F /* TopicVoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicVoteView.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +426,8 @@
 				565218421BBA7CC500412E60 /* TopicListTableView.h */,
 				565218431BBA7CC500412E60 /* TopicListTableView.m */,
 				560E4C131BC6424800BD8CE2 /* Topic.storyboard */,
+				5672CB521BC8EBC0007F4B9F /* TopicVoteView.h */,
+				5672CB531BC8EBC0007F4B9F /* TopicVoteView.m */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -971,6 +976,7 @@
 				565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */,
 				5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */,
 				565218671BBBC41400412E60 /* GVUserDefaults+Properties.m in Sources */,
+				5672CB541BC8EBC0007F4B9F /* TopicVoteView.m in Sources */,
 				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
