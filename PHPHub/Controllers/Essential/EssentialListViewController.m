@@ -10,6 +10,7 @@
 #import "TopicListTableView.h"
 #import "TopicEntity.h"
 #import "TopicModel.h"
+#import "PostTopicViewController.h"
 
 @interface EssentialListViewController ()
 @property (nonatomic, strong) TopicListTableView *tableView;
@@ -104,7 +105,8 @@
 }
 
 - (void)jumpToPostTopicVC {
-    
+    PostTopicViewController *postTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"postTopic"];
+    [self.navigationController pushViewController:postTopicVC animated:YES];
 }
 
 @end

@@ -47,6 +47,7 @@
 		5672CB321BC760A0007F4B9F /* BubbleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB311BC760A0007F4B9F /* BubbleButton.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB351BC79503007F4B9F /* ReplyTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB341BC79503007F4B9F /* ReplyTopicViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB381BC7A10E007F4B9F /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB371BC7A10E007F4B9F /* CommentEntity.m */; settings = {ASSET_TAGS = (); }; };
+		5672CB3E1BC7C230007F4B9F /* PostTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB3D1BC7C230007F4B9F /* PostTopicViewController.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
@@ -166,6 +167,8 @@
 		5672CB341BC79503007F4B9F /* ReplyTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTopicViewController.m; sourceTree = "<group>"; };
 		5672CB361BC7A10E007F4B9F /* CommentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentEntity.h; sourceTree = "<group>"; };
 		5672CB371BC7A10E007F4B9F /* CommentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEntity.m; sourceTree = "<group>"; };
+		5672CB3C1BC7C230007F4B9F /* PostTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTopicViewController.h; sourceTree = "<group>"; };
+		5672CB3D1BC7C230007F4B9F /* PostTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTopicViewController.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +421,8 @@
 				560E4C161BC64D3F00BD8CE2 /* TopicDetailViewController.m */,
 				5672CB331BC79503007F4B9F /* ReplyTopicViewController.h */,
 				5672CB341BC79503007F4B9F /* ReplyTopicViewController.m */,
+				5672CB3C1BC7C230007F4B9F /* PostTopicViewController.h */,
+				5672CB3D1BC7C230007F4B9F /* PostTopicViewController.m */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -962,6 +967,7 @@
 				5652185D1BBBB4F000412E60 /* AFOAuth2Manager+Addtions.m in Sources */,
 				56D8F0661BAFDA5400242FA9 /* BaseDBManager.m in Sources */,
 				5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */,
+				5672CB3E1BC7C230007F4B9F /* PostTopicViewController.m in Sources */,
 				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
