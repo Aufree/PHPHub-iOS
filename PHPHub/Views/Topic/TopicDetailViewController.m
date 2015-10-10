@@ -47,7 +47,8 @@
             weakself.isFavoriteTopic = weakself.topic.favorite;
             weakself.isAttentionTopic = weakself.topic.attention;
             [weakself updateFavoriteButtonStateWithFavarite];
-            [weakself updateAttentionButtonStateWithAttention];
+            [weakself updateAttentionButtonStateWithAttention];            
+            [weakself updateVoteState];
         }
     };
     
@@ -70,6 +71,14 @@
     NSString *rawTopicCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
     NSString *topicCount = [NSString stringWithFormat:@" %@", rawTopicCount];
     [_commentsButton setTitle:topicCount forState:UIControlStateNormal];
+}
+
+- (void)updateVoteState {
+    if (_topic.voteUp) {
+        [_voteButton setImage:[UIImage imageNamed:@"upvote_icon"] forState:UIControlStateNormal];
+    } else if (_topic.voteDown) {
+        [_voteButton setImage:[UIImage imageNamed:@"downvote_icon"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark Load WebView
