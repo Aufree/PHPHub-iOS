@@ -11,4 +11,5 @@
 @interface TopicVoteView : UIView
 @property (nonatomic, strong) UIButton *upVoteButton;
 @property (nonatomic, strong) UIButton *downVoteButton;
+- (instancetype)initWithFrame:(CGRect)frame topicEntity:(TopicEntity *)topic;
 @end

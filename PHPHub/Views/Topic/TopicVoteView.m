@@ -15,13 +15,15 @@ static CGFloat VoteContainerViewHeight = 110;
 @interface TopicVoteView ()
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) UIView *voteContainerView;
+@property (nonatomic, strong) TopicEntity *topic;
 @end
 
 @implementation TopicVoteView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame topicEntity:(TopicEntity *)topic {
     self = [super initWithFrame:frame];
     if (self) {
+        _topic = topic;
         [self setup];
     }
     return self;
@@ -31,6 +33,7 @@ static CGFloat VoteContainerViewHeight = 110;
     [self addSubview:self.maskView];
     [self addConstraintToVoteView];
     [self addAnimationToContainerView];
+    [self updateVoteButtonState];
 }
 
 - (UIView *)maskView {
@@ -74,6 +77,14 @@ static CGFloat VoteContainerViewHeight = 110;
         [_downVoteButton addTarget:self action:@selector(removeFromSuperview) forControlEvents:UIControlEventTouchUpInside];
     }
     return _downVoteButton;
+}
+
+- (void)updateVoteButtonState {
+    if (_topic.voteUp && !_topic.voteDown) {
+        [_upVoteButton setImage:[UIImage imageNamed:@"big_upvote_selected_icon"] forState:UIControlStateNormal];
+    } else if (_topic.voteDown && !_topic.voteUp) {
+        [_downVoteButton setImage:[UIImage imageNamed:@"big_downvote_selected_icon"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)addConstraintToVoteView {

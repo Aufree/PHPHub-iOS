@@ -75,10 +75,12 @@
 }
 
 - (void)updateVoteState {
-    if (_topic.voteUp) {
+    if (_topic.voteUp && !_topic.voteDown) {
         [_voteButton setImage:[UIImage imageNamed:@"upvote_icon"] forState:UIControlStateNormal];
-    } else if (_topic.voteDown) {
+    } else if (_topic.voteDown && !_topic.voteUp) {
         [_voteButton setImage:[UIImage imageNamed:@"downvote_icon"] forState:UIControlStateNormal];
+    } else {
+        [_voteButton setImage:[UIImage imageNamed:@"vote_icon"] forState:UIControlStateNormal];
     }
 }
 
@@ -168,7 +170,9 @@
 
 - (IBAction)didTouchVoteButton:(id)sender {
     UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-    TopicVoteView *topicVoteView = [[TopicVoteView alloc] initWithFrame:keyWindow.bounds];
+    TopicVoteView *topicVoteView = [[TopicVoteView alloc] initWithFrame:keyWindow.bounds topicEntity:_topic];
+    [topicVoteView.upVoteButton addTarget:self action:@selector(upVoteTopic) forControlEvents:UIControlEventTouchUpInside];
+    [topicVoteView.downVoteButton addTarget:self action:@selector(downVoteTopic) forControlEvents:UIControlEventTouchUpInside];
     [keyWindow addSubview: topicVoteView];
 }
 
@@ -183,5 +187,25 @@
         TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
         [self.navigationController pushViewController:webVC animated:YES];
     }
+}
+
+- (void)upVoteTopic {
+    _topic.voteUp = !_topic.voteUp;
+    NSInteger voteCount = _topic.voteCount.integerValue;
+    voteCount = _topic.voteUp ? voteCount + 1 : voteCount - 1;
+    _topic.voteCount = @(voteCount);
+    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", voteCount] forState:UIControlStateNormal];
+    [[TopicModel Instance] voteUpTopic:_topic.topicId withBlock:nil];
+    [self updateVoteState];
+}
+
+- (void)downVoteTopic {
+    _topic.voteDown = !_topic.voteDown;
+    NSInteger voteCount = _topic.voteCount.integerValue;
+    voteCount = _topic.voteDown ? voteCount - 1 : voteCount + 1;
+    _topic.voteCount = @(voteCount);
+    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", voteCount] forState:UIControlStateNormal];
+    [[TopicModel Instance] voteDownTopic:_topic.topicId withBlock:nil];
+    [self updateVoteState];
 }
 @end
