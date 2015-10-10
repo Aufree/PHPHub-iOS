@@ -15,7 +15,6 @@ CREATE TABLE "users" (
 "city" varchar null,
 "email" varchar null,
 "signature" varchar null,
-"introduction" varchar null,
 "github_name" varchar null,
 "real_name" varchar null,
 "replies_web_view" varchar null,

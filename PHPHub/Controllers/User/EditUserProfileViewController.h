@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditUserProfileViewController : UITableViewController
+@protocol EditUserProfileViewControllerDelegate <NSObject>
+- (void)refreshUserProfileView;
+@end
 
+@interface EditUserProfileViewController : UITableViewController
+@property (nonatomic, weak) id<EditUserProfileViewControllerDelegate> delegate;
 @end

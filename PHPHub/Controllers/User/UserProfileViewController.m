@@ -11,7 +11,7 @@
 #import "TopicListViewController.h"
 #import "EditUserProfileViewController.h"
 
-@interface UserProfileViewController ()
+@interface UserProfileViewController () <EditUserProfileViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *realnameLabel;
@@ -54,12 +54,17 @@
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = _userEntity.username;
     _realnameLabel.text = _userEntity.realName;
-    _userIntroLabel.text = _userEntity.introduction;
+    _userIntroLabel.text = _userEntity.signature;
     _localLabel.text = _userEntity.city;
     _githubLabel.text = _userEntity.githubName;
     _twitterLabel.text = _userEntity.twitterAccount;
     _blogLabel.text = _userEntity.blogURL;
     _createdAtLabel.text = [NSString stringWithFormat:@"%@", _userEntity.createdAtDate];
+}
+
+- (void)refreshUserProfileView {
+    _userEntity = [[CurrentUser Instance] userInfo];
+    [self updateUserProfileView];
 }
 
 - (void)createRightButtonItem {
@@ -75,6 +80,7 @@
     EditUserProfileViewController *editUserProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
                                                                                   bundle:[NSBundle mainBundle]]
                                                         instantiateViewControllerWithIdentifier:@"edituserprofile"];
+    editUserProfileVC.delegate = self;
     [self.navigationController pushViewController:editUserProfileVC animated:YES];
 }
 

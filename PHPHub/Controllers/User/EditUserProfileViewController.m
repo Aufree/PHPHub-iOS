@@ -46,7 +46,7 @@
 
 - (void)customUserProfileTextView {
     _introTextView.layer.cornerRadius = 5;
-    _introTextView.placeholder = @"简介";
+    _introTextView.placeholder = @"个人签名";
     _introTextView.textContainerInset = UIEdgeInsetsMake(10, 5, 10, 5);
 }
 
@@ -65,7 +65,7 @@
     _twitterTF.text = _user.twitterAccount;
     _githubTF.text = _user.githubName;
     _blogTF.text = _user.blogURL;
-    _introTextView.text = _user.introduction;
+    _introTextView.text = _user.signature;
 }
 
 - (void)updateUserProfile {
@@ -74,13 +74,20 @@
     _user.twitterAccount = _twitterTF.text;
     _user.githubName = _githubTF.text;
     _user.blogURL = _blogTF.text;
-    _user.introduction = _introTextView.text;
+    _user.signature = _introTextView.text;
     
     [SVProgressHUD show];
     
+    __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
-            [SVProgressHUD showSuccessWithStatus:@"更新成功"];
+            [SVProgressHUD dismiss];
+            
+            if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(refreshUserProfileView)]) {
+                [weakself.delegate refreshUserProfileView];
+            }
+            
+            [weakself.navigationController popViewControllerAnimated:YES];
         } else {
             [SVProgressHUD showErrorWithStatus:@"更新失败, 请稍后再试"];
         }

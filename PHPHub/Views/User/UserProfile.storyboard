@@ -73,7 +73,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="个人简介" id="qd5-tM-qvJ">
+                            <tableViewSection headerTitle="个人签名" id="qd5-tM-qvJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KXe-JB-9jU">
                                         <rect key="frame" x="0.0" y="328.5" width="375" height="44"/>
