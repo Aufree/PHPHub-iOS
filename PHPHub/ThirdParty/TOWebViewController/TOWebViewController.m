@@ -1785,4 +1785,13 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [UIViewController attemptRotationToDeviceOrientation];
 }
 
+#pragma mark Override popViewControllerWithAnimation method
+- (void)popViewControllerWithAnimation {
+    if ([self.webView canGoBack]) {
+        [self.webView goBack];
+        [self refreshButtonsState];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end
