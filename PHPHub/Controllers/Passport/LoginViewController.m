@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AccessTokenHandler.h"
 #import "UserModel.h"
+#import "TOWebViewController.h"
 
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
@@ -81,12 +82,14 @@
     }];
 }
 
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
-{
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)didTouchIntroLoginButton:(id)sender {
+    TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:PHPHubGuide];
+    webVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)dealloc {

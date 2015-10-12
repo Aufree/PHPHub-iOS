@@ -16,3 +16,4 @@
 #define ProjectURL   @"https://github.com/phphub/phphub-ios"
 #define AboutPageURL @"https://phphub.org/about"
 #define ESTGroupURL  @"http://est-group.org"
+#define PHPHubGuide  @"https://phphub.org/guide"
