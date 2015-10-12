@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TopicListTableView : UITableView
+@property (nonatomic, assign) BOOL shouldRemoveHeaderView;
 @property (nonatomic, strong) NSMutableArray *topicEntites;
 @end

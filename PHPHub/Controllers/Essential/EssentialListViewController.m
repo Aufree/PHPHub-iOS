@@ -8,14 +8,17 @@
 
 #import "EssentialListViewController.h"
 #import "TopicListTableView.h"
+#import "TopicSearchBar.h"
+
 #import "TopicEntity.h"
 #import "TopicModel.h"
 #import "PostTopicViewController.h"
 
-@interface EssentialListViewController ()
+@interface EssentialListViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) TopicListTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *topicEntites;
 @property (nonatomic, strong) PaginationEntity *pagination;
+@property (nonatomic, strong) TopicSearchBar *searchBar;
 @end
 
 @implementation EssentialListViewController
@@ -24,10 +27,12 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.shouldRemoveHeaderView = YES;
     [self.view addSubview:self.tableView];
+    self.searchBar = [[TopicSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+    self.tableView.tableHeaderView = self.searchBar;
     
     self.navigationItem.title = @"精华";
-    
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
     
     // Get the client token from server
@@ -39,7 +44,6 @@
     [[CurrentUser Instance] setupClientRequestState:callback];
     [self createRightButtonItem];
 }
-
 
 #pragma mark Get Topic Data
 
@@ -111,5 +115,4 @@
     PostTopicViewController *postTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"postTopic"];
     [self.navigationController pushViewController:postTopicVC animated:YES];
 }
-
 @end

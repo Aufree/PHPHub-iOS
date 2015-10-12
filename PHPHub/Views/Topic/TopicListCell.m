@@ -108,10 +108,10 @@ static CGFloat topicListCellAvatarHeight = 38;
     CGFloat topicTitleOffset = self.avatarImageView.width + topicTitleMargin * 2;
     
     [self.baseView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(baseViewMargin);
+        make.top.offset(0);
         make.left.equalTo(self.contentView.mas_left).offset(baseViewMargin);
         make.right.equalTo(self.contentView.mas_right).offset(-baseViewMargin);
-        make.bottom.offset(0);
+        make.bottom.offset(-baseViewMargin);
     }];
     
     [self.topicTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -121,7 +121,7 @@ static CGFloat topicListCellAvatarHeight = 38;
     }];
     
     [self.topicInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.baseView.mas_bottom).offset(-topicTitleMargin - self.topicInfoLabel.height);
+        make.top.equalTo(self.topicTitleLabel.mas_bottom).offset(baseViewMargin);
         make.left.equalTo(self.baseView.mas_left).offset(topicTitleOffset);
         make.right.equalTo(self.topicRepliesCountLabel.mas_left).offset(-topicTitleMargin);
         make.height.mas_equalTo(self.topicInfoLabel.height);
