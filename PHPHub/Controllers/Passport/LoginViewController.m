@@ -25,6 +25,25 @@
     
     [self drawButtonBorder:_scanLoginButton borderColor:[UIColor colorWithRed:0.886 green:0.643 blue:0.251 alpha:1.000]];
     [self drawButtonBorder:_introLoginButton borderColor:[UIColor colorWithRed:0.275 green:0.698 blue:0.875 alpha:1.000]];
+    
+    BOOL modalPresent = (BOOL)(self.presentingViewController);
+    
+    if (modalPresent) {
+        [self createCancelButton];
+    }
+}
+
+- (void)createCancelButton {
+    UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel"]
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(closeLoginView)];
+    cancelBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.leftBarButtonItem = cancelBarButtonItem;
+}
+
+- (void)closeLoginView {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)drawButtonBorder:(UIButton *)button borderColor:(UIColor *)color {

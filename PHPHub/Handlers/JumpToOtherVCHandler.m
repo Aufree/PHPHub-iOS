@@ -22,7 +22,8 @@
 
 + (void)presentToOtherView:(UIViewController *)vc animated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
     BaseTabBarViewController *tabbar = [(AppDelegate *)[[UIApplication sharedApplication] delegate] tabBarViewController];
-    [tabbar presentViewController:vc animated:animated completion:completion];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [tabbar presentViewController:navigationController animated:animated completion:completion];
 }
 
 + (void)jumpToTopicDetailWithTopic:(TopicEntity *)topic {
@@ -35,6 +36,6 @@
     LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
                                                               bundle:[NSBundle mainBundle]]
                                     instantiateViewControllerWithIdentifier:@"login"];
-    [self pushToOtherView:loginVC animated:YES];
+    [self presentToOtherView:loginVC animated:YES completion:nil];
 }
 @end

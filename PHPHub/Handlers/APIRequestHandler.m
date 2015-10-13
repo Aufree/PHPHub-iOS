@@ -135,6 +135,7 @@
             if (
                 [message isEqualToString:@"Access token is not valid"]
                 || [message isEqualToString:@"Access token is missing"]
+                || [message isEqualToString:@"The resource owner or authorization server denied the request."]
                 )
             {
                 
@@ -152,8 +153,8 @@
                 }
                 else if ([self isLoginRequest:request])
                 {
-                    [JumpToOtherVCHandler jumpToLoginVC];
                     [[CurrentUser Instance] logOut];
+                    [JumpToOtherVCHandler jumpToLoginVC];
                 }
             }
         }

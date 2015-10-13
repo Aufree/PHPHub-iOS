@@ -47,6 +47,6 @@
 
 - (void)logOut {
     [AccessTokenHandler clearToken];
-    self.userId = nil;
+    [GVUserDefaults standardUserDefaults].currentUserId = nil;
 }
 @end
