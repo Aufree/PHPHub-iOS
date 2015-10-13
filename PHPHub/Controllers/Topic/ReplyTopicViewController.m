@@ -52,6 +52,8 @@
     
     if (_commentTextView.text.length > 0) {
         [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
+    } else {
+        [SVProgressHUD showErrorWithStatus:@"请先填写评论"];
     }
 }
 

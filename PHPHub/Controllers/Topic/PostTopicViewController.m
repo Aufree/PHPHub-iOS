@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *nodePickView;
 @property (strong, nonatomic) NSMutableArray *nodeNameArray;
 @property (copy, nonatomic) NSArray *nodeEntites;
+@property (assign, nonatomic) BOOL didSelectedNode;
 @end
 
 @implementation PostTopicViewController
@@ -78,17 +79,23 @@
     NodeEntity *selectedNode = [_nodeEntites objectAtIndex:seletedNodeRow];
     topic.nodeId = selectedNode.nodeId;
     
+    __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             TopicEntity *topicEntity = data[@"entity"];
             topicEntity.user = [[CurrentUser Instance] userInfo];
             topicEntity.topicRepliesCount = @0;
             topicEntity.voteCount = @0;
+            [weakself.navigationController popViewControllerAnimated:NO];
             [JumpToOtherVCHandler jumpToTopicDetailWithTopic:topicEntity];
         }
     };
     
-    [[TopicModel Instance] createTopic:topic withBlock:callback];
+    if ([self topicIsValid]) {
+        [[TopicModel Instance] createTopic:topic withBlock:callback];
+    } else {
+        [SVProgressHUD showErrorWithStatus:@"信息未填写完整"];
+    }
 }
 
 - (IBAction)didTouchSelectNodeButton:(id)sender {
@@ -99,6 +106,7 @@
     NodeEntity *node = [_nodeEntites objectAtIndex:row];
     NSString *buttonTitle = [NSString stringWithFormat:@"发布到 [%@] 下", node.nodeName];
     [_selectNodeButton setTitle:buttonTitle forState:UIControlStateNormal];
+    _didSelectedNode = YES;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -111,5 +119,9 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_nodeNameArray objectAtIndex:row];
+}
+
+- (BOOL)topicIsValid {
+    return _topicTitleTF.text.length > 0 && _topicContentTextView.text.length > 0 && _didSelectedNode;
 }
 @end
