@@ -27,18 +27,14 @@ static CGFloat notificationListCellContentFontSize = 13;
 
 @implementation NotificationListCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
 - (void)setNotificationEntity:(NotificationEntity *)notificationEntity {
     _notificationEntity = notificationEntity;
     
     [self.contentView addSubview:self.baseView];
     NSURL *URL = [BaseHelper qiniuImageCenter:notificationEntity.user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    _notificationInfoLabel.text = @"Aufree • 4天前";
-    _notificationContentLabel.text = notificationEntity.notificationContent;
+    _notificationInfoLabel.text = [NSString stringWithFormat:@"%@ • %@", _notificationEntity.user.username, [_notificationEntity.createdAt timeAgoSinceNow]];
+    _notificationContentLabel.text = notificationEntity.message;
     
     [self addAutoLayoutToCell];
 }
@@ -117,7 +113,7 @@ static CGFloat notificationListCellContentFontSize = 13;
 }
 
 + (CGFloat)countHeightForCell:(NotificationEntity *)notificationEntity {
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:notificationEntity.notificationContent
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:notificationEntity.message
                                                                                       attributes:@{NSFontAttributeName:[UIFont fontWithName:FontName
                                                                                                                                        size:notificationListCellContentFontSize]}];
     
@@ -129,6 +125,6 @@ static CGFloat notificationListCellContentFontSize = 13;
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
     
-    return notificationListCellTitleHeight + notificationListCellTitleMarginTop * 3 + rect.size.height;
+    return notificationListCellTitleHeight + notificationListCellTitleMarginTop * 4 + rect.size.height;
 }
 @end

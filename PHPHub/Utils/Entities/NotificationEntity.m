@@ -12,13 +12,20 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"notificationId" : @"id",
-             @"notificationContent" : @"content",
-             @"user" : @"user.data",
+             @"message" : @"message",
+             @"user" : @"from_user.data",
+             @"topic" : @"topic.data",
+             @"createdAt" : @"created_at",
              };
 }
 
 + (NSValueTransformer *)userJSONTransformer
 {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
+}
+
++ (NSValueTransformer *)topicJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[TopicEntity class]];
 }
 @end

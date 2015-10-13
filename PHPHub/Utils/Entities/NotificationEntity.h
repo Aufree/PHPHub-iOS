@@ -11,6 +11,8 @@
 
 @interface NotificationEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *notificationId;
-@property (nonatomic, copy) NSString *notificationContent;
+@property (nonatomic, copy) NSString *message;
 @property (nonatomic, strong) UserEntity *user;
+@property (nonatomic, strong) TopicEntity *topic;
+@property (nonatomic, strong) NSDate *createdAt;
 @end

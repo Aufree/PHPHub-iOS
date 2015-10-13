@@ -9,6 +9,7 @@
 #import "NotificationListViewController.h"
 #import "NotificationListCell.h"
 #import "NotificationEntity.h"
+#import "NotificationModel.h"
 
 @interface NotificationListViewController ()
 @property (nonatomic, strong) NSMutableArray *notificationEntities;
@@ -22,18 +23,63 @@
     
     self.tableView = [[NotificationListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
-    [self.tableView reloadData];
+    self.navigationItem.title = @"我的消息";
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    [self.tableView.header beginRefreshing];
+}
+
+#pragma mark Get Topic Data
+
+- (void)headerRefreshing {
+    __weak typeof(self) weakself = self;
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (!error) {
+            weakself.notificationEntities = data[@"entities"];
+            weakself.pagination = data[@"pagination"];
+            [weakself.tableView reloadData];
+        }
+        
+        [weakself.tableView.header endRefreshing];
+        if (weakself.pagination.totalPages > 1) {
+            weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+        }
+    };
+    
+    [self fetchDataSource:callback atPage:1];
+}
+
+- (void)footerRereshing {
+    NSUInteger maxPage = self.pagination.totalPages;
+    NSUInteger nextPage = self.pagination.currentPage + 1;
+    
+    if (nextPage <= maxPage) {
+        __weak typeof(self) weakself = self;
+        BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
+            if (!error) {
+                NSArray *newData  = [data objectForKey:@"entities"];
+                
+                [weakself.notificationEntities addObjectsFromArray:newData];
+                weakself.pagination = data[@"pagination"];
+                [weakself.tableView reloadData];
+            }
+            [weakself.tableView.footer endRefreshing];
+        };
+        
+        [self fetchDataSource:callback atPage:nextPage];
+    } else {
+        [self.tableView.footer endRefreshing];
+        [self.tableView.footer noticeNoMoreData];
+    }
+    
 }
 
 - (void)setNotificationEntities:(NSMutableArray *)notificationEntities {
     _notificationEntities = notificationEntities;
-    self.notificationEntities = _notificationEntities;
-    [self.tableView reloadData];
+    self.tableView.notificationEntities = _notificationEntities;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)fetchDataSource:(BaseResultBlock)callback atPage:(NSUInteger)atPage {
+    [[NotificationModel Instance] getNotificationList:callback atPage:atPage];
 }
 
 @end

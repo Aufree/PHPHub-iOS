@@ -11,7 +11,6 @@
 #import "NotificationEntity.h"
 
 @interface NotificationListTableView () <UITableViewDelegate, UITableViewDataSource>
-
 @end
 
 @implementation NotificationListTableView
@@ -41,7 +40,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _notificationEntities.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,9 +52,8 @@
         cell = [[NotificationListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:notificationListIdentifier];
     }
     
-    if (YES) {
-//        NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
-        NotificationEntity *notificationEntity = nil;
+    if (_notificationEntities.count > 0) {
+        NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
         cell.backgroundColor = self.backgroundColor;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.notificationEntity = notificationEntity;
@@ -74,8 +72,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
-    return [NotificationListCell countHeightForCell:nil];
+    NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
+    return [NotificationListCell countHeightForCell:notificationEntity];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
