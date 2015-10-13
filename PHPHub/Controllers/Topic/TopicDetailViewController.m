@@ -194,7 +194,7 @@
     NSInteger voteCount = _topic.voteCount.integerValue;
     voteCount = _topic.voteUp ? voteCount + 1 : voteCount - 1;
     _topic.voteCount = @(voteCount);
-    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", voteCount] forState:UIControlStateNormal];
+    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
     [[TopicModel Instance] voteUpTopic:_topic.topicId withBlock:nil];
     [self updateVoteState];
 }
@@ -204,7 +204,7 @@
     NSInteger voteCount = _topic.voteCount.integerValue;
     voteCount = _topic.voteDown ? voteCount - 1 : voteCount + 1;
     _topic.voteCount = @(voteCount);
-    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", voteCount] forState:UIControlStateNormal];
+    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
     [[TopicModel Instance] voteDownTopic:_topic.topicId withBlock:nil];
     [self updateVoteState];
 }

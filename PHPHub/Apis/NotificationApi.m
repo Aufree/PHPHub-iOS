@@ -10,7 +10,7 @@
 
 @implementation NotificationApi
 - (id)getNotificationList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    NSString *urlPath = [NSString stringWithFormat:@"me/notifications?include=from_user,topic&per_page=20&page=%ld", pageIndex];
+    NSString *urlPath = [NSString stringWithFormat:@"me/notifications?include=from_user,topic&per_page=20&page=%ld", (long)pageIndex];
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];

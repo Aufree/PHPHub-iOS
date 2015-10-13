@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.shouldRemoveHeaderView = YES;
+//    self.tableView.shouldRemoveHeaderView = YES;
     [self.view addSubview:self.tableView];
     self.searchBar = [[TopicSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
     
