@@ -8,6 +8,7 @@
 
 #import "TopicListCell.h"
 #import "BaseView.h"
+#import "UserProfileViewController.h"
 
 #import "Masonry.h"
 #import "NSDate+DateTools.h"
@@ -57,6 +58,9 @@ static CGFloat topicListCellAvatarHeight = 38;
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, topicListCellAvatarHeight, topicListCellAvatarHeight)];
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _avatarImageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapAvatar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAvatarImageView)];
+        [_avatarImageView addGestureRecognizer:tapAvatar];
     }
     return _avatarImageView;
 }
@@ -136,4 +140,23 @@ static CGFloat topicListCellAvatarHeight = 38;
         make.right.equalTo(self.baseView).offset(-10);
     }];
 }
+
+
+#pragma mark Tap User Avatar
+
+- (void)didTapAvatarImageView {
+    UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                          bundle:[NSBundle mainBundle]]
+                                                instantiateViewControllerWithIdentifier:@"userprofile"];
+    userProfileVC.userEntity = _topicEntity.user;
+    [JumpToOtherVCHandler pushToOtherView:userProfileVC animated:YES];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if ([[gestureRecognizer view] isKindOfClass:[UITableViewCell class]]) {
+        return NO;
+    }
+    return YES;
+}
+
 @end
