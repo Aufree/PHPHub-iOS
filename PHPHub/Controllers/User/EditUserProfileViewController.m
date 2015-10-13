@@ -9,7 +9,6 @@
 #import "EditUserProfileViewController.h"
 #import "UITextView+Placeholder.h"
 #import "TPKeyboardAvoidingTableView.h"
-#import "SVProgressHUD.h"
 
 @interface EditUserProfileViewController ()
 @property (strong, nonatomic) UserEntity *user;

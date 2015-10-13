@@ -44,4 +44,9 @@
 - (void)setupClientRequestState:(BaseResultBlock)block {
     [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:block];
 }
+
+- (void)logOut {
+    [AccessTokenHandler clearToken];
+    self.userId = nil;
+}
 @end

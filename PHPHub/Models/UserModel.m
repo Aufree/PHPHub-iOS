@@ -44,9 +44,7 @@
 - (id)loginWithUserName:(NSString *)username loginToken:(NSString *)loginToken block:(BaseResultBlock)block {
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (data) {
-            [AccessTokenHandler storeLoginTokenGrantAccessToken:data[@"access_token"]];
-            [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
-            [[CurrentUser Instance] setupClientRequestState:nil];
+            [self completeLoginAction:data];
             [self getCurrentUserData:^(NSDictionary *userdata, NSError *error) {
                 if (block) block(data, nil);
             }];
@@ -56,6 +54,12 @@
     };
     
     return [_api loginWithUserName:username loginToken:loginToken block:callback];
+}
+
+- (void)completeLoginAction:(NSDictionary *)data {
+    [AccessTokenHandler storeLoginTokenGrantAccessToken:data[@"access_token"]];
+    [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
+    [[CurrentUser Instance] setupClientRequestState:nil];
 }
 
 - (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block {

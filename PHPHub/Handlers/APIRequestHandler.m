@@ -143,34 +143,17 @@
                 // 1. 如果是 client_credentials 的请求的话, 发送 retry 3 次的请求
                 if ([self isClientGrantRequest:request])
                 {
-//                    [[CurrentUser Instance] setupClientRequestState];
+                    [[CurrentUser Instance] setupClientRequestState:nil];
                 }
                 // 2. 如果是未知的 Token 的话, 如 : Barear <NULL>
                 else if ([self isUnknowRequest:request])
                 {
-//                    [[CurrentUser Instance] setupClientRequestState];
+                    [[CurrentUser Instance] setupClientRequestState:nil];
                 }
-                // 3. 如果是 password 的话, 调用 logout 退出, 让用户重新登陆
-                else if ([self isPasswordRequest:request])
+                else if ([self isLoginRequest:request])
                 {
-                    static const CGFloat kDefaultLogoutAlertInterval = 30.0;
-                    static NSDate *lastLogoutAlertDate;
-                    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:lastLogoutAlertDate];
-                    if (timeInterval < kDefaultLogoutAlertInterval)
-                    {
-                        //如果距离上次提示时间太短, 则跳过
-                        NSLog(@"Skip Logout %@, %@", [NSDate date], lastLogoutAlertDate);
-                    }
-                    else
-                    {
-                        //保存最后一次退出时间
-                        lastLogoutAlertDate = [NSDate date];
-                        
-//                        [[CurrentUser Instance] logout:^(NSDictionary *info, EMError *error)
-//                         {
-//                             TTAlert(kLang(@"Session expired, please log in again."));
-//                         }];
-                    }
+                    [JumpToOtherVCHandler jumpToLoginVC];
+                    [[CurrentUser Instance] logOut];
                 }
             }
         }
@@ -212,6 +195,12 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
 {
     NSString *grantType = [self grantTypeFromRequest:request];
     return [grantType isEqualToString:@"password"];
+}
+
+- (BOOL)isLoginRequest:(NSURLRequest *)request
+{
+    NSString *grantType = [self grantTypeFromRequest:request];
+    return [grantType isEqualToString:@"login_token"];
 }
 
 - (BOOL)isClientGrantRequest:(NSURLRequest *)request

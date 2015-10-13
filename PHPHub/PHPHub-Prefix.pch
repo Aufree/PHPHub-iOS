@@ -28,5 +28,6 @@
 #import "NSString+Additions.h"
 #import "UIViewController+Custom.h"
 #import "JumpToOtherVCHandler.h"
+#import "SVProgressHUD.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

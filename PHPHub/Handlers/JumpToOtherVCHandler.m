@@ -10,6 +10,7 @@
 
 #import "BaseTabBarViewController.h"
 #import "TopicDetailViewController.h"
+#import "LoginViewController.h"
 
 #import "AppDelegate.h"
 
@@ -28,5 +29,12 @@
     TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
     topicDetailVC.topic = topic;
     [self pushToOtherView:topicDetailVC animated:YES];
+}
+
++ (void)jumpToLoginVC {
+    LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
+                                                              bundle:[NSBundle mainBundle]]
+                                    instantiateViewControllerWithIdentifier:@"login"];
+    [self pushToOtherView:loginVC animated:YES];
 }
 @end

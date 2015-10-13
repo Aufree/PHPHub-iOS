@@ -22,4 +22,5 @@
 - (void)updateCurrentUserInfo;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState:(BaseResultBlock)block;
+- (void)logOut;
 @end

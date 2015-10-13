@@ -29,8 +29,12 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    if ([CurrentUser Instance].userInfo) {
+    if ([[CurrentUser Instance] isLogin]) {
         [self updateMeView];
     } else {
         LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"

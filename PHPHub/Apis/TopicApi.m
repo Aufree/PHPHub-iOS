@@ -104,17 +104,7 @@
         if (block) block(nil, error);
     };
     
-    if ([[CurrentUser Instance] isLogin]) {
-        return [[BaseApi loginTokenGrantInstance] GET:urlPath
-                                           parameters:nil
-                                              success:successBlock
-                                              failure:failureBlock];
-    } else {
-        return [[BaseApi clientGrantInstance] GET:urlPath
-                                       parameters:nil
-                                          success:successBlock
-                                          failure:failureBlock];
-    }
+    return [self getDataFromServer:urlPath successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{
@@ -230,5 +220,19 @@
                                         parameters:[entity transformToDictionary]
                                            success:successBlock
                                            failure:failureBlock];
+}
+
+- (id)getDataFromServer:(NSString *)urlPath successBlock:(BaseRequestSuccessBlock)successBlock failureBlock:(BaseRequestFailureBlock)failureBlock {
+    if ([[CurrentUser Instance] isLogin]) {
+        return [[BaseApi loginTokenGrantInstance] GET:urlPath
+                                           parameters:nil
+                                              success:successBlock
+                                              failure:failureBlock];
+    } else {
+        return [[BaseApi clientGrantInstance] GET:urlPath
+                                       parameters:nil
+                                          success:successBlock
+                                          failure:failureBlock];
+    }
 }
 @end

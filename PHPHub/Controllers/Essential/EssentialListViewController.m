@@ -112,7 +112,11 @@
 }
 
 - (void)jumpToPostTopicVC {
-    PostTopicViewController *postTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"postTopic"];
-    [self.navigationController pushViewController:postTopicVC animated:YES];
+    if ([[CurrentUser Instance] isLogin]) {
+        PostTopicViewController *postTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"postTopic"];
+        [self.navigationController pushViewController:postTopicVC animated:YES];
+    } else {
+        [JumpToOtherVCHandler jumpToLoginVC];
+    }
 }
 @end
