@@ -30,7 +30,9 @@
     self.tableView.shouldRemoveHeaderView = YES;
     [self.view addSubview:self.tableView];
     self.searchBar = [[TopicSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
-    self.tableView.tableHeaderView = self.searchBar;
+    
+    // Hide Search Bar
+//    self.tableView.tableHeaderView = self.searchBar;
     
     self.navigationItem.title = @"精华";
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
