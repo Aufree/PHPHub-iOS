@@ -49,6 +49,7 @@
     [self.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"X-Client-Platform"];
     [self.requestSerializer setValue:version forHTTPHeaderField:@"X-Client-Version"];
     [self.requestSerializer setValue:buildNumber forHTTPHeaderField:@"X-Client-Build"];
+    [self.requestSerializer setValue:@"" forHTTPHeaderField:@"Cookie"];
     self.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     
     self.handler = [[APIRequestHandler alloc] init];
