@@ -17,4 +17,5 @@
 
 @interface LoginViewController : UIViewController
 @property (nonatomic, weak) id<LoginViewControllerDelegate> delegate;
+@property (nonatomic, copy) void (^completeLoginBlock)(void);
 @end

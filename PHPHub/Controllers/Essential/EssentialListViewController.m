@@ -114,11 +114,17 @@
 }
 
 - (void)jumpToPostTopicVC {
-    if ([[CurrentUser Instance] isLogin]) {
+    [self checkUserPermissionWithAction:^{
         PostTopicViewController *postTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"postTopic"];
         [self.navigationController pushViewController:postTopicVC animated:YES];
+    }];
+}
+
+- (void)checkUserPermissionWithAction:(void (^)(void))completion {
+    if ([[CurrentUser Instance] isLogin]) {
+        if (completion) completion();
     } else {
-        [JumpToOtherVCHandler jumpToLoginVC];
+        [JumpToOtherVCHandler jumpToLoginVC:completion];
     }
 }
 @end

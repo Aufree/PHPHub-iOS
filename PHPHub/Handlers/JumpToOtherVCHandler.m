@@ -32,10 +32,11 @@
     [self pushToOtherView:topicDetailVC animated:YES];
 }
 
-+ (void)jumpToLoginVC {
++ (void)jumpToLoginVC:(void (^)(void))completion {
     LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
                                                               bundle:[NSBundle mainBundle]]
                                     instantiateViewControllerWithIdentifier:@"login"];
+    loginVC.completeLoginBlock = completion;
     [self presentToOtherView:loginVC animated:YES completion:nil];
 }
 @end

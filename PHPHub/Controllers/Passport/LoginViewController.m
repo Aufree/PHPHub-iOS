@@ -14,6 +14,7 @@
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *introLoginButton;
+@property (assign, nonatomic) BOOL modalPresent;
 @end
 
 @implementation LoginViewController
@@ -26,9 +27,9 @@
     [self drawButtonBorder:_scanLoginButton borderColor:[UIColor colorWithRed:0.886 green:0.643 blue:0.251 alpha:1.000]];
     [self drawButtonBorder:_introLoginButton borderColor:[UIColor colorWithRed:0.275 green:0.698 blue:0.875 alpha:1.000]];
     
-    BOOL modalPresent = (BOOL)(self.presentingViewController);
+    self.modalPresent = (BOOL)(self.presentingViewController);
     
-    if (modalPresent) {
+    if (_modalPresent) {
         [self createCancelButton];
     }
 }
@@ -52,6 +53,8 @@
     button.layer.borderColor = color.CGColor;
 }
 
+#pragma mark - Did touch login button button
+
 - (IBAction)didTouchScanLoginButton:(id)sender {
     if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
         static QRCodeReaderViewController *reader = nil;
@@ -63,10 +66,6 @@
         });
         reader.delegate = self;
         
-        [reader setCompletionWithBlock:^(NSString *resultAsString) {
-            NSLog(@"Completion with result: %@", resultAsString);
-        }];
-        
         [self presentViewController:reader animated:YES completion:NULL];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -76,8 +75,7 @@
 
 #pragma mark - QRCodeReader Delegate Methods
 
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
-{    
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
     __weak typeof(self) weakself = self;
     
     [self dismissViewControllerAnimated:YES completion:^{
@@ -89,9 +87,16 @@
         NSString *username = loginInfo[0];
         NSString *loginToken = loginInfo[1];
         
+        [SVProgressHUD show];
         BaseResultBlock callback = ^(NSDictionary *data, NSError *error) {
-            if (!error) {                
-                [weakself.navigationController popViewControllerAnimated:YES];
+            if (!error) {
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                if (weakself.completeLoginBlock) weakself.completeLoginBlock();
+                if (weakself.modalPresent) {
+                    [weakself closeLoginView];
+                } else {
+                    [weakself.navigationController popViewControllerAnimated:YES];
+                }
             }
         };
         
@@ -104,6 +109,8 @@
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+#pragma mark - Did touch introduction button
 
 - (IBAction)didTouchIntroLoginButton:(id)sender {
     TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:PHPHubGuide];

@@ -39,7 +39,15 @@
     _avatarImageView.userInteractionEnabled = YES;
     _topicContentWeb.delegate = self;
     [self updateTopicDetailView];
-    
+    [self fetchTopicDataFromServerWithBlock:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    _topicToolBarView.hidden = NO;
+}
+
+- (void)fetchTopicDataFromServerWithBlock:(void (^)(NSError *error))completion {
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
@@ -48,17 +56,13 @@
             weakself.isFavoriteTopic = weakself.topic.favorite;
             weakself.isAttentionTopic = weakself.topic.attention;
             [weakself updateFavoriteButtonStateWithFavarite];
-            [weakself updateAttentionButtonStateWithAttention];            
+            [weakself updateAttentionButtonStateWithAttention];
             [weakself updateVoteState];
+            if (completion) completion(error);
         }
     };
     
     [[TopicModel Instance] getTopicById:_topic.topicId.integerValue callback:callback];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    _topicToolBarView.hidden = NO;
 }
 
 - (void)updateTopicDetailView {
@@ -218,11 +222,18 @@
         [self.navigationController pushViewController:webVC animated:YES];
     }
 }
+
 - (void)checkUserPermissionWithAction:(void (^)(void))completion {
     if ([[CurrentUser Instance] isLogin]) {
         if (completion) completion();
     } else {
-        [JumpToOtherVCHandler jumpToLoginVC];
+        __weak typeof(self) weakself = self;
+        [JumpToOtherVCHandler jumpToLoginVC:^{
+            [weakself fetchTopicDataFromServerWithBlock:^(NSError *error) {
+                if (error) return;
+                if (completion) completion();
+            }];
+        }];
     }
 }
 @end

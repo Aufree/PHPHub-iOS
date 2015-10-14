@@ -154,7 +154,7 @@
                 else if ([self isLoginRequest:request])
                 {
                     [[CurrentUser Instance] logOut];
-                    [JumpToOtherVCHandler jumpToLoginVC];
+                    [JumpToOtherVCHandler jumpToLoginVC:nil];
                 }
             }
         }
