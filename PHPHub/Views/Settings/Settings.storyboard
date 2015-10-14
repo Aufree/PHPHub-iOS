@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="z6u-Zv-kVM">
-                            <rect key="frame" x="0.0" y="253" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="330" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💕 Made with love by The EST Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0Z-41-qU9">
@@ -151,6 +151,40 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="alj-Sl-fQx"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="3la-ct-VDx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="41" id="K8h-Ny-tbg">
+                                        <rect key="frame" x="0.0" y="271" width="320" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K8h-Ny-tbg" id="uVH-zK-wj2">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出当前登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfr-bU-mGJ">
+                                                    <rect key="frame" x="18" y="8.5" width="284" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="dt2-aD-Nvi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.87058823529411766" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vfr-bU-mGJ" firstAttribute="centerY" secondItem="uVH-zK-wj2" secondAttribute="centerY" id="OVc-dM-0UG"/>
+                                                <constraint firstItem="vfr-bU-mGJ" firstAttribute="centerY" secondItem="uVH-zK-wj2" secondAttribute="centerY" constant="1.25" id="TUt-ip-YER"/>
+                                                <constraint firstAttribute="trailing" secondItem="vfr-bU-mGJ" secondAttribute="trailing" constant="18" id="dS6-RG-w7D"/>
+                                                <constraint firstItem="vfr-bU-mGJ" firstAttribute="leading" secondItem="uVH-zK-wj2" secondAttribute="leading" constant="18" id="njG-t4-ABC"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="TUt-ip-YER"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

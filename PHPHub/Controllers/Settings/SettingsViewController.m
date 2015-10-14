@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "TOWebViewController.h"
 #import "UMFeedback.h"
+#import "WCAlertView.h"
 
 @interface SettingsViewController ()
 
@@ -49,6 +50,8 @@
                 vc = [[TOWebViewController alloc] initWithURLString:ESTGroupURL];
                 break;
         }
+    } else if (section == 2) {
+        [self showLogoutAlertView];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -70,6 +73,9 @@
                                                     }
                                                   }];
     [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];
+}
+
+- (void)showLogoutAlertView {
 }
 
 @end

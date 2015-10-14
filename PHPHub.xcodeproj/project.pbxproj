@@ -54,6 +54,7 @@
 		5672CB571BCBA4D6007F4B9F /* TopicSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB561BCBA4D6007F4B9F /* TopicSearchBar.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB631BCCFC6E007F4B9F /* NotificationApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB621BCCFC6E007F4B9F /* NotificationApi.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB661BCCFD80007F4B9F /* NotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB651BCCFD80007F4B9F /* NotificationModel.m */; settings = {ASSET_TAGS = (); }; };
+		5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB691BCE3BAB007F4B9F /* WCAlertView.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
@@ -187,6 +188,8 @@
 		5672CB621BCCFC6E007F4B9F /* NotificationApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationApi.m; sourceTree = "<group>"; };
 		5672CB641BCCFD80007F4B9F /* NotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationModel.h; sourceTree = "<group>"; };
 		5672CB651BCCFD80007F4B9F /* NotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationModel.m; sourceTree = "<group>"; };
+		5672CB681BCE3BAB007F4B9F /* WCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAlertView.h; sourceTree = "<group>"; };
+		5672CB691BCE3BAB007F4B9F /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -499,6 +502,15 @@
 			path = Topic;
 			sourceTree = "<group>";
 		};
+		5672CB671BCE3BAB007F4B9F /* WCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5672CB681BCE3BAB007F4B9F /* WCAlertView.h */,
+				5672CB691BCE3BAB007F4B9F /* WCAlertView.m */,
+			);
+			path = WCAlertView;
+			sourceTree = "<group>";
+		};
 		56737C321BB2A1B5008B3E60 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +652,7 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				5672CB671BCE3BAB007F4B9F /* WCAlertView */,
 				560E4BFE1BC1178900BD8CE2 /* TPKeyboardAvoiding */,
 				561868641BBF618300E9E111 /* TOWebViewController */,
 				56D8F0B91BB1431200242FA9 /* TitlePagerView */,
@@ -998,6 +1011,7 @@
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				565218471BBA7CC500412E60 /* TopicListCell.m in Sources */,
 				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
+				5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */,
 				56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */,
 				5618687B1BBF618300E9E111 /* TOActivitySafari.m in Sources */,
 				560E4BFA1BC0B79E00BD8CE2 /* SettingsViewController.m in Sources */,
