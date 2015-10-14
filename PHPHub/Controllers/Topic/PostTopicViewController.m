@@ -79,15 +79,19 @@
     NodeEntity *selectedNode = [_nodeEntites objectAtIndex:seletedNodeRow];
     topic.nodeId = selectedNode.nodeId;
     
+    [SVProgressHUD show];
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
+            [SVProgressHUD showSuccessWithStatus:@"发布成功"];
             TopicEntity *topicEntity = data[@"entity"];
             topicEntity.user = [[CurrentUser Instance] userInfo];
             topicEntity.topicRepliesCount = @0;
             topicEntity.voteCount = @0;
             [weakself.navigationController popViewControllerAnimated:NO];
             [JumpToOtherVCHandler jumpToTopicDetailWithTopic:topicEntity];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"发布失败, 请重试"];
         }
     };
     
