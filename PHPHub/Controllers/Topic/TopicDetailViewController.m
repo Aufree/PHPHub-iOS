@@ -31,6 +31,8 @@
 
 @implementation TopicDetailViewController
 
+# pragma mark Life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,12 +42,15 @@
     _topicContentWeb.delegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
+    [self createRightBarButtonItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _topicToolBarView.hidden = NO;
 }
+
+# pragma mark Get Data From Server
 
 - (void)fetchTopicDataFromServerWithBlock:(void (^)(NSError *error))completion {
     __weak typeof(self) weakself = self;
@@ -64,6 +69,23 @@
     
     [[TopicModel Instance] getTopicById:_topic.topicId.integerValue callback:callback];
 }
+
+# pragma mark More Action
+
+- (void)createRightBarButtonItem {
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more"]
+                                                                           style:UIBarButtonItemStylePlain
+                                                                          target:self
+                                                                          action:@selector(showMoreAction)];
+    rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+- (void)showMoreAction {
+    
+}
+
+# pragma mark Update UI
 
 - (void)updateTopicDetailView {
     UserEntity *user = _topic.user;
@@ -222,6 +244,9 @@
         [self.navigationController pushViewController:webVC animated:YES];
     }
 }
+
+
+# pragma mark Check User Permission
 
 - (void)checkUserPermissionWithAction:(void (^)(void))completion {
     if ([[CurrentUser Instance] isLogin]) {
