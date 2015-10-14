@@ -24,6 +24,7 @@ PODS:
     - AFNetworking/NSURLConnection (~> 2.2)
   - CTAssetsPickerController (2.9.5)
   - DateTools (1.7.0)
+  - FDFullscreenPopGesture (1.1)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -63,6 +64,7 @@ DEPENDENCIES:
   - AFOAuth2Manager
   - CTAssetsPickerController
   - DateTools
+  - FDFullscreenPopGesture (= 1.1)
   - FMDB (~> 2.3)
   - FMDBMigrationManager (~> 1.3)
   - GVUserDefaults
@@ -101,6 +103,7 @@ SPEC CHECKSUMS:
   AFOAuth2Manager: 952eb62e8fd8022971e64c6e8fe28b9e999224af
   CTAssetsPickerController: b413fece2194ae3dbf22fbc544cf6f2a6d516a4d
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   FMDBMigrationManager: aa46d473c863b6ade5676c49b73f56540b358ad7
   GVUserDefaults: acb40729f70984008d0650e49d7e422f1bbfa597
