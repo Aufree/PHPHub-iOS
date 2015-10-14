@@ -34,6 +34,14 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([[CurrentUser Instance] isLogin]) {
+        [self closeLoginView];
+    }
+}
+
 - (void)createCancelButton {
     UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel"]
                                                                             style:UIBarButtonItemStylePlain
@@ -44,7 +52,11 @@
 }
 
 - (void)closeLoginView {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if (self.modalPresent) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)drawButtonBorder:(UIButton *)button borderColor:(UIColor *)color {
@@ -92,11 +104,7 @@
             if (!error) {
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                 if (weakself.completeLoginBlock) weakself.completeLoginBlock();
-                if (weakself.modalPresent) {
-                    [weakself closeLoginView];
-                } else {
-                    [weakself.navigationController popViewControllerAnimated:YES];
-                }
+                [weakself closeLoginView];
             }
         };
         
