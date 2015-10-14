@@ -139,6 +139,14 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    
+    if (section < 3 || section > 6) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+}
+
 - (TopicListViewController *)createTopicListWithType:(TopicListType)topicListType {
     TopicListViewController *topicListVC = [[TopicListViewController alloc] init];
     topicListVC.userId = _userEntity.userId.integerValue;
