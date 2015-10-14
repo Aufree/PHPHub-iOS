@@ -31,7 +31,8 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     
-    if ([_userEntity.userId isEqualToNumber:[CurrentUser Instance].userId]) {
+    NSNumber *currentUserId = [CurrentUser Instance].userId;
+    if (currentUserId && [_userEntity.userId isEqualToNumber:currentUserId]) {
         [self createRightButtonItem];
         _userEntity = [[CurrentUser Instance] userInfo];
         [self updateUserProfileView];

@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "TOWebViewController.h"
+
 #import "UMFeedback.h"
 #import "WCAlertView.h"
 
@@ -28,7 +29,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return section == 1 ? 100.0f : 0.1f;
+    return section == 2 ? 100.0f : 0.1f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,6 +77,18 @@
 }
 
 - (void)showLogoutAlertView {
+    __weak typeof(self) weakSelf = self;
+    [WCAlertView showAlertWithTitle:@"提示" message:@"您确定要退出当前账号吗?" customizationBlock:nil completionBlock:
+     ^(NSUInteger buttonIndex, WCAlertView *alertView) {
+         if (buttonIndex == 1) {
+             [weakSelf logout];
+         }
+     } cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
+}
+
+- (void)logout {
+    [[CurrentUser Instance] logOut];    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
