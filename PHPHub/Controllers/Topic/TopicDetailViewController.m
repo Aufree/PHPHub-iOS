@@ -125,68 +125,16 @@
     [self.navigationController pushViewController:userProfileVC animated:YES];
 }
 
-# pragma mark Topic Detail Action
-
-- (IBAction)didTouchFavoriteButton:(id)sender {
-    
-    if (_isFavoriteTopic) {
-        _isFavoriteTopic = NO;
-        [[TopicModel Instance] cancelFavoriteTopicById:_topic.topicId withBlock:nil];
-    } else {
-        _isFavoriteTopic = YES;
-        [[TopicModel Instance] favoriteTopicById:_topic.topicId withBlock:nil];
-    }
-    
-    [self updateFavoriteButtonStateWithFavarite];
-}
-
-- (IBAction)didTouchAttentionButton:(id)sender {
-    if (_isAttentionTopic) {
-        _isAttentionTopic = NO;
-        [[TopicModel Instance] cancelAttentionTopicById:_topic.topicId withBlock:nil];
-    } else {
-        _isAttentionTopic = YES;
-        [[TopicModel Instance] attentionTopicById:_topic.topicId withBlock:nil];
-    }
-    
-    [self updateAttentionButtonStateWithAttention];
-}
-
-- (void)updateFavoriteButtonStateWithFavarite {
-    if (_isFavoriteTopic) {
-        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_blue_icon"] forState:UIControlStateNormal];
-    } else {
-        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_icon"] forState:UIControlStateNormal];
-    }
-}
-
-- (void)updateAttentionButtonStateWithAttention {
-    if (_isAttentionTopic) {
-        [_watchButton setImage:[UIImage imageNamed:@"watch_blue_icon"] forState:UIControlStateNormal];
-    } else {
-        [_watchButton setImage:[UIImage imageNamed:@"watch_icon"] forState:UIControlStateNormal];
-    }
-}
+#pragma mark Vote Topic
 
 - (IBAction)didTouchVoteButton:(id)sender {
-    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-    TopicVoteView *topicVoteView = [[TopicVoteView alloc] initWithFrame:keyWindow.bounds topicEntity:_topic];
-    [topicVoteView.upVoteButton addTarget:self action:@selector(upVoteTopic) forControlEvents:UIControlEventTouchUpInside];
-    [topicVoteView.downVoteButton addTarget:self action:@selector(downVoteTopic) forControlEvents:UIControlEventTouchUpInside];
-    [keyWindow addSubview: topicVoteView];
-}
-
-- (IBAction)didTouchReplyButton:(id)sender {
-    ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];
-    replyTopicVC.topicId = _topic.topicId;
-    [self.navigationController pushViewController:replyTopicVC animated:YES];
-}
-
-- (IBAction)didTouchCommentsButton:(id)sender {
-    if (_topic.topicRepliesUrl) {
-        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
-        [self.navigationController pushViewController:webVC animated:YES];
-    }
+    [self checkUserPermissionWithAction:^{
+        UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+        TopicVoteView *topicVoteView = [[TopicVoteView alloc] initWithFrame:keyWindow.bounds topicEntity:_topic];
+        [topicVoteView.upVoteButton addTarget:self action:@selector(upVoteTopic) forControlEvents:UIControlEventTouchUpInside];
+        [topicVoteView.downVoteButton addTarget:self action:@selector(downVoteTopic) forControlEvents:UIControlEventTouchUpInside];
+        [keyWindow addSubview: topicVoteView];
+    }];
 }
 
 - (void)upVoteTopic {
@@ -207,5 +155,74 @@
     [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
     [[TopicModel Instance] voteDownTopic:_topic.topicId withBlock:nil];
     [self updateVoteState];
+}
+
+
+# pragma mark Topic Action
+
+- (IBAction)didTouchFavoriteButton:(id)sender {
+    [self checkUserPermissionWithAction:^{
+        if (_isFavoriteTopic) {
+            _isFavoriteTopic = NO;
+            [[TopicModel Instance] cancelFavoriteTopicById:_topic.topicId withBlock:nil];
+        } else {
+            _isFavoriteTopic = YES;
+            [[TopicModel Instance] favoriteTopicById:_topic.topicId withBlock:nil];
+        }
+        
+        [self updateFavoriteButtonStateWithFavarite];
+    }];
+}
+
+- (IBAction)didTouchAttentionButton:(id)sender {
+    [self checkUserPermissionWithAction:^{
+        if (_isAttentionTopic) {
+            _isAttentionTopic = NO;
+            [[TopicModel Instance] cancelAttentionTopicById:_topic.topicId withBlock:nil];
+        } else {
+            _isAttentionTopic = YES;
+            [[TopicModel Instance] attentionTopicById:_topic.topicId withBlock:nil];
+        }
+        
+        [self updateAttentionButtonStateWithAttention];
+    }];
+}
+
+- (void)updateFavoriteButtonStateWithFavarite {
+    if (_isFavoriteTopic) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_blue_icon"] forState:UIControlStateNormal];
+    } else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_icon"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)updateAttentionButtonStateWithAttention {
+    if (_isAttentionTopic) {
+        [_watchButton setImage:[UIImage imageNamed:@"watch_blue_icon"] forState:UIControlStateNormal];
+    } else {
+        [_watchButton setImage:[UIImage imageNamed:@"watch_icon"] forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)didTouchReplyButton:(id)sender {
+    [self checkUserPermissionWithAction:^{
+        ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];
+        replyTopicVC.topicId = _topic.topicId;
+        [self.navigationController pushViewController:replyTopicVC animated:YES];
+    }];
+}
+
+- (IBAction)didTouchCommentsButton:(id)sender {
+    if (_topic.topicRepliesUrl) {
+        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
+- (void)checkUserPermissionWithAction:(void (^)(void))completion {
+    if ([[CurrentUser Instance] isLogin]) {
+        if (completion) completion();
+    } else {
+        [JumpToOtherVCHandler jumpToLoginVC];
+    }
 }
 @end
