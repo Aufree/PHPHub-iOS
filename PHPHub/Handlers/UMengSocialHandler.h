@@ -12,4 +12,10 @@
 
 @interface UMengSocialHandler : NSObject
 + (void)setup;
++ (void)shareWithShareURL:(NSString *)shareURL
+            shareImageUrl:(NSString *)shareImageUrl
+               shareTitle:(NSString *)shareTitle
+                shareText:(NSString *)shareText
+                presentVC:(UIViewController *)vc
+                 delegate:(id <UMSocialUIDelegate>)delegate;
 @end

@@ -8,6 +8,9 @@
 
 #import "UMengSocialHandler.h"
 
+@interface UMengSocialHandler () <UMSocialUIDelegate>
+@end
+
 @implementation UMengSocialHandler
 
 + (void)setup {
@@ -16,4 +19,31 @@
     [UMSocialWechatHandler setWXAppId:WX_APP_ID appSecret:WX_APP_SECRET url:PHPHubUrl];
 }
 
++ (void)shareWithShareURL:(NSString *)shareURL
+            shareImageUrl:(NSString *)shareImageUrl
+               shareTitle:(NSString *)shareTitle
+                shareText:(NSString *)shareText
+                presentVC:(UIViewController *)vc
+                 delegate:(id <UMSocialUIDelegate>)delegate {
+    
+    [UMSocialData defaultData].extConfig.title = shareTitle;
+    // Global share link
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];
+    // WeChat Timeline Custom
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = shareURL;
+    [UMSocialData defaultData].extConfig.qqData.url = shareURL;
+    
+    [UMSocialSnsService presentSnsIconSheetView:vc
+                                         appKey:UMENG_APPKEY
+                                      shareText:shareText
+                                     shareImage:[UIImage imageNamed:@"logo"]
+                                shareToSnsNames:[NSArray arrayWithObjects:
+                                                 UMShareToWechatSession,
+                                                 UMShareToWechatTimeline,
+                                                 UMShareToQQ,
+                                                 UMShareToSina,
+                                                 nil]
+                                       delegate:delegate];
+}
 @end

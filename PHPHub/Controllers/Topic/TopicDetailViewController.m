@@ -14,6 +14,7 @@
 #import "ReplyTopicViewController.h"
 #import "TopicVoteView.h"
 #import "UMSocial.h"
+#import "UMengSocialHandler.h"
 
 @interface TopicDetailViewController () <UIWebViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -91,25 +92,10 @@
 - (void)showMoreAction {
     NSString *shareURL = [NSString stringWithFormat:@"%@/topics/%@", PHPHubUrl, _topic.topicId];
     NSString *shareImageUrl = _topic.user.avatar;
+    NSString *shareTitle = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
+    NSString *shareText = _topic.topicTitle;
 
-    [UMSocialData defaultData].extConfig.title = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
-    // Global share link
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];
-    // WeChat Timeline Custom
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
-    [UMSocialData defaultData].extConfig.qqData.url = shareURL;
-    
-    [UMSocialSnsService presentSnsIconSheetView:self
-                                         appKey:UMENG_APPKEY
-                                      shareText:_topic.topicTitle
-                                     shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:[NSArray arrayWithObjects:
-                                                 UMShareToWechatSession,
-                                                 UMShareToWechatTimeline,
-                                                 UMShareToQQ,
-                                                 UMShareToSina,
-                                                 nil]
-                                       delegate:self];
+    [UMengSocialHandler shareWithShareURL:shareURL shareImageUrl:shareImageUrl shareTitle:shareTitle shareText:shareText presentVC:self delegate:self];
 }
 
 # pragma mark Update UI
