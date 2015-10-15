@@ -8,6 +8,7 @@
 
 #import "UMSocial.h"
 #import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
 
 @interface UMengSocialHandler : NSObject
 + (void)setup;

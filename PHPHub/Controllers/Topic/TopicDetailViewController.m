@@ -92,11 +92,12 @@
     NSString *shareURL = [NSString stringWithFormat:@"%@/topics/%@", PHPHubUrl, _topic.topicId];
     NSString *shareImageUrl = _topic.user.avatar;
 
+    [UMSocialData defaultData].extConfig.title = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
     // Global share link
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];
     // WeChat Timeline Custom
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
-     [UMSocialData defaultData].extConfig.qqData.url = shareURL;
+    [UMSocialData defaultData].extConfig.qqData.url = shareURL;
     
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:UMENG_APPKEY
@@ -107,7 +108,6 @@
                                                  UMShareToWechatTimeline,
                                                  UMShareToQQ,
                                                  UMShareToSina,
-                                                 UMShareToQzone,
                                                  nil]
                                        delegate:self];
 }
