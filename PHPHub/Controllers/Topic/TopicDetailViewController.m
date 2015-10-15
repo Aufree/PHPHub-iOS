@@ -15,7 +15,7 @@
 #import "TopicVoteView.h"
 #import "UMSocial.h"
 
-@interface TopicDetailViewController () <UIWebViewDelegate, UMSocialUIDelegate>
+@interface TopicDetailViewController () <UIWebViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
@@ -87,7 +87,7 @@
     NSString *shareImageUrl = _topic.user.avatar;
 
     // Global share link
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];
     // WeChat Timeline Custom
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
     
@@ -256,17 +256,21 @@
     [self checkUserPermissionWithAction:^{
         ReplyTopicViewController *replyTopicVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"replyTopic"];
         replyTopicVC.topicId = _topic.topicId;
+        replyTopicVC.delegate = self;
         [self.navigationController pushViewController:replyTopicVC animated:YES];
     }];
 }
 
 - (IBAction)didTouchCommentsButton:(id)sender {
+    [self jumpToCommentsView];
+}
+
+- (void)jumpToCommentsView {
     if (_topic.topicRepliesUrl) {
         TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
         [self.navigationController pushViewController:webVC animated:YES];
     }
 }
-
 
 # pragma mark Check User Permission
 
@@ -283,4 +287,5 @@
         }];
     }
 }
+
 @end

@@ -24,6 +24,7 @@
     [self createRightButtonItem];
     _commentTextView.layer.cornerRadius = 5.0f;
     _commentTextView.placeholder = @"请使用 Markdown 格式书写 ;-)";
+    [_commentTextView becomeFirstResponder];
 }
 
 # pragma mark Post Comment
@@ -47,6 +48,9 @@
     BaseResultBlock callback =^(NSDictionary *data, NSError *error) {
         if (!error) {
             [weakself.navigationController popViewControllerAnimated:YES];
+            if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(jumpToCommentsView)]) {
+                [weakself.delegate jumpToCommentsView];
+            }
         }
     };
     
