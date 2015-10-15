@@ -1786,7 +1786,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 }
 
 #pragma mark Override popViewControllerWithAnimation method
-- (void)popViewControllerWithAnimation {
+- (void)closeView {
     if ([self.webView canGoBack]) {
         [self.webView goBack];
         [self refreshButtonsState];

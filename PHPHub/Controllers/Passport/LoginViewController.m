@@ -14,7 +14,6 @@
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *introLoginButton;
-@property (assign, nonatomic) BOOL modalPresent;
 @end
 
 @implementation LoginViewController
@@ -26,12 +25,6 @@
     
     [self drawButtonBorder:_scanLoginButton borderColor:[UIColor colorWithRed:0.886 green:0.643 blue:0.251 alpha:1.000]];
     [self drawButtonBorder:_introLoginButton borderColor:[UIColor colorWithRed:0.275 green:0.698 blue:0.875 alpha:1.000]];
-    
-    self.modalPresent = (BOOL)(self.presentingViewController);
-    
-    if (_modalPresent) {
-        [self createCancelButton];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,17 +35,9 @@
     }
 }
 
-- (void)createCancelButton {
-    UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel"]
-                                                                            style:UIBarButtonItemStylePlain
-                                                                           target:self
-                                                                           action:@selector(closeLoginView)];
-    cancelBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
-    self.navigationItem.leftBarButtonItem = cancelBarButtonItem;
-}
-
 - (void)closeLoginView {
-    if (self.modalPresent) {
+    BOOL modalPresent = (BOOL)(self.presentingViewController);
+    if (modalPresent) {
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:YES];

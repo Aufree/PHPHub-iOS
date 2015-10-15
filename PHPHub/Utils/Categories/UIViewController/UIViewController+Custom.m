@@ -21,6 +21,13 @@
 - (void)customViewWillAppear:(BOOL)animated {
     [self customViewWillAppear:animated];
     
+    BOOL modalPresent = (BOOL)(self.presentingViewController);
+    
+    if (modalPresent) {
+        [self createCancelButton];
+        return;
+    }
+    
     if ([self.navigationController.viewControllers indexOfObject:self] != 0  && !self.navigationItem.hidesBackButton) {
         [self createBackButton];
     }
@@ -31,13 +38,27 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:backImage
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self
-                                                                  action:@selector(popViewControllerWithAnimation)];
+                                                                  action:@selector(closeView)];
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     self.navigationItem.backBarButtonItem = nil;
 }
 
-- (void)popViewControllerWithAnimation {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)createCancelButton {
+    UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel"]
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(closeView)];
+    cancelBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
+    self.navigationItem.leftBarButtonItem = cancelBarButtonItem;
+}
+
+- (void)closeView {
+    BOOL modalPresent = (BOOL)(self.presentingViewController);
+    if (modalPresent) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 @end
