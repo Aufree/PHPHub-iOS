@@ -57,6 +57,15 @@
 		5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB691BCE3BAB007F4B9F /* WCAlertView.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
+		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
+		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
+		56B402611BCF96870044812F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402601BCF96870044812F /* CoreGraphics.framework */; };
+		56B402631BCF96A60044812F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402621BCF96A60044812F /* CoreTelephony.framework */; };
+		56B402651BCF96E20044812F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402641BCF96E20044812F /* libiconv.tbd */; };
+		56B402671BCF96F00044812F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402661BCF96F00044812F /* libsqlite3.tbd */; };
+		56B402691BCF96FC0044812F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402681BCF96FC0044812F /* libstdc++.tbd */; };
+		56B4026B1BCF97060044812F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4026A1BCF97060044812F /* libz.tbd */; };
+		56B4026E1BCF97600044812F /* UMengSocialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4026D1BCF97600044812F /* UMengSocialHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
@@ -195,6 +204,16 @@
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
+		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		56B4025E1BCF967B0044812F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		56B402601BCF96870044812F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56B402621BCF96A60044812F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		56B402641BCF96E20044812F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		56B402661BCF96F00044812F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		56B402681BCF96FC0044812F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		56B4026A1BCF97060044812F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		56B4026C1BCF97600044812F /* UMengSocialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMengSocialHandler.h; sourceTree = "<group>"; };
+		56B4026D1BCF97600044812F /* UMengSocialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMengSocialHandler.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -256,6 +275,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B4026B1BCF97060044812F /* libz.tbd in Frameworks */,
+				56B402691BCF96FC0044812F /* libstdc++.tbd in Frameworks */,
+				56B402671BCF96F00044812F /* libsqlite3.tbd in Frameworks */,
+				56B402651BCF96E20044812F /* libiconv.tbd in Frameworks */,
+				56B402631BCF96A60044812F /* CoreTelephony.framework in Frameworks */,
+				56B402611BCF96870044812F /* CoreGraphics.framework in Frameworks */,
+				56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */,
+				56B4025D1BCF96570044812F /* Security.framework in Frameworks */,
 				A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +300,14 @@
 		46A79BE4D8CD8EE6782FCE6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56B4026A1BCF97060044812F /* libz.tbd */,
+				56B402681BCF96FC0044812F /* libstdc++.tbd */,
+				56B402661BCF96F00044812F /* libsqlite3.tbd */,
+				56B402641BCF96E20044812F /* libiconv.tbd */,
+				56B402621BCF96A60044812F /* CoreTelephony.framework */,
+				56B402601BCF96870044812F /* CoreGraphics.framework */,
+				56B4025E1BCF967B0044812F /* SystemConfiguration.framework */,
+				56B4025C1BCF96570044812F /* Security.framework */,
 				5A752BE6144529BFF7075D5A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -633,6 +668,8 @@
 				56D8F05E1BAFA66C00242FA9 /* AccessTokenHandler.m */,
 				560E4C101BC6205900BD8CE2 /* JumpToOtherVCHandler.h */,
 				560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */,
+				56B4026C1BCF97600044812F /* UMengSocialHandler.h */,
+				56B4026D1BCF97600044812F /* UMengSocialHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -1012,6 +1049,7 @@
 				5672CB661BCCFD80007F4B9F /* NotificationModel.m in Sources */,
 				56D8F05C1BAFA5E100242FA9 /* APIRequestHandler.m in Sources */,
 				560B399E1BBF793400CC7007 /* UIViewController+Custom.m in Sources */,
+				56B4026E1BCF97600044812F /* UMengSocialHandler.m in Sources */,
 				560E4C071BC1178900BD8CE2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				56D8F0A51BB0EDAF00242FA9 /* TopicModel.m in Sources */,
 				565218461BBA7CC500412E60 /* NotificationListTableView.m in Sources */,

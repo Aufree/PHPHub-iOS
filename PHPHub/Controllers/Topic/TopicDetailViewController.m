@@ -96,19 +96,18 @@
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];
     // WeChat Timeline Custom
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
+     [UMSocialData defaultData].extConfig.qqData.url = shareURL;
     
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:UMENG_APPKEY
                                       shareText:_topic.topicTitle
-                                     shareImage:nil
+                                     shareImage:[UIImage imageNamed:@"logo"]
                                 shareToSnsNames:[NSArray arrayWithObjects:
                                                  UMShareToWechatSession,
                                                  UMShareToWechatTimeline,
                                                  UMShareToQQ,
-                                                 UMShareToTwitter,
                                                  UMShareToSina,
                                                  UMShareToQzone,
-                                                 UMShareToTencent,
                                                  nil]
                                        delegate:self];
 }

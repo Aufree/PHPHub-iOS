@@ -11,7 +11,7 @@
 
 #import "UMFeedback.h"
 #import "UMOpus.h"
-#import "UMSocial.h"
+#import "UMengSocialHandler.h"
 
 @interface AppDelegate ()
 
@@ -34,7 +34,7 @@
     [[UITextView appearance] setTintColor:[UIColor grayColor]];
     
     // UMeng Share
-    [UMSocialData setAppKey:UMENG_APPKEY];
+    [UMengSocialHandler setup];
     return YES;
 }
 
@@ -73,6 +73,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [UMSocialSnsService handleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
