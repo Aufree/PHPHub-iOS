@@ -17,6 +17,7 @@
     [UMSocialData setAppKey:UMENG_APPKEY];
     [UMSocialQQHandler setQQWithAppId:UMENG_QQ_ID appKey:UMENG_QQ_APPKEY url:PHPHubUrl];
     [UMSocialWechatHandler setWXAppId:WX_APP_ID appSecret:WX_APP_SECRET url:PHPHubUrl];
+    [UMSocialSinaHandler openSSOWithRedirectURL:SinaRedirectURL];
 }
 
 + (void)shareWithShareURL:(NSString *)shareURL
