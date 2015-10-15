@@ -11,6 +11,7 @@
 #import "BaseTabBarViewController.h"
 #import "TopicDetailViewController.h"
 #import "LoginViewController.h"
+#import "UserProfileViewController.h"
 
 #import "AppDelegate.h"
 
@@ -30,6 +31,24 @@
     TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
     topicDetailVC.topic = topic;
     [self pushToOtherView:topicDetailVC animated:YES];
+}
+
++ (void)jumpToTopicDetailWithTopicId:(NSNumber *)topicId {
+    TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
+    TopicEntity *topic = [TopicEntity new];
+    topic.topicId = topicId;
+    topicDetailVC.topic = topic;
+    [self presentToOtherView:topicDetailVC animated:YES completion:nil];
+}
+
++ (void)jumpToUserProfileWithUserId:(NSNumber *)userId {
+    UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                          bundle:[NSBundle mainBundle]]
+                                                instantiateViewControllerWithIdentifier:@"userprofile"];
+    UserEntity *user = [UserEntity new];
+    user.userId = userId;
+    userProfileVC.userEntity = user;
+    [self presentToOtherView:userProfileVC animated:YES completion:nil];
 }
 
 + (void)jumpToLoginVC:(void (^)(void))completion {

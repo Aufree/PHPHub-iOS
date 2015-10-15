@@ -56,6 +56,7 @@
 		5672CB661BCCFD80007F4B9F /* NotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB651BCCFD80007F4B9F /* NotificationModel.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB691BCE3BAB007F4B9F /* WCAlertView.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
+		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
@@ -192,6 +193,8 @@
 		5672CB691BCE3BAB007F4B9F /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
+		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -520,6 +523,15 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		56B402581BCF883F0044812F /* NSURL+QueryDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */,
+				56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */,
+			);
+			path = "NSURL+QueryDictionary";
+			sourceTree = "<group>";
+		};
 		56D8F00F1BAF97C500242FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +734,7 @@
 		56D8F0911BB0E3BE00242FA9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				56B402581BCF883F0044812F /* NSURL+QueryDictionary */,
 				560B399B1BBF791900CC7007 /* UIViewController */,
 				561868361BBD345A00E9E111 /* NSString */,
 				565218641BBBC3FF00412E60 /* GVUserDefaults */,
@@ -1025,6 +1038,7 @@
 				5672CB631BCCFC6E007F4B9F /* NotificationApi.m in Sources */,
 				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
+				56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				5672CB511BC8EB3E007F4B9F /* TopicDetailViewController.m in Sources */,
 				5672CB4F1BC8EB3E007F4B9F /* PostTopicViewController.m in Sources */,

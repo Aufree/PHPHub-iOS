@@ -32,7 +32,8 @@
     _avatarImageView.layer.masksToBounds = YES;
     
     NSNumber *currentUserId = [CurrentUser Instance].userId;
-    if (currentUserId && [_userEntity.userId isEqualToNumber:currentUserId]) {
+    BOOL isCurrentUser = _userEntity.userId.integerValue == currentUserId.integerValue;
+    if (currentUserId && isCurrentUser) {
         [self createRightButtonItem];
         _userEntity = [[CurrentUser Instance] userInfo];
         [self updateUserProfileView];

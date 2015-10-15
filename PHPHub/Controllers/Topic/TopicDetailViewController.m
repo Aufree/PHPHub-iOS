@@ -69,6 +69,7 @@
             [weakself updateFavoriteButtonStateWithFavarite];
             [weakself updateAttentionButtonStateWithAttention];
             [weakself updateVoteState];
+            [weakself updateTopicDetailView];
             if (completion) completion(error);
         }
     };

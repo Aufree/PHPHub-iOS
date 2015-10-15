@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSURL+QueryDictionary.h"
 
 #import "UMFeedback.h"
 #import "UMOpus.h"
@@ -72,6 +73,33 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([url.scheme isEqualToString:@"phphub"]) {
+        [self captureUrlScheme:url];
+        return YES;
+    }
+    
+    // Umeng URL Callback
+    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];
+}
+
+- (void)captureUrlScheme:(NSURL *)url {
+    NSString *type = url.host;
+    
+    NSDictionary *params = [url uq_queryDictionary];
+    
+    NSNumber *objectId = 0;
+    if([params objectForKey:@"id"] != nil) {
+        objectId = params[@"id"];
+    }
+    
+    if ([type isEqualToString:@"users"] && objectId.integerValue > 0) {
+        [JumpToOtherVCHandler jumpToUserProfileWithUserId:objectId];
+    } else if([type isEqualToString:@"topics"] && objectId.integerValue > 0) {
+        [JumpToOtherVCHandler jumpToTopicDetailWithTopicId:objectId];
+    }
 }
 
 #pragma mark - Status bar touch tracking

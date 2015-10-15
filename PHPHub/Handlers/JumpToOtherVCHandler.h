@@ -14,4 +14,6 @@
 + (void)presentToOtherView:(UIViewController *)vc animated:(BOOL)animated completion:(void (^)(void))completion;
 + (void)jumpToTopicDetailWithTopic:(TopicEntity *)topic;
 + (void)jumpToLoginVC:(void (^)(void))completion;
++ (void)jumpToTopicDetailWithTopicId:(NSNumber *)topicId;
++ (void)jumpToUserProfileWithUserId:(NSNumber *)userId;
 @end
