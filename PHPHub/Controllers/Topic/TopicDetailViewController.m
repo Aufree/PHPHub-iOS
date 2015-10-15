@@ -15,7 +15,7 @@
 #import "TopicVoteView.h"
 #import "UMSocial.h"
 
-@interface TopicDetailViewController () <UIWebViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
+@interface TopicDetailViewController () <UIWebViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
@@ -26,8 +26,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *watchButton;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
+@property (assign, nonatomic) CGPoint pointNow;
+@property (assign, nonatomic) CGFloat topicToolBarY;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
 @property (assign, nonatomic) BOOL isAttentionTopic;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
 @end
 
 @implementation TopicDetailViewController
@@ -41,6 +44,7 @@
     _avatarImageView.layer.masksToBounds = YES;
     _avatarImageView.userInteractionEnabled = YES;
     _topicContentWeb.delegate = self;
+    _topicContentWeb.scrollView.delegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
@@ -49,6 +53,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _topicToolBarView.hidden = NO;
+    _topicToolBarY = _topicToolBarView.y;
 }
 
 # pragma mark Get Data From Server
@@ -151,6 +156,26 @@
     }
     
     return YES;
+}
+
+# pragma mark Web View Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y < _pointNow.y) {
+        [UIView animateWithDuration:0.3 animations:^{
+            _toolBarBottomConstraint.constant = 0;
+            [_topicToolBarView layoutIfNeeded];
+        }];
+    } else if (scrollView.contentOffset.y > _pointNow.y) {
+        [UIView animateWithDuration:0.3 animations:^{
+            _toolBarBottomConstraint.constant = -_topicToolBarView.height;
+            [_topicToolBarView layoutIfNeeded];
+        }];
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _pointNow = scrollView.contentOffset;
 }
 
 #pragma mark Touch User Avatar
