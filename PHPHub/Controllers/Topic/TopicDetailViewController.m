@@ -13,8 +13,9 @@
 #import "TOWebViewController.h"
 #import "ReplyTopicViewController.h"
 #import "TopicVoteView.h"
+#import "UMSocial.h"
 
-@interface TopicDetailViewController () <UIWebViewDelegate>
+@interface TopicDetailViewController () <UIWebViewDelegate, UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
@@ -82,7 +83,28 @@
 }
 
 - (void)showMoreAction {
+    NSString *shareURL = [NSString stringWithFormat:@"%@/topics/%@", PHPHubUrl, _topic.topicId];
+    NSString *shareImageUrl = _topic.user.avatar;
+
+    // Global share link
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:shareImageUrl];    
+    // WeChat Timeline Custom
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareURL;
     
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UMENG_APPKEY
+                                      shareText:_topic.topicTitle
+                                     shareImage:nil
+                                shareToSnsNames:[NSArray arrayWithObjects:
+                                                 UMShareToWechatSession,
+                                                 UMShareToWechatTimeline,
+                                                 UMShareToQQ,
+                                                 UMShareToTwitter,
+                                                 UMShareToSina,
+                                                 UMShareToQzone,
+                                                 UMShareToTencent,
+                                                 nil]
+                                       delegate:self];
 }
 
 # pragma mark Update UI

@@ -10,6 +10,7 @@
 
 #import "UMFeedback.h"
 #import "UMOpus.h"
+#import "UMSocial.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +32,8 @@
     [[UITextField appearance] setTintColor:[UIColor grayColor]];
     [[UITextView appearance] setTintColor:[UIColor grayColor]];
     
+    // UMeng Share
+    [UMSocialData setAppKey:UMENG_APPKEY];
     return YES;
 }
 
