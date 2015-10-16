@@ -12,6 +12,7 @@
 #import "UMFeedback.h"
 #import "UMOpus.h"
 #import "UMengSocialHandler.h"
+#import "JpushHandler.h"
 
 @interface AppDelegate ()
 
@@ -35,11 +36,11 @@
     
     // UMeng Share
     [UMengSocialHandler setup];
+    
     return YES;
 }
 
-- (void)makeWindowVisible:(NSDictionary *)launchOptions
-{
+- (void)makeWindowVisible:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -51,6 +52,9 @@
     self.window.rootViewController = _tabBarViewController;
     
     [self.window makeKeyAndVisible];
+    
+    [JpushHandler sendUserIdToAlias];    
+    [JpushHandler setupJpush:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -73,6 +77,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Jpush
+    [APService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // jpush
+    [APService handleRemoteNotification:userInfo];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

@@ -8,6 +8,7 @@
 
 #import "CurrentUser.h"
 #import "AccessTokenHandler.h"
+#import "JpushHandler.h"
 
 @implementation CurrentUser
 + (CurrentUser *)Instance {
@@ -25,6 +26,7 @@
 
 - (void)saveUser:(UserEntity *)user {
     [UserDBManager insertOnDuplicateUpdate:user];
+    [JpushHandler sendUserIdToAlias];
 }
 
 - (void)updateCurrentUserInfo {
@@ -48,5 +50,6 @@
 - (void)logOut {
     [GVUserDefaults standardUserDefaults].userLoginToken = nil;
     [GVUserDefaults standardUserDefaults].currentUserId = nil;
+    [JpushHandler sendEmptyAlias];
 }
 @end

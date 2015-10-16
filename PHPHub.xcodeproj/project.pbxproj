@@ -66,6 +66,13 @@
 		56B402691BCF96FC0044812F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B402681BCF96FC0044812F /* libstdc++.tbd */; };
 		56B4026B1BCF97060044812F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4026A1BCF97060044812F /* libz.tbd */; };
 		56B4026E1BCF97600044812F /* UMengSocialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4026D1BCF97600044812F /* UMengSocialHandler.m */; settings = {ASSET_TAGS = (); }; };
+		56C0A3041BD0CFA40042E302 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3031BD0CFA40042E302 /* CFNetwork.framework */; };
+		56C0A30F1BD0D7740042E302 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A30E1BD0D7740042E302 /* libPushSDK-1.8.5.a */; settings = {ASSET_TAGS = (); }; };
+		56C0A3111BD0DBE00042E302 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */; };
+		56C0A3131BD0DBEE0042E302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3121BD0DBEE0042E302 /* Foundation.framework */; };
+		56C0A3151BD0DC020042E302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3141BD0DC020042E302 /* UIKit.framework */; };
+		56C0A3171BD0DFDA0042E302 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C0A3161BD0DFDA0042E302 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
+		56C0A31A1BD0E0F00042E302 /* JpushHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A3191BD0E0F00042E302 /* JpushHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
@@ -214,6 +221,15 @@
 		56B4026A1BCF97060044812F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		56B4026C1BCF97600044812F /* UMengSocialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMengSocialHandler.h; sourceTree = "<group>"; };
 		56B4026D1BCF97600044812F /* UMengSocialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMengSocialHandler.m; sourceTree = "<group>"; };
+		56C0A3031BD0CFA40042E302 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		56C0A30D1BD0D7740042E302 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		56C0A30E1BD0D7740042E302 /* libPushSDK-1.8.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.5.a"; sourceTree = "<group>"; };
+		56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		56C0A3121BD0DBEE0042E302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		56C0A3141BD0DC020042E302 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		56C0A3161BD0DFDA0042E302 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
+		56C0A3181BD0E0F00042E302 /* JpushHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpushHandler.h; sourceTree = "<group>"; };
+		56C0A3191BD0E0F00042E302 /* JpushHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JpushHandler.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -275,6 +291,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C0A3151BD0DC020042E302 /* UIKit.framework in Frameworks */,
+				56C0A3131BD0DBEE0042E302 /* Foundation.framework in Frameworks */,
+				56C0A3111BD0DBE00042E302 /* CoreFoundation.framework in Frameworks */,
+				56C0A3041BD0CFA40042E302 /* CFNetwork.framework in Frameworks */,
 				56B4026B1BCF97060044812F /* libz.tbd in Frameworks */,
 				56B402691BCF96FC0044812F /* libstdc++.tbd in Frameworks */,
 				56B402671BCF96F00044812F /* libsqlite3.tbd in Frameworks */,
@@ -284,6 +304,7 @@
 				56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */,
 				56B4025D1BCF96570044812F /* Security.framework in Frameworks */,
 				A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */,
+				56C0A30F1BD0D7740042E302 /* libPushSDK-1.8.5.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +321,10 @@
 		46A79BE4D8CD8EE6782FCE6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56C0A3141BD0DC020042E302 /* UIKit.framework */,
+				56C0A3121BD0DBEE0042E302 /* Foundation.framework */,
+				56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */,
+				56C0A3031BD0CFA40042E302 /* CFNetwork.framework */,
 				56B4026A1BCF97060044812F /* libz.tbd */,
 				56B402681BCF96FC0044812F /* libstdc++.tbd */,
 				56B402661BCF96F00044812F /* libsqlite3.tbd */,
@@ -567,6 +592,23 @@
 			path = "NSURL+QueryDictionary";
 			sourceTree = "<group>";
 		};
+		56C0A30B1BD0D7740042E302 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				56C0A30C1BD0D7740042E302 /* lib */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
+		56C0A30C1BD0D7740042E302 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				56C0A30D1BD0D7740042E302 /* APService.h */,
+				56C0A30E1BD0D7740042E302 /* libPushSDK-1.8.5.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		56D8F00F1BAF97C500242FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +656,7 @@
 				56D8F0201BAF97C500242FA9 /* AppDelegate.m */,
 				56D8F01C1BAF97C500242FA9 /* Info.plist */,
 				56D8F01D1BAF97C500242FA9 /* main.m */,
+				56C0A3161BD0DFDA0042E302 /* PushConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -670,6 +713,8 @@
 				560E4C111BC6205900BD8CE2 /* JumpToOtherVCHandler.m */,
 				56B4026C1BCF97600044812F /* UMengSocialHandler.h */,
 				56B4026D1BCF97600044812F /* UMengSocialHandler.m */,
+				56C0A3181BD0E0F00042E302 /* JpushHandler.h */,
+				56C0A3191BD0E0F00042E302 /* JpushHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -701,6 +746,7 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				56C0A30B1BD0D7740042E302 /* JPush */,
 				5672CB671BCE3BAB007F4B9F /* WCAlertView */,
 				560E4BFE1BC1178900BD8CE2 /* TPKeyboardAvoiding */,
 				561868641BBF618300E9E111 /* TOWebViewController */,
@@ -941,6 +987,12 @@
 				TargetAttributes = {
 					56D8F0171BAF97C500242FA9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = X7MPK25PSQ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					56D8F0301BAF97C500242FA9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -983,6 +1035,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */,
+				56C0A3171BD0DFDA0042E302 /* PushConfig.plist in Resources */,
 				5652184B1BBA7D0500412E60 /* Me.storyboard in Resources */,
 				5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */,
 				561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */,
@@ -1061,6 +1114,7 @@
 				5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
 				565218471BBA7CC500412E60 /* TopicListCell.m in Sources */,
+				56C0A31A1BD0E0F00042E302 /* JpushHandler.m in Sources */,
 				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
 				5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */,
 				56D8F0B01BB137FB00242FA9 /* TopicListContainerViewController.m in Sources */,
@@ -1230,11 +1284,46 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AFOAuth2Manager\"",
+					"\"${PODS_ROOT}/Headers/Public/CTAssetsPickerController\"",
+					"\"${PODS_ROOT}/Headers/Public/DateTools\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDBMigrationManager\"",
+					"\"${PODS_ROOT}/Headers/Public/GVUserDefaults\"",
+					"\"${PODS_ROOT}/Headers/Public/HappyDNS\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MTLFMDBAdapter\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/QBPopupMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/QRCodeReaderViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/Qiniu\"",
+					"\"${PODS_ROOT}/Headers/Public/Reachability\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/UIActivityIndicator-for-SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/UITextView+Placeholder\"",
+					"\"${PODS_ROOT}/Headers/Public/UMengFeedback\"",
+					"\"${PODS_ROOT}/Headers/Public/UMengSocial\"",
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
+					"\"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib\"",
+				);
 				INFOPLIST_FILE = PHPHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f63acf5e-13de-4809-acce-cf67287ece0b";
 			};
 			name = Debug;
 		};
@@ -1246,11 +1335,46 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AFOAuth2Manager\"",
+					"\"${PODS_ROOT}/Headers/Public/CTAssetsPickerController\"",
+					"\"${PODS_ROOT}/Headers/Public/DateTools\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDBMigrationManager\"",
+					"\"${PODS_ROOT}/Headers/Public/GVUserDefaults\"",
+					"\"${PODS_ROOT}/Headers/Public/HappyDNS\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MTLFMDBAdapter\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/QBPopupMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/QRCodeReaderViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/Qiniu\"",
+					"\"${PODS_ROOT}/Headers/Public/Reachability\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/UIActivityIndicator-for-SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/UITextView+Placeholder\"",
+					"\"${PODS_ROOT}/Headers/Public/UMengFeedback\"",
+					"\"${PODS_ROOT}/Headers/Public/UMengSocial\"",
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
+					"\"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib\"",
+				);
 				INFOPLIST_FILE = PHPHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f63acf5e-13de-4809-acce-cf67287ece0b";
 			};
 			name = Release;
 		};
