@@ -23,8 +23,10 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.estgroup.PHPHub</string>
+			<string>org.estgroup.phphub</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>phphub</string>
