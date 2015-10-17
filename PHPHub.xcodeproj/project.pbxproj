@@ -71,7 +71,6 @@
 		56C0A3111BD0DBE00042E302 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */; };
 		56C0A3131BD0DBEE0042E302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3121BD0DBEE0042E302 /* Foundation.framework */; };
 		56C0A3151BD0DC020042E302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C0A3141BD0DC020042E302 /* UIKit.framework */; };
-		56C0A3171BD0DFDA0042E302 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C0A3161BD0DFDA0042E302 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
 		56C0A31A1BD0E0F00042E302 /* JpushHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A3191BD0E0F00042E302 /* JpushHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
@@ -227,7 +226,6 @@
 		56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		56C0A3121BD0DBEE0042E302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		56C0A3141BD0DC020042E302 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		56C0A3161BD0DFDA0042E302 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		56C0A3181BD0E0F00042E302 /* JpushHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpushHandler.h; sourceTree = "<group>"; };
 		56C0A3191BD0E0F00042E302 /* JpushHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JpushHandler.m; sourceTree = "<group>"; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -656,7 +654,6 @@
 				56D8F0201BAF97C500242FA9 /* AppDelegate.m */,
 				56D8F01C1BAF97C500242FA9 /* Info.plist */,
 				56D8F01D1BAF97C500242FA9 /* main.m */,
-				56C0A3161BD0DFDA0042E302 /* PushConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1035,7 +1032,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D8F02C1BAF97C500242FA9 /* LaunchScreen.xib in Resources */,
-				56C0A3171BD0DFDA0042E302 /* PushConfig.plist in Resources */,
 				5652184B1BBA7D0500412E60 /* Me.storyboard in Resources */,
 				5652184E1BBA7F0000412E60 /* Passport.storyboard in Resources */,
 				561868451BBE2D6500E9E111 /* UserProfile.storyboard in Resources */,
