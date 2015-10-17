@@ -53,7 +53,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [JpushHandler sendUserIdToAlias];    
+    [JpushHandler sendUserIdToAlias];
     [JpushHandler setupJpush:nil];
 }
 

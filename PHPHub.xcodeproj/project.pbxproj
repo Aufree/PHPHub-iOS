@@ -1282,6 +1282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1323,7 +1324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f63acf5e-13de-4809-acce-cf67287ece0b";
+				PROVISIONING_PROFILE = "5a679ad8-12a4-4bd9-954c-e609eb3b5932";
 			};
 			name = Debug;
 		};
@@ -1333,6 +1334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "PHPHub/PHPHub-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1374,7 +1376,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f63acf5e-13de-4809-acce-cf67287ece0b";
+				PROVISIONING_PROFILE = "5a679ad8-12a4-4bd9-954c-e609eb3b5932";
 			};
 			name = Release;
 		};
