@@ -42,6 +42,8 @@ Pods/
 
 Carthage/Build
 
-
 # Ignore secret constant file
 PHPHub/Constants/SecretConstant.h
+
+# Ignore Config Plist File
+PHPHub/PushConfig.plist
