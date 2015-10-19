@@ -22,10 +22,9 @@
         [GVUserDefaults standardUserDefaults].lastTimeShowLaunchScreenAd = [NSDate date];
     }
     
-    BOOL hasPastOneHour = [[GVUserDefaults standardUserDefaults].lastTimeShowLaunchScreenAd hoursFrom:[NSDate date]] > 1;
-    BOOL userHasBeenLogin = [[CurrentUser Instance] isLogin];
+    BOOL hasPastOneHour = [[NSDate date] hoursFrom:[GVUserDefaults standardUserDefaults].lastTimeShowLaunchScreenAd] >= 1;
     
-    if (hasPastOneHour && userHasBeenLogin) {
+    if (hasPastOneHour) {
         [self loadLaunchScreenAdEntity];
     }
     
