@@ -10,6 +10,7 @@
 #import "AccessTokenHandler.h"
 #import "UserModel.h"
 #import "TOWebViewController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 @interface LoginViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanLoginButton;
@@ -25,6 +26,7 @@
     
     [self drawButtonBorder:_scanLoginButton borderColor:[UIColor colorWithRed:0.886 green:0.643 blue:0.251 alpha:1.000]];
     [self drawButtonBorder:_introLoginButton borderColor:[UIColor colorWithRed:0.275 green:0.698 blue:0.875 alpha:1.000]];
+    self.fd_interactivePopDisabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
