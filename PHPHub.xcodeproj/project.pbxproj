@@ -59,6 +59,7 @@
 		5679BAAC1BD47F2500AA9928 /* LaunchScreenAdEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAAB1BD47F2500AA9928 /* LaunchScreenAdEntity.m */; settings = {ASSET_TAGS = (); }; };
 		5679BAAF1BD480DF00AA9928 /* AdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAAE1BD480DF00AA9928 /* AdApi.m */; settings = {ASSET_TAGS = (); }; };
 		5679BAB21BD4815000AA9928 /* AdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB11BD4815000AA9928 /* AdModel.m */; settings = {ASSET_TAGS = (); }; };
+		5679BAB51BD482D400AA9928 /* LaunchScreenAdDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
 		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
@@ -219,6 +220,8 @@
 		5679BAAE1BD480DF00AA9928 /* AdApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdApi.m; sourceTree = "<group>"; };
 		5679BAB01BD4815000AA9928 /* AdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdModel.h; sourceTree = "<group>"; };
 		5679BAB11BD4815000AA9928 /* AdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdModel.m; sourceTree = "<group>"; };
+		5679BAB31BD482D400AA9928 /* LaunchScreenAdDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdDBManager.h; sourceTree = "<group>"; };
+		5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdDBManager.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -847,6 +850,8 @@
 			children = (
 				5618683C1BBE1E0700E9E111 /* UserDBManager.h */,
 				5618683D1BBE1E0700E9E111 /* UserDBManager.m */,
+				5679BAB31BD482D400AA9928 /* LaunchScreenAdDBManager.h */,
+				5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */,
 			);
 			path = DBManager;
 			sourceTree = "<group>";
@@ -1176,6 +1181,7 @@
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
 				560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				5679BAB51BD482D400AA9928 /* LaunchScreenAdDBManager.m in Sources */,
 				5672CB381BC7A10E007F4B9F /* CommentEntity.m in Sources */,
 				5618687A1BBF618300E9E111 /* TOActivityChrome.m in Sources */,
 				565218441BBA7CC500412E60 /* BaseView.m in Sources */,
