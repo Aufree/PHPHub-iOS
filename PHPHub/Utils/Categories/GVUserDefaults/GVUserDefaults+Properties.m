@@ -12,4 +12,5 @@
 @dynamic userLoginToken;
 @dynamic userClientToken;
 @dynamic currentUserId;
+@dynamic lastTimeShowLaunchScreenAd;
 @end

@@ -13,6 +13,7 @@
 #import "UMOpus.h"
 #import "UMengSocialHandler.h"
 #import "JpushHandler.h"
+#import "LaunchScreenAdHandler.h"
 
 @interface AppDelegate ()
 
@@ -55,6 +56,8 @@
     
     [JpushHandler sendUserIdToAlias];
     [JpushHandler setupJpush:nil];
+    
+    [LaunchScreenAdHandler showLaunchScreenAd];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

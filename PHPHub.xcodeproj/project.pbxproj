@@ -62,6 +62,7 @@
 		5679BAB51BD482D400AA9928 /* LaunchScreenAdDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */; settings = {ASSET_TAGS = (); }; };
 		5679BAB91BD4855600AA9928 /* LaunchScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */; settings = {ASSET_TAGS = (); }; };
 		5679BABC1BD485D800AA9928 /* SkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BABB1BD485D800AA9928 /* SkipButton.m */; settings = {ASSET_TAGS = (); }; };
+		5679BABF1BD4869F00AA9928 /* LaunchScreenAdHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
 		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
@@ -228,6 +229,8 @@
 		5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdView.m; sourceTree = "<group>"; };
 		5679BABA1BD485D800AA9928 /* SkipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipButton.h; sourceTree = "<group>"; };
 		5679BABB1BD485D800AA9928 /* SkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipButton.m; sourceTree = "<group>"; };
+		5679BABD1BD4869F00AA9928 /* LaunchScreenAdHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdHandler.h; sourceTree = "<group>"; };
+		5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdHandler.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -748,6 +751,8 @@
 				56B4026D1BCF97600044812F /* UMengSocialHandler.m */,
 				56C0A3181BD0E0F00042E302 /* JpushHandler.h */,
 				56C0A3191BD0E0F00042E302 /* JpushHandler.m */,
+				5679BABD1BD4869F00AA9928 /* LaunchScreenAdHandler.h */,
+				5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -1196,6 +1201,7 @@
 				560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */,
 				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
 				5679BAB21BD4815000AA9928 /* AdModel.m in Sources */,
+				5679BABF1BD4869F00AA9928 /* LaunchScreenAdHandler.m in Sources */,
 				565218631BBBBDED00412E60 /* UserModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,

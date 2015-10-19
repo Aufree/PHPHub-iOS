@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString *userLoginToken;
 @property (nonatomic, copy) NSString *userClientToken;
 @property (nonatomic, copy) NSNumber *currentUserId;
+@property (nonatomic, strong) NSDate *lastTimeShowLaunchScreenAd;
 @end
