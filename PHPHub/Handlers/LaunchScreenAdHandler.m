@@ -37,11 +37,7 @@
         [GVUserDefaults standardUserDefaults].lastTimeShowLaunchScreenAd = [NSDate date];
     }
     
-    BOOL userHasBeenLogin = [[CurrentUser Instance] isLogin];
-    
-    if (userHasBeenLogin) {
-        [self loadLaunchScreenAdEntity];
-    }
+    [self loadLaunchScreenAdEntity];
     
     [[AdModel Instance] getAdvertsLaunchScreen:nil];
 }
@@ -95,11 +91,32 @@
                                  if (shouldJumpToOtherVC) {
                                      LaunchScreenAdEntity *adEntity = [LaunchScreenAdDBManager findLaunchScreenAdByExpries];
                                      if (adEntity) {
-                                         
+                                         [self jumpToOtherViewController:adEntity];
                                      }
                                  }
                              }];
         }
     }
+}
+
++ (void)jumpToOtherViewController:(LaunchScreenAdEntity *)entity {
+    if (entity.type == LaunchScreenTypeUnknow || !entity.type) {
+        return;
+    }
+    
+    NSNumber *payloadNumber = [self covertToNumber:entity.payload];
+    if (entity.type == LaunchScreenTypeByTopic) {
+        [JumpToOtherVCHandler jumpToTopicDetailWithTopicId:payloadNumber];
+    } else if (entity.type == LaunchScreenTypeByUser) {
+        [JumpToOtherVCHandler jumpToUserProfileWithUserId:payloadNumber];
+    } else if (entity.type == LaunchScreenTypeByWeb) {
+        [JumpToOtherVCHandler jumpToWebVCWithUrlString:entity.payload];
+    }
+}
+
++ (NSNumber *)covertToNumber:(NSString *)numberString {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    return [formatter numberFromString:numberString];
 }
 @end

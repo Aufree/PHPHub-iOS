@@ -10,13 +10,13 @@
 
 @implementation LaunchScreenAdEntity
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"launchScreenAdId" : @"id",
              @"launchDescription" : @"description",
              @"smallImage" : @"image_small",
              @"bigImage" : @"image_large",
+             @"launchScreenType" : @"type",
              @"payload" : @"payload",
              @"displayTime" : @"display_time",
              @"startAt" : @"start_at",
@@ -26,13 +26,13 @@
 
 #pragma mark - MTLFMDBAdapter Stuff
 
-+ (NSDictionary *)FMDBColumnsByPropertyKey
-{
++ (NSDictionary *)FMDBColumnsByPropertyKey {
     return @{
              @"launchScreenAdId" : @"id",
              @"launchDescription" : [NSNull null],
              @"smallImage" : @"image_small",
              @"bigImage" : @"image_large",
+             @"launchScreenType" : @"type",
              @"payload" : @"payload",
              @"displayTime" : @"display_time",
              @"startAt" : @"start_at",
@@ -41,8 +41,22 @@
              };
 }
 
-+ (NSArray *)FMDBPrimaryKeys
-{
+- (LaunchScreenType)type {
+    if (!_type) {
+        if ([self.launchScreenType isEqualToString:@"topic"]) {
+            _type = LaunchScreenTypeByTopic;
+        } else if ([self.launchScreenType isEqualToString:@"user"]) {
+            _type = LaunchScreenTypeByUser;
+        } else if ([self.launchScreenType isEqualToString:@"web"]) {
+            _type = LaunchScreenTypeByWeb;
+        } else {
+            _type = LaunchScreenTypeUnknow;
+        }
+    }
+    return _type;
+}
+
++ (NSArray *)FMDBPrimaryKeys {
     return @[@"id"];
 }
 

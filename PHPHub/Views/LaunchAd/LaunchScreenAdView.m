@@ -7,6 +7,7 @@
 //
 
 #import "LaunchScreenAdView.h"
+#import "LaunchScreenAdHandler.h"
 
 #if !__has_feature(objc_arc)
 #error LaunchScreenAdView requires ARC enabled. Mark the .m file with the objc_arc linker flag.
@@ -38,8 +39,7 @@
     [self addSubview:self.durationTimeLabel];
     [self addSubview:self.skipButton];
     
-    // 加上点击事件
-    UITapGestureRecognizer* recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleClickedEvent)];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleClickedEvent)];
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:recognizer];
 }
@@ -92,7 +92,7 @@
     _currentTime -= 1;
     _durationTimeLabel.text = [NSString stringWithFormat:@"%lus", (unsigned long)_currentTime];
     if (_currentTime == 0) {
-//        [LaunchScreenAdHandler removeLaunchScreenAd:NO];
+        [LaunchScreenAdHandler removeLaunchScreenAd:NO];
         [self invalidDurationTimer];
     }
 }
@@ -118,12 +118,12 @@
 }
 
 - (void)handleClickedEvent {
-//    [LaunchScreenAdHandler removeLaunchScreenAd:YES];
+    [LaunchScreenAdHandler removeLaunchScreenAd:YES];
     [self invalidDurationTimer];
 }
 
 - (void)didTouchSkipButton {
-//    [LaunchScreenAdHandler removeLaunchScreenAd:NO];
+    [LaunchScreenAdHandler removeLaunchScreenAd:NO];
     [self invalidDurationTimer];
 }
 

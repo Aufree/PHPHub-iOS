@@ -12,6 +12,7 @@
 #import "TopicDetailViewController.h"
 #import "LoginViewController.h"
 #import "UserProfileViewController.h"
+#import "TOWebViewController.h"
 
 #import "AppDelegate.h"
 
@@ -38,7 +39,7 @@
     TopicEntity *topic = [TopicEntity new];
     topic.topicId = topicId;
     topicDetailVC.topic = topic;
-    [self presentToOtherView:topicDetailVC animated:YES completion:nil];
+    [self pushToOtherView:topicDetailVC animated:YES];
 }
 
 + (void)jumpToUserProfileWithUserId:(NSNumber *)userId {
@@ -48,7 +49,13 @@
     UserEntity *user = [UserEntity new];
     user.userId = userId;
     userProfileVC.userEntity = user;
-    [self presentToOtherView:userProfileVC animated:YES completion:nil];
+    [self pushToOtherView:userProfileVC animated:YES];
+}
+
++ (void)jumpToWebVCWithUrlString:(NSString *)url {
+    TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:url];
+    webVC.hidesBottomBarWhenPushed = YES;
+    [self pushToOtherView:webVC animated:YES];
 }
 
 + (void)jumpToLoginVC:(void (^)(void))completion {
