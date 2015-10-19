@@ -9,6 +9,7 @@
 #import "NotificationListTableView.h"
 #include "NotificationListCell.h"
 #import "NotificationEntity.h"
+#import "TopicDetailViewController.h"
 
 @interface NotificationListTableView () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -63,7 +64,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NotificationEntity *notification = [_notificationEntities objectAtIndex:indexPath.row];
+    TopicEntity *topic = notification.topic;
+    TopicDetailViewController *topicDetailVC = [[UIStoryboard storyboardWithName:@"Topic" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topic"];
+    topicDetailVC.topic = topic;
+    [JumpToOtherVCHandler pushToOtherView:topicDetailVC animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{

@@ -7,6 +7,7 @@
 //
 
 #import "NotificationListCell.h"
+#import "UserProfileViewController.h"
 #import "BaseView.h"
 
 #import "Masonry.h"
@@ -31,9 +32,9 @@ static CGFloat notificationListCellContentFontSize = 13;
     _notificationEntity = notificationEntity;
     
     [self.contentView addSubview:self.baseView];
-    NSURL *URL = [BaseHelper qiniuImageCenter:notificationEntity.user.avatar withWidth:@"76" withHeight:@"76"];
+    NSURL *URL = [BaseHelper qiniuImageCenter:notificationEntity.fromUser.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    _notificationInfoLabel.text = [NSString stringWithFormat:@"%@ • %@", _notificationEntity.user.username, [_notificationEntity.createdAt timeAgoSinceNow]];
+    _notificationInfoLabel.text = [NSString stringWithFormat:@"%@ • %@", _notificationEntity.fromUser.username, [_notificationEntity.createdAt timeAgoSinceNow]];
     _notificationContentLabel.text = notificationEntity.message;
     
     [self addAutoLayoutToCell];
@@ -54,6 +55,9 @@ static CGFloat notificationListCellContentFontSize = 13;
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, notificationListCellAvatarHeight, notificationListCellAvatarHeight)];
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _avatarImageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapAvatar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAvatarImageView)];
+        [_avatarImageView addGestureRecognizer:tapAvatar];
         [_avatarImageView addSubview:self.circleImageView];
     }
     return _avatarImageView;
@@ -127,4 +131,22 @@ static CGFloat notificationListCellContentFontSize = 13;
     
     return notificationListCellTitleHeight + notificationListCellTitleMarginTop * 4 + rect.size.height;
 }
+
+#pragma mark Tap User Avatar
+
+- (void)didTapAvatarImageView {
+    UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
+                                                                          bundle:[NSBundle mainBundle]]
+                                                instantiateViewControllerWithIdentifier:@"userprofile"];
+    userProfileVC.userEntity = _notificationEntity.fromUser;
+    [JumpToOtherVCHandler pushToOtherView:userProfileVC animated:YES];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if ([[gestureRecognizer view] isKindOfClass:[UITableViewCell class]]) {
+        return NO;
+    }
+    return YES;
+}
+
 @end
