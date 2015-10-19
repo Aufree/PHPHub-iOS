@@ -56,6 +56,7 @@
 		5672CB661BCCFD80007F4B9F /* NotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB651BCCFD80007F4B9F /* NotificationModel.m */; settings = {ASSET_TAGS = (); }; };
 		5672CB6A1BCE3BAB007F4B9F /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5672CB691BCE3BAB007F4B9F /* WCAlertView.m */; settings = {ASSET_TAGS = (); }; };
 		56737C351BB2A1FE008B3E60 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56737C341BB2A1FE008B3E60 /* MeViewController.m */; };
+		5679BAAC1BD47F2500AA9928 /* LaunchScreenAdEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAAB1BD47F2500AA9928 /* LaunchScreenAdEntity.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
 		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
@@ -210,6 +211,8 @@
 		5672CB691BCE3BAB007F4B9F /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
 		56737C331BB2A1FE008B3E60 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		56737C341BB2A1FE008B3E60 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		5679BAAA1BD47F2500AA9928 /* LaunchScreenAdEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdEntity.h; sourceTree = "<group>"; };
+		5679BAAB1BD47F2500AA9928 /* LaunchScreenAdEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdEntity.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -873,6 +876,8 @@
 				5652181D1BB6A9C200412E60 /* NotificationEntity.m */,
 				5672CB361BC7A10E007F4B9F /* CommentEntity.h */,
 				5672CB371BC7A10E007F4B9F /* CommentEntity.m */,
+				5679BAAA1BD47F2500AA9928 /* LaunchScreenAdEntity.h */,
+				5679BAAB1BD47F2500AA9928 /* LaunchScreenAdEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1139,6 +1144,7 @@
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
 				56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
+				5679BAAC1BD47F2500AA9928 /* LaunchScreenAdEntity.m in Sources */,
 				5672CB511BC8EB3E007F4B9F /* TopicDetailViewController.m in Sources */,
 				5672CB4F1BC8EB3E007F4B9F /* PostTopicViewController.m in Sources */,
 				5672CB411BC8A6E7007F4B9F /* NodeApi.m in Sources */,
