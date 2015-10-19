@@ -22,6 +22,7 @@ static CGFloat topicListCellAvatarHeight = 38;
 @property (nonatomic, strong) UILabel *topicTitleLabel;
 @property (nonatomic, strong) UILabel *topicInfoLabel;
 @property (nonatomic, strong) UILabel *topicRepliesCountLabel;
+@property (nonatomic, assign) BOOL didSetupConstraints;
 @end
 
 @implementation TopicListCell
@@ -38,7 +39,10 @@ static CGFloat topicListCellAvatarHeight = 38;
     NSNumber *repliesCount = _topicEntity.topicRepliesCount;
     _topicRepliesCountLabel.text = repliesCount.integerValue > 99 ? @"99+" : repliesCount.stringValue;
     
-    [self addAutoLayoutToCell];
+    if (!_didSetupConstraints) {
+        self.didSetupConstraints = YES;
+        [self addAutoLayoutToCell];
+    }
 }
 
 - (BaseView *)baseView {
@@ -77,7 +81,7 @@ static CGFloat topicListCellAvatarHeight = 38;
     if (!_topicTitleLabel) {
         _topicTitleLabel = [[UILabel alloc] init];
         _topicTitleLabel.font = [UIFont fontWithName:FontName size:14];
-        _topicTitleLabel.numberOfLines = 1;
+        _topicTitleLabel.numberOfLines = 2;
     }
     return _topicTitleLabel;
 }
@@ -112,10 +116,10 @@ static CGFloat topicListCellAvatarHeight = 38;
     CGFloat topicTitleOffset = self.avatarImageView.width + topicTitleMargin * 2;
     
     [self.baseView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(0);
+        make.top.equalTo(self.contentView).offset(0);
         make.left.equalTo(self.contentView.mas_left).offset(baseViewMargin);
         make.right.equalTo(self.contentView.mas_right).offset(-baseViewMargin);
-        make.bottom.offset(-baseViewMargin);
+        make.bottom.equalTo(self.contentView).offset(-baseViewMargin);
     }];
     
     [self.topicTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -128,7 +132,7 @@ static CGFloat topicListCellAvatarHeight = 38;
         make.top.equalTo(self.topicTitleLabel.mas_bottom).offset(baseViewMargin);
         make.left.equalTo(self.baseView.mas_left).offset(topicTitleOffset);
         make.right.equalTo(self.topicRepliesCountLabel.mas_left).offset(-topicTitleMargin);
-        make.height.mas_equalTo(self.topicInfoLabel.height);
+        make.bottom.equalTo(self.baseView).offset(-topicTitleMargin);
     }];
     
     [self.topicRepliesCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {

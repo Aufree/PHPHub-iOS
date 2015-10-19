@@ -10,9 +10,11 @@
 #import "TopicListCell.h"
 #import "TopicEntity.h"
 #import "TopicDetailViewController.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+
+static NSString *topicListIdentifier = @"topicListIdentifier";
 
 @interface TopicListTableView() <UITableViewDelegate, UITableViewDataSource>
-
 @end
 
 @implementation TopicListTableView
@@ -20,15 +22,19 @@
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self = [super initWithFrame:frame style:style];
     if (self) {
-        self.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
-        self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.dataSource = self;
-        self.delegate = self;
-        self.topicEntites = [[NSMutableArray alloc] init];
-        
-        [self reloadData];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    [self registerClass:[TopicListCell class] forCellReuseIdentifier:topicListIdentifier];
+    self.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataSource = self;
+    self.delegate = self;
+    self.topicEntites = [[NSMutableArray alloc] init];
+    [self reloadData];
 }
 
 #pragma mark - Table view data source
@@ -42,8 +48,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *topicListIdentifier = @"topicListIdentifier";
-    
     TopicListCell *cell = [tableView dequeueReusableCellWithIdentifier:topicListIdentifier];
     
     if (!cell) {
@@ -73,7 +77,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 67;
+    return [tableView fd_heightForCellWithIdentifier:topicListIdentifier configuration:^(TopicListCell *cell) {
+        if (_topicEntites.count > 0) {
+            TopicEntity *topic = [_topicEntites objectAtIndex:indexPath.row];
+            cell.topicEntity = topic;
+        }
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
