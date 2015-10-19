@@ -60,6 +60,8 @@
 		5679BAAF1BD480DF00AA9928 /* AdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAAE1BD480DF00AA9928 /* AdApi.m */; settings = {ASSET_TAGS = (); }; };
 		5679BAB21BD4815000AA9928 /* AdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB11BD4815000AA9928 /* AdModel.m */; settings = {ASSET_TAGS = (); }; };
 		5679BAB51BD482D400AA9928 /* LaunchScreenAdDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */; settings = {ASSET_TAGS = (); }; };
+		5679BAB91BD4855600AA9928 /* LaunchScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */; settings = {ASSET_TAGS = (); }; };
+		5679BABC1BD485D800AA9928 /* SkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BABB1BD485D800AA9928 /* SkipButton.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
 		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
@@ -222,6 +224,10 @@
 		5679BAB11BD4815000AA9928 /* AdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdModel.m; sourceTree = "<group>"; };
 		5679BAB31BD482D400AA9928 /* LaunchScreenAdDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdDBManager.h; sourceTree = "<group>"; };
 		5679BAB41BD482D400AA9928 /* LaunchScreenAdDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdDBManager.m; sourceTree = "<group>"; };
+		5679BAB71BD4855600AA9928 /* LaunchScreenAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdView.h; sourceTree = "<group>"; };
+		5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdView.m; sourceTree = "<group>"; };
+		5679BABA1BD485D800AA9928 /* SkipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkipButton.h; sourceTree = "<group>"; };
+		5679BABB1BD485D800AA9928 /* SkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipButton.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -457,6 +463,7 @@
 		565218341BBA7CC500412E60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5679BAB61BD484F200AA9928 /* LaunchAd */,
 				560E4BF51BC0B56500BD8CE2 /* Settings */,
 				561868401BBE2D3600E9E111 /* User */,
 				5652184C1BBA7EDD00412E60 /* Passport */,
@@ -477,6 +484,8 @@
 				565218371BBA7CC500412E60 /* BaseView.m */,
 				5672CB301BC760A0007F4B9F /* BubbleButton.h */,
 				5672CB311BC760A0007F4B9F /* BubbleButton.m */,
+				5679BABA1BD485D800AA9928 /* SkipButton.h */,
+				5679BABB1BD485D800AA9928 /* SkipButton.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -595,6 +604,15 @@
 				56737C341BB2A1FE008B3E60 /* MeViewController.m */,
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		5679BAB61BD484F200AA9928 /* LaunchAd */ = {
+			isa = PBXGroup;
+			children = (
+				5679BAB71BD4855600AA9928 /* LaunchScreenAdView.h */,
+				5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */,
+			);
+			path = LaunchAd;
 			sourceTree = "<group>";
 		};
 		56B402581BCF883F0044812F /* NSURL+QueryDictionary */ = {
@@ -1138,9 +1156,11 @@
 				5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */,
 				565218671BBBC41400412E60 /* GVUserDefaults+Properties.m in Sources */,
 				5672CB541BC8EBC0007F4B9F /* TopicVoteView.m in Sources */,
+				5679BAB91BD4855600AA9928 /* LaunchScreenAdView.m in Sources */,
 				56D8F0AC1BB1359100242FA9 /* WiKiListViewController.m in Sources */,
 				5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				56D8F0901BB009C500242FA9 /* BaseTabBarViewController.m in Sources */,
+				5679BABC1BD485D800AA9928 /* SkipButton.m in Sources */,
 				565218471BBA7CC500412E60 /* TopicListCell.m in Sources */,
 				56C0A31A1BD0E0F00042E302 /* JpushHandler.m in Sources */,
 				56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */,
