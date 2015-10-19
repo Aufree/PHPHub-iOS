@@ -27,11 +27,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *watchButton;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
 @property (assign, nonatomic) CGPoint pointNow;
 @property (assign, nonatomic) CGFloat topicToolBarY;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
 @property (assign, nonatomic) BOOL isAttentionTopic;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
 @end
 
 @implementation TopicDetailViewController
@@ -69,7 +69,7 @@
             weakself.isAttentionTopic = weakself.topic.attention;
             [weakself updateFavoriteButtonStateWithFavarite];
             [weakself updateAttentionButtonStateWithAttention];
-            [weakself updateVoteState];
+            [weakself updateVoteStateWithVoteCount:weakself.topic.voteCount.integerValue];
             [weakself updateTopicDetailView];
             if (completion) completion(error);
         }
@@ -106,14 +106,15 @@
     [_avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = user.username;
     _signatureLabel.text = user.signature;
-    NSString *voteCountString = [NSString stringWithFormat:@"  %@", _topic.voteCount.stringValue];
-    [_voteButton setTitle:voteCountString forState:UIControlStateNormal];
     NSString *rawTopicCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
     NSString *topicCount = [NSString stringWithFormat:@" %@", rawTopicCount];
     [_commentsButton setTitle:topicCount forState:UIControlStateNormal];
 }
 
-- (void)updateVoteState {
+- (void)updateVoteStateWithVoteCount:(NSInteger)voteCount {
+    _topic.voteCount = @(voteCount);
+    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
+    
     if (_topic.voteUp && !_topic.voteDown) {
         [_voteButton setImage:[UIImage imageNamed:@"upvote_icon"] forState:UIControlStateNormal];
     } else if (_topic.voteDown && !_topic.voteUp) {
@@ -199,23 +200,28 @@
 - (void)upVoteTopic {
     _topic.voteUp = !_topic.voteUp;
     NSInteger voteCount = _topic.voteCount.integerValue;
-    voteCount = _topic.voteUp ? voteCount + 1 : voteCount - 1;
-    _topic.voteCount = @(voteCount);
-    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
+    if (_topic.voteDown) {
+        voteCount += 2;
+    } else {
+        voteCount = _topic.voteUp ? voteCount + 1 : voteCount - 1;
+    }
+    _topic.voteDown = NO;
+    [self updateVoteStateWithVoteCount:voteCount];
     [[TopicModel Instance] voteUpTopic:_topic.topicId withBlock:nil];
-    [self updateVoteState];
 }
 
 - (void)downVoteTopic {
     _topic.voteDown = !_topic.voteDown;
     NSInteger voteCount = _topic.voteCount.integerValue;
-    voteCount = _topic.voteDown ? voteCount - 1 : voteCount + 1;
-    _topic.voteCount = @(voteCount);
-    [_voteButton setTitle:[NSString stringWithFormat:@"  %ld", (long)voteCount] forState:UIControlStateNormal];
+    if (_topic.voteUp) {
+        voteCount -= 2;
+    } else {
+        voteCount = !_topic.voteDown ? voteCount + 1 : voteCount - 1;
+    }
+    _topic.voteUp = NO;
+    [self updateVoteStateWithVoteCount:voteCount];
     [[TopicModel Instance] voteDownTopic:_topic.topicId withBlock:nil];
-    [self updateVoteState];
 }
-
 
 # pragma mark Topic Action
 
