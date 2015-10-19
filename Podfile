@@ -26,3 +26,4 @@ pod 'QRCodeReaderViewController', :git => 'https://github.com/zhengjinghua-ext-f
 pod 'UITextView+Placeholder'
 pod 'pop', '~> 1.0'
 pod 'FDFullscreenPopGesture', '1.1'
+pod 'UITableView+FDTemplateLayoutCell'

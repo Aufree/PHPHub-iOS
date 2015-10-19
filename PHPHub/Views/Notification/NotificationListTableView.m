@@ -10,6 +10,9 @@
 #include "NotificationListCell.h"
 #import "NotificationEntity.h"
 #import "TopicDetailViewController.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+
+static NSString *notificationListIdentifier = @"notificationListIdentifier";
 
 @interface NotificationListTableView () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -19,15 +22,19 @@
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self = [super initWithFrame:frame style:style];
     if (self) {
-        self.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
-        self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.dataSource = self;
-        self.delegate = self;
-        self.notificationEntities = [[NSMutableArray alloc] init];
-        
-        [self reloadData];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    [self registerClass:[NotificationListCell class] forCellReuseIdentifier:notificationListIdentifier];
+    self.backgroundColor = [UIColor colorWithWhite:0.933 alpha:1.000];
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataSource = self;
+    self.delegate = self;
+    self.notificationEntities = [[NSMutableArray alloc] init];
+    [self reloadData];
 }
 
 - (void)setNotificationEntities:(NSMutableArray *)notificationEntities {
@@ -45,8 +52,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *notificationListIdentifier = @"notificationListIdentifier";
-    
     NotificationListCell *cell = [tableView dequeueReusableCellWithIdentifier:notificationListIdentifier];
     
     if (!cell) {
@@ -63,6 +68,15 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView fd_heightForCellWithIdentifier:notificationListIdentifier configuration:^(NotificationListCell *cell) {
+        if (_notificationEntities.count > 0) {
+            NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
+            cell.notificationEntity = notificationEntity;
+        }
+    }];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NotificationEntity *notification = [_notificationEntities objectAtIndex:indexPath.row];
     TopicEntity *topic = notification.topic;
@@ -74,11 +88,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10.0)];
     return footerView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NotificationEntity *notificationEntity = self.notificationEntities[indexPath.row];
-    return [NotificationListCell countHeightForCell:notificationEntity];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

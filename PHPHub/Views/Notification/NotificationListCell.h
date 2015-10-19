@@ -11,5 +11,4 @@
 
 @interface NotificationListCell : UITableViewCell
 @property (nonatomic, strong) NotificationEntity *notificationEntity;
-+ (CGFloat)countHeightForCell:(NotificationEntity *)notificationEntity;
 @end

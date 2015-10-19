@@ -21,7 +21,7 @@
 - (void)viewDidLoad {    
     [super viewDidLoad];
     
-    self.tableView = [[NotificationListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView = [[NotificationListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];    
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"我的消息";
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];

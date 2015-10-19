@@ -24,6 +24,7 @@ static CGFloat notificationListCellContentFontSize = 13;
 @property (nonatomic, strong) UIImageView *circleImageView;
 @property (nonatomic, strong) UILabel *notificationInfoLabel;
 @property (nonatomic, strong) UILabel *notificationContentLabel;
+@property (nonatomic, assign) BOOL didSetupConstraints;
 @end
 
 @implementation NotificationListCell
@@ -37,13 +38,15 @@ static CGFloat notificationListCellContentFontSize = 13;
     _notificationInfoLabel.text = [NSString stringWithFormat:@"%@ • %@", _notificationEntity.fromUser.username, [_notificationEntity.createdAt timeAgoSinceNow]];
     _notificationContentLabel.text = notificationEntity.message;
     
-    [self addAutoLayoutToCell];
+    if (!_didSetupConstraints) {
+        self.didSetupConstraints = YES;
+        [self addAutoLayoutToCell];
+    }
 }
 
 - (BaseView *)baseView {
     if (!_baseView) {
         _baseView = [[BaseView alloc] init];
-        
         [_baseView addSubview:self.avatarImageView];
         [_baseView addSubview:self.notificationInfoLabel];
         [_baseView addSubview:self.notificationContentLabel];
@@ -96,40 +99,25 @@ static CGFloat notificationListCellContentFontSize = 13;
     CGFloat marginLeft = self.avatarImageView.width + infoMargin * 2;
     
     [self.baseView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(baseViewMargin);
+        make.top.equalTo(self.contentView.mas_top).offset(baseViewMargin);
         make.left.equalTo(self.contentView.mas_left).offset(baseViewMargin);
         make.right.equalTo(self.contentView.mas_right).offset(-baseViewMargin);
-        make.bottom.offset(0);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
     }];
     
     [self.notificationInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.baseView.mas_top).offset(infoMargin);
         make.left.equalTo(self.baseView.mas_left).offset(marginLeft);
-        make.right.equalTo(self.baseView.mas_right).offset(-infoMargin/2);
+        make.right.equalTo(self.baseView.mas_right).offset(-baseViewMargin);
         make.height.mas_equalTo(notificationListCellTitleHeight);
     }];
 
     [self.notificationContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.notificationInfoLabel.mas_bottom).offset(infoMargin/2);
         make.left.equalTo(self.baseView.mas_left).offset(marginLeft);
-        make.right.equalTo(self.baseView.mas_right).offset(-infoMargin/2);
+        make.right.equalTo(self.baseView.mas_right).offset(-baseViewMargin);
+        make.bottom.equalTo(self.baseView.mas_bottom).offset(-12);
     }];
-}
-
-+ (CGFloat)countHeightForCell:(NotificationEntity *)notificationEntity {
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:notificationEntity.message
-                                                                                      attributes:@{NSFontAttributeName:[UIFont fontWithName:FontName
-                                                                                                                                       size:notificationListCellContentFontSize]}];
-    
-    CGFloat contentMarginLeft = notificationListCellAvatarHeight + 20;
-    CGFloat contentMarginRight = 5;
-    CGFloat maxWidth = SCREEN_WIDTH - (contentMarginLeft + contentMarginRight);
-    
-    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT)
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                               context:nil];
-    
-    return notificationListCellTitleHeight + notificationListCellTitleMarginTop * 4 + rect.size.height;
 }
 
 #pragma mark Tap User Avatar
