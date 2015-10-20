@@ -10,6 +10,7 @@
 #import "TOWebViewController.h"
 #import "TopicListViewController.h"
 #import "EditUserProfileViewController.h"
+#import "UIActionSheet+Blocks.h"
 
 @interface UserProfileViewController () <EditUserProfileViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -33,8 +34,8 @@
     
     NSNumber *currentUserId = [CurrentUser Instance].userId;
     BOOL isCurrentUser = _userEntity.userId.integerValue == currentUserId.integerValue;
+    [self createRightButtonItemWithCurrentUser:isCurrentUser];
     if (currentUserId && isCurrentUser) {
-        [self createRightButtonItem];
         _userEntity = [[CurrentUser Instance] userInfo];
         [self updateUserProfileView];
     } else {
@@ -77,11 +78,20 @@
     [self updateUserProfileView];
 }
 
-- (void)createRightButtonItem {
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_profile_icon"]
+- (void)createRightButtonItemWithCurrentUser:(BOOL)isCurrentUser {
+    UIImage *buttonImage;
+    SEL buttonAction;
+    if (isCurrentUser) {
+        buttonImage = [UIImage imageNamed:@"edit_profile_icon"];
+        buttonAction = @selector(jumpToEditUserProfile);
+    } else {
+        buttonImage = [UIImage imageNamed:@"more"];
+        buttonAction = @selector(showActionSheet);
+    }
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:buttonImage
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
-                                                                          action:@selector(jumpToEditUserProfile)];
+                                                                          action:buttonAction];
     rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
@@ -92,6 +102,20 @@
                                                         instantiateViewControllerWithIdentifier:@"edituserprofile"];
     editUserProfileVC.delegate = self;
     [self.navigationController pushViewController:editUserProfileVC animated:YES];
+}
+
+- (void)showActionSheet {
+    [UIActionSheet showInView:self.view
+                    withTitle:@"更多操作"
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+            otherButtonTitles:@[@"举报"]
+                     tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                         if (buttonIndex == 0) {
+                             // For stupid apple review
+                             [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
+                         }
+                     }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
