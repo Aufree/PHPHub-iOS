@@ -54,6 +54,7 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - SVProgressHUD (1.1.3)
+  - UIActionSheet+Blocks (0.9)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
   - UITableView+FDTemplateLayoutCell (1.3)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - Reachability
   - SDWebImage
   - SVProgressHUD
+  - UIActionSheet+Blocks
   - UIActivityIndicator-for-SDWebImage
   - UITableView+FDTemplateLayoutCell
   - UITextView+Placeholder
@@ -124,6 +126,7 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
   UITextView+Placeholder: 672ce543356b5b5787f354415bc3b132d47f0362

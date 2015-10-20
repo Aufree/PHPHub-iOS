@@ -15,6 +15,7 @@
 #import "TopicVoteView.h"
 #import "UMSocial.h"
 #import "UMengSocialHandler.h"
+#import "UIActionSheet+Blocks.h"
 
 @interface TopicDetailViewController () <UIWebViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -84,7 +85,7 @@
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more"]
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
-                                                                          action:@selector(showMoreAction)];
+                                                                          action:@selector(showActionSheet)];
     rightBarButtonItem.tintColor = [UIColor colorWithRed:0.502 green:0.776 blue:0.200 alpha:1.000];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
@@ -96,6 +97,20 @@
     NSString *shareText = _topic.topicTitle;
 
     [UMengSocialHandler shareWithShareURL:shareURL shareImageUrl:shareImageUrl shareTitle:shareTitle shareText:shareText presentVC:self delegate:self];
+}
+
+- (void)showActionSheet {
+    [UIActionSheet showInView:self.view
+                    withTitle:@"更多操作"
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+            otherButtonTitles:@[@"举报"]
+                     tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                         if (buttonIndex == 0) {
+                             // For stupid apple review
+                             [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
+                         }
+                     }];
 }
 
 # pragma mark Update UI
