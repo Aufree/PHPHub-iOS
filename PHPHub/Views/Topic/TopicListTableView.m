@@ -34,7 +34,33 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
     self.dataSource = self;
     self.delegate = self;
     self.topicEntites = [[NSMutableArray alloc] init];
+    [self setupHeaderView];
     [self reloadData];
+}
+
+- (void)setupHeaderView {
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.font = [UIFont fontWithName:FontName size:13];
+    self.header = header;
+}
+
+- (void)setupFooterView {
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    footer.stateLabel.font = [UIFont fontWithName:FontName size:13];
+    self.footer = footer;
+}
+
+- (void)refreshData {
+    if (_topicListTableViewDelegate && [_topicListTableViewDelegate respondsToSelector:@selector(headerRefreshing)]) {
+        [_topicListTableViewDelegate headerRefreshing];
+    }
+}
+
+- (void)loadMoreData {
+    if (_topicListTableViewDelegate && [_topicListTableViewDelegate respondsToSelector:@selector(footerRereshing)]) {
+        [_topicListTableViewDelegate footerRereshing];
+    }
 }
 
 #pragma mark - Table view data source

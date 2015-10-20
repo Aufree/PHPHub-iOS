@@ -24,10 +24,16 @@
     self.tableView = [[NotificationListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];    
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"我的消息";
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    [self setupHeaderView];
     [self.tableView.header beginRefreshing];
 }
 
+- (void)setupHeaderView {
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.font = [UIFont fontWithName:FontName size:13];
+    self.tableView.header = header;
+}
 #pragma mark Get Topic Data
 
 - (void)headerRefreshing {
@@ -41,7 +47,9 @@
         
         [weakself.tableView.header endRefreshing];
         if (weakself.pagination.totalPages > 1) {
-            weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+            MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+            footer.stateLabel.font = [UIFont fontWithName:FontName size:13];
+            self.tableView.footer = footer;
         }
     };
     

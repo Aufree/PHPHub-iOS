@@ -10,7 +10,7 @@
 #import "TopicEntity.h"
 #import "TopicModel.h"
 
-@interface TopicListViewController ()
+@interface TopicListViewController () <TopicListTableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *topicEntites;
 @property (nonatomic, strong) PaginationEntity *pagination;
 @end
@@ -21,14 +21,14 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.topicListTableViewDelegate = self;
     
     if (self.isFromTopicContainer) {
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 112, 0);
     }
     
     [self.view addSubview:self.tableView];
-    
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+
     [self.tableView.header beginRefreshing];
 }
 
@@ -44,15 +44,14 @@
         [weakself.tableView.header endRefreshing];
         
         if (weakself.pagination.totalPages > 1) {
-            weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+            [weakself.tableView setupFooterView];
         }
     };
     
     [self fetchDataSource:callback atPage:1];
 }
 
-- (void)footerRereshing
-{
+- (void)footerRereshing {
     NSUInteger maxPage = self.pagination.totalPages;
     NSUInteger nextPage = self.pagination.currentPage + 1;
     

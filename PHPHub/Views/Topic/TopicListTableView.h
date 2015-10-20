@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TopicListTableViewDelegate <NSObject>
+- (void)headerRefreshing;
+- (void)footerRereshing;
+@end
+
 @interface TopicListTableView : UITableView
 @property (nonatomic, assign) BOOL shouldRemoveHeaderView;
 @property (nonatomic, strong) NSMutableArray *topicEntites;
+@property (nonatomic, weak) id<TopicListTableViewDelegate> topicListTableViewDelegate;
+- (void)setupFooterView;
 @end

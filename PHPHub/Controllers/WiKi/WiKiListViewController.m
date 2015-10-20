@@ -11,7 +11,7 @@
 #import "TopicEntity.h"
 #import "TopicModel.h"
 
-@interface WiKiListViewController ()
+@interface WiKiListViewController () <TopicListTableViewDelegate>
 @property (nonatomic, strong) TopicListTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *topicEntites;
 @property (nonatomic, strong) PaginationEntity *pagination;
@@ -22,11 +22,11 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.topicListTableViewDelegate = self;
     [self.view addSubview:self.tableView];
     
     self.navigationItem.title = @"社区 WiKi";
-    
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+
     [self.tableView.header beginRefreshing];
 }
 
@@ -41,15 +41,14 @@
         
         [weakself.tableView.header endRefreshing];
         if (weakself.pagination.totalPages > 1) {
-            weakself.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+            [weakself.tableView setupFooterView];
         }
     };
     
     [self fetchDataSource:callback atPage:1];
 }
 
-- (void)footerRereshing
-{
+- (void)footerRereshing {
     NSUInteger maxPage = self.pagination.totalPages;
     NSUInteger nextPage = self.pagination.currentPage + 1;
     
