@@ -8,17 +8,15 @@
 
 #import "EssentialListViewController.h"
 #import "TopicListTableView.h"
-#import "TopicSearchBar.h"
 
 #import "TopicEntity.h"
 #import "TopicModel.h"
 #import "PostTopicViewController.h"
 
-@interface EssentialListViewController () <UISearchBarDelegate>
+@interface EssentialListViewController ()
 @property (nonatomic, strong) TopicListTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *topicEntites;
 @property (nonatomic, strong) PaginationEntity *pagination;
-@property (nonatomic, strong) TopicSearchBar *searchBar;
 @end
 
 @implementation EssentialListViewController
@@ -27,12 +25,7 @@
     [super viewDidLoad];
     
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-//    self.tableView.shouldRemoveHeaderView = YES;
     [self.view addSubview:self.tableView];
-    self.searchBar = [[TopicSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
-    
-    // Hide Search Bar
-//    self.tableView.tableHeaderView = self.searchBar;
     
     self.navigationItem.title = @"精华";
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
