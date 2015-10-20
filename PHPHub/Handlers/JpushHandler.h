@@ -15,4 +15,5 @@
 + (NSString *)logSet:(NSSet *)dic;
 + (void)sendUserIdToAlias;
 + (void)sendEmptyAlias;
++ (void)handleUserInfo:(NSDictionary *)userInfo;
 @end

@@ -90,6 +90,10 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // jpush
     [APService handleRemoteNotification:userInfo];
+    
+    if (userInfo && application.applicationState == UIApplicationStateInactive) {
+        [JpushHandler handleUserInfo:userInfo];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
