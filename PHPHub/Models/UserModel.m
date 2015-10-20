@@ -64,7 +64,7 @@
 
 - (id)updateUserProfile:(UserEntity *)user withBlock:(BaseResultBlock)block {
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
-        if (data) {
+        if (!error) {
             UserEntity *userEntity = data[@"entity"];
             [[CurrentUser Instance] saveUser:userEntity];
             if (block) block(data, nil);

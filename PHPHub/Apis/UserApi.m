@@ -70,7 +70,9 @@
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         if (data[@"data"]) {
-            data[@"entity"] = [UserEntity entityFromDictionary:data[@"data"]];
+            UserEntity *user = [UserEntity entityFromDictionary:data[@"data"]];
+            user.repliesUrl = [[CurrentUser Instance] userInfo].repliesUrl;
+            data[@"entity"] = user;
         }
         if (block) block(data, nil);
     };
