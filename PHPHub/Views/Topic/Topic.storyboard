@@ -64,7 +64,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="rbI-Ps-Kbg"/>
                                                 </constraints>
-                                                <state key="normal" title="  10" image="vote_icon">
+                                                <state key="normal" title="  0" image="vote_icon">
                                                     <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
