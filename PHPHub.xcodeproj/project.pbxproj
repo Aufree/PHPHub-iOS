@@ -63,6 +63,7 @@
 		5679BAB91BD4855600AA9928 /* LaunchScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BAB81BD4855600AA9928 /* LaunchScreenAdView.m */; settings = {ASSET_TAGS = (); }; };
 		5679BABC1BD485D800AA9928 /* SkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BABB1BD485D800AA9928 /* SkipButton.m */; settings = {ASSET_TAGS = (); }; };
 		5679BABF1BD4869F00AA9928 /* LaunchScreenAdHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */; settings = {ASSET_TAGS = (); }; };
+		5679BACC1BD7395000AA9928 /* ExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5679BACB1BD7395000AA9928 /* ExceptionHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		56B4025D1BCF96570044812F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025C1BCF96570044812F /* Security.framework */; };
 		56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B4025E1BCF967B0044812F /* SystemConfiguration.framework */; };
@@ -231,6 +232,8 @@
 		5679BABB1BD485D800AA9928 /* SkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkipButton.m; sourceTree = "<group>"; };
 		5679BABD1BD4869F00AA9928 /* LaunchScreenAdHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenAdHandler.h; sourceTree = "<group>"; };
 		5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenAdHandler.m; sourceTree = "<group>"; };
+		5679BACA1BD7395000AA9928 /* ExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHandler.h; sourceTree = "<group>"; };
+		5679BACB1BD7395000AA9928 /* ExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHandler.m; sourceTree = "<group>"; };
 		56B402591BCF883F0044812F /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
 		56B4025A1BCF883F0044812F /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
 		56B4025C1BCF96570044812F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -753,6 +756,8 @@
 				56C0A3191BD0E0F00042E302 /* JpushHandler.m */,
 				5679BABD1BD4869F00AA9928 /* LaunchScreenAdHandler.h */,
 				5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */,
+				5679BACA1BD7395000AA9928 /* ExceptionHandler.h */,
+				5679BACB1BD7395000AA9928 /* ExceptionHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -1123,7 +1128,7 @@
 		};
 		A0B60134939C09094568F1F5 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -1131,9 +1136,9 @@
 			name = "Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" ac5f6cd91df4d5db1b5e1722b2cea82a844f4046 8afbdd50e7beef24219170815761f02507997fe238148cacf60bc21913180edc";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1205,6 +1210,7 @@
 				565218631BBBBDED00412E60 /* UserModel.m in Sources */,
 				56D8F01E1BAF97C500242FA9 /* main.m in Sources */,
 				56D8F0631BAFB0AE00242FA9 /* BaseEntity.m in Sources */,
+				5679BACC1BD7395000AA9928 /* ExceptionHandler.m in Sources */,
 				56D8F09E1BB0ED0800242FA9 /* TopicEntity.m in Sources */,
 				560E4C081BC1178900BD8CE2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				5679BAB51BD482D400AA9928 /* LaunchScreenAdDBManager.m in Sources */,

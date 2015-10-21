@@ -14,6 +14,7 @@
 #import "UMengSocialHandler.h"
 #import "JpushHandler.h"
 #import "LaunchScreenAdHandler.h"
+#import "ExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
     [UMFeedback setAppkey:UMENG_APPKEY];
     [UMOpus setAudioEnable:YES];
     
+    // Exception Collection
+    [ExceptionHandler bootup];
+    
     // Showing the App
     [self makeWindowVisible:launchOptions];
     
@@ -37,7 +41,7 @@
     
     // UMeng Share
     [UMengSocialHandler setup];
-    
+
     return YES;
 }
 
