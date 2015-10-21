@@ -29,5 +29,6 @@
 #import "UIViewController+Custom.h"
 #import "JumpToOtherVCHandler.h"
 #import "SVProgressHUD.h"
+#import "AnalyticsHandler.h"
 
 #define DidTapStatusBar @"DidTapStatusBar"

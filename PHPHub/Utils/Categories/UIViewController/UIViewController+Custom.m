@@ -20,6 +20,7 @@
 
 - (void)customViewWillAppear:(BOOL)animated {
     [self customViewWillAppear:animated];
+    [self analyticsScreenView];
     
     BOOL modalPresent = (BOOL)(self.presentingViewController);
     
@@ -30,6 +31,13 @@
     
     if ([self.navigationController.viewControllers indexOfObject:self] != 0  && !self.navigationItem.hidesBackButton) {
         [self createBackButton];
+    }
+}
+
+- (void)analyticsScreenView {
+    NSString *title = self.navigationItem.title;
+    if (title) {
+        [AnalyticsHandler logScreen:title];
     }
 }
 

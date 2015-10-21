@@ -52,4 +52,8 @@
     [GVUserDefaults standardUserDefaults].currentUserId = nil;
     [JpushHandler sendEmptyAlias];
 }
+
+- (NSString *)userLabel {
+    return self.isLogin ? [NSString stringWithFormat:@"user_%@_%@", [CurrentUser Instance].userId, [[CurrentUser Instance] userInfo].username] : @"non-logged-in";
+}
 @end

@@ -13,3 +13,4 @@
 #define UMENG_QQ_APPKEY @"Set up qq appkey"
 #define WX_APP_ID       @"Set up weixin app id"
 #define WX_APP_SECRET   @"Set up weixin app secret"
+#define TRACKING_ID     @"Set up google anlytics tracking id"

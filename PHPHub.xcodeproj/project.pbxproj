@@ -82,6 +82,9 @@
 		56C0A31A1BD0E0F00042E302 /* JpushHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A3191BD0E0F00042E302 /* JpushHandler.m */; settings = {ASSET_TAGS = (); }; };
 		56C0A39A1BD223D50042E302 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C0A3991BD223D50042E302 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
 		56C0A39C1BD224780042E302 /* PushConfig.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C0A39B1BD224780042E302 /* PushConfig.example.plist */; settings = {ASSET_TAGS = (); }; };
+		56D30D5F1BD77440007FDC69 /* AnalyticsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D30D5E1BD77440007FDC69 /* AnalyticsHandler.m */; settings = {ASSET_TAGS = (); }; };
+		56D30D6F1BD77F28007FDC69 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D30D631BD77F28007FDC69 /* libGoogleAnalyticsServices.a */; settings = {ASSET_TAGS = (); }; };
+		56D30D711BD77F8D007FDC69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D30D701BD77F8D007FDC69 /* CoreData.framework */; };
 		56D8F01E1BAF97C500242FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F01D1BAF97C500242FA9 /* main.m */; };
 		56D8F0211BAF97C500242FA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0201BAF97C500242FA9 /* AppDelegate.m */; };
 		56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D8F0281BAF97C500242FA9 /* Images.xcassets */; };
@@ -256,6 +259,20 @@
 		56C0A3191BD0E0F00042E302 /* JpushHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JpushHandler.m; sourceTree = "<group>"; };
 		56C0A3991BD223D50042E302 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		56C0A39B1BD224780042E302 /* PushConfig.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.example.plist; sourceTree = "<group>"; };
+		56D30D5D1BD77440007FDC69 /* AnalyticsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHandler.h; sourceTree = "<group>"; };
+		56D30D5E1BD77440007FDC69 /* AnalyticsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsHandler.m; sourceTree = "<group>"; };
+		56D30D631BD77F28007FDC69 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = PHPHub/ThirdParty/GoogleAnalytics/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		56D30D651BD77F28007FDC69 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		56D30D661BD77F28007FDC69 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		56D30D671BD77F28007FDC69 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		56D30D681BD77F28007FDC69 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		56D30D691BD77F28007FDC69 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		56D30D6A1BD77F28007FDC69 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		56D30D6B1BD77F28007FDC69 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		56D30D6C1BD77F28007FDC69 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		56D30D6D1BD77F28007FDC69 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		56D30D6E1BD77F28007FDC69 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		56D30D701BD77F8D007FDC69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		56D8F0181BAF97C500242FA9 /* PHPHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHPHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D8F01C1BAF97C500242FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D8F01D1BAF97C500242FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,6 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D30D711BD77F8D007FDC69 /* CoreData.framework in Frameworks */,
 				56C0A3151BD0DC020042E302 /* UIKit.framework in Frameworks */,
 				56C0A3131BD0DBEE0042E302 /* Foundation.framework in Frameworks */,
 				56C0A3111BD0DBE00042E302 /* CoreFoundation.framework in Frameworks */,
@@ -325,6 +343,7 @@
 				56B402691BCF96FC0044812F /* libstdc++.tbd in Frameworks */,
 				56B402671BCF96F00044812F /* libsqlite3.tbd in Frameworks */,
 				56B402651BCF96E20044812F /* libiconv.tbd in Frameworks */,
+				56D30D6F1BD77F28007FDC69 /* libGoogleAnalyticsServices.a in Frameworks */,
 				56B402631BCF96A60044812F /* CoreTelephony.framework in Frameworks */,
 				56B402611BCF96870044812F /* CoreGraphics.framework in Frameworks */,
 				56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */,
@@ -347,6 +366,8 @@
 		46A79BE4D8CD8EE6782FCE6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56D30D631BD77F28007FDC69 /* libGoogleAnalyticsServices.a */,
+				56D30D701BD77F8D007FDC69 /* CoreData.framework */,
 				56C0A3141BD0DC020042E302 /* UIKit.framework */,
 				56C0A3121BD0DBEE0042E302 /* Foundation.framework */,
 				56C0A3101BD0DBE00042E302 /* CoreFoundation.framework */,
@@ -647,6 +668,31 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		56D30D621BD77F28007FDC69 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				56D30D641BD77F28007FDC69 /* Library */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		56D30D641BD77F28007FDC69 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				56D30D651BD77F28007FDC69 /* GAI.h */,
+				56D30D661BD77F28007FDC69 /* GAIDictionaryBuilder.h */,
+				56D30D671BD77F28007FDC69 /* GAIEcommerceFields.h */,
+				56D30D681BD77F28007FDC69 /* GAIEcommerceProduct.h */,
+				56D30D691BD77F28007FDC69 /* GAIEcommerceProductAction.h */,
+				56D30D6A1BD77F28007FDC69 /* GAIEcommercePromotion.h */,
+				56D30D6B1BD77F28007FDC69 /* GAIFields.h */,
+				56D30D6C1BD77F28007FDC69 /* GAILogger.h */,
+				56D30D6D1BD77F28007FDC69 /* GAITrackedViewController.h */,
+				56D30D6E1BD77F28007FDC69 /* GAITracker.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		56D8F00F1BAF97C500242FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +804,8 @@
 				5679BABE1BD4869F00AA9928 /* LaunchScreenAdHandler.m */,
 				5679BACA1BD7395000AA9928 /* ExceptionHandler.h */,
 				5679BACB1BD7395000AA9928 /* ExceptionHandler.m */,
+				56D30D5D1BD77440007FDC69 /* AnalyticsHandler.h */,
+				56D30D5E1BD77440007FDC69 /* AnalyticsHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -791,6 +839,7 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				56D30D621BD77F28007FDC69 /* GoogleAnalytics */,
 				56C0A30B1BD0D7740042E302 /* JPush */,
 				5672CB671BCE3BAB007F4B9F /* WCAlertView */,
 				560E4BFE1BC1178900BD8CE2 /* TPKeyboardAvoiding */,
@@ -1138,7 +1187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" ac5f6cd91df4d5db1b5e1722b2cea82a844f4046 8afbdd50e7beef24219170815761f02507997fe238148cacf60bc21913180edc";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1189,6 +1238,7 @@
 				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
 				56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */,
+				56D30D5F1BD77440007FDC69 /* AnalyticsHandler.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,
 				5679BAAC1BD47F2500AA9928 /* LaunchScreenAdEntity.m in Sources */,
 				5672CB511BC8EB3E007F4B9F /* TopicDetailViewController.m in Sources */,
@@ -1384,10 +1434,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
+					"$(PROJECT_DIR)/PHPHub/ThirdParty/GoogleAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d049311c-cb89-4b00-b027-5cec13d05dc3";
+				PROVISIONING_PROFILE = "e7f6dcdf-7cd4-4993-84d2-c6c09777ef57";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1437,10 +1488,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
+					"$(PROJECT_DIR)/PHPHub/ThirdParty/GoogleAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d049311c-cb89-4b00-b027-5cec13d05dc3";
+				PROVISIONING_PROFILE = "e7f6dcdf-7cd4-4993-84d2-c6c09777ef57";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

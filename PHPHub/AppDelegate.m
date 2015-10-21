@@ -41,6 +41,9 @@
     
     // UMeng Share
     [UMengSocialHandler setup];
+    
+    // Tracking Server Bootup
+    [AnalyticsHandler bootup];
 
     return YES;
 }
