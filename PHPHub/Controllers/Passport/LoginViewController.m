@@ -92,6 +92,7 @@
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                 if (weakself.completeLoginBlock) weakself.completeLoginBlock();
                 [weakself closeLoginView];
+                [AnalyticsHandler logEvent:@"登录成功" withCategory:kUserAction label:[CurrentUser Instance].userLabel];
             }
         };
         
@@ -111,6 +112,8 @@
     TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:PHPHubGuide];
     webVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webVC animated:YES];
+    
+    [AnalyticsHandler logEvent:@"查看登录说明"];
 }
 
 - (void)dealloc {

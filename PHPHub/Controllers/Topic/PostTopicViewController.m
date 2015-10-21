@@ -90,6 +90,7 @@
             topicEntity.voteCount = @0;
             [weakself.navigationController popViewControllerAnimated:NO];
             [JumpToOtherVCHandler jumpToTopicDetailWithTopic:topicEntity];
+            [AnalyticsHandler logEvent:@"发布帖子" withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, topic.topicId]];
         } else {
             [SVProgressHUD showErrorWithStatus:@"发布失败, 请重试"];
         }

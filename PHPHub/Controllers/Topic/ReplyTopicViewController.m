@@ -43,6 +43,7 @@
     CommentEntity *comment = [[CommentEntity alloc] init];
     comment.topicId = _topicId;
     comment.commentBody = _commentTextView.text;
+    [AnalyticsHandler logEvent:@"回复帖子" withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, _topicId]];
     
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^(NSDictionary *data, NSError *error) {

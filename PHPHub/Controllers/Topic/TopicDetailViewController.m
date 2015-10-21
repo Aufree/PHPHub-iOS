@@ -52,6 +52,11 @@
     [self createRightBarButtonItem];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSString *logScreen = [NSString stringWithFormat:@"帖子详情 ID:%@", _topic.topicId];
+    [AnalyticsHandler logScreen:logScreen];
+}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _topicToolBarView.hidden = NO;
@@ -150,7 +155,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 
-    if (navigationType == UIWebViewNavigationTypeLinkClicked ) {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         NSURL *url = [request URL];
         TOWebViewController *webVC = [[TOWebViewController alloc] initWithURL:url];
         [self.navigationController pushViewController:webVC animated:YES];
@@ -223,6 +228,7 @@
     _topic.voteDown = NO;
     [self updateVoteStateWithVoteCount:voteCount];
     [[TopicModel Instance] voteUpTopic:_topic.topicId withBlock:nil];
+    [self analyticsWithTopicEvent:@"赞帖子"];
 }
 
 - (void)downVoteTopic {
@@ -236,6 +242,7 @@
     _topic.voteUp = NO;
     [self updateVoteStateWithVoteCount:voteCount];
     [[TopicModel Instance] voteDownTopic:_topic.topicId withBlock:nil];
+    [self analyticsWithTopicEvent:@"踩帖子"];
 }
 
 # pragma mark Topic Action
@@ -244,9 +251,11 @@
     [self checkUserPermissionWithAction:^{
         if (_isFavoriteTopic) {
             _isFavoriteTopic = NO;
+            [self analyticsWithTopicEvent:@"收藏帖子"];
             [[TopicModel Instance] cancelFavoriteTopicById:_topic.topicId withBlock:nil];
         } else {
             _isFavoriteTopic = YES;
+            [self analyticsWithTopicEvent:@"取消收藏帖子"];
             [[TopicModel Instance] favoriteTopicById:_topic.topicId withBlock:nil];
         }
         
@@ -258,9 +267,11 @@
     [self checkUserPermissionWithAction:^{
         if (_isAttentionTopic) {
             _isAttentionTopic = NO;
+            [self analyticsWithTopicEvent:@"取消关注帖子"];
             [[TopicModel Instance] cancelAttentionTopicById:_topic.topicId withBlock:nil];
         } else {
             _isAttentionTopic = YES;
+            [self analyticsWithTopicEvent:@"关注帖子"];
             [[TopicModel Instance] attentionTopicById:_topic.topicId withBlock:nil];
         }
         
@@ -301,6 +312,7 @@
     if (_topic.topicRepliesUrl) {
         TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
         [self.navigationController pushViewController:webVC animated:YES];
+        [self analyticsWithTopicEvent:@"查看帖子评论"];
     }
 }
 
@@ -320,4 +332,10 @@
     }
 }
 
+
+# pragma mark Google Analytics
+
+- (void)analyticsWithTopicEvent:(NSString *)event {
+    [AnalyticsHandler logEvent:event withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, _topic.topicId]];
+}
 @end

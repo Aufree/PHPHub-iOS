@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define kShare @"用户分享"
-#define kUserAction @"用户行为"
+#define kShare       @"用户分享"
+#define kUserAction  @"用户行为"
+#define kTopicAction @"帖子操作"
 
 @interface AnalyticsHandler : NSObject
 + (void)bootup;

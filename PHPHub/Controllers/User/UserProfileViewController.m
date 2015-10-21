@@ -38,17 +38,23 @@
     if (currentUserId && isCurrentUser) {
         _userEntity = [[CurrentUser Instance] userInfo];
         [self updateUserProfileView];
+        [AnalyticsHandler logScreen:@"我的资料页面"];
     } else {
-        __weak typeof(self) weakself = self;
-        BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
-            if (!error) {
-                _userEntity = data[@"entity"];
-                [weakself updateUserProfileView];
-            }
-        };
-        
-        [[UserModel Instance] getUserById:_userEntity.userId callback:callback];
+        [self fetchUserData];
+        [AnalyticsHandler logScreen:[NSString stringWithFormat:@"他人资料页面 ID:%@", _userEntity.userId]];
     }
+}
+
+- (void)fetchUserData {
+    __weak typeof(self) weakself = self;
+    BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
+        if (!error) {
+            _userEntity = data[@"entity"];
+            [weakself updateUserProfileView];
+        }
+    };
+    
+    [[UserModel Instance] getUserById:_userEntity.userId callback:callback];
 }
 
 - (void)updateUserProfileView {

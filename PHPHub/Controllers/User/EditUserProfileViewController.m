@@ -81,7 +81,7 @@
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             [SVProgressHUD dismiss];
-            
+            [AnalyticsHandler logEvent:@"更新个人资料" withCategory:kUserAction label:[NSString stringWithFormat:@"%@", [CurrentUser Instance].userLabel]];
             if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(refreshUserProfileView)]) {
                 [weakself.delegate refreshUserProfileView];
             }

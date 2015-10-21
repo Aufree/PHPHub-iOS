@@ -84,12 +84,16 @@
 - (void)fetchDataSource:(BaseResultBlock)callback atPage:(NSUInteger)atPage {
     if (self.topicListType == TopicListTypeNewest) {
         [[TopicModel Instance] getNewestTopicList:callback atPage:atPage];
+        self.navigationItem.title = @"最新帖子";
     } else if (self.topicListType == TopicListTypeHots) {
         [[TopicModel Instance] getHotsTopicList:callback atPage:atPage];
+        self.navigationItem.title = @"最热帖子";
     } else if (self.topicListType == TopicListTypeNoReply) {
         [[TopicModel Instance] getNoReplyTopicList:callback atPage:atPage];
+        self.navigationItem.title = @"冷门帖子";
     } else if (self.topicListType == TopicListTypeJob) {
         [[TopicModel Instance] getJobTopicList:callback atPage:atPage];
+        self.navigationItem.title = @"招聘帖子";
     } else if (self.topicListType == TopicListTypeFavorite && self.userId > 0) {
         [[TopicModel Instance] getFavoriteTopicListByUser:self.userId callback:callback atPage:atPage];
         self.navigationItem.title = @"收藏的帖子";

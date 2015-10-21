@@ -81,6 +81,7 @@
     [WCAlertView showAlertWithTitle:@"提示" message:@"您确定要退出当前账号吗?" customizationBlock:nil completionBlock:
      ^(NSUInteger buttonIndex, WCAlertView *alertView) {
          if (buttonIndex == 1) {
+             [AnalyticsHandler logEvent:@"退出登录" withCategory:kUserAction label:[CurrentUser Instance].userLabel];
              [weakSelf logout];
          }
      } cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
