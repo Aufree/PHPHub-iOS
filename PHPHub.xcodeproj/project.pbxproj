@@ -1438,7 +1438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7f6dcdf-7cd4-4993-84d2-c6c09777ef57";
+				PROVISIONING_PROFILE = "c8e6b924-252e-4515-8383-6b5aeb282108";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1492,7 +1492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7f6dcdf-7cd4-4993-84d2-c6c09777ef57";
+				PROVISIONING_PROFILE = "c8e6b924-252e-4515-8383-6b5aeb282108";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

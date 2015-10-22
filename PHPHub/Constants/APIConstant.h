@@ -9,9 +9,14 @@
 #define APIAccessTokenURL [NSString stringWithFormat:@"%@%@", APIBaseURL, @"/oauth/access_token"]
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
 
+#if DEBUG
+#define APIBaseURL      @"https://staging_api.phphub.org"
+#else
+#define APIBaseURL      @"https://api.phphub.org"
+#endif
+
 #define PHPHubHost      @"phphub.org"
 #define PHPHubUrl       @"https://phphub.org/"
-#define APIBaseURL      @"https://api.phphub.org"
 #define GitHubURL       @"https://github.com/"
 #define TwitterURL      @"https://twitter.com/"
 #define ProjectURL      @"https://github.com/phphub/phphub-ios"
