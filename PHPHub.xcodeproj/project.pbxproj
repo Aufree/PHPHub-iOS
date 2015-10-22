@@ -26,6 +26,7 @@
 		5618687B1BBF618300E9E111 /* TOActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868711BBF618300E9E111 /* TOActivitySafari.m */; settings = {ASSET_TAGS = (); }; };
 		5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868731BBF618300E9E111 /* TOWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */; settings = {ASSET_TAGS = (); }; };
+		56437C971BD8E1D800C6995F /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56437C961BD8E1D800C6995F /* DateTools.bundle */; settings = {ASSET_TAGS = (); }; };
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
 		565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652180F1BB69F8200412E60 /* NotificationListViewController.m */; };
 		5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181D1BB6A9C200412E60 /* NotificationEntity.m */; };
@@ -160,6 +161,7 @@
 		561868731BBF618300E9E111 /* TOWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOWebViewController.m; sourceTree = "<group>"; };
 		561868741BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TOWebViewControllerIcons.h"; sourceTree = "<group>"; };
 		561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TOWebViewControllerIcons.m"; sourceTree = "<group>"; };
+		56437C961BD8E1D800C6995F /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
 		5652180E1BB69F8200412E60 /* NotificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
@@ -476,6 +478,14 @@
 				561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */,
 			);
 			path = TOWebViewController;
+			sourceTree = "<group>";
+		};
+		56437C951BD8E1D800C6995F /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				56437C961BD8E1D800C6995F /* DateTools.bundle */,
+			);
+			path = DateTools;
 			sourceTree = "<group>";
 		};
 		5652180D1BB69F5B00412E60 /* Notification */ = {
@@ -839,6 +849,7 @@
 		56D8F04A1BAF9D7600242FA9 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				56437C951BD8E1D800C6995F /* DateTools */,
 				56D30D621BD77F28007FDC69 /* GoogleAnalytics */,
 				56C0A30B1BD0D7740042E302 /* JPush */,
 				5672CB671BCE3BAB007F4B9F /* WCAlertView */,
@@ -1146,6 +1157,7 @@
 				5618683B1BBE1A3800E9E111 /* Migrations.bundle in Resources */,
 				56D8F0291BAF97C500242FA9 /* Images.xcassets in Resources */,
 				560E4C141BC6424800BD8CE2 /* Topic.storyboard in Resources */,
+				56437C971BD8E1D800C6995F /* DateTools.bundle in Resources */,
 				560E4BF71BC0B57800BD8CE2 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
