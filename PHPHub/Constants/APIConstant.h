@@ -22,5 +22,5 @@
 #define ProjectURL      @"https://github.com/phphub/phphub-ios"
 #define AboutPageURL    @"https://phphub.org/about"
 #define ESTGroupURL     @"http://est-group.org"
-#define PHPHubGuide     @"https://phphub.org/guide"
+#define PHPHubGuide     @"https://phphub.org/helps/qr-login-guide"
 #define SinaRedirectURL @"http://sns.whalecloud.com/sina2/callback"
