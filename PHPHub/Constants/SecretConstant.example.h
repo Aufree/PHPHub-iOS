@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 ESTGroup. All rights reserved.
 //
 
-#define Client_id       @"Get the client id from server"
-#define Client_secret   @"Get the client secret from server"
+#define Client_id       @"kHOugsx4dmcXwvVbmLkd"
+#define Client_secret   @"PuuFCrF94MloSbSkxpwS"
 #define UMENG_APPKEY    @"Set up UMEng App Key"
 #define UMENG_QQ_ID     @"Set up qq id"
 #define UMENG_QQ_APPKEY @"Set up qq appkey"
