@@ -92,6 +92,8 @@
                 if (weakself.completeLoginBlock) weakself.completeLoginBlock();
                 [weakself closeLoginView];
                 [AnalyticsHandler logEvent:@"登录成功" withCategory:kUserAction label:[CurrentUser Instance].userLabel];
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"登录失败 😔 请重试" maskType:SVProgressHUDMaskTypeBlack];
             }
         };
         
