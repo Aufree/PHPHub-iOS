@@ -109,13 +109,22 @@
                     withTitle:@"更多操作"
             cancelButtonTitle:@"取消"
        destructiveButtonTitle:nil
-            otherButtonTitles:@[@"举报"]
+            otherButtonTitles:@[@"举报", @"复制链接"]
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          if (buttonIndex == 0) {
                              // For stupid apple review
                              [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
+                         } else if (buttonIndex == 1) {
+                             [self copyTopicUrlToClipboard];
                          }
                      }];
+}
+
+- (void)copyTopicUrlToClipboard {
+    NSString *topicUrl = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = topicUrl;
+    [SVProgressHUD showSuccessWithStatus:@"复制成功" maskType:SVProgressHUDMaskTypeBlack];
 }
 
 # pragma mark Update UI

@@ -23,4 +23,5 @@
 #define AboutPageURL    @"https://phphub.org/about"
 #define ESTGroupURL     @"http://est-group.org"
 #define PHPHubGuide     @"https://phphub.org/helps/qr-login-guide"
+#define PHPHubTopicURL  @"https://phphub.org/topics/"
 #define SinaRedirectURL @"http://sns.whalecloud.com/sina2/callback"
