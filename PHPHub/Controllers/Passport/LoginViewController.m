@@ -61,7 +61,6 @@
         
         dispatch_once(&onceToken, ^{
             reader                        = [QRCodeReaderViewController new];
-            reader.modalPresentationStyle = UIModalPresentationFormSheet;
         });
         reader.delegate = self;
         
