@@ -26,6 +26,7 @@
 		5618687B1BBF618300E9E111 /* TOActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868711BBF618300E9E111 /* TOActivitySafari.m */; settings = {ASSET_TAGS = (); }; };
 		5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868731BBF618300E9E111 /* TOWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */; settings = {ASSET_TAGS = (); }; };
+		56437CA31BDA27B100C6995F /* EmptyTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56437CA21BDA27B100C6995F /* EmptyTopicView.m */; settings = {ASSET_TAGS = (); }; };
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
 		565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652180F1BB69F8200412E60 /* NotificationListViewController.m */; };
 		5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181D1BB6A9C200412E60 /* NotificationEntity.m */; };
@@ -160,6 +161,8 @@
 		561868731BBF618300E9E111 /* TOWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOWebViewController.m; sourceTree = "<group>"; };
 		561868741BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TOWebViewControllerIcons.h"; sourceTree = "<group>"; };
 		561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TOWebViewControllerIcons.m"; sourceTree = "<group>"; };
+		56437CA11BDA27B100C6995F /* EmptyTopicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTopicView.h; sourceTree = "<group>"; };
+		56437CA21BDA27B100C6995F /* EmptyTopicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTopicView.m; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
 		5652180E1BB69F8200412E60 /* NotificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
@@ -555,6 +558,8 @@
 				5672CB531BC8EBC0007F4B9F /* TopicVoteView.m */,
 				5672CB551BCBA4D6007F4B9F /* TopicSearchBar.h */,
 				5672CB561BCBA4D6007F4B9F /* TopicSearchBar.m */,
+				56437CA11BDA27B100C6995F /* EmptyTopicView.h */,
+				56437CA21BDA27B100C6995F /* EmptyTopicView.m */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -1251,6 +1256,7 @@
 				5672CB631BCCFC6E007F4B9F /* NotificationApi.m in Sources */,
 				561868431BBE2D5500E9E111 /* UserProfileViewController.m in Sources */,
 				561868391BBD345A00E9E111 /* NSString+Additions.m in Sources */,
+				56437CA31BDA27B100C6995F /* EmptyTopicView.m in Sources */,
 				56B4025B1BCF883F0044812F /* NSURL+QueryDictionary.m in Sources */,
 				56D30D5F1BD77440007FDC69 /* AnalyticsHandler.m in Sources */,
 				C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */,

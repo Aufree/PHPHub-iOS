@@ -12,6 +12,7 @@
 #import "TopicDetailViewController.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "UIScrollView+EmptyDataSet.h"
+#import "EmptyTopicView.h"
 
 static NSString *topicListIdentifier = @"topicListIdentifier";
 
@@ -122,13 +123,9 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
     return _shouldRemoveHeaderView ? 0 : 10;
 }
 
-- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *text = @"啥都没有";
-    
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
-                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
-    
-    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+    EmptyTopicView *emptyTopicView = [[EmptyTopicView alloc] initWithFrame:self.bounds];
+    return emptyTopicView;
 }
 
 @end
