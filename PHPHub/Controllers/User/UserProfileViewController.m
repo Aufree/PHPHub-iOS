@@ -130,10 +130,10 @@
     NSString *urlString;
     UIViewController *vc;
     
-    if (section == 3 && row == 0) {
+    if (section == 3 && row == 0 && ![NSString isStringEmpty:_userEntity.githubName]) {
         // Jump to GitHub
         urlString = [NSString stringWithFormat:@"%@%@", GitHubURL, _userEntity.githubName];
-    } else if (section == 4 && row == 0) {
+    } else if (section == 4 && row == 0 && ![NSString isStringEmpty:_userEntity.twitterAccount]) {
         // Jump to Twitter
         urlString = [NSString stringWithFormat:@"%@%@", TwitterURL, _userEntity.twitterAccount];
     } else if (section == 5 && row == 0) {
