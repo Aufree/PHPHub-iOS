@@ -2,6 +2,8 @@
 
 此项目为 [PHPHub](https://phphub.org/) iOS客户端
 
+![](https://cloud.githubusercontent.com/assets/324764/10683969/448b0cda-797a-11e5-8f93-3e51ad7144df.png)
+
 ## 用到的组件
 #### 1、通过 CocoaPods 安装
 
