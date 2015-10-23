@@ -25,6 +25,7 @@ PODS:
   - Crashlytics (3.3.4)
   - CTAssetsPickerController (2.9.5)
   - DateTools (1.7.0)
+  - DZNEmptyDataSet (1.7.2)
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
   - Fabric/Base (1.5.5)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - Crashlytics
   - CTAssetsPickerController
   - DateTools
+  - DZNEmptyDataSet
   - Fabric
   - FDFullscreenPopGesture (= 1.1)
   - FMDB (~> 2.3)
@@ -116,6 +118,7 @@ SPEC CHECKSUMS:
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
   CTAssetsPickerController: b413fece2194ae3dbf22fbc544cf6f2a6d516a4d
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52

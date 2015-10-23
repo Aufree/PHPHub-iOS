@@ -11,10 +11,11 @@
 #import "TopicEntity.h"
 #import "TopicDetailViewController.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 static NSString *topicListIdentifier = @"topicListIdentifier";
 
-@interface TopicListTableView() <UITableViewDelegate, UITableViewDataSource>
+@interface TopicListTableView() <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @end
 
 @implementation TopicListTableView
@@ -36,6 +37,12 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
     self.topicEntites = [[NSMutableArray alloc] init];
     [self setupHeaderView];
     [self reloadData];
+    [self setupEmptyDataSet];
+}
+
+- (void)setupEmptyDataSet {
+    self.emptyDataSetDelegate = self;
+    self.emptyDataSetSource = self;
 }
 
 - (void)setupHeaderView {
@@ -113,6 +120,15 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return _shouldRemoveHeaderView ? 0 : 10;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text = @"啥都没有";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
 @end
