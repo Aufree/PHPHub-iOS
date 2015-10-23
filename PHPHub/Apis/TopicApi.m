@@ -11,7 +11,7 @@
 @implementation TopicApi
 
 - (NSString *)getUrlPathWithFilter:(NSString *)filter atPage:(NSInteger)pageIndex{
-    NSString *urlPath = @"topics?include=node,last_reply_user,user&filter=%@&per_page=20&page=%ld&columns=user(signature)";
+    NSString *urlPath = @"topics?include=node,last_reply_user,user&filters=%@&per_page=20&page=%ld&columns=user(signature)";
     return [NSString stringWithFormat:urlPath, filter, (long)pageIndex];
 }
 
