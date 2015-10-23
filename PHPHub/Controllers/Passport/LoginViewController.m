@@ -60,7 +60,7 @@
         static dispatch_once_t onceToken;
         
         dispatch_once(&onceToken, ^{
-            reader                        = [QRCodeReaderViewController new];
+            reader = [[QRCodeReaderViewController alloc] initWithCancelButtonTitle:@"取消"];
         });
         reader.delegate = self;
         
