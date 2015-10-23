@@ -61,10 +61,15 @@
     
     [self.window makeKeyAndVisible];
     
+    // Setup Jpush
     [JpushHandler sendUserIdToAlias];
     [JpushHandler setupJpush:nil];
     
+    // Show launch screen ad
     [LaunchScreenAdHandler showLaunchScreenAd];
+    
+    // Update current user info
+    [[CurrentUser Instance] updateCurrentUserInfoIfNeeded];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

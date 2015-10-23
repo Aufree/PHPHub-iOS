@@ -29,8 +29,10 @@
     [JpushHandler sendUserIdToAlias];
 }
 
-- (void)updateCurrentUserInfo {
-    [[UserModel Instance] getCurrentUserData:nil];
+- (void)updateCurrentUserInfoIfNeeded {
+    if ([[CurrentUser Instance] isLogin]) {
+        [[UserModel Instance] getCurrentUserData:nil];
+    }
 }
 
 - (NSNumber *)userId {

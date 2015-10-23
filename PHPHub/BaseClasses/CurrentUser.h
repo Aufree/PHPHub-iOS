@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UserEntity *userInfo;
 + (CurrentUser *)Instance;
 - (BOOL)isLogin;
-- (void)updateCurrentUserInfo;
+- (void)updateCurrentUserInfoIfNeeded;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState:(BaseResultBlock)block;
 - (void)logOut;
