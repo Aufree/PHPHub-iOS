@@ -19,6 +19,7 @@
 
 @interface TopicDetailViewController () <UIWebViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
@@ -45,6 +46,7 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     _avatarImageView.userInteractionEnabled = YES;
+    _userInfoView.userInteractionEnabled = YES;
     _topicContentWeb.delegate = self;
     _topicContentWeb.scrollView.delegate = self;
     [self updateTopicDetailView];
@@ -200,13 +202,13 @@
     
     UITouch *touch = [touches anyObject];
     
-    if ([touch view] == _avatarImageView) {
-        [self didTapAvatarImageView];
+    if ([touch view] == _avatarImageView || [touch view] == _userInfoView) {
+        [self jumpToUserProfileVC];
     }
     
 }
 
-- (void)didTapAvatarImageView {
+- (void)jumpToUserProfileVC {
     UserProfileViewController *userProfileVC = [[UIStoryboard storyboardWithName:@"UserProfile"
                                                                           bundle:[NSBundle mainBundle]]
                                                 instantiateViewControllerWithIdentifier:@"userprofile"];
