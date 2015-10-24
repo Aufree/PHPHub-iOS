@@ -24,6 +24,10 @@
     return (self.userId && self.userId.intValue > 0);
 }
 
+- (BOOL)hasClientToken {
+    return [GVUserDefaults standardUserDefaults].userClientToken;
+}
+
 - (void)saveUser:(UserEntity *)user {
     [UserDBManager insertOnDuplicateUpdate:user];
     [JpushHandler sendUserIdToAlias];
