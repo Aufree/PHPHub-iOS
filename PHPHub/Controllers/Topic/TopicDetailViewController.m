@@ -34,6 +34,7 @@
 @property (assign, nonatomic) CGFloat topicToolBarY;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
 @property (assign, nonatomic) BOOL isAttentionTopic;
+@property (copy, nonatomic) NSString *topicURL;
 @end
 
 @implementation TopicDetailViewController
@@ -49,6 +50,7 @@
     _userInfoView.userInteractionEnabled = YES;
     _topicContentWeb.delegate = self;
     _topicContentWeb.scrollView.delegate = self;
+    _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
@@ -97,36 +99,37 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
-- (void)showMoreAction {
-    NSString *shareURL = [NSString stringWithFormat:@"%@/topics/%@", PHPHubUrl, _topic.topicId];
-    NSString *shareImageUrl = _topic.user.avatar;
-    NSString *shareTitle = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
-    NSString *shareText = _topic.topicTitle;
-
-    [UMengSocialHandler shareWithShareURL:shareURL shareImageUrl:shareImageUrl shareTitle:shareTitle shareText:shareText presentVC:self delegate:self];
-}
-
 - (void)showActionSheet {
     [UIActionSheet showInView:self.view
                     withTitle:@"更多操作"
             cancelButtonTitle:@"取消"
        destructiveButtonTitle:nil
-            otherButtonTitles:@[@"举报", @"复制链接"]
+            otherButtonTitles:@[@"举报", @"复制链接", @"分享"]
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          if (buttonIndex == 0) {
                              // For stupid apple review
                              [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
                          } else if (buttonIndex == 1) {
                              [self copyTopicUrlToClipboard];
+                         } else if (buttonIndex == 2) {
+                             [self shareToFriends];
                          }
                      }];
 }
 
 - (void)copyTopicUrlToClipboard {
-    NSString *topicUrl = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
+    NSString *topicUrl = _topicURL;
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = topicUrl;
     [SVProgressHUD showSuccessWithStatus:@"复制成功" maskType:SVProgressHUDMaskTypeBlack];
+}
+
+- (void)shareToFriends {
+    NSString *shareURL = _topicURL;
+    NSString *shareImageUrl = _topic.user.avatar;
+    NSString *shareTitle = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
+    NSString *shareText = _topic.topicTitle;
+    [UMengSocialHandler shareWithShareURL:shareURL shareImageUrl:shareImageUrl shareTitle:shareTitle shareText:shareText presentVC:self delegate:self];
 }
 
 # pragma mark Update UI
