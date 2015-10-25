@@ -12,8 +12,7 @@
 @implementation APIRequestHandler
 
 // Register Notification for HTTP Requests
-- (void)registerNotifications
-{
+- (void)registerNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(networkRequestDidStart:)
                                                  name:AFNetworkingOperationDidStartNotification
@@ -38,8 +37,7 @@
 }
 
 // start
-- (void)networkRequestDidStart:(NSNotification *)notification
-{
+- (void)networkRequestDidStart:(NSNotification *)notification {
     NSURLRequest *request = AFNetworkRequestFromNotification(notification);
     if (!request) return;
     
@@ -50,8 +48,7 @@
 }
 
 // finish
-- (void)networkRequestDidFinish:(NSNotification *)notification
-{
+- (void)networkRequestDidFinish:(NSNotification *)notification {
     NSURLRequest *request = AFNetworkRequestFromNotification(notification);
     NSURLResponse *response = [notification.object response];
     NSError *error = [notification.object error];
@@ -80,12 +77,10 @@
         body = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
     }
     
-    if (error)
-    {
+    if (error) {
         NSLog(@"[Network Error] %@ '%@' (%i) : %@ -------------> %@" , [request HTTPMethod], [[response URL] absoluteString], (int)responseStatusCode, error, response);
     }
-    else
-    {
+    else {
         if (DEBUG_HTTP) {
             NSLog(@"---");
             NSLog(@"---");
@@ -127,8 +122,7 @@
     
     NSDictionary *userInfo = notification.userInfo;
     
-    if (userInfo[AFNetworkingTaskDidCompleteErrorKey])
-    {
+    if (userInfo[AFNetworkingTaskDidCompleteErrorKey]) {
         if ((int)responseStatusCode == 401)
         {
             NSString *message = responseObject[@"message"];
@@ -186,32 +180,27 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
     return request;
 }
 
-- (BOOL)isUnknowRequest:(NSURLRequest *)request
-{
+- (BOOL)isUnknowRequest:(NSURLRequest *)request {
     NSString *grantType = [self grantTypeFromRequest:request];
     return [grantType isEqualToString:@"unknow"];
 }
 
-- (BOOL)isPasswordRequest:(NSURLRequest *)request
-{
+- (BOOL)isPasswordRequest:(NSURLRequest *)request {
     NSString *grantType = [self grantTypeFromRequest:request];
     return [grantType isEqualToString:@"password"];
 }
 
-- (BOOL)isLoginRequest:(NSURLRequest *)request
-{
+- (BOOL)isLoginRequest:(NSURLRequest *)request {
     NSString *grantType = [self grantTypeFromRequest:request];
     return [grantType isEqualToString:@"login_token"];
 }
 
-- (BOOL)isClientGrantRequest:(NSURLRequest *)request
-{
+- (BOOL)isClientGrantRequest:(NSURLRequest *)request {
     NSString *grantType = [self grantTypeFromRequest:request];
     return [grantType isEqualToString:@"client_credentials"];
 }
 
-- (NSString *)grantTypeFromRequest:(NSURLRequest *)request
-{
+- (NSString *)grantTypeFromRequest:(NSURLRequest *)request {
     NSString *token = [request valueForHTTPHeaderField:@"Authorization"];
     
     if ([token isEqualToString:[AccessTokenHandler getClientGrantAccessTokenFromLocal]]) {
@@ -225,8 +214,7 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
     return @"unknow";
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
