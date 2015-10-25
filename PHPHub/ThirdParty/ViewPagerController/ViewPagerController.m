@@ -159,6 +159,15 @@
     return [self viewControllerAtIndex:index];
 }
 
+- (void)pageViewController:(UIPageViewController *)pageViewController
+       didFinishAnimating:(BOOL)finished
+  previousViewControllers:(NSArray *)previousViewControllers
+      transitionCompleted:(BOOL)completed {
+    if (completed) {
+        self.currentIndex = [_contents indexOfObject:[pageViewController.viewControllers lastObject]];
+    }
+}
+
 #pragma mark - UIScrollViewDelegate, Responding to Scrolling and Dragging
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
