@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (assign, nonatomic) CGPoint pointNow;
 @property (assign, nonatomic) CGFloat topicToolBarY;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
@@ -177,6 +178,10 @@
     }
     
     return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    _activityView.hidden = YES;
 }
 
 # pragma mark Web View Delegate
