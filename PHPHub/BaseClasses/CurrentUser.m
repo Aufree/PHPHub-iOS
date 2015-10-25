@@ -25,7 +25,7 @@
 }
 
 - (BOOL)hasClientToken {
-    return [GVUserDefaults standardUserDefaults].userClientToken;
+    return [NSString isStringEmpty:[GVUserDefaults standardUserDefaults].userClientToken];
 }
 
 - (void)saveUser:(UserEntity *)user {

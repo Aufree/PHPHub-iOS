@@ -27,17 +27,26 @@
     self.tableView = [[TopicListTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.topicListTableViewDelegate = self;
     [self.view addSubview:self.tableView];
-    
     self.navigationItem.title = @"精华";
-    
+
+    [self checkCurrentUserClientToken];
+    [self createRightButtonItem];
+}
+
+#pragma mark Check current user client token
+
+- (void)checkCurrentUserClientToken {
     // Get the client token from server
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         [weakself.tableView.header beginRefreshing];
     };
     
-    [[CurrentUser Instance] setupClientRequestState:callback];
-    [self createRightButtonItem];
+    if ([[CurrentUser Instance] hasClientToken]) {
+        callback(nil, nil);
+    } else {
+        [[CurrentUser Instance] setupClientRequestState:callback];
+    }
 }
 
 #pragma mark Get Topic Data
