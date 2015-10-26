@@ -811,6 +811,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     self.loadingBarView.alpha = 0.0f;
     [self handleLoadRequestCompletion];
     [self refreshButtonsState];
+    self.title = @"加载失败";
 }
 
 #pragma mark -

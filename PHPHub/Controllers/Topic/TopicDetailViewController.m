@@ -184,6 +184,10 @@
     _activityView.hidden = YES;
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    _activityView.hidden = YES;
+}
+
 # pragma mark Web View Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
