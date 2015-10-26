@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-ma-VRF">
                                 <rect key="frame" x="0.0" y="20" width="320" height="52"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-gd-fek">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-gd-fek">
                                         <rect key="frame" x="12" y="7" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="jgJ-R4-oi2"/>
@@ -127,6 +127,9 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HC9-DB-SdO">
                                 <rect key="frame" x="0.0" y="72" width="320" height="452"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1yv-gg-I7m" id="Dm6-w1-tFf"/>
+                                </connections>
                             </webView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-xm-WTv">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -173,7 +176,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIb-ug-ZXN" customClass="BubbleButton">
                                         <rect key="frame" x="240" y="0.0" width="80" height="44"/>
-                                        <state key="normal" image="comments_icon">
+                                        <state key="normal" title=" 0" image="comments_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

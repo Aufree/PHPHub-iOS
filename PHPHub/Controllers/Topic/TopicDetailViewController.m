@@ -19,7 +19,7 @@
 #import "UMengSocialHandler.h"
 #import "UIActionSheet+Blocks.h"
 
-@interface TopicDetailViewController () <UIWebViewDelegate, UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
+@interface TopicDetailViewController () <UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -49,9 +49,6 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
-    _avatarImageView.userInteractionEnabled = YES;
-    _userInfoView.userInteractionEnabled = YES;
-    _topicContentWeb.delegate = self;
     _topicContentWeb.scrollView.delegate = self;
     _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
     [self updateTopicDetailView];
@@ -146,9 +143,11 @@
     [_avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = user.username;
     _signatureLabel.text = user.signature;
-    NSString *rawTopicCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
-    NSString *topicCount = [NSString stringWithFormat:@" %@", rawTopicCount];
-    [_commentsButton setTitle:topicCount forState:UIControlStateNormal];
+    if (_topic.topicRepliesCount.integerValue > 0) {
+        NSString *rawRepliesCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
+        NSString *repliesCount = [NSString stringWithFormat:@" %@", rawRepliesCount];
+        [_commentsButton setTitle:repliesCount forState:UIControlStateNormal];
+    }
 }
 
 - (void)updateVoteStateWithVoteCount:(NSInteger)voteCount {
