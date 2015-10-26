@@ -87,7 +87,7 @@ DEPENDENCIES:
   - pop (~> 1.0)
   - QBPopupMenu
   - Qiniu
-  - QRCodeReaderViewController (from `https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git`)
+  - QRCodeReaderViewController (from `https://github.com/zhengjinghua/MQRCodeReaderViewController.git`)
   - Reachability
   - SDWebImage
   - SVProgressHUD
@@ -102,15 +102,15 @@ EXTERNAL SOURCES:
   MTLFMDBAdapter:
     :git: https://github.com/summerblue/MTLFMDBAdapter
   QRCodeReaderViewController:
-    :git: https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git
+    :git: https://github.com/zhengjinghua/MQRCodeReaderViewController.git
 
 CHECKOUT OPTIONS:
   MTLFMDBAdapter:
     :commit: 8a567630ad9ef38388a48ac6600e7a7a35316cdb
     :git: https://github.com/summerblue/MTLFMDBAdapter
   QRCodeReaderViewController:
-    :commit: 466bc1abd221912f0855e0a228546dec494a7721
-    :git: https://github.com/zhengjinghua-ext-forks/QRCodeReaderViewController.git
+    :commit: 9cd7dfa6a00514b5b22dc5f9a6d0ed53829b241d
+    :git: https://github.com/zhengjinghua/MQRCodeReaderViewController.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -133,7 +133,7 @@ SPEC CHECKSUMS:
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
   Qiniu: 1fb5191b3bc1edb65b2da3d905b8281e15bd1d5c
-  QRCodeReaderViewController: 02665936a9742f72bd7b1ef16336b12547c88c66
+  QRCodeReaderViewController: 557e3291d8fe8adf20d62b7f6bd79a3941f8ec31
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
