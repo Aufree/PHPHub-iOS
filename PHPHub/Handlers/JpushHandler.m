@@ -31,8 +31,7 @@
     NSString *callbackString = [NSString stringWithFormat:@"Result: %d, \ntags: %@, \nalias: %@\n", iResCode, [JpushHandler logSet:tags], alias];
     
     // 提交成功
-    if (iResCode == 0)
-    {
+    if (iResCode == 0) {
         NSString *build = [[NSUserDefaults standardUserDefaults] objectForKey:@"tmpLastBuildNumberIndentifier"];
         
         [[NSUserDefaults standardUserDefaults] setObject:build forKey:@"LastBuildNumberIndentifier"];
