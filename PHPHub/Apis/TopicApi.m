@@ -92,15 +92,13 @@
 {
     NSString *urlPath = [NSString stringWithFormat:@"topics/%ld?include=user,node&columns=user(signature)", (long)topicId];
     
-    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
-    {
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entity"] = [TopicEntity entityFromDictionary:data[@"data"]];
         if (block) block(data, nil);
     };
     
-    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error)
-    {
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
         if (block) block(nil, error);
     };
     
@@ -108,16 +106,14 @@
 }
 
 - (id)getTopicListByUrlPath:(NSString *)urlPath block:(BaseResultBlock)block{
-    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData)
-    {
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         data[@"entities"] = [TopicEntity arrayOfEntitiesFromArray:data[@"data"]];
         data[@"pagination"] = [PaginationEntity entityFromDictionary:data[@"meta"][@"pagination"]];
         if (block) block(data, nil);
     };
     
-    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error)
-    {
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
         if (block) block(nil, error);
     };
     

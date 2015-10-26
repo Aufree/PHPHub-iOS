@@ -83,6 +83,9 @@
             [weakself updateVoteStateWithVoteCount:weakself.topic.voteCount.integerValue];
             [weakself updateTopicDetailView];
             if (completion) completion(error);
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"未找到该帖子信息" maskType:SVProgressHUDMaskTypeBlack];
+            [weakself.navigationController popViewControllerAnimated:YES];
         }
     };
     
