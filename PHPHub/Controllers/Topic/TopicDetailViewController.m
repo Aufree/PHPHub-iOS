@@ -84,7 +84,7 @@
             [weakself updateTopicDetailView];
             if (completion) completion(error);
         } else {
-            [SVProgressHUD showErrorWithStatus:@"未找到该帖子信息" maskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showErrorWithStatus:@"未找到该帖子信息"];
             [weakself.navigationController popViewControllerAnimated:YES];
         }
     };
@@ -112,7 +112,7 @@
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          if (buttonIndex == 0) {
                              // For stupid apple review
-                             [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
+                             [SVProgressHUD showSuccessWithStatus:@"举报成功"];
                          } else if (buttonIndex == 1) {
                              [self copyTopicUrlToClipboard];
                          } else if (buttonIndex == 2) {
@@ -125,7 +125,7 @@
     NSString *topicUrl = _topicURL;
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = topicUrl;
-    [SVProgressHUD showSuccessWithStatus:@"复制成功" maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showSuccessWithStatus:@"复制成功"];
 }
 
 - (void)shareToFriends {

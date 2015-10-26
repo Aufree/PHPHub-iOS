@@ -58,7 +58,7 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SVProgressHUD (1.1.3)
+  - SVProgressHUD (HEAD based on 1.1.3)
   - UIActionSheet+Blocks (0.9)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
@@ -90,7 +90,7 @@ DEPENDENCIES:
   - QRCodeReaderViewController (from `https://github.com/zhengjinghua/MQRCodeReaderViewController.git`)
   - Reachability
   - SDWebImage
-  - SVProgressHUD
+  - SVProgressHUD (HEAD)
   - UIActionSheet+Blocks
   - UIActivityIndicator-for-SDWebImage
   - UITableView+FDTemplateLayoutCell

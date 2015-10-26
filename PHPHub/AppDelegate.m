@@ -72,6 +72,9 @@
     
     // Update current user info
     [[CurrentUser Instance] updateCurrentUserInfoIfNeeded];
+    
+    // SVProgressHUD customized
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

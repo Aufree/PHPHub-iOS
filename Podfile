@@ -18,7 +18,7 @@ pod 'MTLFMDBAdapter', :git => 'https://github.com/summerblue/MTLFMDBAdapter'
 pod 'FMDBMigrationManager', '~> 1.3'
 pod 'GVUserDefaults'
 pod 'Masonry'
-pod 'SVProgressHUD'
+pod 'SVProgressHUD', :head
 pod 'MJRefresh'
 pod 'UMengFeedback', '~> 2.3.4'
 pod 'UMengSocial', '4.2.3'

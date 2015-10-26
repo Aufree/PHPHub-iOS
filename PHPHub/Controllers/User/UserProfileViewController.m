@@ -119,7 +119,7 @@
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          if (buttonIndex == 0) {
                              // For stupid apple review
-                             [SVProgressHUD showSuccessWithStatus:@"举报成功" maskType:SVProgressHUDMaskTypeBlack];
+                             [SVProgressHUD showSuccessWithStatus:@"举报成功"];
                          }
                      }];
 }
