@@ -27,6 +27,7 @@
 		5618687C1BBF618300E9E111 /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868731BBF618300E9E111 /* TOWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5618687D1BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */; settings = {ASSET_TAGS = (); }; };
 		56437CA31BDA27B100C6995F /* EmptyTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56437CA21BDA27B100C6995F /* EmptyTopicView.m */; settings = {ASSET_TAGS = (); }; };
+		56437CA71BDE226500C6995F /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56437CA61BDE226500C6995F /* CommentListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5644B4F61BB1692C008A96A8 /* PaginationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644B4F51BB1692C008A96A8 /* PaginationEntity.m */; };
 		565218101BB69F8200412E60 /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652180F1BB69F8200412E60 /* NotificationListViewController.m */; };
 		5652181E1BB6A9C200412E60 /* NotificationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652181D1BB6A9C200412E60 /* NotificationEntity.m */; };
@@ -163,6 +164,8 @@
 		561868751BBF618300E9E111 /* UIImage+TOWebViewControllerIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TOWebViewControllerIcons.m"; sourceTree = "<group>"; };
 		56437CA11BDA27B100C6995F /* EmptyTopicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTopicView.h; sourceTree = "<group>"; };
 		56437CA21BDA27B100C6995F /* EmptyTopicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTopicView.m; sourceTree = "<group>"; };
+		56437CA51BDE226500C6995F /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		56437CA61BDE226500C6995F /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
 		5644B4F41BB1692C008A96A8 /* PaginationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationEntity.h; sourceTree = "<group>"; };
 		5644B4F51BB1692C008A96A8 /* PaginationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationEntity.m; sourceTree = "<group>"; };
 		5652180E1BB69F8200412E60 /* NotificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
@@ -481,6 +484,15 @@
 			path = TOWebViewController;
 			sourceTree = "<group>";
 		};
+		56437CA41BDE222300C6995F /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				56437CA51BDE226500C6995F /* CommentListViewController.h */,
+				56437CA61BDE226500C6995F /* CommentListViewController.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		5652180D1BB69F5B00412E60 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +505,7 @@
 		565218341BBA7CC500412E60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56437CA41BDE222300C6995F /* Comment */,
 				5679BAB61BD484F200AA9928 /* LaunchAd */,
 				560E4BF51BC0B56500BD8CE2 /* Settings */,
 				561868401BBE2D3600E9E111 /* User */,
@@ -1263,6 +1276,7 @@
 				5679BAAC1BD47F2500AA9928 /* LaunchScreenAdEntity.m in Sources */,
 				5672CB511BC8EB3E007F4B9F /* TopicDetailViewController.m in Sources */,
 				5672CB4F1BC8EB3E007F4B9F /* PostTopicViewController.m in Sources */,
+				56437CA71BDE226500C6995F /* CommentListViewController.m in Sources */,
 				5672CB411BC8A6E7007F4B9F /* NodeApi.m in Sources */,
 				560E4C0A1BC1178900BD8CE2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5672CB321BC760A0007F4B9F /* BubbleButton.m in Sources */,

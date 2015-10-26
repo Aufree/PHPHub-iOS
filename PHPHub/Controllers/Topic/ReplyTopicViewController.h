@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol ReplyTopicViewControllerDelegate <NSObject>
+@optional
 - (void)jumpToCommentsView;
+- (void)reloadCommentListView;
 @end
 
 @interface ReplyTopicViewController : UIViewController

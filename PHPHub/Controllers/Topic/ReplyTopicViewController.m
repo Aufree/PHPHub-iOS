@@ -45,20 +45,29 @@
     comment.commentBody = _commentTextView.text;
     [AnalyticsHandler logEvent:@"回复帖子" withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, _topicId]];
     
+    [SVProgressHUD show];
+    
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^(NSDictionary *data, NSError *error) {
         if (!error) {
+            [SVProgressHUD dismiss];
             [weakself.navigationController popViewControllerAnimated:YES];
-            if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(jumpToCommentsView)]) {
-                [weakself.delegate jumpToCommentsView];
+            if (weakself.delegate) {
+                if ([weakself.delegate respondsToSelector:@selector(reloadCommentListView)]) {
+                    [weakself.delegate reloadCommentListView];
+                } else if ([weakself.delegate respondsToSelector:@selector(jumpToCommentsView)]) {
+                    [weakself.delegate jumpToCommentsView];
+                }
             }
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"回复失败, 请重试"];
         }
     };
     
-    if (_commentTextView.text.length > 0) {
+    if (_commentTextView.text.length > 1) {
         [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
     } else {
-        [SVProgressHUD showErrorWithStatus:@"请先填写评论"];
+        [SVProgressHUD showErrorWithStatus:@"评论字数至少为两个"];
     }
 }
 

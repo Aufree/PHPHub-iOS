@@ -11,8 +11,10 @@
 #import "AccessTokenHandler.h"
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
+#import "CommentListViewController.h"
 #import "ReplyTopicViewController.h"
 #import "TopicVoteView.h"
+
 #import "UMSocial.h"
 #import "UMengSocialHandler.h"
 #import "UIActionSheet+Blocks.h"
@@ -191,7 +193,7 @@
     _activityView.hidden = YES;
 }
 
-# pragma mark Web View Delegate
+# pragma mark Scroll View Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.y < _pointNow.y) {
@@ -336,8 +338,9 @@
 
 - (void)jumpToCommentsView {
     if (_topic.topicRepliesUrl) {
-        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURLString:_topic.topicRepliesUrl];
-        [self.navigationController pushViewController:webVC animated:YES];
+        CommentListViewController *commentsListVC = [[CommentListViewController alloc] init];
+        commentsListVC.topic = _topic;
+        [self.navigationController pushViewController:commentsListVC animated:YES];
         [self analyticsWithTopicEvent:@"查看帖子评论"];
     }
 }
