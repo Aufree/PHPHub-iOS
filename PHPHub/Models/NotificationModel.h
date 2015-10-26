@@ -12,4 +12,5 @@
 @interface NotificationModel : BaseModel
 @property (nonatomic, strong) NotificationApi *api;
 - (id)getNotificationList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getUnreadNotificationCount:(BaseResultBlock)block;
 @end

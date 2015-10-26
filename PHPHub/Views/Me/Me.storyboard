@@ -90,10 +90,23 @@
                                                     <color key="textColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUf-ul-nAs">
+                                                    <rect key="frame" x="267" y="11.5" width="20" height="20"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="Bme-5i-drA"/>
+                                                        <constraint firstAttribute="height" constant="20" id="blV-2g-PSw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="S0C-Bw-3WW" firstAttribute="leading" secondItem="uA5-Y2-T0M" secondAttribute="trailing" constant="30" id="0om-ZY-v93"/>
+                                                <constraint firstItem="hUf-ul-nAs" firstAttribute="centerY" secondItem="XI6-8H-Zqs" secondAttribute="centerY" id="1H7-Nz-Tpp"/>
                                                 <constraint firstItem="S0C-Bw-3WW" firstAttribute="top" secondItem="XI6-8H-Zqs" secondAttribute="topMargin" constant="2" id="JmK-NT-FBW"/>
+                                                <constraint firstAttribute="trailing" secondItem="hUf-ul-nAs" secondAttribute="trailing" id="Lmr-pH-WFb"/>
                                                 <constraint firstItem="uA5-Y2-T0M" firstAttribute="top" secondItem="XI6-8H-Zqs" secondAttribute="topMargin" id="cMU-q1-TqP"/>
                                                 <constraint firstItem="uA5-Y2-T0M" firstAttribute="leading" secondItem="XI6-8H-Zqs" secondAttribute="leadingMargin" constant="12" id="v9e-zZ-AmA"/>
                                                 <constraint firstAttribute="trailing" secondItem="S0C-Bw-3WW" secondAttribute="trailing" id="ymY-wL-VLx"/>
@@ -281,6 +294,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatarImageView" destination="yWp-GX-ofb" id="fSX-3p-oMK"/>
+                        <outlet property="unreadCountLabel" destination="hUf-ul-nAs" id="zhj-vo-0dR"/>
                         <outlet property="userIntroLabel" destination="ukX-8b-4ps" id="fZX-0x-gua"/>
                         <outlet property="usernameLabel" destination="9OA-pB-5Bv" id="nZF-PO-b1y"/>
                     </connections>

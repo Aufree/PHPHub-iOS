@@ -16,19 +16,18 @@
 
 @interface MeViewController () <LoginViewControllerDelegate>
 @property (nonatomic, strong) UserEntity *userEntity;
+@property (weak, nonatomic) IBOutlet UILabel *unreadCountLabel;
 @end
 
 @implementation MeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUnreadCount:) name:UpdateNoticeCount object:nil];
     self.navigationItem.title = @"我的";
-    
     self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
-    
-    _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
-    _avatarImageView.layer.masksToBounds = YES;
+    [self setupCornerRadiusWithView:@[_avatarImageView, _unreadCountLabel]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +41,23 @@
                                         instantiateViewControllerWithIdentifier:@"login"];
         loginVC.delegate = self;
         [self.navigationController pushViewController:loginVC animated:NO];
+    }
+}
+
+- (void)setupCornerRadiusWithView:(NSArray *)views {
+    for (UIView *view in views) {
+        view.layer.cornerRadius = view.height/2;
+        view.layer.masksToBounds = YES;
+    }
+}
+
+- (void)updateUnreadCount:(NSNotification *)notification {
+    NSNumber *unreadCount = notification.userInfo[@"unreadCount"];
+    if (unreadCount.integerValue > 0) {
+        _unreadCountLabel.hidden = NO;
+        _unreadCountLabel.text = unreadCount.stringValue;
+    } else {
+        _unreadCountLabel.hidden = YES;
     }
 }
 

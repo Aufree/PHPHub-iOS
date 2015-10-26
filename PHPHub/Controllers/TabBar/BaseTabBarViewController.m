@@ -11,30 +11,47 @@
 #import "TopicListContainerViewController.h"
 #import "WiKiListViewController.h"
 
-@interface BaseTabBarViewController ()
-{
+#import "NotificationModel.h"
+
+@interface BaseTabBarViewController () {
     UINavigationController *_essentialNC;
     UINavigationController *_forumNC;
     UINavigationController *_wikiNC;
     UINavigationController *_meNC;
 }
+@property (nonatomic) NSTimer *refreshUnreadCountTimer;
 @end
 
 @implementation BaseTabBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.delegate = self;
-    
     self.view.backgroundColor = RGB(242, 242, 242);
     [self setupTabBarItems];
-    
     [self setupTabBarStyle];
+    [self createRefreshUnreadCountTimer];
 }
 
-- (void)setupTabBarItems
-{
+- (void)createRefreshUnreadCountTimer {
+    if (!self.refreshUnreadCountTimer) {
+        self.refreshUnreadCountTimer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(checkNoticeCount) userInfo:nil repeats:YES];
+    }
+}
+
+- (void)checkNoticeCount {
+    if ([[CurrentUser Instance] isLogin]) {
+        [[NotificationModel Instance] getUnreadNotificationCount:^(id data, NSError *error) {
+            if (!error) {
+                NSNumber *unreadCount = data[@"count"];
+                _meNC.tabBarItem.badgeValue = unreadCount.integerValue > 0 ? unreadCount.stringValue : nil;
+                [[NSNotificationCenter defaultCenter] postNotificationName:UpdateNoticeCount object:nil userInfo:@{@"unreadCount":unreadCount}];
+            }
+        }];
+    }
+}
+
+- (void)setupTabBarItems {
     UIEdgeInsets insets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
 
     EssentialListViewController *essentialListVC = [[EssentialListViewController alloc] init];
@@ -62,8 +79,7 @@
     
 }
 
-- (void)setupTabBarStyle
-{
+- (void)setupTabBarStyle {
     // for shouldSelectViewController, enabling animation for tabbar item clicked.
     [self setDelegate:self];
     
@@ -73,8 +89,7 @@
 
 #pragma mark - Delegate - UITabBarControllerDelegate
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-{
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionFade];
     [animation setDuration:0.25];

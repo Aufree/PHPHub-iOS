@@ -9,8 +9,7 @@
 #import "NotificationModel.h"
 
 @implementation NotificationModel
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _api = [[NotificationApi alloc] init];
@@ -20,5 +19,9 @@
 
 - (id)getNotificationList:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
     return [_api getNotificationList:block atPage:pageIndex];
+}
+
+- (id)getUnreadNotificationCount:(BaseResultBlock)block {
+    return [_api getUnreadNotificationCount:block];
 }
 @end

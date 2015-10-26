@@ -28,4 +28,22 @@
                                       success:successBlock
                                       failure:failureBlock];
 }
+
+- (id)getUnreadNotificationCount:(BaseResultBlock)block {
+    NSString *urlPath = [NSString stringWithFormat:@"me/notifications/count"];
+    
+    BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
+        NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
+        if (block) block(data, nil);
+    };
+    
+    BaseRequestFailureBlock failureBlock = ^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) block(nil, error);
+    };
+    
+    return [[BaseApi loginTokenGrantInstance] GET:urlPath
+                                       parameters:nil
+                                          success:successBlock
+                                          failure:failureBlock];
+}
 @end

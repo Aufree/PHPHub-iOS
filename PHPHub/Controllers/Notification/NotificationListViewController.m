@@ -26,6 +26,7 @@
     self.navigationItem.title = @"我的消息";
     [self setupHeaderView];
     [self.tableView.header beginRefreshing];
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateNoticeCount object:nil userInfo:@{@"unreadCount":@0}];
 }
 
 - (void)setupHeaderView {
@@ -34,6 +35,7 @@
     header.stateLabel.font = [UIFont fontWithName:FontName size:13];
     self.tableView.header = header;
 }
+
 #pragma mark Get Topic Data
 
 - (void)headerRefreshing {
