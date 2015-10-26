@@ -66,7 +66,9 @@
     [JpushHandler setupJpush:nil];
     
     // Show launch screen ad
-    [LaunchScreenAdHandler showLaunchScreenAd];
+    if ([GVUserDefaults standardUserDefaults].userClientToken) {
+        [LaunchScreenAdHandler showLaunchScreenAd];
+    }
     
     // Update current user info
     [[CurrentUser Instance] updateCurrentUserInfoIfNeeded];

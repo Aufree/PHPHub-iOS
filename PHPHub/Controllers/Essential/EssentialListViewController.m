@@ -41,12 +41,8 @@
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         [weakself.tableView.header beginRefreshing];
     };
-    
-    if ([[CurrentUser Instance] hasClientToken]) {
-        callback(nil, nil);
-    } else {
-        [[CurrentUser Instance] setupClientRequestState:callback];
-    }
+
+    [[CurrentUser Instance] setupClientRequestState:callback];
 }
 
 #pragma mark Get Topic Data

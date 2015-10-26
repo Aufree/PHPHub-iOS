@@ -29,11 +29,7 @@
         if (block) block(data, error);
     };
     
-    if ([[CurrentUser Instance] hasClientToken]) {
-        return [_api getAdvertsLaunchScreen:callback];
-    } else {
-        return nil;
-    }
+    return [_api getAdvertsLaunchScreen:callback];
 }
 
 - (void)insertAdEntitiesToLocalDataBase:(NSArray *)adEntities {
