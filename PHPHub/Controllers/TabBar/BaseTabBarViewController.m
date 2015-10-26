@@ -11,8 +11,6 @@
 #import "TopicListContainerViewController.h"
 #import "WiKiListViewController.h"
 
-#import "NotificationModel.h"
-
 @interface BaseTabBarViewController () {
     UINavigationController *_essentialNC;
     UINavigationController *_forumNC;
@@ -26,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNoticeCount:) name:UpdateNoticeCount object:nil];
+    
     self.delegate = self;
     self.view.backgroundColor = RGB(242, 242, 242);
     [self setupTabBarItems];
@@ -40,15 +40,12 @@
 }
 
 - (void)checkNoticeCount {
-    if ([[CurrentUser Instance] isLogin]) {
-        [[NotificationModel Instance] getUnreadNotificationCount:^(id data, NSError *error) {
-            if (!error) {
-                NSNumber *unreadCount = data[@"count"];
-                _meNC.tabBarItem.badgeValue = unreadCount.integerValue > 0 ? unreadCount.stringValue : nil;
-                [[NSNotificationCenter defaultCenter] postNotificationName:UpdateNoticeCount object:nil userInfo:@{@"unreadCount":unreadCount}];
-            }
-        }];
-    }
+    [[CurrentUser Instance] checkNoticeCount];
+}
+
+- (void)updateNoticeCount:(NSNotification *)notification {
+    NSNumber *unreadCount = notification.userInfo[@"unreadCount"];
+    _meNC.tabBarItem.badgeValue = unreadCount.integerValue > 0 ? unreadCount.stringValue : nil;
 }
 
 - (void)setupTabBarItems {

@@ -9,6 +9,7 @@
 #import "CurrentUser.h"
 #import "AccessTokenHandler.h"
 #import "JpushHandler.h"
+#import "NotificationModel.h"
 
 @implementation CurrentUser
 + (CurrentUser *)Instance {
@@ -51,6 +52,18 @@
 
 - (void)setupClientRequestState:(BaseResultBlock)block {
     [AccessTokenHandler fetchClientGrantTokenWithRetryTimes:3 callback:block];
+}
+
+- (void)checkNoticeCount {
+    if ([[CurrentUser Instance] isLogin]) {
+        [[NotificationModel Instance] getUnreadNotificationCount:^(id data, NSError *error) {
+            if (!error) {
+                NSNumber *unreadCount = data[@"count"];
+                [[UIApplication sharedApplication] setApplicationIconBadgeNumber:unreadCount.integerValue];
+                [[NSNotificationCenter defaultCenter] postNotificationName:UpdateNoticeCount object:nil userInfo:@{@"unreadCount":unreadCount}];
+            }
+        }];
+    }
 }
 
 - (void)logOut {

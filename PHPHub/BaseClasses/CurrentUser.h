@@ -21,6 +21,7 @@
 - (void)updateCurrentUserInfoIfNeeded;
 - (void)saveUser:(UserEntity *)user;
 - (void)setupClientRequestState:(BaseResultBlock)block;
+- (void)checkNoticeCount;
 - (void)logOut;
 - (NSString *)userLabel;
 @end

@@ -26,7 +26,7 @@
     self.navigationItem.title = @"我的消息";
     [self setupHeaderView];
     [self.tableView.header beginRefreshing];
-    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateNoticeCount object:nil userInfo:@{@"unreadCount":@0}];
+    [[CurrentUser Instance] checkNoticeCount];
 }
 
 - (void)setupHeaderView {

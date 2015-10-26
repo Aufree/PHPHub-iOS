@@ -28,6 +28,7 @@
     self.navigationItem.title = @"我的";
     self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
     [self setupCornerRadiusWithView:@[_avatarImageView, _unreadCountLabel]];
+    [self setupUnreadCountLabel];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +49,13 @@
     for (UIView *view in views) {
         view.layer.cornerRadius = view.height/2;
         view.layer.masksToBounds = YES;
+    }
+}
+
+- (void)setupUnreadCountLabel {
+    if (self.navigationController.tabBarItem.badgeValue.integerValue > 0) {
+        _unreadCountLabel.hidden = NO;
+        _unreadCountLabel.text = self.navigationController.tabBarItem.badgeValue;
     }
 }
 

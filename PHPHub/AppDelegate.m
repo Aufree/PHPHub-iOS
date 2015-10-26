@@ -93,6 +93,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[CurrentUser Instance] checkNoticeCount];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
