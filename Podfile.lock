@@ -66,6 +66,7 @@ PODS:
   - UITextView+Placeholder (1.1.0)
   - UMengFeedback (2.3.4)
   - UMengSocial (4.2.3)
+  - WebViewJavascriptBridge (4.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -97,6 +98,7 @@ DEPENDENCIES:
   - UITextView+Placeholder
   - UMengFeedback (~> 2.3.4)
   - UMengSocial (= 4.2.3)
+  - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   MTLFMDBAdapter:
@@ -143,5 +145,6 @@ SPEC CHECKSUMS:
   UITextView+Placeholder: 672ce543356b5b5787f354415bc3b132d47f0362
   UMengFeedback: 5283cc0e324dffca4dd54c4abb3cbded56487817
   UMengSocial: 85882abe5b20aa38ad558ece71360e16b5d50909
+  WebViewJavascriptBridge: f10ac16f2cd3adf2b941bd79477c55a8f6e01044
 
 COCOAPODS: 0.38.2

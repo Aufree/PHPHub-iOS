@@ -8,11 +8,13 @@
 
 #import "BaseWebView.h"
 #import "TOWebViewController.h"
+#import "WebViewJavascriptBridge.h"
 
 #import "AccessTokenHandler.h"
 
 @interface BaseWebView () <UIWebViewDelegate>
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;;
+@property WebViewJavascriptBridge* bridge;
 @end
 
 @implementation BaseWebView
@@ -34,6 +36,9 @@
     self.delegate = self;
     [self addSubview:self.activityView];
     [self loadTopicContentWebView];
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:self webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSString *imageUrl = data[@"imageUrl"];
+    }];
 }
 
 - (UIActivityIndicatorView *)activityView {
