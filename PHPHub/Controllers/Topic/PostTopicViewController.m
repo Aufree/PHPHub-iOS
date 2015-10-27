@@ -103,7 +103,11 @@
     if ([self topicIsValid]) {
         [[TopicModel Instance] createTopic:topic withBlock:callback];
     } else {
-        [SVProgressHUD showErrorWithStatus:@"信息未填写完整"];
+        if (![self topicContentIsValid]) {
+            [SVProgressHUD showErrorWithStatus:@"帖子内容长度应大于 1"];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"信息未填写完整"];
+        }
     }
 }
 
@@ -133,6 +137,10 @@
 }
 
 - (BOOL)topicIsValid {
-    return _topicTitleTF.text.length > 0 && _topicContentTextView.text.length > 0 && _didSelectedNode;
+    return _topicTitleTF.text.length > 0 && _topicContentTextView.text.length > 1 && _didSelectedNode;
+}
+
+- (BOOL)topicContentIsValid {
+    return _topicContentTextView.text.length > 1;
 }
 @end
