@@ -9,12 +9,12 @@
 #import "CommentListViewController.h"
 #import "ReplyTopicViewController.h"
 #import "TOWebViewController.h"
+#import "BaseWebView.h"
 
 #import "AccessTokenHandler.h"
 
-@interface CommentListViewController () <UIWebViewDelegate, ReplyTopicViewControllerDelegate>
-@property (nonatomic, strong) UIWebView *commentsWebView;
-@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+@interface CommentListViewController () <ReplyTopicViewControllerDelegate>
+@property (nonatomic, strong) BaseWebView *commentsWebView;
 @end
 
 @implementation CommentListViewController
@@ -24,27 +24,15 @@
     self.navigationItem.title = @"回复列表";
     
     [self.view addSubview:self.commentsWebView];
-    [self.view addSubview:self.activityView];
     
     [self createRightBarButtonItem];
-    [self loadTopicContentWebView];
 }
 
 - (UIWebView *)commentsWebView {
     if (!_commentsWebView) {
-        _commentsWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        _commentsWebView.delegate = self;
+        _commentsWebView = [[BaseWebView alloc] initWithFrame:self.view.bounds urlString:_topic.topicRepliesUrl];
     }
     return _commentsWebView;
-}
-
-- (UIActivityIndicatorView *)activityView {
-    if (!_activityView) {
-        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        _activityView.center = CGPointMake(self.view.width/2, self.view.height/2);
-        [_activityView startAnimating];
-    }
-    return _activityView;
 }
 
 - (void)createRightBarButtonItem {
@@ -66,35 +54,6 @@
 }
 
 #pragma mark Load WebView
-
-- (void)loadTopicContentWebView {
-    NSURL *url = [NSURL URLWithString:_topic.topicRepliesUrl];
-    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
-    [requestObj setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
-    [_commentsWebView loadRequest:requestObj];
-}
-
-#pragma mark WebView Delegate
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        NSURL *url = [request URL];
-        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURL:url];
-        [self.navigationController pushViewController:webVC animated:YES];
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    _activityView.hidden = YES;
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    _activityView.hidden = YES;
-}
 
 - (void)reloadCommentListView {
     [_commentsWebView reload];

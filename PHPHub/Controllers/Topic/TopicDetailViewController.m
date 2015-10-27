@@ -14,6 +14,7 @@
 #import "CommentListViewController.h"
 #import "ReplyTopicViewController.h"
 #import "TopicVoteView.h"
+#import "BaseWebView.h"
 
 #import "UMSocial.h"
 #import "UMengSocialHandler.h"
@@ -25,14 +26,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
-@property (weak, nonatomic) IBOutlet UIWebView *topicContentWeb;
+@property (weak, nonatomic) IBOutlet BaseWebView *topicContentWeb;
 @property (weak, nonatomic) IBOutlet UIView *topicToolBarView;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (weak, nonatomic) IBOutlet UIButton *watchButton;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (assign, nonatomic) CGPoint pointNow;
 @property (assign, nonatomic) CGFloat topicToolBarY;
 @property (assign, nonatomic) BOOL isFavoriteTopic;
@@ -74,7 +74,7 @@
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
             weakself.topic = data[@"entity"];
-            [weakself loadTopicContentWebView];
+            weakself.topicContentWeb.urlString = weakself.topic.topicContentUrl;
             weakself.isFavoriteTopic = weakself.topic.favorite;
             weakself.isAttentionTopic = weakself.topic.attention;
             [weakself updateFavoriteButtonStateWithFavarite];
@@ -161,35 +161,6 @@
     } else {
         [_voteButton setImage:[UIImage imageNamed:@"vote_icon"] forState:UIControlStateNormal];
     }
-}
-
-#pragma mark Load WebView
-
-- (void)loadTopicContentWebView {
-    NSURL *url = [NSURL URLWithString:_topic.topicContentUrl];
-    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
-    [requestObj setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal] forHTTPHeaderField:@"Authorization"];
-    [_topicContentWeb loadRequest:requestObj];
-}
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        NSURL *url = [request URL];
-        TOWebViewController *webVC = [[TOWebViewController alloc] initWithURL:url];
-        [self.navigationController pushViewController:webVC animated:YES];
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    _activityView.hidden = YES;
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    _activityView.hidden = YES;
 }
 
 # pragma mark Scroll View Delegate

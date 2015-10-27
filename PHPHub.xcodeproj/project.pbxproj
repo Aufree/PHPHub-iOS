@@ -111,6 +111,7 @@
 		56D8F0B31BB1380F00242FA9 /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B21BB1380F00242FA9 /* TopicListViewController.m */; };
 		56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */; };
 		56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */; };
+		56E945611BDF04F10008B02C /* BaseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E945601BDF04F10008B02C /* BaseWebView.m */; settings = {ASSET_TAGS = (); }; };
 		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 		C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = C19433411BB340A200D51917 /* UIResponder+Router.m */; };
 /* End PBXBuildFile section */
@@ -330,6 +331,8 @@
 		56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
 		56D8F0BA1BB1432F00242FA9 /* TitlePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePagerView.h; sourceTree = "<group>"; };
 		56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePagerView.m; sourceTree = "<group>"; };
+		56E9455F1BDF04F10008B02C /* BaseWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebView.h; sourceTree = "<group>"; };
+		56E945601BDF04F10008B02C /* BaseWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebView.m; sourceTree = "<group>"; };
 		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19433401BB340A200D51917 /* UIResponder+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
 		C19433411BB340A200D51917 /* UIResponder+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
@@ -529,6 +532,8 @@
 				5672CB311BC760A0007F4B9F /* BubbleButton.m */,
 				5679BABA1BD485D800AA9928 /* SkipButton.h */,
 				5679BABB1BD485D800AA9928 /* SkipButton.m */,
+				56E9455F1BDF04F10008B02C /* BaseWebView.h */,
+				56E945601BDF04F10008B02C /* BaseWebView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1289,6 +1294,7 @@
 				5652186B1BBBCB4D00412E60 /* CurrentUser.m in Sources */,
 				560E4C091BC1178900BD8CE2 /* TPKeyboardAvoidingTableView.m in Sources */,
 				565218551BBB6D9500412E60 /* LoginViewController.m in Sources */,
+				56E945611BDF04F10008B02C /* BaseWebView.m in Sources */,
 				5679BAB21BD4815000AA9928 /* AdModel.m in Sources */,
 				5679BABF1BD4869F00AA9928 /* LaunchScreenAdHandler.m in Sources */,
 				565218631BBBBDED00412E60 /* UserModel.m in Sources */,

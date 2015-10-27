@@ -10,4 +10,5 @@
 
 @interface NSString (Additions)
 + (BOOL)isStringEmpty:(NSString *)string;
++ (NSNumber *)covertToNumber:(NSString *)numberString;
 @end

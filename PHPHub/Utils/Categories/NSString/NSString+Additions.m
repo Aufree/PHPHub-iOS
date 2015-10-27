@@ -21,4 +21,10 @@
     
     return NO;
 }
+
++ (NSNumber *)covertToNumber:(NSString *)numberString {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    return [formatter numberFromString:numberString];
+}
 @end

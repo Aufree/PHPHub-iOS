@@ -103,7 +103,7 @@
         return;
     }
     
-    NSNumber *payloadNumber = [self covertToNumber:entity.payload];
+    NSNumber *payloadNumber = [NSString covertToNumber:entity.payload];
     if (entity.type == LaunchScreenTypeByTopic) {
         [JumpToOtherVCHandler jumpToTopicDetailWithTopicId:payloadNumber];
     } else if (entity.type == LaunchScreenTypeByUser) {
@@ -111,11 +111,5 @@
     } else if (entity.type == LaunchScreenTypeByWeb) {
         [JumpToOtherVCHandler jumpToWebVCWithUrlString:entity.payload];
     }
-}
-
-+ (NSNumber *)covertToNumber:(NSString *)numberString {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    return [formatter numberFromString:numberString];
 }
 @end
