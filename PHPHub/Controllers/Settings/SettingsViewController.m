@@ -45,9 +45,12 @@
                 vc = [[TOWebViewController alloc] initWithURLString:ProjectURL];
                 break;
             case 1:
-                vc = [[TOWebViewController alloc] initWithURLString:AboutPageURL];
+                vc = [[TOWebViewController alloc] initWithURLString:AboutTheAuthorURL];
                 break;
             case 2:
+                vc = [[TOWebViewController alloc] initWithURLString:AboutPageURL];
+                break;
+            case 3:
                 vc = [[TOWebViewController alloc] initWithURLString:ESTGroupURL];
                 break;
         }
