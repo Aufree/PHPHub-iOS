@@ -29,11 +29,6 @@
     // Do not auto load data
     self.manualLoadData = YES;
     
-    // Keeps tab bar below navigation bar on iOS 7.0+
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.translucent = YES;
-    
     self.currentIndex = 0;
     
     [super viewDidLoad];

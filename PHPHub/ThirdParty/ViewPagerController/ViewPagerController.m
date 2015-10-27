@@ -48,6 +48,10 @@
     if (self.manualLoadData != YES) {
         [self reloadData];
     }
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
 - (void)dealloc{
@@ -92,7 +96,6 @@
         _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _contentView.backgroundColor = self.contentViewBackgroundColor;
         _contentView.bounds = self.view.bounds;
-        
         [self.view insertSubview:_contentView atIndex:0];
     }
     

@@ -50,7 +50,6 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
-    _topicContentWeb.baseWebDelegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
