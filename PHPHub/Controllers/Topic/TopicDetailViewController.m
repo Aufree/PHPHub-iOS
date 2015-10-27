@@ -49,8 +49,8 @@
     
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
-    _topicContentWeb.scrollView.delegate = self;
     _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
+    _topicContentWeb.baseWebDelegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
@@ -61,6 +61,7 @@
     NSString *logScreen = [NSString stringWithFormat:@"帖子详情 ID:%@", _topic.topicId];
     [AnalyticsHandler logScreen:logScreen];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _topicToolBarView.hidden = NO;
