@@ -17,6 +17,12 @@
 #import "AppDelegate.h"
 
 @implementation JumpToOtherVCHandler
+
++ (UIViewController *)getTabbarViewController {
+    BaseTabBarViewController *tabbar = [(AppDelegate *)[[UIApplication sharedApplication] delegate] tabBarViewController];
+    return tabbar;
+}
+
 + (void)pushToOtherView:(UIViewController *)vc animated:(BOOL)animated {
     BaseTabBarViewController *tabbar = [(AppDelegate *)[[UIApplication sharedApplication] delegate] tabBarViewController];
     [tabbar pushToViewController:vc animated:YES];

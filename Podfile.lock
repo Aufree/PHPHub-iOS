@@ -39,6 +39,7 @@ PODS:
     - FMDB/common (~> 2.3)
   - GVUserDefaults (1.0.1)
   - HappyDNS (0.2.1)
+  - JTSImageViewController (1.5.1)
   - Mantle (1.5.5):
     - Mantle/extobjc (= 1.5.5)
   - Mantle/extobjc (1.5.5)
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - FMDB (~> 2.3)
   - FMDBMigrationManager (~> 1.3)
   - GVUserDefaults
+  - JTSImageViewController
   - Mantle (~> 1.5)
   - Masonry
   - MBProgressHUD
@@ -127,6 +129,7 @@ SPEC CHECKSUMS:
   FMDBMigrationManager: aa46d473c863b6ade5676c49b73f56540b358ad7
   GVUserDefaults: acb40729f70984008d0650e49d7e422f1bbfa597
   HappyDNS: 8eb3c929ee6143eb56bfddfc9e6052ca9429699c
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
   Mantle: 1b29072a707453975b200a173cf77ec1e2810b75
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

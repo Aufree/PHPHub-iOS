@@ -9,6 +9,7 @@
 #import "BaseWebView.h"
 #import "TOWebViewController.h"
 #import "WebViewJavascriptBridge.h"
+#import "JTSImageViewController.h"
 
 #import "AccessTokenHandler.h"
 
@@ -38,6 +39,7 @@
     [self loadTopicContentWebView];
     _bridge = [WebViewJavascriptBridge bridgeForWebView:self webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
         NSString *imageUrl = data[@"imageUrl"];
+        [self openImageInApp:imageUrl];
     }];
 }
 
@@ -86,6 +88,22 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [_activityView removeFromSuperview];
+}
+
+- (void)openImageInApp:(NSString *)imageUrlString {
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    imageInfo.imageURL = [NSURL URLWithString:imageUrlString];
+    imageInfo.referenceRect = self.frame;
+    imageInfo.referenceView = self.superview;
+    
+    // Setup view controller
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_None];
+    
+    // Present the view controller.
+    [imageViewer showFromViewController:[JumpToOtherVCHandler getTabbarViewController] transition:JTSImageViewControllerTransition_FromOffscreen];
 }
 
 @end

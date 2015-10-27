@@ -10,6 +10,7 @@
 #import "TopicEntity.h"
 
 @interface JumpToOtherVCHandler : NSObject
++ (UIViewController *)getTabbarViewController;
 + (void)pushToOtherView:(UIViewController *)vc animated:(BOOL)animated;
 + (void)presentToOtherView:(UIViewController *)vc animated:(BOOL)animated completion:(void (^)(void))completion;
 + (void)jumpToTopicDetailWithTopic:(TopicEntity *)topic;
