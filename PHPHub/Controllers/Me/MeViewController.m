@@ -28,7 +28,6 @@
     self.navigationItem.title = @"我的";
     self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
     [self setupCornerRadiusWithView:@[_avatarImageView, _unreadCountLabel]];
-    [self setupUnreadCountLabel];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,6 +35,7 @@
     
     if ([[CurrentUser Instance] isLogin]) {
         [self updateMeView];
+        [self setupUnreadCountLabel];
     } else {
         LoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Passport"
                                                                   bundle:[NSBundle mainBundle]]

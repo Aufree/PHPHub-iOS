@@ -26,7 +26,6 @@
     self.navigationItem.title = @"我的消息";
     [self setupHeaderView];
     [self.tableView.header beginRefreshing];
-    [[CurrentUser Instance] checkNoticeCount];
 }
 
 - (void)setupHeaderView {
@@ -45,6 +44,7 @@
             weakself.notificationEntities = data[@"entities"];
             weakself.pagination = data[@"pagination"];
             [weakself.tableView reloadData];
+            [[CurrentUser Instance] checkNoticeCount];
         }
         
         [weakself.tableView.header endRefreshing];
