@@ -13,6 +13,7 @@
     return @{
              @"nodeId" : @"id",
              @"nodeName" : @"name",
+             @"parentNode" : @"parent_node",
              };
 }
 @end

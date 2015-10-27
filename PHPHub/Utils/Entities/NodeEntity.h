@@ -11,4 +11,5 @@
 @interface NodeEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *nodeId;
 @property (nonatomic, copy) NSString *nodeName;
+@property (nonatomic, strong) NSNumber *parentNode;
 @end

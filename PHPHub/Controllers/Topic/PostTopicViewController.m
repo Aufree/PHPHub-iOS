@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectNodeButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *nodePickView;
 @property (strong, nonatomic) NSMutableArray *nodeNameArray;
-@property (copy, nonatomic) NSArray *nodeEntites;
+@property (strong, nonatomic) NSMutableArray *nodeEntites;
 @property (assign, nonatomic) BOOL didSelectedNode;
 @end
 
@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"发布话题";
     self.nodeNameArray = [[NSMutableArray alloc] init];
+    self.nodeEntites = [[NSMutableArray alloc] init];
     
     [self setup];
     [self createRightButtonItem];
@@ -60,9 +61,12 @@
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
         if (!error) {
-            weakself.nodeEntites = data[@"entities"];
-            for (NodeEntity *node in weakself.nodeEntites) {
-                [weakself.nodeNameArray addObject:node.nodeName];
+            NSArray *tempNodeEntites = data[@"entities"];
+            for (NodeEntity *node in tempNodeEntites) {
+                if (node.parentNode.integerValue > 0) {
+                    [weakself.nodeEntites addObject:node];
+                    [weakself.nodeNameArray addObject:node.nodeName];
+                }
             }
             [weakself.nodePickView reloadAllComponents];
         }
@@ -108,10 +112,12 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NodeEntity *node = [_nodeEntites objectAtIndex:row];
-    NSString *buttonTitle = [NSString stringWithFormat:@"发布到 [%@] 下", node.nodeName];
-    [_selectNodeButton setTitle:buttonTitle forState:UIControlStateNormal];
-    _didSelectedNode = YES;
+    if (_nodeEntites.count > 0) {        
+        NodeEntity *node = [_nodeEntites objectAtIndex:row];
+        NSString *buttonTitle = [NSString stringWithFormat:@"发布到 [%@] 下", node.nodeName];
+        [_selectNodeButton setTitle:buttonTitle forState:UIControlStateNormal];
+        _didSelectedNode = YES;
+    }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
