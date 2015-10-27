@@ -10,9 +10,9 @@
 #define QiniuUploadTokenIdentifier @"QiniuUploadTokenIdentifier"
 
 #if DEBUG
-#define APIBaseURL      @"https://staging_api.phphub.org"
+#define APIBaseURL      @"https://staging_api.phphub.org/v1"
 #else
-#define APIBaseURL      @"https://api.phphub.org"
+#define APIBaseURL      @"https://api.phphub.org/v1"
 #endif
 
 #define PHPHubHost      @"phphub.org"
