@@ -20,7 +20,7 @@
 #import "UMengSocialHandler.h"
 #import "UIActionSheet+Blocks.h"
 
-@interface TopicDetailViewController () <UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
+@interface TopicDetailViewController () <UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate, BaseWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -50,6 +50,7 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
+    _topicContentWeb.baseWebDelegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
