@@ -12,6 +12,7 @@
 #import "UserProfileViewController.h"
 #import "TopicListViewController.h"
 #import "SettingsViewController.h"
+#import "CommentListViewController.h"
 #import "TOWebViewController.h"
 
 @interface MeViewController () <LoginViewControllerDelegate>
@@ -117,7 +118,7 @@
         if (row == 0) {
             vc = [self createTopicListWithType:TopicListTypeNormal];
         } else if (row == 1) {
-            vc = [[TOWebViewController alloc] initWithURLString:_userEntity.repliesUrl];
+            [self jumpToCommentListView];
         } else if (row == 2) {
             vc = [[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settings"];
         }
@@ -136,6 +137,15 @@
     topicListVC.userId = [[CurrentUser Instance] userId].integerValue;
     topicListVC.topicListType = topicListType;
     return topicListVC;
+}
+
+- (void)jumpToCommentListView {
+    CommentListViewController *commentListVC = [[CommentListViewController alloc] init];
+    commentListVC.hidesBottomBarWhenPushed = YES;
+    TopicEntity *topic = [TopicEntity new];
+    topic.topicRepliesUrl = _userEntity.repliesUrl;
+    commentListVC.topic = topic;
+    [self.navigationController pushViewController:commentListVC animated:YES];
 }
 
 @end
