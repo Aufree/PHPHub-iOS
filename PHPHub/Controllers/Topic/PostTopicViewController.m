@@ -82,6 +82,7 @@
     NSInteger seletedNodeRow = [_nodePickView selectedRowInComponent:0];
     NodeEntity *selectedNode = [_nodeEntites objectAtIndex:seletedNodeRow];
     topic.nodeId = selectedNode.nodeId;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     
     [SVProgressHUD show];
     __weak typeof(self) weakself = self;
@@ -98,6 +99,8 @@
         } else {
             [SVProgressHUD showErrorWithStatus:@"发布失败, 请重试"];
         }
+        
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     };
     
     if ([self topicIsValid]) {

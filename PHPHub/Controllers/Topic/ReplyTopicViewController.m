@@ -45,6 +45,8 @@
     comment.commentBody = _commentTextView.text;
     [AnalyticsHandler logEvent:@"回复帖子" withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, _topicId]];
     
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
     [SVProgressHUD show];
     
     __weak typeof(self) weakself = self;
@@ -62,6 +64,7 @@
         } else {
             [SVProgressHUD showErrorWithStatus:@"回复失败, 请重试"];
         }
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     };
     
     if (_commentTextView.text.length > 1) {
