@@ -10,6 +10,7 @@
 #import "TOWebViewController.h"
 #import "TopicListViewController.h"
 #import "EditUserProfileViewController.h"
+#import "CommentListViewController.h"
 #import "UIActionSheet+Blocks.h"
 
 @interface UserProfileViewController () <EditUserProfileViewControllerDelegate>
@@ -145,7 +146,7 @@
                 vc = [self createTopicListWithType:TopicListTypeNormal];
                 break;
             case 1:
-                vc = [[TOWebViewController alloc] initWithURLString:_userEntity.repliesUrl];
+                [self jumpToCommentListView];
                 break;
             case 2:
                 vc = [self createTopicListWithType:TopicListTypeAttention];
@@ -187,5 +188,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 20;
+}
+
+- (void)jumpToCommentListView {
+    CommentListViewController *commentListVC = [[CommentListViewController alloc] init];
+    TopicEntity *topic = [TopicEntity new];
+    topic.topicRepliesUrl = _userEntity.repliesUrl;
+    commentListVC.topic = topic;
+    [self.navigationController pushViewController:commentListVC animated:YES];
 }
 @end

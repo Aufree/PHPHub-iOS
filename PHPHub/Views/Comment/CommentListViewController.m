@@ -21,11 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"回复列表";
+    self.navigationItem.title = @"评论列表";
     
     [self.view addSubview:self.commentsWebView];
     
-    [self createRightBarButtonItem];
+    if (_topic.topicId > 0) {
+        [self createRightBarButtonItem];
+    }
 }
 
 - (UIWebView *)commentsWebView {
