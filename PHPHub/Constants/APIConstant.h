@@ -22,7 +22,7 @@
 #define ProjectURL        @"https://github.com/aufree/phphub-ios"
 #define AboutPageURL      @"https://phphub.org/about"
 #define ESTGroupURL       @"http://est-group.org"
-#define AboutTheAuthorURL @"weibo.com/jinfali"
+#define AboutTheAuthorURL @"https://github.com/aufree"
 #define PHPHubGuide       @"http://7xnqwn.com1.z0.glb.clouddn.com/index.html"
 #define PHPHubTopicURL    @"https://phphub.org/topics/"
 #define SinaRedirectURL   @"http://sns.whalecloud.com/sina2/callback"
