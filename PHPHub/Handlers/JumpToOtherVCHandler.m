@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 #import "UserProfileViewController.h"
 #import "TOWebViewController.h"
+#import "CommentListViewController.h"
 
 #import "AppDelegate.h"
 
@@ -56,6 +57,13 @@
     user.userId = userId;
     userProfileVC.userEntity = user;
     [self pushToOtherView:userProfileVC animated:YES];
+}
+
++ (void)jumpToCommentListVCWithTopic:(TopicEntity *)topic {
+    CommentListViewController *commentListVC = [[CommentListViewController alloc] init];
+    commentListVC.hidesBottomBarWhenPushed = YES;
+    commentListVC.topic = topic;
+    [self pushToOtherView:commentListVC animated:YES];
 }
 
 + (void)jumpToWebVCWithUrlString:(NSString *)url {

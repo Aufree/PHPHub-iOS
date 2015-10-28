@@ -17,5 +17,6 @@
 + (void)jumpToLoginVC:(void (^)(void))completion;
 + (void)jumpToTopicDetailWithTopicId:(NSNumber *)topicId;
 + (void)jumpToUserProfileWithUserId:(NSNumber *)userId;
++ (void)jumpToCommentListVCWithTopic:(TopicEntity *)topic;
 + (void)jumpToWebVCWithUrlString:(NSString *)url;
 @end

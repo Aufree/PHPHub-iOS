@@ -102,7 +102,10 @@
 
 + (void)handleUserInfo:(NSDictionary *)userInfo {
     if (userInfo[@"reply_id"] && userInfo[@"replies_url"]) {
-        [JumpToOtherVCHandler jumpToWebVCWithUrlString:userInfo[@"replies_url"]];
+        NSString *repliesUrl = userInfo[@"replies_url"];
+        TopicEntity *topic = [TopicEntity new];
+        topic.topicRepliesUrl = repliesUrl;
+        [JumpToOtherVCHandler jumpToCommentListVCWithTopic:topic];
     } else if (userInfo[@"topic_id"]) {
         [JumpToOtherVCHandler jumpToTopicDetailWithTopicId:userInfo[@"topic_id"]];
     }
