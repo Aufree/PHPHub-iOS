@@ -132,7 +132,7 @@
     NSString *shareURL = _topicURL;
     NSString *shareImageUrl = _topic.user.avatar;
     NSString *shareTitle = [NSString stringWithFormat:@"分享 %@ 的文章", _topic.user.username];
-    NSString *shareText = _topic.topicTitle;
+    NSString *shareText = [NSString stringWithFormat:@"%@ %@", _topic.topicTitle, _topicURL];
     [UMengSocialHandler shareWithShareURL:shareURL shareImageUrl:shareImageUrl shareTitle:shareTitle shareText:shareText presentVC:self delegate:self];
 }
 
