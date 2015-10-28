@@ -82,7 +82,6 @@
     NSInteger seletedNodeRow = [_nodePickView selectedRowInComponent:0];
     NodeEntity *selectedNode = [_nodeEntites objectAtIndex:seletedNodeRow];
     topic.nodeId = selectedNode.nodeId;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
     
     [SVProgressHUD show];
     __weak typeof(self) weakself = self;
@@ -104,6 +103,7 @@
     };
     
     if ([self topicIsValid]) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
         [[TopicModel Instance] createTopic:topic withBlock:callback];
     } else {
         if (![self topicContentIsValid]) {

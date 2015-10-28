@@ -45,8 +45,6 @@
     comment.commentBody = _commentTextView.text;
     [AnalyticsHandler logEvent:@"回复帖子" withCategory:kTopicAction label:[NSString stringWithFormat:@"%@ topicId:%@", [CurrentUser Instance].userLabel, _topicId]];
     
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    
     [SVProgressHUD show];
     
     __weak typeof(self) weakself = self;
@@ -68,6 +66,7 @@
     };
     
     if (_commentTextView.text.length > 1) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
         [[TopicModel Instance] addCommentToTopic:comment withBlock:callback];
     } else {
         [SVProgressHUD showErrorWithStatus:@"评论字数至少为两个"];
