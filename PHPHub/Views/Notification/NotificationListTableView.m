@@ -10,11 +10,13 @@
 #include "NotificationListCell.h"
 #import "NotificationEntity.h"
 #import "TopicDetailViewController.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "EmptyTopicView.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 
 static NSString *notificationListIdentifier = @"notificationListIdentifier";
 
-@interface NotificationListTableView () <UITableViewDelegate, UITableViewDataSource>
+@interface NotificationListTableView () <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @end
 
 @implementation NotificationListTableView
@@ -35,6 +37,12 @@ static NSString *notificationListIdentifier = @"notificationListIdentifier";
     self.delegate = self;
     self.notificationEntities = [[NSMutableArray alloc] init];
     [self reloadData];
+    [self setupEmptyDataSet];
+}
+
+- (void)setupEmptyDataSet {
+    self.emptyDataSetDelegate = self;
+    self.emptyDataSetSource = self;
 }
 
 - (void)setNotificationEntities:(NSMutableArray *)notificationEntities {
@@ -92,6 +100,11 @@ static NSString *notificationListIdentifier = @"notificationListIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
+}
+
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+    EmptyTopicView *emptyTopicView = [[EmptyTopicView alloc] initWithFrame:self.bounds];
+    return emptyTopicView;
 }
 
 @end
