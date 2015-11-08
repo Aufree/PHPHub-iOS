@@ -50,13 +50,13 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.font = [UIFont fontWithName:FontName size:13];
-    self.header = header;
+    self.mj_header = header;
 }
 
 - (void)setupFooterView {
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     footer.stateLabel.font = [UIFont fontWithName:FontName size:13];
-    self.footer = footer;
+    self.mj_footer = footer;
 }
 
 - (void)refreshData {

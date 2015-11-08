@@ -39,7 +39,7 @@
     // Get the client token from server
     __weak typeof(self) weakself = self;
     BaseResultBlock callback =^ (NSDictionary *data, NSError *error) {
-        [weakself.tableView.header beginRefreshing];
+        [weakself.tableView.mj_header beginRefreshing];
     };
 
     [[CurrentUser Instance] setupClientRequestState:callback];
@@ -56,7 +56,7 @@
             [weakself.tableView reloadData];
         }
         
-        [weakself.tableView.header endRefreshing];
+        [weakself.tableView.mj_header endRefreshing];
         if (weakself.pagination.totalPages > 1) {
             [weakself.tableView setupFooterView];
         }
@@ -79,13 +79,12 @@
                 weakself.pagination = data[@"pagination"];
                 [weakself.tableView reloadData];
             }
-            [weakself.tableView.footer endRefreshing];
+            [weakself.tableView.mj_footer endRefreshing];
         };
         
         [self fetchDataSource:callback atPage:nextPage];
     } else {
-        [self.tableView.footer endRefreshing];
-        [self.tableView.footer noticeNoMoreData];
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
     
 }

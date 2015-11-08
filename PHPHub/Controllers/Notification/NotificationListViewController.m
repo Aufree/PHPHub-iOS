@@ -25,14 +25,14 @@
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"我的消息";
     [self setupHeaderView];
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setupHeaderView {
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.font = [UIFont fontWithName:FontName size:13];
-    self.tableView.header = header;
+    self.self.tableView.mj_header = header;
 }
 
 #pragma mark Get Topic Data
@@ -47,11 +47,11 @@
             [[CurrentUser Instance] checkNoticeCount];
         }
         
-        [weakself.tableView.header endRefreshing];
+        [weakself.self.tableView.mj_header endRefreshing];
         if (weakself.pagination.totalPages > 1) {
             MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
             footer.stateLabel.font = [UIFont fontWithName:FontName size:13];
-            self.tableView.footer = footer;
+            self.tableView.mj_footer = footer;
         }
     };
     
@@ -72,13 +72,12 @@
                 weakself.pagination = data[@"pagination"];
                 [weakself.tableView reloadData];
             }
-            [weakself.tableView.footer endRefreshing];
+            [weakself.tableView.mj_footer endRefreshing];
         };
         
         [self fetchDataSource:callback atPage:nextPage];
     } else {
-        [self.tableView.footer endRefreshing];
-        [self.tableView.footer noticeNoMoreData];
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
     
 }

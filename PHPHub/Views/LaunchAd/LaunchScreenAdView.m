@@ -104,18 +104,7 @@
     _updateDurationLabelTimer = nil;
 }
 
-#pragma mark - Random Numbers
-
-+ (NSUInteger)randomNumberBetweenNumber:(NSUInteger)minNumber andNumber:(NSUInteger)maxNumber {
-    if (minNumber > maxNumber)
-    {
-        return [self randomNumberBetweenNumber:maxNumber andNumber:minNumber];
-    }
-    
-    NSUInteger randomInt = (arc4random_uniform(maxNumber - minNumber + 1)) + minNumber;
-    
-    return randomInt;
-}
+#pragma mark - Handler Event
 
 - (void)handleClickedEvent {
     [LaunchScreenAdHandler removeLaunchScreenAd:YES];
