@@ -15,6 +15,7 @@
 #import "JpushHandler.h"
 #import "LaunchScreenAdHandler.h"
 #import "ExceptionHandler.h"
+#import "SSKeychain.h"
 
 @interface AppDelegate ()
 
@@ -53,7 +54,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
+
     if (_tabBarViewController == nil){
         _tabBarViewController = [[BaseTabBarViewController alloc] init];
     }
@@ -75,6 +76,9 @@
     
     // SVProgressHUD customized
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    
+    // Setup SSKeyChain
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

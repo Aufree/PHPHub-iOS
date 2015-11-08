@@ -28,3 +28,5 @@
 #define SinaRedirectURL   @"http://sns.whalecloud.com/sina2/callback"
 
 #define UpdateNoticeCount @"UpdateNoticeCount"
+#define KeyChainService   @"PHPHubService"
+#define KeyChainAccount   @"com.PHPHub.keychain"

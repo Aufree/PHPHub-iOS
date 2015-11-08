@@ -9,7 +9,6 @@
 #import "GVUserDefaults+Properties.h"
 
 @implementation GVUserDefaults (Properties)
-@dynamic userLoginToken;
 @dynamic userClientToken;
 @dynamic currentUserId;
 @dynamic lastTimeShowLaunchScreenAd;

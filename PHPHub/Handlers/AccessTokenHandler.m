@@ -7,6 +7,7 @@
 //
 
 #import "AccessTokenHandler.h"
+#import "SSKeychain.h"
 
 @implementation AccessTokenHandler
 #pragma mark - Client Grant
@@ -61,17 +62,17 @@
 #pragma mark - Password Grant
 
 + (NSString *)getLoginTokenGrantAccessToken {
-    NSString *token = [GVUserDefaults standardUserDefaults].userLoginToken;
+    NSString *token = [SSKeychain passwordForService:KeyChainService account:KeyChainAccount];
     return [NSString stringWithFormat:@"Bearer %@", token];
 }
 
 + (void)storeLoginTokenGrantAccessToken:(NSString *)token {
-    [GVUserDefaults standardUserDefaults].userLoginToken = token;
+    [SSKeychain setPassword:token forService:KeyChainService account:KeyChainAccount];
     [[BaseApi clientGrantInstance] setUpLoginTokenGrantRequest];
 }
 
 + (void)clearToken {
-    [GVUserDefaults standardUserDefaults].userLoginToken = nil;
+    [SSKeychain deletePasswordForService:KeyChainService account:KeyChainAccount];
     [GVUserDefaults standardUserDefaults].userClientToken = nil;
 }
 

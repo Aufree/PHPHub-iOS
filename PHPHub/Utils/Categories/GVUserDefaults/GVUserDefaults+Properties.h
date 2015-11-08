@@ -9,7 +9,6 @@
 #import "GVUserDefaults.h"
 
 @interface GVUserDefaults (Properties)
-@property (nonatomic, copy) NSString *userLoginToken;
 @property (nonatomic, copy) NSString *userClientToken;
 @property (nonatomic, copy) NSNumber *currentUserId;
 @property (nonatomic, strong) NSDate *lastTimeShowLaunchScreenAd;

@@ -10,6 +10,7 @@
 #import "AccessTokenHandler.h"
 #import "JpushHandler.h"
 #import "NotificationModel.h"
+#import "SSKeychain.h"
 
 @implementation CurrentUser
 + (CurrentUser *)Instance {
@@ -67,7 +68,7 @@
 }
 
 - (void)logOut {
-    [GVUserDefaults standardUserDefaults].userLoginToken = nil;
+    [SSKeychain deletePasswordForService:KeyChainService account:KeyChainAccount];
     [GVUserDefaults standardUserDefaults].currentUserId = nil;
     [JpushHandler sendEmptyAlias];
 }
