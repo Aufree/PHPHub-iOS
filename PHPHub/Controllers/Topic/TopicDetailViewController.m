@@ -20,7 +20,7 @@
 #import "UMengSocialHandler.h"
 #import "UIActionSheet+Blocks.h"
 
-@interface TopicDetailViewController () <UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate, BaseWebViewDelegate>
+@interface TopicDetailViewController () <UIScrollViewDelegate, UMSocialUIDelegate, ReplyTopicViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -50,7 +50,7 @@
     _avatarImageView.layer.cornerRadius = _avatarImageView.height/2;
     _avatarImageView.layer.masksToBounds = YES;
     _topicURL = [NSString stringWithFormat:@"%@%@", PHPHubTopicURL, _topic.topicId];
-    _topicContentWeb.baseWebDelegate = self;
+    _topicContentWeb.scrollView.delegate = self;
     [self updateTopicDetailView];
     [self fetchTopicDataFromServerWithBlock:nil];
     [self createRightBarButtonItem];
@@ -66,6 +66,12 @@
     [super viewDidAppear:animated];
     _topicToolBarView.hidden = NO;
     _topicToolBarY = _topicToolBarView.y;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    _topicContentWeb.scrollView.delegate = nil;
+    _topicContentWeb = nil;
 }
 
 # pragma mark Get Data From Server
