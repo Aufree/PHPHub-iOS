@@ -68,7 +68,7 @@
 
 + (void)storeLoginTokenGrantAccessToken:(NSString *)token {
     [SSKeychain setPassword:token forService:KeyChainService account:KeyChainAccount];
-    [[BaseApi clientGrantInstance] setUpLoginTokenGrantRequest];
+    [[BaseApi loginTokenGrantInstance] setUpLoginTokenGrantRequest];
 }
 
 + (void)clearToken {
