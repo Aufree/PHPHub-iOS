@@ -129,17 +129,9 @@
 - (NSURLSessionDataTask *)DELETE:(NSString *)URLString
                       parameters:(NSDictionary *)parameters
                          success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
-{
-    // add DELETE
-    NSMutableDictionary *ext_parameters = [NSMutableDictionary dictionary];
-    [ext_parameters setObject:@"delete" forKey:@"_method"];
+                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
     
-    if (parameters) {
-        [ext_parameters addEntriesFromDictionary:parameters];
-    }
-    
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:ext_parameters error:nil];
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"DELETE" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil error:nil];
     
     __block NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
         if (error) {
