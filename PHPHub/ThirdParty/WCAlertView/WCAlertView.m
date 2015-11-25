@@ -47,15 +47,13 @@
 
 static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
 
-+ (void)setDefaultStyle:(WCAlertViewStyle)style
-{
++ (void)setDefaultStyle:(WCAlertViewStyle)style {
     
     kDefaultAlertStyle = style;
     
 }
 
-+ (id)showAlertWithTitle:(NSString *)title message:(NSString *)message customizationBlock:(void (^)(WCAlertView *alertView))customization completionBlock:(void (^)(NSUInteger buttonIndex, WCAlertView *alertView))block cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...
-{
++ (id)showAlertWithTitle:(NSString *)title message:(NSString *)message customizationBlock:(void (^)(WCAlertView *alertView))customization completionBlock:(void (^)(NSUInteger buttonIndex, WCAlertView *alertView))block cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
 
     WCAlertView *alertView = [[self alloc] initWithTitle:title message:message completionBlock:block cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
     
@@ -82,8 +80,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     
 }
 
-- (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...
-{
+- (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil]) {
         
         [self setDefaultStyle];
@@ -131,16 +128,14 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
 	
 }
 
-- (void)setStyle:(WCAlertViewStyle)style
-{
+- (void)setStyle:(WCAlertViewStyle)style {
     if (style != _style) {
         _style = style;
         [self customizeAlertViewStyle:style];
     }
 }
 
-- (void)setDefaultStyle
-{
+- (void)setDefaultStyle {
     self.buttonShadowBlur = 2.0f;
     self.buttonShadowOffset = CGSizeMake(0.5f, 0.5f);
     self.labelShadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -155,8 +150,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     
 }
 
-- (void)customizeAlertViewStyle:(WCAlertViewStyle)style
-{
+- (void)customizeAlertViewStyle:(WCAlertViewStyle)style {
     switch (style) {
         case WCAlertViewStyleDefault:
             break;
@@ -184,8 +178,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     }
 }
 
-- (void)violetAlertHetched:(BOOL)hatched
-{
+- (void)violetAlertHetched:(BOOL)hatched {
     self.labelTextColor = [UIColor whiteColor];
     self.labelShadowColor = [UIColor colorWithRed:0.004 green:0.003 blue:0.006 alpha:0.700];
     
@@ -214,8 +207,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     }
 }
 
-- (void)whiteAlertHatched:(BOOL)hatched
-{
+- (void)whiteAlertHatched:(BOOL)hatched {
     self.labelTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
     self.labelShadowColor = [UIColor whiteColor];
     
@@ -235,8 +227,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     }
 }
 
-- (void)blackAlertHatched:(BOOL)hatched
-{
+- (void)blackAlertHatched:(BOOL)hatched {
     self.labelTextColor = [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1.0f];
     self.labelShadowColor = [UIColor blackColor];
     self.labelShadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -261,8 +252,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
 
 #pragma mark -
 #pragma mark UIView Overrides
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
     
     if (self.style) {
@@ -291,8 +281,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     
 }
 
-- (void)drawRect:(CGRect)rect 
-{
+- (void)drawRect:(CGRect)rect  {
     [super drawRect:rect];
     
     if (self.style) {

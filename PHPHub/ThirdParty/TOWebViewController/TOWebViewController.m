@@ -92,8 +92,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 @interface TOWebViewController () <UIActionSheetDelegate,
                                    UIPopoverControllerDelegate,
                                    MFMailComposeViewControllerDelegate,
-                                   MFMessageComposeViewControllerDelegate>
-{
+                                   MFMessageComposeViewControllerDelegate> {
     
     //The state of the UIWebView's scroll view before the rotation animation has started
     struct {
@@ -211,37 +210,32 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 #pragma mark Class Implementation
 @implementation TOWebViewController
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder])
         [self setup];
 
     return self;
 }
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
         [self setup];
   
     return self;
 }
 
-- (instancetype)initWithURL:(NSURL *)url
-{
+- (instancetype)initWithURL:(NSURL *)url {
     if (self = [super init])
         _url = [self cleanURL:url];
     
     return self;
 }
 
-- (instancetype)initWithURLString:(NSString *)urlString
-{
+- (instancetype)initWithURLString:(NSString *)urlString {
     return [self initWithURL:[NSURL URLWithString:urlString]];
 }
 
-- (NSURL *)cleanURL:(NSURL *)url
-{
+- (NSURL *)cleanURL:(NSURL *)url {
     //If no URL scheme was supplied, defer back to HTTP.
     if (url.scheme.length == 0) {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", [url absoluteString]]];
@@ -250,8 +244,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return url;
 }
 
-- (void)setup
-{
+- (void)setup {
     //Direct ivar reference since we don't want to trigger their actions yet
     _showActionButton = YES;
     _showDoneButton   = YES;
@@ -270,8 +263,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
                                           timeoutInterval:60.0];
 }
 
-- (void)loadView
-{
+- (void)loadView {
     //Create the all-encompassing container view
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 #pragma clang diagnostic push
@@ -337,8 +329,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         [self setUpNavigationButtons];
 }
 
-- (void)setUpNavigationButtons
-{
+- (void)setUpNavigationButtons {
     //set up the buttons for the navigation bar
     CGRect buttonFrame = CGRectZero; buttonFrame.size = NAVIGATION_BUTTON_SIZE;
     
@@ -387,8 +378,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (UIView *)containerViewWithNavigationButtons
-{
+- (UIView *)containerViewWithNavigationButtons {
     CGRect buttonFrame = CGRectZero;
     buttonFrame.size = NAVIGATION_BUTTON_SIZE;
 
@@ -427,8 +417,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return iconsContainerView;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     if (self.navigationController) {
@@ -492,8 +481,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self.actionButton      addTarget:self action:@selector(actionButtonTapped:)        forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     //see if we need to show the toolbar
@@ -517,8 +505,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     self.gradientLayer.frame = self.view.bounds;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     //start loading the initial page
     if (self.url && self.webView.request == nil)
@@ -533,8 +520,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     if (self.beingPresentedModally == NO) {
@@ -543,41 +529,35 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     if (self.webViewRotationSnapshot)
         return NO;
     
     return YES;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     if (self.webViewRotationSnapshot)
         return NO;
     
     return YES;
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     //get the web view ready for rotation
     [self setUpWebViewForRotationToOrientation:toInterfaceOrientation withDuration:duration];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     //reset the gradient layer's frame to match the new bounds
     self.gradientLayer.frame = self.view.bounds;
     
@@ -593,15 +573,13 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self animateWebViewRotationToOrientation:toInterfaceOrientation withDuration:duration];
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self restoreWebViewFromRotationFromOrientation:fromInterfaceOrientation];
 }
 
 #pragma mark -
 #pragma mark State Tracking
-- (BOOL)beingPresentedModally
-{
+- (BOOL)beingPresentedModally {
     // Check if we have a parent navigation controller, it's being presented modally,
     // and if it is, that we are its root view controller
     if (self.navigationController && self.navigationController.presentingViewController)
@@ -612,8 +590,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return NO;
 }
 
-- (BOOL)onTopOfNavigationControllerStack
-{
+- (BOOL)onTopOfNavigationControllerStack {
     if (self.navigationController == nil)
         return NO;
     
@@ -625,8 +602,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark Manual Property Accessors
-- (void)setUrl:(NSURL *)url
-{
+- (void)setUrl:(NSURL *)url {
     if (self.url == url)
         return;
     
@@ -639,8 +615,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self.webView loadRequest:self.urlRequest];
 }
 
-- (void)setLoadingBarTintColor:(UIColor *)loadingBarTintColor
-{
+- (void)setLoadingBarTintColor:(UIColor *)loadingBarTintColor {
     if (loadingBarTintColor == self.loadingBarTintColor)
         return;
     
@@ -652,16 +627,14 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         self.loadingBarView.tintColor = self.loadingBarTintColor;
 }
 
-- (UINavigationBar *)navigationBar
-{
+- (UINavigationBar *)navigationBar {
     if (self.navigationController)
         return self.navigationController.navigationBar;
     
     return nil;
 }
 
-- (UIToolbar *)toolbar
-{
+- (UIToolbar *)toolbar {
     if (IPAD)
         return nil;
     
@@ -671,8 +644,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return nil;
 }
 
-- (void)setNavigationButtonsHidden:(BOOL)navigationButtonsHidden
-{
+- (void)setNavigationButtonsHidden:(BOOL)navigationButtonsHidden {
     if (navigationButtonsHidden == _navigationButtonsHidden)
         return;
     
@@ -709,8 +681,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)setButtonTintColor:(UIColor *)buttonTintColor
-{
+- (void)setButtonTintColor:(UIColor *)buttonTintColor {
     if (buttonTintColor == _buttonTintColor)
         return;
     
@@ -728,8 +699,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)setButtonBevelOpacity:(CGFloat)buttonBevelOpacity
-{
+- (void)setButtonBevelOpacity:(CGFloat)buttonBevelOpacity {
     if (buttonBevelOpacity == _buttonBevelOpacity)
         return;
     
@@ -744,8 +714,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark WebView Delegate
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     BOOL shouldStart = YES;
     
     //If a request handler has been set, check to see if we should go ahead
@@ -781,8 +750,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return shouldStart;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     //increment the number of load requests started
     _loadingProgressState.loadingCount++;
     
@@ -796,8 +764,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self refreshButtonsState];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self handleLoadRequestCompletion];
     [self refreshButtonsState];
 
@@ -806,8 +773,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         self.title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     self.loadingBarView.alpha = 0.0f;
     [self handleLoadRequestCompletion];
     [self refreshButtonsState];
@@ -816,20 +782,17 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark Button Callbacks
-- (void)backButtonTapped:(id)sender
-{
+- (void)backButtonTapped:(id)sender {
     [self.webView goBack];
     [self refreshButtonsState];
 }
 
-- (void)forwardButtonTapped:(id)sender
-{
+- (void)forwardButtonTapped:(id)sender {
     [self.webView goForward];
     [self refreshButtonsState];
 }
 
-- (void)reloadStopButtonTapped:(id)sender
-{
+- (void)reloadStopButtonTapped:(id)sender {
     //regardless of reloading, or stopping, halt the webview
     [self.webView stopLoading];
     
@@ -855,15 +818,13 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self refreshButtonsState];
 }
 
-- (void)doneButtonTapped:(id)sender
-{
+- (void)doneButtonTapped:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:self.modalCompletionHandler];
 }
 
 #pragma mark -
 #pragma mark Action Item Event Handlers
-- (void)actionButtonTapped:(id)sender
-{
+- (void)actionButtonTapped:(id)sender {
     // If we're on iOS 6 or above, we can use the super-duper activity view controller :)
     if (NSClassFromString(@"UIPresentationController")) {
         NSArray *browserActivities = @[[TOActivitySafari new], [TOActivityChrome new]];
@@ -959,8 +920,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     //Handle whichever button was tapped
     switch (buttonIndex) {
         case 0:
@@ -1001,20 +961,17 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
     //Once the popover controller is dismissed, we can release our own reference to it
     self.sharingPopoverController = nil;
 }
 
-- (void)copyURLToClipboard
-{
+- (void)copyURLToClipboard {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.url.absoluteString;
 }
 
-- (void)openInBrowser
-{
+- (void)openInBrowser {
     BOOL chromeIsInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]];
     NSURL *inputURL = self.webView.request.URL;
     
@@ -1053,34 +1010,29 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [[UIApplication sharedApplication] openURL:inputURL];
 }
 
-- (void)openMailDialog
-{
+- (void)openMailDialog {
     MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
     mailViewController.mailComposeDelegate = self;
     [mailViewController setMessageBody:[self.url absoluteString] isHTML:NO];
     [self presentViewController:mailViewController animated:YES completion:nil];
 }
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)openMessageDialog
-{
+- (void)openMessageDialog {
     MFMessageComposeViewController *messageViewController = [[MFMessageComposeViewController alloc] init];
     messageViewController.messageComposeDelegate = self;
     [messageViewController setBody:[self.url absoluteString]];
     [self presentViewController:messageViewController animated:YES completion:nil];
 }
 
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
-{
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)openTwitterDialog
-{
+- (void)openTwitterDialog {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     TWTweetComposeViewController *tweetComposer = [[TWTweetComposeViewController alloc] init];
@@ -1092,14 +1044,12 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark Page Load Progress Tracking Handlers
-- (void)resetLoadProgress
-{
+- (void)resetLoadProgress {
     memset(&_loadingProgressState, 0, sizeof(_loadingProgressState));
     [self setLoadingProgress:0.0f];
 }
 
-- (void)startLoadProgress
-{
+- (void)startLoadProgress {
     if (self.webView.isLoading == NO)
         return;
     
@@ -1137,8 +1087,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)incrementLoadProgress
-{
+- (void)incrementLoadProgress {
     float progress          = _loadingProgressState.loadingProgress;
     float maxProgress       = _loadingProgressState.interactive ? kAfterInteractiveMaxProgressValue : kBeforeInteractiveMaxProgressValue;
     float remainingPercent  = (float)_loadingProgressState.loadingCount / (float)_loadingProgressState.maxLoadCount;
@@ -1148,8 +1097,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [self setLoadingProgress:progress];
 }
 
-- (void)finishLoadProgress
-{
+- (void)finishLoadProgress {
     //reset the load progress
     [self refreshButtonsState];
     [self setLoadingProgress:1.0f];
@@ -1162,8 +1110,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         [self.reloadStopButton setImage:self.reloadIcon forState:UIControlStateNormal];
 }
 
-- (void)setLoadingProgress:(CGFloat)loadingProgress
-{
+- (void)setLoadingProgress:(CGFloat)loadingProgress {
     // progress should be incremental only
     if (loadingProgress > _loadingProgressState.loadingProgress)
     {
@@ -1200,8 +1147,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)handleLoadRequestCompletion
-{
+- (void)handleLoadRequestCompletion {
     //decrement the number of concurrent requests
     _loadingProgressState.loadingCount--;
     
@@ -1248,8 +1194,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark Button State Handling
-- (void)refreshButtonsState
-{
+- (void)refreshButtonsState {
     //update the state for the back button
     if (self.webView.canGoBack)
         [self.backButton setEnabled:YES];
@@ -1273,8 +1218,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark UIWebView Attrbutes
-- (UIView *)webViewContentView
-{
+- (UIView *)webViewContentView {
     //loop through the views inside the webview, and pull out the one that renders the HTML content
     for (UIView *view in self.webView.scrollView.subviews)
     {
@@ -1285,8 +1229,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return nil;
 }
 
-- (BOOL)webViewPageWidthIsDynamic
-{
+- (BOOL)webViewPageWidthIsDynamic {
     //A bit of a crazy JavaScript that scans the HTML for a <meta name="viewport"> tag and retrieves its contents
     NSString *metaDataQuery =   @"(function() {"
                                 @"var metaTags = document.getElementsByTagName('meta');"
@@ -1323,8 +1266,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     return NO;
 }
 
-- (UIColor *)webViewPageBackgroundColor
-{
+- (UIColor *)webViewPageBackgroundColor {
     //Pull the current background colour from the web view
     NSString *rgbString = [self.webView stringByEvaluatingJavaScriptFromString:@"window.getComputedStyle(document.body,null).getPropertyValue('background-color');"];
     
@@ -1366,8 +1308,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 
 #pragma mark -
 #pragma mark UIWebView Interface Rotation Handler
-- (CGRect)rectForVisibleRegionOfWebViewAnimatingToOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
+- (CGRect)rectForVisibleRegionOfWebViewAnimatingToOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     CGRect  rect            = CGRectZero;
     CGPoint contentOffset   = self.webView.scrollView.contentOffset;
     CGSize  webViewSize     = self.webView.bounds.size;
@@ -1459,8 +1400,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 }
 
 /* Called outside of the animation block. All of the views are currently in their 'before' state. */
-- (void)setUpWebViewForRotationToOrientation:(UIInterfaceOrientation)toOrientation withDuration:(NSTimeInterval)duration
-{
+- (void)setUpWebViewForRotationToOrientation:(UIInterfaceOrientation)toOrientation withDuration:(NSTimeInterval)duration {
     // form sheet style controllers' bounds don't change, so none of this is necessary
     if (IPAD && self.modalPresentationStyle == UIModalPresentationFormSheet)
         return;
@@ -1601,8 +1541,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 }
 
 /* Called within the animation block. All views will be set to their 'destination' state. */
-- (void)animateWebViewRotationToOrientation:(UIInterfaceOrientation)toOrientation withDuration:(NSTimeInterval)duration
-{
+- (void)animateWebViewRotationToOrientation:(UIInterfaceOrientation)toOrientation withDuration:(NSTimeInterval)duration {
     /// form sheet style controllers' bounds don't change, so implemeting this is rather pointless
     if (IPAD && self.modalPresentationStyle == UIModalPresentationFormSheet)
         return;
@@ -1673,8 +1612,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     self.webViewRotationSnapshot.frame = frame;
 }
 
-- (void)restoreWebViewFromRotationFromOrientation:(UIInterfaceOrientation)fromOrientation
-{
+- (void)restoreWebViewFromRotationFromOrientation:(UIInterfaceOrientation)fromOrientation {
     /// form sheet style controllers' bounds don't change, so implemeting this isn't required
     if (IPAD && self.modalPresentationStyle == UIModalPresentationFormSheet)
         return;
@@ -1715,8 +1653,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
 }
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     //when the rotation and animation is complete, FINALLY unhide the web view
     self.webView.hidden = NO;
 

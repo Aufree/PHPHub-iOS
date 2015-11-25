@@ -45,24 +45,20 @@ NSString *const TOActivityTypeChrome = @"au.com.timoliver.TOActivityTypeChrome";
 @implementation TOActivityChrome
 
 #pragma mark - Activity Display Properties -
-- (NSString *)activityType
-{
+- (NSString *)activityType {
     return TOActivityTypeChrome;
 }
 
-- (NSString *)activityTitle
-{
+- (NSString *)activityTitle {
     return NSLocalizedStringFromTable(@"Chrome", @"TOWebViewControllerLocalizable", @"Open in Chrome Action");
 }
 
-- (UIImage *)activityImage
-{
+- (UIImage *)activityImage {
     return [TOActivityChrome sharedActivityImage];
 }
 
 #pragma mark - Activity Action Handlers -
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
+- (void)prepareWithActivityItems:(NSArray *)activityItems {
     //Grab the first URL in the list
     for (id item in activityItems) {
         if ([item isKindOfClass:[NSURL class]]) {
@@ -72,8 +68,7 @@ NSString *const TOActivityTypeChrome = @"au.com.timoliver.TOActivityTypeChrome";
     }
 }
 
-- (void)performActivity
-{
+- (void)performActivity {
     if (self.url == nil) {
         [self activityDidFinish:NO];
         return;
@@ -109,8 +104,7 @@ NSString *const TOActivityTypeChrome = @"au.com.timoliver.TOActivityTypeChrome";
     [self activityDidFinish:NO];
 }
 
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
+- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]] == NO)
         return NO;
     
@@ -127,8 +121,7 @@ NSString *const TOActivityTypeChrome = @"au.com.timoliver.TOActivityTypeChrome";
 }
 
 #pragma mark - Image Generation -
-+ (UIImage *)sharedActivityImage
-{
++ (UIImage *)sharedActivityImage {
     static UIImage *sharedActivityImage = nil;
     static dispatch_once_t onceToken;
     

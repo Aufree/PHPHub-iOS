@@ -45,24 +45,20 @@ NSString *const TOActivityTypeSafari = @"au.com.timoliver.TOActivityTypeSafari";
 @implementation TOActivitySafari
 
 #pragma mark - Activity Display Properties -
-- (NSString *)activityType
-{
+- (NSString *)activityType {
     return TOActivityTypeSafari;
 }
 
-- (NSString *)activityTitle
-{
+- (NSString *)activityTitle {
     return NSLocalizedStringFromTable(@"Safari", @"TOWebViewControllerLocalizable", @"Open in Safari Action");
 }
 
-- (UIImage *)activityImage
-{
+- (UIImage *)activityImage {
     return [TOActivitySafari sharedActivityImage];
 }
 
 #pragma mark - Activity Action Handlers -
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
+- (void)prepareWithActivityItems:(NSArray *)activityItems {
     //Grab the first URL in the list
     for (id item in activityItems) {
         if ([item isKindOfClass:[NSURL class]]) {
@@ -72,8 +68,7 @@ NSString *const TOActivityTypeSafari = @"au.com.timoliver.TOActivityTypeSafari";
     }
 }
 
-- (void)performActivity
-{
+- (void)performActivity {
     if (self.url == nil) {
         [self activityDidFinish:NO];
         return;
@@ -83,8 +78,7 @@ NSString *const TOActivityTypeSafari = @"au.com.timoliver.TOActivityTypeSafari";
     [self activityDidFinish:YES];
 }
 
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
+- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
     //Check to see if there is an NSURL in the provided items
     BOOL containsURL = NO;
     for (id item in activityItems) {
@@ -98,8 +92,7 @@ NSString *const TOActivityTypeSafari = @"au.com.timoliver.TOActivityTypeSafari";
 }
 
 #pragma mark - Image Generation -
-+ (UIImage *)sharedActivityImage
-{
++ (UIImage *)sharedActivityImage {
     static UIImage *sharedActivityImage = nil;
     static dispatch_once_t onceToken;
     

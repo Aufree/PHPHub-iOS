@@ -99,8 +99,7 @@
     self.currentIndex = index;
 }
 
-- (TitlePagerView *)pagingTitleView
-{
+- (TitlePagerView *)pagingTitleView {
     if (!_pagingTitleView) {
         self.pagingTitleView = [[TitlePagerView alloc] init];
         self.pagingTitleView.frame = CGRectMake(0, 0, 0, 40);
@@ -138,8 +137,7 @@
     }
 }
 
-- (void)setCurrentIndex:(NSInteger)index
-{
+- (void)setCurrentIndex:(NSInteger)index {
     _currentIndex = index;
     [self.pagingTitleView adjustTitleViewByIndex:index];
 }

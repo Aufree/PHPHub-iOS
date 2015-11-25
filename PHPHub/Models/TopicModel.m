@@ -10,8 +10,7 @@
 
 @implementation TopicModel
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _api = [[TopicApi alloc] init];
@@ -19,8 +18,7 @@
     return self;
 }
 
-- (id)getAllTopic:(BaseResultBlock)block atPage:(NSInteger)pageIndex
-{
+- (id)getAllTopic:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
     return [_api getAll:block atPage:pageIndex];
 }
 

@@ -11,8 +11,7 @@
 
 @implementation UserModel
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _api = [[UserApi alloc] init];

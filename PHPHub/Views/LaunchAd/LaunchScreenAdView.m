@@ -33,8 +33,7 @@
     return self;
 }
 
-- (void)setup
-{
+- (void)setup {
     [self addSubview:self.imageView];
     [self addSubview:self.durationTimeLabel];
     [self addSubview:self.skipButton];
@@ -81,8 +80,7 @@
 
 #pragma mark - Animations
 
-- (void)startAnimateWithImageLink:(NSURL *)url
-{
+- (void)startAnimateWithImageLink:(NSURL *)url {
     [self.imageView sd_setImageWithURL:url];
     self.updateDurationLabelTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateDurationTimeLabel) userInfo:nil repeats:YES];
     _currentTime = self.transitionDuration;

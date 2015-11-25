@@ -12,19 +12,18 @@
 #pragma mark - Shared Instance
 
 + (instancetype)sharedInstance {
-    static BaseDBManager *_sharedOMDBManager = nil;
+    static BaseDBManager *_sharedDBManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedOMDBManager = [[BaseDBManager alloc] init];
+        _sharedDBManager = [[BaseDBManager alloc] init];
     });
     
-    return _sharedOMDBManager;
+    return _sharedDBManager;
 }
 
 #pragma mark - Initialize
 
-- (id) init
-{
+- (id)init {
     self = [super init];
     if (self) {
         BOOL result = [self repareDatabase:nil];
@@ -37,8 +36,7 @@
     return self;
 }
 
-- (BOOL)repareDatabase:(NSError *__autoreleasing *)error
-{
+- (BOOL)repareDatabase:(NSError *__autoreleasing *)error {
     // Grab the Documents folder
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -76,15 +74,13 @@
     return YES;
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
     // Read he about "When to close SQLite database (using FMDB)":
     // - http://stackoverflow.com/questions/15720272/when-to-close-sqlite-database-using-fmdb
     [self.db close];
 }
 
-- (void)debugFMDBMigrationManager:(FMDBMigrationManager *)manager
-{
+- (void)debugFMDBMigrationManager:(FMDBMigrationManager *)manager {
     NSLog(@"Has `schema_migrations` table?: %@", manager.hasMigrationsTable ? @"YES" : @"NO");
     NSLog(@"Origin Version: %llu", manager.originVersion);
     NSLog(@"Current version: %llu", manager.currentVersion);
@@ -95,8 +91,7 @@
 
 #pragma mark - Public Functions
 
-+ (NSArray *)columnValuesForUpdate:(MTLModel<MTLFMDBSerializing> *)model
-{
++ (NSArray *)columnValuesForUpdate:(MTLModel<MTLFMDBSerializing> *)model {
     NSArray *columnValues = [MTLFMDBAdapter columnValues:model];
     NSArray *keysValues = [MTLFMDBAdapter primaryKeysValues:model];
     
@@ -107,8 +102,7 @@
     return params;
 }
 
-+ (BOOL)isExists:(MTLModel<MTLFMDBSerializing> *)model
-{
++ (BOOL)isExists:(MTLModel<MTLFMDBSerializing> *)model {
     if (!model) return NO;
     
     BOOL isExists = NO;
@@ -124,8 +118,7 @@
     return isExists;
 }
 
-+ (void)insertOnDuplicateUpdate:(MTLModel<MTLFMDBSerializing> *)entity
-{
++ (void)insertOnDuplicateUpdate:(MTLModel<MTLFMDBSerializing> *)entity {
     if (!entity) return;
     
     if ([self.class isExists:entity])
@@ -143,8 +136,7 @@
     }
 }
 
-+ (id)findById:(NSString *)primary_id withClass:(Class)objectClass;
-{
++ (id)findById:(NSString *)primary_id withClass:(Class)objectClass; {
     if (!primary_id) return nil;
     
     NSError *error = nil;
@@ -156,8 +148,7 @@
     return nil;
 }
 
-+ (id)findUsingPrimaryKeys:(MTLModel<MTLFMDBSerializing> *)model
-{
++ (id)findUsingPrimaryKeys:(MTLModel<MTLFMDBSerializing> *)model {
     NSError *error = nil;
     NSString *query = [NSString stringWithFormat:@"select * from %@ where %@", [model.class FMDBTableName], [MTLFMDBAdapter whereStatementForModel:model]];
     NSArray *params = [MTLFMDBAdapter primaryKeysValues:model];
@@ -168,8 +159,7 @@
     return nil;
 }
 
-+ (NSArray *)findByColumn:(NSString *)column columnValue:(NSString *)value withClass:(Class)objectClass
-{
++ (NSArray *)findByColumn:(NSString *)column columnValue:(NSString *)value withClass:(Class)objectClass {
     if (!column || !value) return nil;
     
     NSError *error = nil;
@@ -183,8 +173,7 @@
     return result;
 }
 
-+ (NSArray *)findRandomByDictionary:(NSDictionary *)columnDictionary withClass:(Class)objectClass
-{
++ (NSArray *)findRandomByDictionary:(NSDictionary *)columnDictionary withClass:(Class)objectClass {
     if (!columnDictionary) return nil;
     
     NSError *error = nil;
@@ -208,8 +197,7 @@
     return result;
 }
 
-+ (id)updateDate:(NSDictionary *)columnDictionary withClass:(Class)objectClass
-{
++ (id)updateDate:(NSDictionary *)columnDictionary withClass:(Class)objectClass {
     if (!columnDictionary) return nil;
     
     NSMutableArray *whereArray = [NSMutableArray array];
@@ -229,8 +217,7 @@
     return nil;
 }
 
-+ (NSNumber *)getDataCount:(Class)objectClass
-{
++ (NSNumber *)getDataCount:(Class)objectClass {
     NSNumber *count = 0;
     
     NSString * query = [NSString stringWithFormat:@"SELECT count(*) as 'count' FROM %@", [objectClass FMDBTableName]];
@@ -244,8 +231,7 @@
     return count;
 }
 
-+ (NSNumber *)getMaxColumnIdWithClass:(Class)objectClass column:(NSString *)column
-{
++ (NSNumber *)getMaxColumnIdWithClass:(Class)objectClass column:(NSString *)column {
     NSNumber *maxId = 0;
     
     NSString * query = [NSString stringWithFormat:@"SELECT MAX(%@) as 'maxId' FROM %@", column, [objectClass FMDBTableName]];

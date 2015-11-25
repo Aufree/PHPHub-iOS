@@ -10,8 +10,7 @@
 
 @implementation UserDBManager
 
-+ (UserEntity *)findByUserId:(NSNumber *)userId
-{
++ (UserEntity *)findByUserId:(NSNumber *)userId {
     UserEntity *tmpEntity = [[UserEntity alloc] init];
     tmpEntity.userId = userId;
     return [UserDBManager findUsingPrimaryKeys:tmpEntity];

@@ -16,8 +16,7 @@ NSString * const kAFOAuthLoginTokenCredentialsGrantType = @"login_token";
                                                        loginToken:(NSString *)loginToken
                                                           scope:(NSString *)scope
                                                         success:(void (^)(AFOAuthCredential *credential))success
-                                                        failure:(void (^)(NSError *error))failure
-{
+                                                        failure:(void (^)(NSError *error))failure {
     NSParameterAssert(username);
     NSParameterAssert(scope);
     

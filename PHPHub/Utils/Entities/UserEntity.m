@@ -33,8 +33,7 @@
              };
 }
 
-+ (NSArray *)FMDBPrimaryKeys
-{
++ (NSArray *)FMDBPrimaryKeys {
     return @[@"id"];
 }
 
@@ -44,8 +43,7 @@
 
 #pragma mark - MTLFMDBAdapter
 
-+ (NSDictionary *)FMDBColumnsByPropertyKey
-{
++ (NSDictionary *)FMDBColumnsByPropertyKey {
     return @{
              @"userId" : @"id",
              @"username" : @"name",

@@ -25,8 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, WCAlertViewStyle)
-{
+typedef NS_ENUM(NSInteger, WCAlertViewStyle) {
     WCAlertViewStyleDefault = 0,
     WCAlertViewStyleWhite,
     WCAlertViewStyleWhiteHatched,

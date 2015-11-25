@@ -53,8 +53,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
 @implementation UIImage (TOWebViewControllerIcons)
 
 #pragma mark - Private Methods -
-+ (UIColor *)fillColorFromAttributes:(NSDictionary *)attributes
-{
++ (UIColor *)fillColorFromAttributes:(NSDictionary *)attributes {
     UIColor *fillColor = attributes[TOWebViewControllerButtonTintColor];
     if (fillColor == nil) {
         if (IPAD)
@@ -66,8 +65,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return fillColor;
 }
 
-+ (CGFloat)bevelOpacityFromAttributes:(NSDictionary *)attributes
-{
++ (CGFloat)bevelOpacityFromAttributes:(NSDictionary *)attributes {
     NSNumber *opacityNumber = attributes[TOWebViewControllerButtonBevelOpacity];
     if (opacityNumber == nil) {
         if (IPAD)
@@ -79,8 +77,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return opacityNumber.floatValue;
 }
 
-+ (void)drawBevelFromFillColor:(UIColor *)fillColor opacity:(CGFloat)opacity
-{
++ (void)drawBevelFromFillColor:(UIColor *)fillColor opacity:(CGFloat)opacity {
     CGFloat hue = 0.0f, saturation = 0.0f, brightness = 0.0f, alpha = 0.0f;
     [fillColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
     
@@ -108,8 +105,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
 }
 
 #pragma mark - Navigation Buttons -
-+ (instancetype)TOWebViewControllerIcon_backButtonWithAttributes:(NSDictionary *)attributes
-{
++ (instancetype)TOWebViewControllerIcon_backButtonWithAttributes:(NSDictionary *)attributes {
     UIImage *backButtonImage = nil;
     if (MINIMAL_UI) {
         UIGraphicsBeginImageContextWithOptions((CGSize){12,21}, NO, [[UIScreen mainScreen] scale]);
@@ -163,8 +159,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return backButtonImage;
 }
 
-+ (instancetype)TOWebViewControllerIcon_forwardButtonWithAttributes:(NSDictionary *)attributes
-{
++ (instancetype)TOWebViewControllerIcon_forwardButtonWithAttributes:(NSDictionary *)attributes {
     UIImage *forwardButtonImage = nil;
     if (MINIMAL_UI) {
         UIGraphicsBeginImageContextWithOptions((CGSize){12,21}, NO, [[UIScreen mainScreen] scale]);
@@ -218,8 +213,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return forwardButtonImage;
 }
 
-+ (instancetype)TOWebViewControllerIcon_refreshButtonWithAttributes:(NSDictionary *)attributes
-{
++ (instancetype)TOWebViewControllerIcon_refreshButtonWithAttributes:(NSDictionary *)attributes {
     UIImage *refreshButtonImage = nil;
     if (MINIMAL_UI) {
         UIGraphicsBeginImageContextWithOptions((CGSize){19,22}, NO, [[UIScreen mainScreen] scale]);
@@ -289,8 +283,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return refreshButtonImage;
 }
 
-+ (instancetype)TOWebViewControllerIcon_stopButtonWithAttributes:(NSDictionary *)attributes
-{
++ (instancetype)TOWebViewControllerIcon_stopButtonWithAttributes:(NSDictionary *)attributes {
     UIImage *stopButtonImage = nil;
     if (MINIMAL_UI) {
         UIGraphicsBeginImageContextWithOptions((CGSize){19,19}, NO, [[UIScreen mainScreen] scale]);
@@ -359,8 +352,7 @@ const NSString *TOWebViewControllerButtonBevelOpacity    = @"TOWebViewController
     return stopButtonImage;
 }
 
-+ (instancetype)TOWebViewControllerIcon_actionButtonWithAttributes:(NSDictionary *)attributes
-{
++ (instancetype)TOWebViewControllerIcon_actionButtonWithAttributes:(NSDictionary *)attributes {
     UIImage *actionButtonImage = nil;
     if (MINIMAL_UI) {
         UIGraphicsBeginImageContextWithOptions((CGSize){19,30}, NO, [[UIScreen mainScreen] scale]);

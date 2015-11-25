@@ -19,13 +19,11 @@
              };
 }
 
-+ (NSValueTransformer *)fromUserJSONTransformer
-{
++ (NSValueTransformer *)fromUserJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
 }
 
-+ (NSValueTransformer *)topicJSONTransformer
-{
++ (NSValueTransformer *)topicJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[TopicEntity class]];
 }
 @end

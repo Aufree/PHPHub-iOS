@@ -12,8 +12,7 @@
 @implementation BaseApi
 #pragma mark - Share Instance
 
-+ (instancetype)loginTokenGrantInstance
-{
++ (instancetype)loginTokenGrantInstance {
     static BaseApi *_passwordGrantInstance = nil;
     static dispatch_once_t passwordGrantOnceToken;
     dispatch_once(&passwordGrantOnceToken, ^{
@@ -25,8 +24,7 @@
     return _passwordGrantInstance;
 }
 
-+ (instancetype)clientGrantInstance
-{
++ (instancetype)clientGrantInstance {
     static BaseApi *_clientGrantInstance = nil;
     static dispatch_once_t clientGrantOnceToken;
     dispatch_once(&clientGrantOnceToken, ^{
@@ -40,8 +38,7 @@
 
 #pragma mark - Helper
 
-- (void)prepareForCommonRequest
-{
+- (void)prepareForCommonRequest {
     NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
     NSString *buildNumber = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
     self.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -56,15 +53,13 @@
     [self.handler registerNotifications];
 }
 
-- (void)setUpLoginTokenGrantRequest
-{
+- (void)setUpLoginTokenGrantRequest {
     [self.requestSerializer setValue:[AccessTokenHandler getLoginTokenGrantAccessToken]
                   forHTTPHeaderField:@"Authorization"];
     self.handler.grantType = @"login_token";
 }
 
-- (void)setUpClientGrantRequest
-{
+- (void)setUpClientGrantRequest {
     [self.requestSerializer setValue:[AccessTokenHandler getClientGrantAccessTokenFromLocal]
                   forHTTPHeaderField:@"Authorization"];
     self.handler.grantType = @"client_credentials";
@@ -72,22 +67,19 @@
 
 #pragma mark - Abstract Method
 
-- (id)create:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)create:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
-- (id)update:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)update:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
-- (id)upvote:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)upvote:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
@@ -98,8 +90,7 @@
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
                    parameters:(NSDictionary *)parameters
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
-{
+                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
     NSMutableDictionary *ext_parameters = [parameters mutableCopy];
     
     // add PUT

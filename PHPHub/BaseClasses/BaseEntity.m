@@ -9,8 +9,7 @@
 #import "BaseEntity.h"
 
 @implementation BaseEntity
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
@@ -22,13 +21,11 @@
     return [MTLJSONAdapter JSONDictionaryFromModel:self];
 }
 
-+ (NSArray *)transformToArray:(NSArray *)array
-{
++ (NSArray *)transformToArray:(NSArray *)array {
     return [MTLJSONAdapter JSONArrayFromModels:array];
 }
 
-+ (id)entityFromDictionary:(NSDictionary *)data
-{
++ (id)entityFromDictionary:(NSDictionary *)data {
     NSError *error;
     id entity = [MTLJSONAdapter modelOfClass:self.class fromJSONDictionary:data error:&error];
     
@@ -39,8 +36,7 @@
     return entity;
 }
 
-+ (NSArray *)arrayOfEntitiesFromArray:(NSArray *)array
-{
++ (NSArray *)arrayOfEntitiesFromArray:(NSArray *)array {
     NSError *error;
     NSArray *arrayOfEntities = [MTLJSONAdapter modelsOfClass:[self class]
                                                fromJSONArray:array
@@ -54,8 +50,7 @@
 
 #pragma mark - Share Property convertor
 
-+ (NSValueTransformer *)createdAtJSONTransformer
-{
++ (NSValueTransformer *)createdAtJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return [self.dateFormatter dateFromString:str];
     } reverseBlock:^(NSDate *date) {
@@ -63,8 +58,7 @@
     }];
 }
 
-+ (NSValueTransformer *)updatedAtJSONTransformer
-{
++ (NSValueTransformer *)updatedAtJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return [self.dateFormatter dateFromString:str];;
     } reverseBlock:^(NSDate *date) {
@@ -91,8 +85,7 @@
 
 #pragma mark - Helpers
 
-+ (NSDateFormatter *)dateFormatter
-{
++ (NSDateFormatter *)dateFormatter {
     static NSDateFormatter *_formatter;
     
     if (!_formatter) {

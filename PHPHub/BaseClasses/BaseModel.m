@@ -9,27 +9,23 @@
 #import "BaseModel.h"
 
 @implementation BaseModel
-+ (instancetype)Instance
-{
++ (instancetype)Instance {
     return [[self alloc] init];
 }
 
-- (id)create:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)create:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
-- (id)update:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)update:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
-- (id)upvote:(id)entity withBlock:(BaseResultBlock)block
-{
+- (id)upvote:(id)entity withBlock:(BaseResultBlock)block {
     NSLog(@"You must override %@ in a subclass",NSStringFromSelector(_cmd));
     [self doesNotRecognizeSelector:_cmd];
     return nil;

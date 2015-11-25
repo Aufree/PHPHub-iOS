@@ -13,8 +13,7 @@
 // Center Square Image
 + (NSURL *)qiniuImageCenter:(NSString *)link
                  withWidth:(NSString *)width
-                withHeight:(NSString *)height
-{
+                withHeight:(NSString *)height {
     NSString *url = [[NSString alloc] init];
     if([height isEqualToString:@"0"]) {
         url = [NSString stringWithFormat:@"%@?imageView2/2/w/%@/", link, width];
@@ -27,8 +26,7 @@
 + (NSURL *)qiniuImageCenter:(NSString *)link
                  withWidth:(NSString *)width
                 withHeight:(NSString *)height
-                      mode:(NSInteger)model
-{
+                      mode:(NSInteger)model {
     NSString *url = [[NSString alloc] init];
     url = [NSString stringWithFormat:@"%@?imageView/%ld/w/%@/h/%@", link, (long)model, width, height];
     return [NSURL URLWithString:url];

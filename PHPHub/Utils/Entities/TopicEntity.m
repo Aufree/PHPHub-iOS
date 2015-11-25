@@ -10,8 +10,7 @@
 
 @implementation TopicEntity
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"topicId" : @"id",
              @"nodeId" : @"node_id",
@@ -32,18 +31,15 @@
              };
 }
 
-+ (NSValueTransformer *)userJSONTransformer
-{
++ (NSValueTransformer *)userJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
 }
 
-+ (NSValueTransformer *)lastReplyUserJSONTransformer
-{
++ (NSValueTransformer *)lastReplyUserJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
 }
 
-+ (NSValueTransformer *)nodeJSONTransformer
-{
++ (NSValueTransformer *)nodeJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[NodeEntity class]];
 }
 @end

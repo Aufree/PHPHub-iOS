@@ -108,8 +108,7 @@ static CGFloat TitlePagerViewTitleSpace = 50;
     self.pageIndicator.x = pageIndicatorXPosition;
 }
 
-- (void)adjustTitleViewByIndex:(CGFloat)index
-{
+- (void)adjustTitleViewByIndex:(CGFloat)index {
     for (UILabel *textLabel in self.subviews) {
         if ([textLabel isKindOfClass:[UILabel class]]) {
             textLabel.textColor = [UIColor colorWithWhite:0.675 alpha:1.000];

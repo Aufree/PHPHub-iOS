@@ -11,8 +11,7 @@
 
 @implementation CommentEntity
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"commentId" : @"id",
              @"topicId" : @"topic_id",

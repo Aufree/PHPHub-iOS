@@ -25,8 +25,7 @@ static NSString *const kFragmentBegin       = @"#";
 }
 
 - (NSURL *)uq_URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary
-                          withSortedKeys:(BOOL)sortedKeys
-{
+                          withSortedKeys:(BOOL)sortedKeys {
   NSMutableArray *queries = [self.query length] > 0 ? @[self.query].mutableCopy : @[].mutableCopy;
   NSString *dictionaryQuery = [queryDictionary uq_URLQueryStringWithSortedKeys:sortedKeys];
   if (dictionaryQuery) {
@@ -62,8 +61,7 @@ static NSString *const kFragmentBegin       = @"#";
 }
 
 - (NSURL*) uq_URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary
-                                 withSortedKeys:(BOOL) sortedKeys
-{
+                                 withSortedKeys:(BOOL) sortedKeys {
   NSURL *stripped = [self uq_URLByRemovingQuery];
   return [stripped uq_URLByAppendingQueryDictionary:queryDictionary withSortedKeys:sortedKeys];
 }

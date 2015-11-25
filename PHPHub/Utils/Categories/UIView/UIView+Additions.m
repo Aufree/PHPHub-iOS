@@ -147,8 +147,7 @@
     [self setFrame:rect];
 }
 
-- (UIViewController*)viewController
-{
+- (UIViewController*)viewController {
     for (UIView* next = [self superview]; next; next = next.superview)
     {
         UIResponder* nextResponder = [next nextResponder];
