@@ -105,11 +105,11 @@ Go to [PHPHub's official website](https://phphub.org) and Login with GitHub. the
 
 ## Who made this
 
-I'm [Aufree](https://github.com/aufree), A passionate engineer, leading member of the [The EST Group](http://www.est-group.org), and while I am college dropout, I want to make some cool stuff in GitHub, That's why I'm here, you can ping me on [Twitter](https://twitter.com/_Paul_King_) or follow me on [Weibo](http://weibo.com/jinfali) If you find an issue.
+I'm [Aufree](https://github.com/aufree), A passionate engineer, leading member of [The EST Group](http://www.est-group.org), and while I am college dropout, I want to make some cool stuff in GitHub, That's why I'm here, you can ping me on [Twitter](https://twitter.com/_Paul_King_) or follow me on [Weibo](http://weibo.com/jinfali) If you find an issue.
 
 ## Contributers
 
-* [@Aufree](https://github.com/aufree) - A Rails and iOS Developer
+* [@Aufree](https://github.com/aufree) - An engineer love of technology.
 * [@Moneky](https://github.com/zhengjinghua/) - Amazing guy. 
 * [@Summer](https://github.com/summerblue) - The only true man I have always admire, this guy can do anything. 
 
