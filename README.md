@@ -17,6 +17,17 @@ If you have any questions please don't hesitate to ask them in an issue or email
 
 **Our team is EST Group, Check out [this link](http://www.est-group.org) if you want to know more details.**
 
+
+## PHPHub related projects
+
+You can checkout the others open source projects of PHPHub in the following list.
+
+* [PHPHub-Server](https://github.com/NauxLiu/phphub-server) by [@NauxLiu](https://github.com/NauxLiu)
+* [PHPHub-Android](https://github.com/CycloneAxe/phphub-android) by [@Kelvin](https://github.com/CycloneAxe) and [@Xiaoxiaoyu](https://github.com/xiaoxiaoyu)
+* [PHPHub-UI](https://github.com/phphub/phphub-ui) by [@Summer](https://github.com/phphub/phphub-ui) and [@Aufree](https://github.com/aufree)
+* [PHPHub-Web](https://github.com/summerblue/phphub) by [@Summer](https://github.com/phphub/phphub-ui)
+
+
 ## [中文文档](http://aufree.github.io/phphub-ios/)
 
 ## Features
@@ -116,15 +127,6 @@ I'm [Aufree](https://github.com/aufree), A passionate engineer, leading member o
 ## Contributing
 
 Thank you for your interest in contributing to PHPHub for iOS! Your ideas for improving this app are greatly appreciated. The best way to contribute is by submitting a pull request. I'll do my best to respond to you as soon as possible. You can also [submit a new GitHub issue](https://github.com/Aufree/phphub-ios/issues/new) if you find bugs or have questions.
-
-## PHPHub
-
-You can checkout the others open source projects of PHPHub in the following list.
-
-* [PHPHub-Server](https://github.com/NauxLiu/phphub-server) by [@NauxLiu](https://github.com/NauxLiu)
-* [PHPHub-Android](https://github.com/CycloneAxe/phphub-android) by [@Kelvin](https://github.com/CycloneAxe) and [@Xiaoxiaoyu](https://github.com/xiaoxiaoyu)
-* [PHPHub-UI](https://github.com/phphub/phphub-ui) by [@Summer](https://github.com/phphub/phphub-ui) and [@Aufree](https://github.com/aufree)
-* [PHPHub-Web](https://github.com/summerblue/phphub) by [@Summer](https://github.com/phphub/phphub-ui)
 
 ## Third-party Libraries
 
