@@ -78,10 +78,6 @@ Next you'll need to create your own version of environment-specific data. Make a
 
 > $ cp PHPHub/Constants/SecretConstant.example.h PHPHub/Constants/SecretConstant.h
 
-Open `PHPHub.xcworkspace` in Xcode.
-
-**Note: Don't open the .xcodeproj because we use Cocoapods now!**
-
 Now you need to apply for a `Client_id` and a `Client_secret` in [this link](#) (Use in production environments).
 
 Open `SecretConstant.h` and set it up.
@@ -97,6 +93,10 @@ Run the application in the debug mode.
 Select Product -> Scheme -> Edit Schemes -> Info -> Change Build Configuration to Debug mode.
 
 **Important: You shouldn't test your code in production environment!**
+
+Open `PHPHub.xcworkspace` in Xcode.
+
+**Note: Don't open the .xcodeproj because we use Cocoapods now!**
 
 That's it! Have Fun! :beers:
 
