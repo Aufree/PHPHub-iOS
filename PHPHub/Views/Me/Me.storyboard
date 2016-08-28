@@ -120,7 +120,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HnG-9s-Q9R">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voted_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HnG-9s-Q9R">
                                                     <rect key="frame" x="20" y="8" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="BBy-zX-spP"/>
@@ -292,9 +292,9 @@
     </scenes>
     <resources>
         <image name="comment_icon" width="19" height="16"/>
-        <image name="favorite_icon" width="14" height="17"/>
         <image name="ring_icon" width="17" height="19"/>
         <image name="settings_icon" width="18" height="18"/>
         <image name="topic_icon" width="17" height="14"/>
+        <image name="voted_icon" width="19" height="18"/>
     </resources>
 </document>
