@@ -8,18 +8,18 @@
 
 #import "BaseEntity.h"
 #import "UserEntity.h"
-#import "NodeEntity.h"
+#import "CategoryEntity.h"
 
 @interface TopicEntity : BaseEntity
 @property (nonatomic, strong) NSNumber *topicId;
-@property (nonatomic, strong) NSNumber *nodeId;
+@property (nonatomic, strong) NSNumber *categoryId;
 @property (nonatomic, copy) NSString *topicTitle;
 @property (nonatomic, copy) NSString *topicBody;
 @property (nonatomic, strong) NSNumber *topicRepliesCount;
 @property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic, strong) UserEntity *user;
 @property (nonatomic, strong) UserEntity *lastReplyUser;
-@property (nonatomic, strong) NodeEntity *node;
+@property (nonatomic, strong) CategoryEntity *category;
 @property (nonatomic, copy) NSString *topicContentUrl;
 @property (nonatomic, copy) NSString *topicRepliesUrl;
 @property (nonatomic, assign) BOOL favorite;

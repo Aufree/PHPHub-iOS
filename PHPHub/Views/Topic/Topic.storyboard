@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Topic Detail View Controller-->
@@ -97,7 +97,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bko-RW-cAF">
-                                        <rect key="frame" x="0.0" y="52" width="320" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="51" width="320" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="I8k-En-d3a"/>
@@ -135,7 +135,7 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-bu-dMT">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="RoP-Mm-uke"/>
@@ -317,11 +317,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fk9-Uq-2v4"/>
                                 </constraints>
-                                <state key="normal" title="请选择节点">
+                                <state key="normal" title="请选择分类">
                                     <color key="titleColor" red="0.55686274509803924" green="0.65490196078431373" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTouchSelectNodeButton:" destination="Lzc-Og-Ec1" eventType="touchUpInside" id="qaK-i3-HHa"/>
+                                    <action selector="didTouchSelectCategoryButton:" destination="Lzc-Og-Ec1" eventType="touchUpInside" id="gfr-WR-tnP"/>
                                 </connections>
                             </button>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gp9-hd-mFe">
@@ -350,8 +350,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="nodePickView" destination="Gp9-hd-mFe" id="3DC-uG-NMt"/>
-                        <outlet property="selectNodeButton" destination="0Tm-tW-dWh" id="Zy5-3C-YWx"/>
+                        <outlet property="categoryPickView" destination="Gp9-hd-mFe" id="f9G-fS-Zn8"/>
+                        <outlet property="selectCategoryButton" destination="0Tm-tW-dWh" id="EqI-yM-qgR"/>
                         <outlet property="topicContentTextView" destination="OUA-Zb-itQ" id="xm9-qH-2f2"/>
                         <outlet property="topicTitleTF" destination="EkO-ET-nr7" id="2LK-wh-cWe"/>
                     </connections>

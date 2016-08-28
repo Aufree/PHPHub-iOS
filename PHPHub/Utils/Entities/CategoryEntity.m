@@ -1,19 +1,18 @@
 //
-//  NodeEntity.m
+//  CategoryEntity.m
 //  PHPHub
 //
 //  Created by Aufree on 9/23/15.
 //  Copyright (c) 2015 ESTGroup. All rights reserved.
 //
 
-#import "NodeEntity.h"
+#import "CategoryEntity.h"
 
-@implementation NodeEntity
+@implementation CategoryEntity
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"nodeId" : @"id",
-             @"nodeName" : @"name",
-             @"parentNode" : @"parent_node",
+             @"categoryId" : @"id",
+             @"categoryName" : @"name",
              };
 }
 @end

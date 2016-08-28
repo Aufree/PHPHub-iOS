@@ -1,22 +1,22 @@
 //
-//  NodeApi.m
+//  CategoryApi.m
 //  PHPHub
 //
 //  Created by Aufree on 10/10/15.
 //  Copyright © 2015 ESTGroup. All rights reserved.
 //
 
-#import "NodeApi.h"
+#import "CategoryApi.h"
 
-@implementation NodeApi
+@implementation CategoryApi
 
-- (id)getAllTopicNode:(BaseResultBlock)block {
-    NSString *urlPath = @"nodes";
+- (id)getAllTopicCategory:(BaseResultBlock)block {
+    NSString *urlPath = @"categories";
     
     BaseRequestSuccessBlock successBlock = ^(NSURLSessionDataTask * __unused task, id rawData) {
         NSMutableDictionary *data = [(NSDictionary *)rawData mutableCopy];
         if (data[@"data"]) {
-            data[@"entities"] = [NodeEntity arrayOfEntitiesFromArray:data[@"data"]];
+            data[@"entities"] = [CategoryEntity arrayOfEntitiesFromArray:data[@"data"]];
         }
         if (block) block(data, nil);
     };

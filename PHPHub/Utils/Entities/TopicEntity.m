@@ -13,14 +13,14 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"topicId" : @"id",
-             @"nodeId" : @"node_id",
+             @"categoryId" : @"category_id",
              @"topicTitle" : @"title",
              @"topicBody" : @"body",
              @"topicRepliesCount" : @"reply_count",
              @"voteCount" : @"vote_count",
              @"user" : @"user.data",
              @"lastReplyUser" : @"last_reply_user.data",
-             @"node" : @"node.data",
+             @"category" : @"category.data",
              @"topicContentUrl" : @"links.details_web_view",
              @"topicRepliesUrl" : @"links.replies_web_view",
              @"favorite" : @"favorite",
@@ -39,7 +39,7 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UserEntity class]];
 }
 
-+ (NSValueTransformer *)nodeJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[NodeEntity class]];
++ (NSValueTransformer *)categoryJSONTransformer {
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[CategoryEntity class]];
 }
 @end

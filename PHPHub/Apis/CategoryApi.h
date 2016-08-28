@@ -1,5 +1,5 @@
 //
-//  NodeApi.h
+//  CategoryApi.h
 //  PHPHub
 //
 //  Created by Aufree on 10/10/15.
@@ -7,8 +7,8 @@
 //
 
 #import "BaseApi.h"
-#import "NodeEntity.h"
+#import "CategoryEntity.h"
 
-@interface NodeApi : BaseApi
-- (id)getAllTopicNode:(BaseResultBlock)block;
+@interface CategoryApi : BaseApi
+- (id)getAllTopicCategory:(BaseResultBlock)block;
 @end
