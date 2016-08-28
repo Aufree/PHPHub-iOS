@@ -28,15 +28,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
 @property (weak, nonatomic) IBOutlet BaseWebView *topicContentWeb;
 @property (weak, nonatomic) IBOutlet UIView *topicToolBarView;
-@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
-@property (weak, nonatomic) IBOutlet UIButton *watchButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *linkButton;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBarBottomConstraint;
 @property (assign, nonatomic) CGPoint pointNow;
 @property (assign, nonatomic) CGFloat topicToolBarY;
-@property (assign, nonatomic) BOOL isFavoriteTopic;
-@property (assign, nonatomic) BOOL isAttentionTopic;
 @property (copy, nonatomic) NSString *topicURL;
 @end
 
@@ -82,10 +80,6 @@
         if (!error) {
             weakself.topic = data[@"entity"];
             weakself.topicContentWeb.urlString = weakself.topic.topicContentUrl;
-            weakself.isFavoriteTopic = weakself.topic.favorite;
-            weakself.isAttentionTopic = weakself.topic.attention;
-            [weakself updateFavoriteButtonStateWithFavarite];
-            [weakself updateAttentionButtonStateWithAttention];
             [weakself updateVoteStateWithVoteCount:weakself.topic.voteCount.integerValue];
             [weakself updateTopicDetailView];
             if (completion) completion(error);
@@ -114,15 +108,11 @@
                     withTitle:@"更多操作"
             cancelButtonTitle:@"取消"
        destructiveButtonTitle:nil
-            otherButtonTitles:@[@"举报", @"复制链接", @"分享"]
+            otherButtonTitles:@[@"举报"]
                      tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                          if (buttonIndex == 0) {
                              // For stupid apple review
                              [SVProgressHUD showSuccessWithStatus:@"举报成功"];
-                         } else if (buttonIndex == 1) {
-                             [self copyTopicUrlToClipboard];
-                         } else if (buttonIndex == 2) {
-                             [self shareToFriends];
                          }
                      }];
 }
@@ -252,52 +242,12 @@
 
 # pragma mark Topic Action
 
-- (IBAction)didTouchFavoriteButton:(id)sender {
-    [self checkUserPermissionWithAction:^{
-        if (_isFavoriteTopic) {
-            _isFavoriteTopic = NO;
-            [self analyticsWithTopicEvent:@"收藏帖子"];
-            [[TopicModel Instance] cancelFavoriteTopicById:_topic.topicId withBlock:nil];
-        } else {
-            _isFavoriteTopic = YES;
-            [self analyticsWithTopicEvent:@"取消收藏帖子"];
-            [[TopicModel Instance] favoriteTopicById:_topic.topicId withBlock:nil];
-        }
-        
-        [self updateFavoriteButtonStateWithFavarite];
-    }];
+- (IBAction)didTouchShareButton:(id)sender {
+    [self shareToFriends];
 }
 
-- (IBAction)didTouchAttentionButton:(id)sender {
-    [self checkUserPermissionWithAction:^{
-        if (_isAttentionTopic) {
-            _isAttentionTopic = NO;
-            [self analyticsWithTopicEvent:@"取消关注帖子"];
-            [[TopicModel Instance] cancelAttentionTopicById:_topic.topicId withBlock:nil];
-        } else {
-            _isAttentionTopic = YES;
-            [self analyticsWithTopicEvent:@"关注帖子"];
-            [[TopicModel Instance] attentionTopicById:_topic.topicId withBlock:nil];
-        }
-        
-        [self updateAttentionButtonStateWithAttention];
-    }];
-}
-
-- (void)updateFavoriteButtonStateWithFavarite {
-    if (_isFavoriteTopic) {
-        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_blue_icon"] forState:UIControlStateNormal];
-    } else {
-        [_favoriteButton setImage:[UIImage imageNamed:@"favorite_icon"] forState:UIControlStateNormal];
-    }
-}
-
-- (void)updateAttentionButtonStateWithAttention {
-    if (_isAttentionTopic) {
-        [_watchButton setImage:[UIImage imageNamed:@"watch_blue_icon"] forState:UIControlStateNormal];
-    } else {
-        [_watchButton setImage:[UIImage imageNamed:@"watch_icon"] forState:UIControlStateNormal];
-    }
+- (IBAction)didTouchLinkButton:(id)sender {
+    [self copyTopicUrlToClipboard];
 }
 
 - (IBAction)didTouchReplyButton:(id)sender {

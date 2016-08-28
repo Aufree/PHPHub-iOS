@@ -149,20 +149,20 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="HPi-OD-AOl"/>
                                         </constraints>
-                                        <state key="normal" image="favorite_icon">
+                                        <state key="normal" image="share_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTouchFavoriteButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="ai6-Uy-3tb"/>
+                                            <action selector="didTouchShareButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="iFV-xi-Ul7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55W-fj-Utx" customClass="BubbleButton">
                                         <rect key="frame" x="80" y="0.0" width="80" height="44"/>
-                                        <state key="normal" image="watch_icon">
+                                        <state key="normal" image="link_icon">
                                             <color key="titleColor" red="0.64313725490196072" green="0.70196078431372544" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTouchAttentionButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="FDr-3l-jPy"/>
+                                            <action selector="didTouchLinkButton:" destination="1yv-gg-I7m" eventType="touchUpInside" id="Z23-wx-ZZk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqO-iZ-Lup" customClass="BubbleButton">
@@ -226,16 +226,16 @@
                     <connections>
                         <outlet property="avatarImageView" destination="DNm-gd-fek" id="fC5-dN-xtr"/>
                         <outlet property="commentsButton" destination="sIb-ug-ZXN" id="92c-fK-dXd"/>
-                        <outlet property="favoriteButton" destination="QnM-IR-QMe" id="XEl-Eg-qny"/>
                         <outlet property="introductionLabel" destination="BOC-dg-bn7" id="Ods-Me-IkJ"/>
+                        <outlet property="linkButton" destination="55W-fj-Utx" id="CV0-b1-59A"/>
                         <outlet property="replyButton" destination="vqO-iZ-Lup" id="iVk-Kl-1dd"/>
+                        <outlet property="shareButton" destination="QnM-IR-QMe" id="C5l-mk-zDG"/>
                         <outlet property="toolBarBottomConstraint" destination="kCZ-aq-DDW" id="f7N-fC-p2K"/>
                         <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
                         <outlet property="topicToolBarView" destination="a9p-xm-WTv" id="4mp-J9-1Jc"/>
                         <outlet property="userInfoView" destination="jJj-b7-YoS" id="Vpv-cD-WOW"/>
                         <outlet property="usernameLabel" destination="ZD4-Y8-xmR" id="MTY-Iw-USl"/>
                         <outlet property="voteButton" destination="TaI-gv-SCh" id="Hus-0V-dfn"/>
-                        <outlet property="watchButton" destination="55W-fj-Utx" id="PGz-x0-TeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCR-i3-oY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,9 +363,9 @@
     </scenes>
     <resources>
         <image name="comments_icon" width="22" height="18"/>
-        <image name="favorite_icon" width="14" height="17"/>
+        <image name="link_icon" width="21" height="21"/>
         <image name="pencil_icon" width="22" height="23"/>
+        <image name="share_icon" width="18" height="18"/>
         <image name="vote_icon" width="17" height="23"/>
-        <image name="watch_icon" width="23" height="15"/>
     </resources>
 </document>
