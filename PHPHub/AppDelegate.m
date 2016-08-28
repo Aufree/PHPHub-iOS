@@ -95,6 +95,7 @@
     
     // SVProgressHUD customized
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
     
     // Setup SSKeyChain
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
