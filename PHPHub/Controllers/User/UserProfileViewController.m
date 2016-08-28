@@ -64,7 +64,7 @@
     [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = _userEntity.username;
     _realnameLabel.text = [self stringFormatter:_userEntity.realName];
-    _userIntroLabel.text = [self stringFormatter:_userEntity.signature];
+    _userIntroLabel.text = [self stringFormatter:_userEntity.introduction];
     _localLabel.text = [self stringFormatter:_userEntity.city];
     _githubLabel.text = [self stringFormatter:_userEntity.githubName];
     _twitterLabel.text = [self stringFormatter:_userEntity.twitterAccount];

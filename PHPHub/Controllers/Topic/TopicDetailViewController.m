@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *userInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *introductionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
 @property (weak, nonatomic) IBOutlet BaseWebView *topicContentWeb;
 @property (weak, nonatomic) IBOutlet UIView *topicToolBarView;
@@ -149,7 +149,7 @@
     NSURL *url = [BaseHelper qiniuImageCenter:user.avatar withWidth:@"76" withHeight:@"76"];
     [_avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     _usernameLabel.text = user.username;
-    _signatureLabel.text = user.signature;
+    _introductionLabel.text = user.introduction;
     if (_topic.topicRepliesCount.integerValue > 0) {
         NSString *rawRepliesCount = _topic.topicRepliesCount.integerValue > 99 ? @"99+" : _topic.topicRepliesCount.stringValue;
         NSString *repliesCount = [NSString stringWithFormat:@" %@", rawRepliesCount];

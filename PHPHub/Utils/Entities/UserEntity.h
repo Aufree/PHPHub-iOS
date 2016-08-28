@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *company;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *email;
-@property (nonatomic, copy) NSString *signature;
+@property (nonatomic, copy) NSString *introduction;
 @property (nonatomic, copy) NSString *githubName;
 @property (nonatomic, copy) NSString *realName;
 @property (nonatomic, copy) NSString *repliesUrl;

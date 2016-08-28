@@ -227,8 +227,8 @@
                         <outlet property="avatarImageView" destination="DNm-gd-fek" id="fC5-dN-xtr"/>
                         <outlet property="commentsButton" destination="sIb-ug-ZXN" id="92c-fK-dXd"/>
                         <outlet property="favoriteButton" destination="QnM-IR-QMe" id="XEl-Eg-qny"/>
+                        <outlet property="introductionLabel" destination="BOC-dg-bn7" id="Ods-Me-IkJ"/>
                         <outlet property="replyButton" destination="vqO-iZ-Lup" id="iVk-Kl-1dd"/>
-                        <outlet property="signatureLabel" destination="BOC-dg-bn7" id="dyW-0Q-x1C"/>
                         <outlet property="toolBarBottomConstraint" destination="kCZ-aq-DDW" id="f7N-fC-p2K"/>
                         <outlet property="topicContentWeb" destination="HC9-DB-SdO" id="HHi-Vf-51a"/>
                         <outlet property="topicToolBarView" destination="a9p-xm-WTv" id="4mp-J9-1Jc"/>

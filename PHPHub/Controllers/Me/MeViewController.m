@@ -78,7 +78,7 @@
         NSURL *URL = [BaseHelper qiniuImageCenter:_userEntity.avatar withWidth:avatarHeight withHeight:avatarHeight];
         [_avatarImageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
         _usernameLabel.text = _userEntity.username;
-        _userIntroLabel.text = [NSString isStringEmpty:_userEntity.signature] ? @"个人签名为空哦 :)" : _userEntity.signature;
+        _userIntroLabel.text = [NSString isStringEmpty:_userEntity.introduction] ? @"个人签名为空哦 :)" : _userEntity.introduction;
     }
 }
 

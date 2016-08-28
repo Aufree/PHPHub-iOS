@@ -64,7 +64,7 @@
     _twitterTF.text = _user.twitterAccount;
     _githubTF.text = _user.githubName;
     _blogTF.text = _user.blogURL;
-    _introTextView.text = _user.signature;
+    _introTextView.text = _user.introduction;
 }
 
 - (void)updateUserProfile {
@@ -73,7 +73,7 @@
     _user.twitterAccount = _twitterTF.text;
     _user.githubName = _githubTF.text;
     _user.blogURL = _blogTF.text;
-    _user.signature = _introTextView.text;
+    _user.introduction = _introTextView.text;
     
     [SVProgressHUD show];
     
