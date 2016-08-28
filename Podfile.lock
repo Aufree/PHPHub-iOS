@@ -63,7 +63,7 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - SSKeychain (1.2.3)
-  - SVProgressHUD (HEAD based on 2.0-beta)
+  - SVProgressHUD (HEAD based on 2.0.3)
   - UIActionSheet+Blocks (0.9)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
@@ -148,7 +148,7 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
-  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d

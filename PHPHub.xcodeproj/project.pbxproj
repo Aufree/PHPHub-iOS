@@ -1114,7 +1114,7 @@
 				TargetAttributes = {
 					56D8F0171BAF97C500242FA9 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = X7MPK25PSQ;
+						DevelopmentTeam = W4M3J6TJMK;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1452,7 +1452,7 @@
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/GoogleAnalytics",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.estgroupe.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1608,7 +1608,7 @@
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/GoogleAnalytics",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.estgroupe.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1662,7 +1662,7 @@
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/JPush/lib",
 					"$(PROJECT_DIR)/PHPHub/ThirdParty/GoogleAnalytics",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.estgroup.phphub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.estgroupe.phphub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
