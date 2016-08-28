@@ -19,14 +19,9 @@
 - (id)getJobTopicList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getWiKiList:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
-- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
-- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
+- (id)getVotedTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex;
 - (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block;
 - (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block;
-- (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
-- (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
-- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
-- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)createTopic:(TopicEntity *)entity withBlock:(BaseResultBlock)block;
 - (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block;
 - (id)voteDownTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block;

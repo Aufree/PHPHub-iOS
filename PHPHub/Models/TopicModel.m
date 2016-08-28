@@ -50,12 +50,8 @@
     return [_api getTopicListByUser:userId callback:block atPage:pageIndex];
 }
 
-- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    return [_api getFavoriteTopicListByUser:userId callback:block atPage:pageIndex];
-}
-
-- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    return [_api getAttentionTopicListByUser:userId callback:block atPage:pageIndex];
+- (id)getVotedTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    return [_api getVotedTopicListByUser:userId callback:block atPage:pageIndex];
 }
 
 - (id)getTopicById:(NSInteger)topicId callback:(BaseResultBlock)block {
@@ -64,22 +60,6 @@
 
 - (id)addCommentToTopic:(CommentEntity *)comment withBlock:(BaseResultBlock)block {
     return [_api addCommentToTopic:comment withBlock:block];
-}
-
-- (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [_api favoriteTopicById:topicId withBlock:block];
-}
-
-- (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [_api cancelFavoriteTopicById:topicId withBlock:block];
-}
-
-- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [_api attentionTopicById:topicId withBlock:block];
-}
-
-- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    return [_api cancelAttentionTopicById:topicId withBlock:block];
 }
 
 - (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {

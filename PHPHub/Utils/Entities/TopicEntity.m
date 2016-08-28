@@ -23,8 +23,6 @@
              @"category" : @"category.data",
              @"topicContentUrl" : @"links.details_web_view",
              @"topicRepliesUrl" : @"links.replies_web_view",
-             @"favorite" : @"favorite",
-             @"attention" : @"attention",
              @"voteUp" : @"vote_up",
              @"voteDown" : @"vote_down",
              @"updatedAt" : @"updated_at",

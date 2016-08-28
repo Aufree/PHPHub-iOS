@@ -22,8 +22,6 @@
 @property (nonatomic, strong) CategoryEntity *category;
 @property (nonatomic, copy) NSString *topicContentUrl;
 @property (nonatomic, copy) NSString *topicRepliesUrl;
-@property (nonatomic, assign) BOOL favorite;
-@property (nonatomic, assign) BOOL attention;
 @property (nonatomic, assign) BOOL voteUp;
 @property (nonatomic, assign) BOOL voteDown;
 @property (nonatomic, strong) NSDate *updatedAt;

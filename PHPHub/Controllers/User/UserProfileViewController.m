@@ -149,10 +149,7 @@
                 [self jumpToCommentListView];
                 break;
             case 2:
-                vc = [self createTopicListWithType:TopicListTypeAttention];
-                break;
-            case 3:
-                vc = [self createTopicListWithType:TopicListTypeFavorite];
+                vc = [self createTopicListWithType:TopicListTypeVoted];
                 break;
                 
             default:

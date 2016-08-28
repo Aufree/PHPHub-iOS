@@ -64,15 +64,8 @@
     return [self getTopicListByUrlPath:urlPath block:block];
 }
 
-- (id)getFavoriteTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/favorite/topics?include=category,last_reply_user,user&per_page=20&page=%ld"
-                         , (long)userId, (long)pageIndex];
-    
-    return [self getTopicListByUrlPath:urlPath block:block];
-}
-
-- (id)getAttentionTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
-    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/attention/topics?include=category,last_reply_user,user&per_page=20&page=%ld"
+- (id)getVotedTopicListByUser:(NSInteger)userId callback:(BaseResultBlock)block atPage:(NSInteger)pageIndex {
+    NSString *urlPath = [NSString stringWithFormat:@"user/%ld/votes?include=category,last_reply_user,user&per_page=20&page=%ld"
                          , (long)userId, (long)pageIndex];
     
     return [self getTopicListByUrlPath:urlPath block:block];
@@ -131,26 +124,6 @@
                                        parameters:[comment transformToDictionary]
                                           success:successBlock
                                           failure:failureBlock];
-}
-
-- (id)favoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    NSString *urlString = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
-    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
-}
-
-- (id)cancelFavoriteTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    NSString *urlString = [NSString stringWithFormat:@"topics/%@/favorite", topicId];
-    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:YES];
-}
-
-- (id)attentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    NSString *urlString = [NSString stringWithFormat:@"topics/%@/attention", topicId];
-    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:NO];
-}
-
-- (id)cancelAttentionTopicById:(NSNumber *)topicId withBlock:(BaseResultBlock)block {
-    NSString *urlString = [NSString stringWithFormat:@"topics/%@/attention", topicId];
-    return [self topicAction:topicId withBlock:block urlString:urlString deleteAction:YES];
 }
 
 - (id)voteUpTopic:(NSNumber *)topicId withBlock:(BaseResultBlock)block {

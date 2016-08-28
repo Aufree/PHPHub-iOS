@@ -305,42 +305,14 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ZzT-Qd-9ze">
-                                        <rect key="frame" x="0.0" y="887" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZzT-Qd-9ze" id="JW0-7l-bfk">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注的帖子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-oJ-82H">
-                                                    <rect key="frame" x="17" y="11" width="325" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.56862745100000001" green="0.59999999999999998" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rE5-oJ-82H" firstAttribute="leading" secondItem="JW0-7l-bfk" secondAttribute="leading" constant="17" id="5MW-nG-iUU"/>
-                                                <constraint firstItem="rE5-oJ-82H" firstAttribute="top" secondItem="JW0-7l-bfk" secondAttribute="top" constant="11" id="O8t-UP-yXC"/>
-                                                <constraint firstAttribute="trailing" secondItem="rE5-oJ-82H" secondAttribute="trailing" constant="17" id="SGN-Kv-3WR"/>
-                                                <constraint firstAttribute="trailing" secondItem="rE5-oJ-82H" secondAttribute="trailing" id="kp4-iz-P7A"/>
-                                                <constraint firstAttribute="bottom" secondItem="rE5-oJ-82H" secondAttribute="bottom" constant="12" id="pSv-Ut-NK1"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="SGN-Kv-3WR"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="wIm-MR-ddc">
-                                        <rect key="frame" x="0.0" y="931" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="887" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIm-MR-ddc" id="xmz-PM-EDd">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏的帖子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-AV-aok">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赞过的帖子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-AV-aok">
                                                     <rect key="frame" x="17" y="11" width="325" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.56862745100000001" green="0.59999999999999998" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -366,7 +338,7 @@
                             <tableViewSection headerTitle="Since" id="1M1-kG-wa3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dYZ-Sw-bB5">
-                                        <rect key="frame" x="0.0" y="1025" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="981" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dYZ-Sw-bB5" id="T7R-dt-Zbm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

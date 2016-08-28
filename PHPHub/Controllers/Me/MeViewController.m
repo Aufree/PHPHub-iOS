@@ -107,10 +107,7 @@
                 vc = notificationListVC;
                 break;
             } case 1: {
-                vc = [self createTopicListWithType:TopicListTypeAttention];
-                break;
-            } case 2: {
-                vc = [self createTopicListWithType:TopicListTypeFavorite];
+                vc = [self createTopicListWithType:TopicListTypeVoted];
                 break;
             }
         }

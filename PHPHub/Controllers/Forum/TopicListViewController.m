@@ -93,12 +93,9 @@
     } else if (self.topicListType == TopicListTypeJob) {
         [[TopicModel Instance] getJobTopicList:callback atPage:atPage];
         self.navigationItem.title = @"招聘帖子";
-    } else if (self.topicListType == TopicListTypeFavorite && self.userId > 0) {
-        [[TopicModel Instance] getFavoriteTopicListByUser:self.userId callback:callback atPage:atPage];
-        self.navigationItem.title = @"收藏的帖子";
-    } else if (self.topicListType == TopicListTypeAttention && self.userId > 0) {
-        [[TopicModel Instance] getAttentionTopicListByUser:self.userId callback:callback atPage:atPage];
-        self.navigationItem.title = @"关注的帖子";
+    } else if (self.topicListType == TopicListTypeVoted && self.userId > 0) {
+        [[TopicModel Instance] getVotedTopicListByUser:self.userId callback:callback atPage:atPage];
+        self.navigationItem.title = @"赞过的帖子";
     } else if (self.topicListType == TopicListTypeNormal && self.userId > 0) {
         [[TopicModel Instance] getTopicListByUser:self.userId callback:callback atPage:atPage];
         self.navigationItem.title = @"发布的帖子";
