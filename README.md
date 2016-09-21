@@ -28,7 +28,7 @@ You can checkout the others open source projects of PHPHub in the following list
 * [PHPHub-Web](https://github.com/summerblue/phphub) by [@Summer](https://github.com/phphub/phphub-ui)
 
 
-## [中文文档](http://aufree.github.io/phphub-ios/)
+## [中文文档](http://aufree.github.io/PHPHub-iOS/)
 
 ## Features
 
