@@ -28,7 +28,9 @@
 
 // 提交后的结果回调, 见 http://docs.jpush.cn/pages/viewpage.action?pageId=3309913
 + (void)tagsAliasCallback:(int)iResCode tags:(NSSet *)tags alias:(NSString *)alias {
-    NSString *callbackString = [NSString stringWithFormat:@"Result: %d, \ntags: %@, \nalias: %@\n", iResCode, [JpushHandler logSet:tags], alias];
+    __unused NSString *callbackString = [NSString stringWithFormat:@"Result: %d, \ntags: %@, \nalias: %@\n", iResCode, [JpushHandler logSet:tags], alias];
+    
+    NSLog(@"JPUSH TagsAlias 回调: %@", callbackString);
     
     // 提交成功
     if (iResCode == 0) {
@@ -37,8 +39,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:build forKey:@"LastBuildNumberIndentifier"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
-    NSLog(@"JPUSH TagsAlias 回调: %@", callbackString);
 }
 
 // log NSSet with UTF8

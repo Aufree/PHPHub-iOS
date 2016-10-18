@@ -92,7 +92,8 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
 @interface TOWebViewController () <UIActionSheetDelegate,
                                    UIPopoverControllerDelegate,
                                    MFMailComposeViewControllerDelegate,
-                                   MFMessageComposeViewControllerDelegate> {
+                                   MFMessageComposeViewControllerDelegate,
+                                   CAAnimationDelegate> {
     
     //The state of the UIWebView's scroll view before the rotation animation has started
     struct {
