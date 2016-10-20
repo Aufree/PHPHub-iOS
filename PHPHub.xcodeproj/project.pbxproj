@@ -750,7 +750,6 @@
 				565218341BBA7CC500412E60 /* Views */,
 				56D8F0461BAF9D5E00242FA9 /* Controllers */,
 				56D8F09F1BB0ED4E00242FA9 /* Apis */,
-				56D8F0451BAF9D5800242FA9 /* Classes */,
 				56D8F0491BAF9D7000242FA9 /* Resources */,
 				56D8F01B1BAF97C500242FA9 /* Supporting Files */,
 			);
@@ -786,13 +785,6 @@
 				56D8F0361BAF97C500242FA9 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		56D8F0451BAF9D5800242FA9 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		56D8F0461BAF9D5E00242FA9 /* Controllers */ = {
