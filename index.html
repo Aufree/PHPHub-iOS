@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>PHPHub-iOS by Aufree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/animate.css/3.4.0/animate.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <h1>PHPHub for iOS 中文介绍</h1> 
+        <div class="separator"></div>
+        <p class="slogon">PHPHub 是积极向上的 PHP & Laravel 开发者社区.</p>
+        <a href="https://github.com/aufree">
+          <img class="avatar wow bounceInDown" data-wow-duration="1.5s" src="https://avatars2.githubusercontent.com/u/5310542?v=3&s=200" alt="avatar">
+        </a>
+      </header>
+      <section class="main-content">
+          <section class="intro">
+            <h2>介绍</h2>
+            <p><a href="https://github.com/Aufree/phphub-ios">PHPHub for iOS</a> 是 PHPHub 的官方 iOS 客户端, 同时兼容 iPhone 和 iPad, 使用了最新的 <a href="https://github.com/NauxLiu/phphub-server">PHPHub API</a>, 目前该 API 仍在完善中, 待完全稳定之后会开放给所有开发者使用, 敬请期待. 若您在使用此应用的过程中有发现任何问题, 请到 GitHub 上给我提 issue 或 PR, 我将会不定期抽出时间来对一些 Bug 进行修复或更新.</p>
+            <p>我们的团队是 EST Group, 若您对我们团队有兴趣, 点击<a href="http://est-group.org/">此链接</a>可了解更多详情信息.</p>
+          </section>
+
+          <section class="screenshots">
+            <h2>应用截图</h2>     
+            <h3>iPhone</h3>
+            <img class="wow slideInLeft" data-wow-duration="1s" src="https://cloud.githubusercontent.com/assets/5310542/17099679/73306598-529c-11e6-9869-8338de6d4d0d.png" alt="iphone">       
+            <h3>iPad</h3>
+            <img  class="wow slideInRight" data-wow-duration="1s" src="https://cloud.githubusercontent.com/assets/5310542/17099574/c7196890-529b-11e6-9962-d36e2ae52e43.png" style="margin-top:30px;">
+          </section>
+
+          <section class="installtion">
+            <h2>安装</h2>
+            <h3>安装 Cocoapods</h3>
+            <p>本项目使用 Cocoapods 来对第三方库进行管理, 如果你的电脑未安装过 Cocoapods, 运行以下命令进行安装.</p>
+            <p class="code">$ gem install cocoapods</p>            
+            <p class="code">$ pod setup</p>
+            <p>安装第三方库.</p>
+            <p class="code">$ pod install</p>
+            <h3>配置项目</h3>
+            <p>项目的一些较为隐秘的信息都放在了 SecretConstant.h 中, 因此你需要先创建自己的 SecretConstant.h 文件, 运行以下命令进行创建.</p>
+            <p class="code">$ cp PHPHub/Constants/SecretConstant.example.h PHPHub/Constants/SecretConstant.h</p>
+            <p>SecretConstant 文件中的 Client_id 和 Client_secret 只能用于测试环境, 若要用在生产环境, 可以点击<a href="#">此链接</a>进行申请.</p>
+            <p>由于本项目用到了 JPush 作为消息推送, 因此你需要为 JPush 创建 PushConfig.plist 文件, 运行以下命令进行创建.</p>
+            <p class="code">$ cp PHPHub/PushConfig.example.plist PHPHub/PushConfig.plist</p>
+            <p>确保你将此项目运行在测试环境上.</p>
+            <p class="code">打开 Xcode, 选择 Product -> Scheme -> Edit Schemes -> Info -> 更改 Build Configuration 为 Debug 模式.</p>
+            <p>打开 PHPHub.xcworkspace.</p>
+            <p>OK, 这就完了, 祝你玩得开心.</p>
+          </section>
+
+          <section class="login-guide">
+            <h2>怎样登录?</h2>
+            <h3>测试环境</h3>
+            <p class="p-center">打开 PHPHub iOS 应用, 点击进入 "我的页面" 使用 "扫码登录" 来扫描下方二维码完成登录.</p>
+            <img class="qrcode wow bounceIn" data-wow-duration="1s" src="http://ww4.sinaimg.cn/large/76dc7f1bgw1eyi0esx6mnj21be18w43c.jpg" alt="QRCode">
+            <h3>生产环境</h3>
+            <p>去 <a href="https://phphub.org/login">PHPHub 论坛</a> 使用你的 GitHub 账号进行登录, 完成之后进入个人资料页面, 扫描个人资料页面的客户端登录二维码完成登录, 如下图所示.</p>
+            <img id="website-rqcode" class="wow bounceInUp" data-wow-duration="2s" src="http://ww3.sinaimg.cn/large/76dc7f1bjw1eyi5ju8wcaj20sb0odwkj.jpg" alt="Website QRCode">
+          </section>
+
+      </section>  
+    </div>
+    
+      <footer class="main-footer">
+          <div class="footer-container">
+          <section class="who-made-this">
+            <h2>Who made this?</h2>
+            <p>我是李锦发, 网络常用 ID 为 Aufree, 是一名热爱科技的工程师, 同时也是 <a href="http://est-group.org/">EST Group</a> 的主要成员之一. </p>
+            <p>此项目是我从 10 月份开始, 在工作之余抽出半个多月的时间做的, 部分功能接下来会再慢慢优化和完善. 我很喜欢逛 GitHub, 因为这里是程序员释放灵感的地方, 也总能让我发现一些意想不到的惊喜. 今后我会再创造一些其它的开源项目出来, 如果你对我有兴趣的话, 可以关注我的新浪微博 <a href="http://weibo.com/jinfali">@李锦发</a> 或 GitHub <a href="https://github.com/aufree">@Aufree</a>.</p>
+          </section>
+            <div class="footer-content">
+              <p>Made With Love By <a href="http://est-group.org/">The EST Group</a></p>
+              <p>We design and build the future</p>              
+            </div>
+          </div>
+      </footer>
+
+      <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+</html>
