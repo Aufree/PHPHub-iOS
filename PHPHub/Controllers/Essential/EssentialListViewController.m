@@ -30,7 +30,7 @@
     self.navigationItem.title = @"精华";
 
     [self checkCurrentUserClientToken];
-    [self createRightButtonItem];    
+    [self createRightButtonItem];
 }
 
 #pragma mark Check current user client token
