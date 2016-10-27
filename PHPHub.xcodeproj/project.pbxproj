@@ -112,8 +112,8 @@
 		56D8F0B81BB13A7200242FA9 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0B71BB13A7200242FA9 /* ViewPagerController.m */; };
 		56D8F0BC1BB1432F00242FA9 /* TitlePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */; };
 		56E945611BDF04F10008B02C /* BaseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E945601BDF04F10008B02C /* BaseWebView.m */; };
-		A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A752BE6144529BFF7075D5A /* libPods.a */; };
 		C19433421BB340A200D51917 /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = C19433411BB340A200D51917 /* UIResponder+Router.m */; };
+		D6F644CB27B8325F8A2C5EA6 /* libPods-PHPHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8EE8540CB5DFEC8342EFC6 /* libPods-PHPHub.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +127,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		26CCEB8B0128425B52B7509C /* Pods-PHPHub.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHPHub.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-PHPHub/Pods-PHPHub.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
+		4E8EE8540CB5DFEC8342EFC6 /* libPods-PHPHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PHPHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		560B399C1BBF793400CC7007 /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
 		560B399D1BBF793400CC7007 /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
 		560E4BF61BC0B57800BD8CE2 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -333,10 +333,10 @@
 		56D8F0BB1BB1432F00242FA9 /* TitlePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePagerView.m; sourceTree = "<group>"; };
 		56E9455F1BDF04F10008B02C /* BaseWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebView.h; sourceTree = "<group>"; };
 		56E945601BDF04F10008B02C /* BaseWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebView.m; sourceTree = "<group>"; };
-		5A752BE6144529BFF7075D5A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5E4C5566C66CAF21D7A147A /* Pods.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
+		5FDDB29A22F49ECC96EFA2F4 /* Pods-PHPHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHPHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHPHub/Pods-PHPHub.debug.xcconfig"; sourceTree = "<group>"; };
 		C19433401BB340A200D51917 /* UIResponder+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
 		C19433411BB340A200D51917 /* UIResponder+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
+		E61C2E1390F975ED4CCD37CE /* Pods-PHPHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHPHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-PHPHub/Pods-PHPHub.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,8 +358,8 @@
 				56B402611BCF96870044812F /* CoreGraphics.framework in Frameworks */,
 				56B4025F1BCF967B0044812F /* SystemConfiguration.framework in Frameworks */,
 				56B4025D1BCF96570044812F /* Security.framework in Frameworks */,
-				A224F83563419A8CA5AF1D13 /* libPods.a in Frameworks */,
 				56C0A30F1BD0D7740042E302 /* libPushSDK-1.8.5.a in Frameworks */,
+				D6F644CB27B8325F8A2C5EA6 /* libPods-PHPHub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,19 +390,9 @@
 				56B402601BCF96870044812F /* CoreGraphics.framework */,
 				56B4025E1BCF967B0044812F /* SystemConfiguration.framework */,
 				56B4025C1BCF96570044812F /* Security.framework */,
-				5A752BE6144529BFF7075D5A /* libPods.a */,
+				4E8EE8540CB5DFEC8342EFC6 /* libPods-PHPHub.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		48AB7B79B85CBC8E3BC49600 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */,
-				379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */,
-				A5E4C5566C66CAF21D7A147A /* Pods.ad hoc distribution.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		560B399B1BBF791900CC7007 /* UIViewController */ = {
@@ -724,8 +714,8 @@
 				56D8F01A1BAF97C500242FA9 /* PHPHub */,
 				56D8F0341BAF97C500242FA9 /* PHPHubTests */,
 				56D8F0191BAF97C500242FA9 /* Products */,
-				48AB7B79B85CBC8E3BC49600 /* Pods */,
 				46A79BE4D8CD8EE6782FCE6C /* Frameworks */,
+				B9BAE1D895E021193D2A6B90 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1044,6 +1034,16 @@
 			path = TitlePagerView;
 			sourceTree = "<group>";
 		};
+		B9BAE1D895E021193D2A6B90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FDDB29A22F49ECC96EFA2F4 /* Pods-PHPHub.debug.xcconfig */,
+				E61C2E1390F975ED4CCD37CE /* Pods-PHPHub.release.xcconfig */,
+				26CCEB8B0128425B52B7509C /* Pods-PHPHub.ad hoc distribution.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C194333F1BB340A200D51917 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,13 +1060,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56D8F03B1BAF97C500242FA9 /* Build configuration list for PBXNativeTarget "PHPHub" */;
 			buildPhases = (
-				5290A2E267E7BC8ACB24A108 /* Check Pods Manifest.lock */,
+				C2AFAA07BFA1FE2CF78DD1A1 /* [CP] Check Pods Manifest.lock */,
 				56D8F0141BAF97C500242FA9 /* Sources */,
 				56D8F0151BAF97C500242FA9 /* Frameworks */,
 				56D8F0161BAF97C500242FA9 /* Resources */,
-				A0B60134939C09094568F1F5 /* Copy Pods Resources */,
 				56437C991BD915BF00C6995F /* ShellScript */,
-				66F65CD20924285459C8D23B /* Embed Pods Frameworks */,
+				D9023C01876329ACBC9C3A3F /* [CP] Embed Pods Frameworks */,
+				D1949EB42CFF9A5F07C5F078 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1180,21 +1180,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5290A2E267E7BC8ACB24A108 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		56437C991BD915BF00C6995F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1208,34 +1193,49 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
-		66F65CD20924285459C8D23B /* Embed Pods Frameworks */ = {
+		C2AFAA07BFA1FE2CF78DD1A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A0B60134939C09094568F1F5 /* Copy Pods Resources */ = {
+		D1949EB42CFF9A5F07C5F078 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PHPHub/Pods-PHPHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9023C01876329ACBC9C3A3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PHPHub/Pods-PHPHub-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1402,7 +1402,7 @@
 		};
 		56437C9B1BD9DC2200C6995F /* ad hoc distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5E4C5566C66CAF21D7A147A /* Pods.ad hoc distribution.xcconfig */;
+			baseConfigurationReference = 26CCEB8B0128425B52B7509C /* Pods-PHPHub.ad hoc distribution.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1564,7 +1564,7 @@
 		};
 		56D8F03C1BAF97C500242FA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 289757EEDBB7E93A1BC45C31 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 5FDDB29A22F49ECC96EFA2F4 /* Pods-PHPHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1618,7 +1618,7 @@
 		};
 		56D8F03D1BAF97C500242FA9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 379B16D3AE766B12953E1E13 /* Pods.release.xcconfig */;
+			baseConfigurationReference = E61C2E1390F975ED4CCD37CE /* Pods-PHPHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

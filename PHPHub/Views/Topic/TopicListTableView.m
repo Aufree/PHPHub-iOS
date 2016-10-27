@@ -111,11 +111,9 @@ static NSString *topicListIdentifier = @"topicListIdentifier";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView fd_heightForCellWithIdentifier:topicListIdentifier configuration:^(TopicListCell *cell) {
-        if (_topicEntites.count > 0) {
-            TopicEntity *topic = [_topicEntites objectAtIndex:indexPath.row];
-            cell.topicEntity = topic;
-        }
+    return [tableView fd_heightForCellWithIdentifier:topicListIdentifier cacheByIndexPath:indexPath configuration:^(TopicListCell *cell) {
+        TopicEntity *topic = [_topicEntites objectAtIndex:indexPath.row];
+        cell.topicEntity = topic;
     }];
 }
 
