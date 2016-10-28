@@ -34,5 +34,5 @@ target "PHPHub" do
     pod 'DZNEmptyDataSet'
     pod 'WebViewJavascriptBridge'
     pod 'JTSImageViewController'
-    pod 'SSKeychain'
+    pod 'SAMKeychain'
 end

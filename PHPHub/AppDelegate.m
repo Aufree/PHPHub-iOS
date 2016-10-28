@@ -15,7 +15,7 @@
 #import "JpushHandler.h"
 #import "LaunchScreenAdHandler.h"
 #import "ExceptionHandler.h"
-#import "SSKeychain.h"
+#import "SAMKeychain.h"
 
 @interface AppDelegate ()
 
@@ -98,7 +98,7 @@
     [SVProgressHUD setMinimumDismissTimeInterval:1];
     
     // Setup SSKeyChain
-    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
+    [SAMKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
 }
 
 #pragma mark - APNs

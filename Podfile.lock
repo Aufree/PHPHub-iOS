@@ -61,10 +61,10 @@ PODS:
     - HappyDNS (~> 0.2)
   - QRCodeReaderViewController (3.5.2)
   - Reachability (3.2)
+  - SAMKeychain (1.5.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SSKeychain (1.2.3)
   - SVProgressHUD (2.0.3)
   - UIActionSheet+Blocks (0.9)
   - UIActivityIndicator-for-SDWebImage (1.2):
@@ -98,8 +98,8 @@ DEPENDENCIES:
   - Qiniu
   - QRCodeReaderViewController (from `https://github.com/zhengjinghua/MQRCodeReaderViewController.git`)
   - Reachability
+  - SAMKeychain
   - SDWebImage
-  - SSKeychain
   - SVProgressHUD (= 2.0.3)
   - UIActionSheet+Blocks
   - UIActivityIndicator-for-SDWebImage
@@ -148,8 +148,8 @@ SPEC CHECKSUMS:
   Qiniu: d899770cc7b9a7abb3bff9fd993adc93c9475d45
   QRCodeReaderViewController: 557e3291d8fe8adf20d62b7f6bd79a3941f8ec31
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
@@ -159,6 +159,6 @@ SPEC CHECKSUMS:
   UMengSocial: 85882abe5b20aa38ad558ece71360e16b5d50909
   WebViewJavascriptBridge: f10ac16f2cd3adf2b941bd79477c55a8f6e01044
 
-PODFILE CHECKSUM: 5efc83d717d9a17f203cbbd2b71f45398143d8b2
+PODFILE CHECKSUM: 218f28d4935673973e859ea6da2ea60ad76d0c63
 
 COCOAPODS: 1.1.1
