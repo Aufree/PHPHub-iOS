@@ -23,7 +23,6 @@ PHPHub for iOS is the universal iPhone and iPad application for [PHPHub](https:/
 If you have any questions please don't hesitate to ask them in an issue or email me at phphub.org@gmail.com.
 
 > - 本人著作的书籍[《Laravel 入门教程》](https://laravel-china.org/laravel-tutorial/5.1)已正式发布，有兴趣的朋友可点击 [此处](https://laravel-china.org/topics/3383) 作进一步了解。
-> - 本项目由 [优帆远扬](http://yousails.com/) 提供技术支持，有需要技术服务或软件开发的朋友可 [跟我联系](mailto:aufree@yousails.com)。
 
 ## PHPHub related projects
 
