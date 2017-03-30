@@ -8,6 +8,13 @@
 <a href="https://github.com/Aufree/phphub-ios/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat"></a>
 </p>
 
+<p align="center">
+  <b>Special thanks to the generous sponsorship by:</b>
+  <br><br>
+  <a href="https://www.yousails.com">
+    <img src="https://yousails.com/banners/brand.png" width=350>
+  </a>
+</p>
 
 PHPHub is a Forum project written in Laravel 4.2, and it is also the project build up PHP & Laravel China community.
 
