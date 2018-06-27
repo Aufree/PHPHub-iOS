@@ -163,7 +163,7 @@ For a more complete list, check the [Podfile](https://github.com/Aufree/phphub-i
 
 ## License
 
-Copyright (c) 2015 Paul King
+Copyright (c) 2015-2018 Paul King
 
 ---------------
 
