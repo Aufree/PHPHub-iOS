@@ -8,21 +8,11 @@
 <a href="https://github.com/Aufree/phphub-ios/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat"></a>
 </p>
 
-<p align="center">
-  <br>
-  若需要软件外包服务，可与我联系，添加好友请注明来意
-  <br>
-  <br>  
-  <img src="https://user-images.githubusercontent.com/5310542/41954703-5178d4e8-7a0f-11e8-81b2-41c8f6aa0151.png" width="30%">
-</p>
-
 PHPHub is a Forum project written in Laravel 4.2, and it is also the project build up PHP & Laravel China community.
 
 PHPHub for iOS is the universal iPhone and iPad application for [PHPHub](https://phphub.org/), This is the official PHPHub iOS client that uses the newly introduced official [PHPHub API](https://github.com/NauxLiu/phphub-server), One of the cool features of the new API are updates pushed in real time.
 
 If you have any questions please don't hesitate to ask them in an issue or email me at phphub.org@gmail.com.
-
-> - 本人著作的书籍[《Laravel 入门教程》](https://laravel-china.org/laravel-tutorial/5.1)已正式发布，有兴趣的朋友可点击 [此处](https://laravel-china.org/topics/3383) 作进一步了解。
 
 ## PHPHub related projects
 
