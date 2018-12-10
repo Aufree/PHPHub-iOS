@@ -15,7 +15,7 @@ target "PHPHub" do
     pod 'QBPopupMenu'
     pod 'Mantle', '1.5.5'
     pod 'FMDB', '~> 2.3'
-    pod 'MTLFMDBAdapter', :git => 'https://github.com/summerblue/MTLFMDBAdapter'
+    pod 'MTLFMDBAdapter', :git => 'https://github.com/tanis2000/MTLFMDBAdapter.git'
     pod 'FMDBMigrationManager', '1.4'
     pod 'GVUserDefaults'
     pod 'Masonry'
